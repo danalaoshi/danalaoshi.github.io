@@ -1,6 +1,8 @@
 # danalaoshi.github.io
 大拿老师课堂笔记，微信：tu_ling_xue_yuan
 
+做个标记
+
 # 🎓 计算机课程讲义平台
 
 > 一个全面的计算机科学学习资源平台，涵盖从前端开发到后端架构的完整知识体系。
@@ -9,8 +11,8 @@
 
 <div class="grid-container">
   <div class="course-card">
-    <h3>前端开发</h3>
-    <p>HTML、CSS、JavaScript 及相关框架</p>
+    <h3>Python基础</h3>
+    <p>主要聚焦Python的基础语法和相关的一些练习</p>
     <a href="#/Python/README">开始学习 →</a>
   </div>
   
