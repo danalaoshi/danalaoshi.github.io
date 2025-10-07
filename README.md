@@ -11,21 +11,12 @@
   <div class="course-card">
     <h3>前端开发</h3>
     <p>HTML、CSS、JavaScript 及相关框架</p>
-    <a href="#/前端开发/README">开始学习 →</a>
+    <a href="#/Python/README">开始学习 →</a>
   </div>
   
-  <div class="course-card">
-    <h3>后端开发</h3>
-    <p>Node.js、数据库、服务器架构</p>
-    <a href="#/后端开发/README">开始学习 →</a>
-  </div>
-  
-  <div class="course-card">
-    <h3>工具与部署</h3>
-    <p>Git、Docker、CI/CD 等开发工具</p>
-    <a href="#/工具与部署/README">开始学习 →</a>
-  </div>
 </div>
+
+做个标记
 
 ## 📚 课程特色
 
