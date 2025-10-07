@@ -1,13 +1,24 @@
-- **开始**
-  - [首页](/)
-  - [课程介绍](/README)
+- **大拿老师**
+  - [关于这里的一切](/)
 
 - **Python开发**
-  - [Python语法](/python/README)
-  - 基础语法 
-    - [HTML入门](/python/python概述)
-    - [语义化标签](/python/变量和注释)
-
+  - [Python语言概述](/python/base/001Python语言概述)
+  - [Python注释](/python/base/001注释)
+  - [变量](/python/base/002变量和变量类型)
+  - [字符串](/python/base/003str)
+  - [运算符](/python/base/004运算符.md)
+  - [if分支语句](/python/base/005-if分支语句.md)
+  - [for循环](/python/base/006-for循环.md)
+  - [while循环](/python/base/007-while循环.md)
+  - [函数](/python/base/008-函数讲义.md)
+  - [内置函数](/python/base/008-内置函数.md)
+  - [内置结构](/python/base/09-内置结构.md)
+  - [类和面向对象](/python/base/009-类.md)
+  - [内置模块](/python/base/010-内置模块.md)
+  - [持久化和文件](/python/base/011-持久化和文件.md)
+  - [异常处理](/python/base/012-异常处理.md)
+  - [TKinter](/python/base/013-tkinter.md)
+     
 - **其他资源**
   - [学习路线图](#/学习路线图)
   - [常见问题](#/常见问题)
