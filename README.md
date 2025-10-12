@@ -20,7 +20,7 @@
   <div class="course-card">
     <h3>Python基础</h3>
     <p>主要聚焦Python的基础语法和相关的一些练习</p>
-    <a href="#/python/README">开始学习 →</a>
+    <a href="#/python/README.md">开始学习 →</a>
   </div>
   
 </div>
