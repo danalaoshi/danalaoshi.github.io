@@ -83,6 +83,7 @@ exclude_patterns = []
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
+html_baseurl = 'https://danalaoshi.github.io/'
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -204,7 +205,8 @@ epub_exclude_files = ['search.html']
 # -- Options for intersphinx extension ---------------------------------------
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+# intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {}
 
 # -- Options for todo extension ----------------------------------------------
 

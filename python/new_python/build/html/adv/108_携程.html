@@ -1,128 +1,76 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="zh-CN" >
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>9. 协程 &mdash; Python新全栈教程 1.0 文档</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'1.0',
-              LANGUAGE:'zh_CN',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <link rel="canonical" href="https://danalaoshi.github.io/adv/108_%E6%90%BA%E7%A8%8B.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f115507d"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="10. 1. 网络通信概述" href="109_网络编程.html" />
+    <link rel="next" title="10. 1. 网络通信概述" href="109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html" />
     <link rel="prev" title="8. 日志(logging)" href="107_log.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> Python新全栈教程
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            Python新全栈教程
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../base/001.html">1. 开学典礼-不讲知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/001Python语言概述.html">2. Python语言概述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/001注释.html">3. 注释和帮助</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001%E6%B3%A8%E9%87%8A.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html">4. 变量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/003str.html">5. 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/004运算符.html">6. 表达式 和 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/005-if分支语句.html">7. 分支语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/006-for循环.html">8. 循环语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/007-while循环.html">9. while循环</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/008-函数讲义.html">10. 函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/008-内置函数.html">11. 内置函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/09-内置结构.html">12. 内置数据结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/009-类.html">13. OOP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/010-内置模块.html">14. 常用内置模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/011-持久化和文件.html">15. 文件和序列化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/004%E8%BF%90%E7%AE%97%E7%AC%A6.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/006-for%E5%BE%AA%E7%8E%AF.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/007-while%E5%BE%AA%E7%8E%AF.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-%E5%87%BD%E6%95%B0%E8%AE%B2%E4%B9%89.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/09-%E5%86%85%E7%BD%AE%E7%BB%93%E6%9E%84.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/009-%E7%B1%BB.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/010-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/011-%E6%8C%81%E4%B9%85%E5%8C%96%E5%92%8C%E6%96%87%E4%BB%B6.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/012-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">16. Python异常的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/013-tkinter.html">17. Tkinter</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="101-函数高级.html">1. 函数高级</a></li>
-<li class="toctree-l1"><a class="reference internal" href="102-类高级.html">2. OOP高级编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="103_调试技术.html">3. 调试技术</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1021-单元测试.html">4. 单元测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="104_模块和包.html">5. 模块和包</a></li>
-<li class="toctree-l1"><a class="reference internal" href="105多线程.html">6. 多线程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="101-%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="103_%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html">7. 计算机编码问题</a></li>
 <li class="toctree-l1"><a class="reference internal" href="107_log.html">8. 日志(logging)</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">9. 协程</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">9.1. 迭代器</a></li>
@@ -130,115 +78,72 @@
 <li class="toctree-l2"><a class="reference internal" href="#id4">9.3. 协程</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="109_网络编程.html">10. 1. 网络通信概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">10. 1. 网络通信概述</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Python新全栈教程</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>9. 协程</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">9. </span>协程</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/adv/108_携程.md.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/adv/108_携程.md.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>9. 协程<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+             
+  <section id="id1">
+<h1><span class="section-number">9. </span>协程<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <p>本章主要讲解协程问题，从迭代器开始逐渐过渡到携程的概念和用法。</p>
-<div class="section" id="id2">
-<h2>9.1. 迭代器<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<section id="id2">
+<h2><span class="section-number">9.1. </span>迭代器<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>可迭代：可直接被for循环使用的对象叫可迭代的(Iterable), 注意这个是个形容词，用来形容一个对象是否可以迭代。</li>
-<li>迭代器：不但可以作用于for循环,还可以被next调用的,叫迭代器(Itrator), 这个是一个名词。</li>
+<li><p>可迭代：可直接被for循环使用的对象叫可迭代的(Iterable), 注意这个是个形容词，用来形容一个对象是否可以迭代。</p></li>
+<li><p>迭代器：不但可以作用于for循环,还可以被next调用的,叫迭代器(Itrator), 这个是一个名词。</p></li>
 </ul>
 <p>通过定义我们知道，迭代器都是可迭代的，可迭代的未必是迭代器。</p>
 <p>我们常见的<code class="docutils literal notranslate"><span class="pre">range</span></code>函数就是可迭代的，我们也经常用，还有比如<code class="docutils literal notranslate"><span class="pre">list</span></code>对象等。</p>
 <ul>
-<li><p class="first">可以用<code class="docutils literal notranslate"><span class="pre">isinstance</span></code>判断是否可迭代和是否是迭代器，参看下面代码：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Iterable</span>
+<li><p>可以用<code class="docutils literal notranslate"><span class="pre">isinstance</span></code>判断是否可迭代和是否是迭代器，参看下面代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span>
   <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
   <span class="nb">isinstance</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">)</span>
 
 
-  <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Iterator</span>
+  <span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterator</span>
   <span class="nb">isinstance</span><span class="p">((</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)),</span> <span class="n">Iterator</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">iterable和Iterator的关系,可以通过iter函数运算，简而言之就是把一个对象转换成一个迭代器</p>
+<li><p>iterable和Iterator的关系,可以通过iter函数运算，简而言之就是把一个对象转换成一个迭代器</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="nb">isinstance</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">),</span> <span class="n">Iterator</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">for</span></code>循环原理</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code>循环原理</p>
 <ul>
-<li><p class="first">先判断对象是否为可迭代对象</p>
+<li><p>先判断对象是否为可迭代对象</p>
 <ul class="simple">
-<li>不是的话直接报错，抛出TypeError异常</li>
-<li>是的话则调用<code class="docutils literal notranslate"><span class="pre">iter</span></code>方法，返回一个迭代器</li>
+<li><p>不是的话直接报错，抛出TypeError异常</p></li>
+<li><p>是的话则调用<code class="docutils literal notranslate"><span class="pre">iter</span></code>方法，返回一个迭代器</p></li>
 </ul>
 </li>
-<li><p class="first">不断地调用迭代器的next方法，每次按序返回迭代器中的一个值</p>
-</li>
-<li><p class="first">迭代到最后，没有更多元素了就抛出异常<code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>，这个异常<code class="docutils literal notranslate"><span class="pre">python</span></code> 自己会处理，不会暴露给开发者</p>
-</li>
-<li><p class="first">看个小代码：</p>
+<li><p>不断地调用迭代器的next方法，每次按序返回迭代器中的一个值</p></li>
+<li><p>迭代到最后，没有更多元素了就抛出异常<code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>，这个异常<code class="docutils literal notranslate"><span class="pre">python</span></code> 自己会处理，不会暴露给开发者</p></li>
+<li><p>看个小代码：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># for循环原理</span>
   <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
   <span class="n">x_iterator</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span>
@@ -253,9 +158,9 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id3">
-<h2>9.2. 生成器<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id3">
+<h2><span class="section-number">9.2. </span>生成器<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <p>生成器是特指一种一边循环一边计算的机制的实现(generator)，是一种特定的迭代器。</p>
 <p>它是一个算法/函数,这个函数可以返回多个返回值，想得到这个函数需要用<code class="docutils literal notranslate"><span class="pre">next</span></code>函数调用这个生成器，
 每次调用<code class="docutils literal notranslate"><span class="pre">next</span></code>函数的时候生成器会计算下一个值,利用<code class="docutils literal notranslate"><span class="pre">yield</span></code>返回一个值，这样如果有多个<code class="docutils literal notranslate"><span class="pre">yield</span></code>这个
@@ -271,7 +176,7 @@
 <p>可以粗暴的理解成<code class="docutils literal notranslate"><span class="pre">函数中包含yield叫generator</span></code>，生成器可以被<code class="docutils literal notranslate"><span class="pre">next</span></code>调用，此时遇到函数中的<code class="docutils literal notranslate"><span class="pre">yield</span></code>则返回，
 下次被<code class="docutils literal notranslate"><span class="pre">next</span></code>调用的时候则继续上次返回的点执行，这样一个函数可以被多次调用，每次调用执行一段代码。</p>
 <p>生成器案例1：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">odd</span><span class="p">():</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span><span class="w"> </span><span class="nf">odd</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;step 1&#39;</span><span class="p">)</span>
     <span class="k">yield</span> <span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;step 2&#39;</span><span class="p">)</span>
@@ -305,7 +210,7 @@
 <p>利用生成器解决斐波那契数列问题：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#coding=utf-8</span>
 <span class="c1"># 利用循环解决斐波那契问题</span>
-<span class="k">def</span> <span class="nf">fib_loop</span><span class="p">(</span><span class="nb">max</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fib_loop</span><span class="p">(</span><span class="nb">max</span><span class="p">):</span>
     <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
     <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="nb">max</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
@@ -314,7 +219,7 @@
     <span class="k">return</span> <span class="s1">&#39;done&#39;</span>
 
 <span class="c1"># 利用生成器</span>
-<span class="k">def</span> <span class="nf">fib_g</span><span class="p">(</span><span class="nb">max</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fib_g</span><span class="p">(</span><span class="nb">max</span><span class="p">):</span>
     <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
     <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="nb">max</span><span class="p">:</span>
         <span class="k">yield</span> <span class="n">b</span>
@@ -336,9 +241,9 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;STOP&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
-<h2>9.3. 协程<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id4">
+<h2><span class="section-number">9.3. </span>协程<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
 <p>还没弄完</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- 历史
     - 3.4引入协程概念，用yield实现
@@ -476,55 +381,38 @@
     - 案例v17
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="109_网络编程.html" class="btn btn-neutral float-right" title="10. 1. 网络通信概述" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="107_log.html" class="btn btn-neutral float-left" title="8. 日志(logging)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="107_log.html" class="btn btn-neutral float-left" title="8. 日志(logging)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html" class="btn btn-neutral float-right" title="10. 1. 网络通信概述" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2020, 北京图灵学院.
-
-    </p>
+    <p>&#169; 版权所有 2020, 北京图灵学院。</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

@@ -1,125 +1,73 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="zh-CN" >
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>5. 模块和包 &mdash; Python新全栈教程 1.0 文档</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'1.0',
-              LANGUAGE:'zh_CN',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <link rel="canonical" href="https://danalaoshi.github.io/adv/104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f115507d"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="6. 多线程" href="105多线程.html" />
-    <link rel="prev" title="4. 单元测试" href="1021-单元测试.html" /> 
+    <link rel="next" title="6. 多线程" href="105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" />
+    <link rel="prev" title="4. 单元测试" href="1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> Python新全栈教程
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            Python新全栈教程
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../base/001.html">1. 开学典礼-不讲知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/001Python语言概述.html">2. Python语言概述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/001注释.html">3. 注释和帮助</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001%E6%B3%A8%E9%87%8A.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html">4. 变量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/003str.html">5. 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/004运算符.html">6. 表达式 和 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/005-if分支语句.html">7. 分支语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/006-for循环.html">8. 循环语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/007-while循环.html">9. while循环</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/008-函数讲义.html">10. 函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/008-内置函数.html">11. 内置函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/09-内置结构.html">12. 内置数据结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/009-类.html">13. OOP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/010-内置模块.html">14. 常用内置模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/011-持久化和文件.html">15. 文件和序列化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/004%E8%BF%90%E7%AE%97%E7%AC%A6.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/006-for%E5%BE%AA%E7%8E%AF.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/007-while%E5%BE%AA%E7%8E%AF.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-%E5%87%BD%E6%95%B0%E8%AE%B2%E4%B9%89.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/09-%E5%86%85%E7%BD%AE%E7%BB%93%E6%9E%84.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/009-%E7%B1%BB.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/010-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/011-%E6%8C%81%E4%B9%85%E5%8C%96%E5%92%8C%E6%96%87%E4%BB%B6.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/012-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">16. Python异常的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/013-tkinter.html">17. Tkinter</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="101-函数高级.html">1. 函数高级</a></li>
-<li class="toctree-l1"><a class="reference internal" href="102-类高级.html">2. OOP高级编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="103_调试技术.html">3. 调试技术</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1021-单元测试.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="101-%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="103_%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">4. 单元测试</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5. 模块和包</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#module">5.1. 模块(Module)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">5.1.1. 为什么我们用模块</a></li>
@@ -135,7 +83,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id9">5.2.1. 包的导入操作</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#import-package-name">5.2.1.1. import package_name</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#import-package-module-name">5.2.1.2. import package.module_name</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#from-import">5.2.1.3. from…import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#from-import">5.2.1.3. from...import</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#from-package-import">5.2.1.4. from package import *</a></li>
 </ul>
 </li>
@@ -144,124 +92,84 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="105多线程.html">6. 多线程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html">7. 计算机编码问题</a></li>
 <li class="toctree-l1"><a class="reference internal" href="107_log.html">8. 日志(logging)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="108_携程.html">9. 协程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="109_网络编程.html">10. 1. 网络通信概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="108_%E6%90%BA%E7%A8%8B.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">10. 1. 网络通信概述</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Python新全栈教程</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>5. 模块和包</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5. </span>模块和包</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/adv/104_模块和包.md.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/adv/104_模块和包.md.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>5. 模块和包<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="module">
-<h2>5.1. 模块(Module)<a class="headerlink" href="#module" title="永久链接至标题">¶</a></h2>
+             
+  <section id="id1">
+<h1><span class="section-number">5. </span>模块和包<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="module">
+<h2><span class="section-number">5.1. </span>模块(Module)<a class="headerlink" href="#module" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>一个模块就是一个包含pytho代码的文件， 后缀名成是.py就可以，模块就是个python文件</li>
+<li><p>一个模块就是一个包含pytho代码的文件， 后缀名成是.py就可以，模块就是个python文件</p></li>
 </ul>
-<div class="section" id="id2">
-<h3>5.1.1. 为什么我们用模块<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<section id="id2">
+<h3><span class="section-number">5.1.1. </span>为什么我们用模块<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>程序太大，编写维护非常不方便，需要拆分</li>
-<li>模块可以增加代码重复利用的方式</li>
-<li>当做命名空间使用，避免命名冲突</li>
+<li><p>程序太大，编写维护非常不方便，需要拆分</p></li>
+<li><p>模块可以增加代码重复利用的方式</p></li>
+<li><p>当做命名空间使用，避免命名冲突</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
-<h3>5.1.2. 如何定义模块<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id3">
+<h3><span class="section-number">5.1.2. </span>如何定义模块<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>模块就是一个普通文件，所以任何代码可以直接书写，</li>
-<li>不过根据模块的规范，最好在模块中编写以下内容<ul>
-<li>函数（单一功能）</li>
-<li>类（相似功能的组合，或者类似业务模块）</li>
-<li>测试代码</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="id4">
-<h3>5.1.3. 如何使用模块<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<li><p>模块就是一个普通文件，所以任何代码可以直接书写，</p></li>
+<li><p>不过根据模块的规范，最好在模块中编写以下内容</p>
 <ul>
-<li><p class="first">模块直接导入</p>
-<ul class="simple">
-<li>假如模块名称直接以数字开头，需要借助importlib帮助</li>
+<li><p>函数（单一功能）</p></li>
+<li><p>类（相似功能的组合，或者类似业务模块）</p></li>
+<li><p>测试代码</p></li>
 </ul>
 </li>
-<li><p class="first">语法</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">module_name</span>
-    <span class="kn">import</span> <span class="nn">module_name.function_name</span>
-    <span class="kn">import</span> <span class="nn">module_name.class_name</span>
+</ul>
+</section>
+<section id="id4">
+<h3><span class="section-number">5.1.3. </span>如何使用模块<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<ul>
+<li><p>模块直接导入</p>
+<ul class="simple">
+<li><p>假如模块名称直接以数字开头，需要借助importlib帮助</p></li>
+</ul>
+</li>
+<li><p>语法</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span><span class="w"> </span><span class="nn">module_name</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">module_name.function_name</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">module_name.class_name</span>
 </pre></div>
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="id5">
-<h3>5.1.4. 模块是数字的案例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id5">
+<h3><span class="section-number">5.1.4. </span>模块是数字的案例<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <p>下面案例说明一个导入一个数字命名的模块,因为模块如果用数字命名不违反操作系统文件命名规则,但跟我们python中变量定义违背,需要转换以下.</p>
 <p>此处需要注意模块<code class="docutils literal notranslate"><span class="pre">01.py</span></code>中代码在导入的时候的都需要被执行,包括那一行<code class="docutils literal notranslate"><span class="pre">print</span></code>语句</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 文件名称 ./01.py</span>
@@ -270,17 +178,17 @@
 <span class="c1"># 一个sayhello函数，</span>
 <span class="c1"># 一个打印语句</span>
 
-<span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;NoName&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">():</span>
+  <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;NoName&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
 
 
-  <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
 
 
-<span class="k">def</span> <span class="nf">sayHello</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sayHello</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi, 欢迎来到图灵学院！&quot;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是模块p01呀，你特么的叫我干毛&quot;</span><span class="p">)</span>
@@ -288,12 +196,12 @@
 </div>
 <p>我们在第二个文件中尝试导入上面模块, 需要注意两点:</p>
 <ol class="simple">
-<li>需要借助<code class="docutils literal notranslate"><span class="pre">importlib</span></code>来导入模块</li>
-<li>模块中有些语句在导入的时候被执行了, 可以查看运行结果对比</li>
+<li><p>需要借助<code class="docutils literal notranslate"><span class="pre">importlib</span></code>来导入模块</p></li>
+<li><p>模块中有些语句在导入的时候被执行了, 可以查看运行结果对比</p></li>
 </ol>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="c1"># 借助于importlib包可以实现导入以数字开头的模块名称</span>
-<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">importlib</span>
 
 <span class="c1"># 相当于导入了一个叫01的模块并把导入模块赋值给了tuling</span>
 <span class="n">tuling</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;01&quot;</span><span class="p">)</span>
@@ -304,9 +212,9 @@
 <span class="n">stu</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>5.1.5. 导入正常模块<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id6">
+<h3><span class="section-number">5.1.5. </span>导入正常模块<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>一个正常模块是不应该用数字命名的, 还有一般情况下一个模块不应该有直接执行的功能代码, 因为这种代码在导入的时候被执行一般是
 不被期待的, 所以我们用<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;</span> </code>语句来判断:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 文件名 ./p01.py</span>
@@ -314,17 +222,17 @@
 <span class="c1"># 一个sayhello函数，</span>
 <span class="c1"># 一个打印语句</span>
 
-<span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;NoName&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">():</span>
+  <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;NoName&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
 
 
-  <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
 
 
-<span class="k">def</span> <span class="nf">sayHello</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sayHello</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi, 欢迎来到图灵学院！&quot;</span><span class="p">)</span>
 
 
@@ -337,7 +245,7 @@
 </div>
 <p>上面模块我们导入后结果清净了许多哦, 模块中功能只要我执行的时候才会被运行:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">p01</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">p01</span>
 
 <span class="n">stu</span> <span class="o">=</span> <span class="n">p01</span><span class="o">.</span><span class="n">Student</span><span class="p">(</span><span class="s2">&quot;xiaojign&quot;</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
 
@@ -346,31 +254,29 @@
 <span class="n">p01</span><span class="o">.</span><span class="n">sayHello</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id7">
-<h3>5.1.6. 模块的其他导入方式<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id7">
+<h3><span class="section-number">5.1.6. </span>模块的其他导入方式<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
 <p>根据不同导入需求模块可以在导入的时候:</p>
 <ul>
-<li><p class="first">起一个别名</p>
-</li>
-<li><p class="first">有选择导入</p>
+<li><p>起一个别名</p></li>
+<li><p>有选择导入</p>
 <p>不同导入方式使用方式可能也略有不同</p>
 </li>
-<li><p class="first">导入的时候可以给模块起一个别名,为了防止重名等:</p>
-</li>
+<li><p>导入的时候可以给模块起一个别名,为了防止重名等:</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">p01</span> <span class="k">as</span> <span class="nn">p</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">p01</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">p</span>
 
 <span class="n">stu</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">Student</span><span class="p">(</span><span class="s2">&quot;yueyue&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
 <span class="n">stu</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>以下代码导入两个指定的函数和类, 别的未导入的就不能使用:</li>
+<li><p>以下代码导入两个指定的函数和类, 别的未导入的就不能使用:</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">from</span> <span class="nn">p01</span> <span class="kn">import</span> <span class="n">Student</span><span class="p">,</span> <span class="n">sayHello</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">p01</span><span class="w"> </span><span class="kn">import</span> <span class="n">Student</span><span class="p">,</span> <span class="n">sayHello</span>
 
 
 <span class="n">stu</span> <span class="o">=</span> <span class="n">Student</span><span class="p">()</span>
@@ -382,10 +288,10 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>也可以用星号直接导入全部(所以他为什么要这么做呢???? 哎, 男人呀…….)</li>
+<li><p>也可以用星号直接导入全部(所以他为什么要这么做呢???? 哎, 男人呀.......)</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">from</span> <span class="nn">p01</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">p01</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">sayHello</span><span class="p">()</span>
 
@@ -393,15 +299,15 @@
 <span class="n">stu</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id8">
-<h3>5.1.7. 模块的搜索路径和存储<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id8">
+<h3><span class="section-number">5.1.7. </span>模块的搜索路径和存储<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>模块的搜索路径： 加载模块的时候，系统会在那些地方寻找此模块</li>
-<li>系统默认的模块搜索路径: 系统有一套自己的规则用来限制搜多顺序,我们可以通过<code class="docutils literal notranslate"><span class="pre">sys</span></code>模块来获取这个既定的路径</li>
+<li><p>模块的搜索路径： 加载模块的时候，系统会在那些地方寻找此模块</p></li>
+<li><p>系统默认的模块搜索路径: 系统有一套自己的规则用来限制搜多顺序,我们可以通过<code class="docutils literal notranslate"><span class="pre">sys</span></code>模块来获取这个既定的路径</p></li>
 </ul>
 <p>下面代码用来打印出模块搜索的默认路径:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
 <span class="nb">print</span><span class="p">(</span> <span class="nb">type</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span> <span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span> <span class="p">)</span>
@@ -411,29 +317,28 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>添加搜索路径: 如果想添加一个特别的路径, 一般是为了让你自定义的模块被找到:</li>
+<li><p>添加搜索路径: 如果想添加一个特别的路径, 一般是为了让你自定义的模块被找到:</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">dir</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li>模块的加载顺序: 一个程序肯能用到很多模块,模块的加载顺序是:<ol>
-<li>上搜索内存中已经加载好的模块</li>
-<li>搜索python的内置模块</li>
-<li>搜索sys.path路径</li>
+<li><p>模块的加载顺序: 一个程序肯能用到很多模块,模块的加载顺序是:</p>
+<ol class="simple">
+<li><p>上搜索内存中已经加载好的模块</p></li>
+<li><p>搜索python的内置模块</p></li>
+<li><p>搜索sys.path路径</p></li>
 </ol>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="package">
-<h2>5.2. 包(Package)<a class="headerlink" href="#package" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="package">
+<h2><span class="section-number">5.2. </span>包(Package)<a class="headerlink" href="#package" title="Link to this heading"></a></h2>
 <ul>
-<li><p class="first">包是一种组织管理代码的方式，包里面存放的是模块</p>
-</li>
-<li><p class="first">用于将模块包含在一起的文件夹就是包</p>
-</li>
-<li><p class="first">自定义包的结构</p>
+<li><p>包是一种组织管理代码的方式，包里面存放的是模块</p></li>
+<li><p>用于将模块包含在一起的文件夹就是包</p></li>
+<li><p>自定义包的结构</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">|---</span><span class="n">包</span>
   <span class="o">|---|---</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>  <span class="n">包的标志文件</span>
   <span class="o">|---|---</span> <span class="n">模块1</span>
@@ -446,13 +351,13 @@
 </div>
 </li>
 </ul>
-<div class="section" id="id9">
-<h3>5.2.1. 包的导入操作<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
-<div class="section" id="import-package-name">
-<h4>5.2.1.1. import package_name<a class="headerlink" href="#import-package-name" title="永久链接至标题">¶</a></h4>
+<section id="id9">
+<h3><span class="section-number">5.2.1. </span>包的导入操作<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
+<section id="import-package-name">
+<h4><span class="section-number">5.2.1.1. </span>import package_name<a class="headerlink" href="#import-package-name" title="Link to this heading"></a></h4>
 <ul class="simple">
-<li>直接导入一个包，这种方式原则上只能使用__init__.py中的内容</li>
-<li>使用方式是：</li>
+<li><p>直接导入一个包，这种方式原则上只能使用__init__.py中的内容</p></li>
+<li><p>使用方式是：</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">package_name</span><span class="o">.</span><span class="n">func_name</span>
 <span class="n">package_name</span><span class="o">.</span><span class="n">class_name</span><span class="o">.</span><span class="n">func_name</span><span class="p">()</span>
@@ -465,7 +370,7 @@
 </pre></div>
 </div>
 <p>其中<code class="docutils literal notranslate"><span class="pre">./__init__.py</span></code>的内容是:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inInit</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">inInit</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am in init of package&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -474,17 +379,17 @@
 <span class="c1"># 一个sayhello函数，</span>
 <span class="c1"># 一个打印语句</span>
 
-<span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;NoName&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">():</span>
+  <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;NoName&quot;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">18</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
 
 
-  <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My name is </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
 
 
-<span class="k">def</span> <span class="nf">sayHello</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sayHello</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi, 欢迎来到图灵学院！&quot;</span><span class="p">)</span>
 
 
@@ -493,51 +398,51 @@
 </div>
 <p>有了上面的包后,我们尝试使用上面包来编写代码, 此时如果只是导入包,我们只能使用包中<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>定义的内容:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">pkg01</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pkg01</span>
 
 <span class="n">pkg01</span><span class="o">.</span><span class="n">inInit</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>如果我们把上面导入使用别名, 效果还一致:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">pkg01</span> <span class="k">as</span> <span class="nn">p</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pkg01</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">p</span>
 
 <span class="n">p</span><span class="o">.</span><span class="n">inInit</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="import-package-module-name">
-<h4>5.2.1.2. import package.module_name<a class="headerlink" href="#import-package-module-name" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="import-package-module-name">
+<h4><span class="section-number">5.2.1.2. </span>import package.module_name<a class="headerlink" href="#import-package-module-name" title="Link to this heading"></a></h4>
 <p>如果我需要使用模块中定义等等内容, 则需要利用点号导入子模块.</p>
 <p>下面代码就可以使用子模块<code class="docutils literal notranslate"><span class="pre">p01</span></code>中定义的内容了:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">pkg01.p01</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pkg01.p01</span>
 
 <span class="n">stu</span> <span class="o">=</span> <span class="n">pkg01</span><span class="o">.</span><span class="n">p01</span><span class="o">.</span><span class="n">Student</span><span class="p">()</span>
 <span class="n">stu</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="from-import">
-<h4>5.2.1.3. from…import<a class="headerlink" href="#from-import" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="from-import">
+<h4><span class="section-number">5.2.1.3. </span>from...import<a class="headerlink" href="#from-import" title="Link to this heading"></a></h4>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">package</span> <span class="pre">import</span> <span class="pre">module1,</span> <span class="pre">module2,</span> <span class="pre">module3,</span> <span class="pre">.....</span> </code></li>
-<li>此种导入方法不执行<code class="docutils literal notranslate"><span class="pre">__init__</span></code>的内容</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">package</span> <span class="pre">import</span> <span class="pre">module1,</span> <span class="pre">module2,</span> <span class="pre">module3,</span> <span class="pre">.....</span> </code></p></li>
+<li><p>此种导入方法不执行<code class="docutils literal notranslate"><span class="pre">__init__</span></code>的内容</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">from</span> <span class="nn">pkg01</span> <span class="kn">import</span> <span class="n">p01</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pkg01</span><span class="w"> </span><span class="kn">import</span> <span class="n">p01</span>
 
 <span class="n">stu</span> <span class="o">=</span> <span class="n">p01</span><span class="o">.</span><span class="n">Student</span><span class="p">()</span>
 <span class="n">stu</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="from-package-import">
-<h4>5.2.1.4. from package import *<a class="headerlink" href="#from-package-import" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="from-package-import">
+<h4><span class="section-number">5.2.1.4. </span>from package import *<a class="headerlink" href="#from-package-import" title="Link to this heading"></a></h4>
 <p>这种方式的一种变通就是<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">package</span> <span class="pre">import</span> <span class="pre">*</span></code>, 但此时等于导入<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>中
 定义的所有的内容, 但仅限于这个文件中定义的内容</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">from</span> <span class="nn">pkg01</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pkg01</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">inInit</span><span class="p">()</span>
 
@@ -545,29 +450,29 @@
 <span class="c1">#stu = p01.Student()</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="all">
-<h3>5.2.2. <code class="docutils literal notranslate"><span class="pre">__all__</span></code>的用法<a class="headerlink" href="#all" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+<section id="all">
+<h3><span class="section-number">5.2.2. </span><code class="docutils literal notranslate"><span class="pre">__all__</span></code>的用法<a class="headerlink" href="#all" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>在使用<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">package</span> <span class="pre">import</span> <span class="pre">*</span> </code>的时候， 定义 <code class="docutils literal notranslate"><span class="pre">*</span> </code>可以导入的内容</li>
-<li><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>中如果文件为空， 或者没有 <code class="docutils literal notranslate"><span class="pre">__all__</span></code>， 那么只可以把<code class="docutils literal notranslate"><span class="pre">__init__</span></code>中的内容导入</li>
-<li><code class="docutils literal notranslate"><span class="pre">__init__</span></code> 如果设置了<code class="docutils literal notranslate"><span class="pre">__all__</span></code>的值，那么则按照<code class="docutils literal notranslate"><span class="pre">__all__</span></code> 指定的子包或者模块进行加载
-如此则不会载入<code class="docutils literal notranslate"><span class="pre">__init__</span></code>中的内容</li>
-<li><code class="docutils literal notranslate"><span class="pre">__all__=['module1',</span> <span class="pre">'module2',</span> <span class="pre">'package1'.........]</span></code></li>
+<li><p>在使用<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">package</span> <span class="pre">import</span> <span class="pre">*</span> </code>的时候， 定义 <code class="docutils literal notranslate"><span class="pre">*</span> </code>可以导入的内容</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>中如果文件为空， 或者没有 <code class="docutils literal notranslate"><span class="pre">__all__</span></code>， 那么只可以把<code class="docutils literal notranslate"><span class="pre">__init__</span></code>中的内容导入</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> 如果设置了<code class="docutils literal notranslate"><span class="pre">__all__</span></code>的值，那么则按照<code class="docutils literal notranslate"><span class="pre">__all__</span></code> 指定的子包或者模块进行加载
+如此则不会载入<code class="docutils literal notranslate"><span class="pre">__init__</span></code>中的内容</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__all__=['module1',</span> <span class="pre">'module2',</span> <span class="pre">'package1'.........]</span></code></p></li>
 </ul>
 <p>我们把包<code class="docutils literal notranslate"><span class="pre">pkg01</span></code>改成包<code class="docutils literal notranslate"><span class="pre">pkg02</span></code>, 同时更改<code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>内容为:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">__all__</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;p01&#39;</span><span class="p">]</span>
 
-<span class="k">def</span> <span class="nf">inInit</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">inInit</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am in inti of pacakge&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>此时在用<code class="docutils literal notranslate"><span class="pre">form</span> <span class="pre">pkg01</span> <span class="pre">import</span> <span class="pre">*</span></code>导入, 则默认值导入模块<code class="docutils literal notranslate"><span class="pre">p01</span></code>.</p>
 <p>参考下面代码:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">from</span> <span class="nn">pkg02</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pkg02</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">stu</span> <span class="o">=</span> <span class="n">p01</span><span class="o">.</span><span class="n">Student</span><span class="p">()</span>
 <span class="n">stu</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
@@ -576,56 +481,39 @@
 <span class="c1"># inInit()</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="105多线程.html" class="btn btn-neutral float-right" title="6. 多线程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="1021-单元测试.html" class="btn btn-neutral float-left" title="4. 单元测试" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html" class="btn btn-neutral float-left" title="4. 单元测试" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" class="btn btn-neutral float-right" title="6. 多线程" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2020, 北京图灵学院.
-
-    </p>
+    <p>&#169; 版权所有 2020, 北京图灵学院。</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

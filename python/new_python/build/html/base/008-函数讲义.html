@@ -1,111 +1,59 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="zh-CN" >
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>10. 函数 &mdash; Python新全栈教程 1.0 文档</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'1.0',
-              LANGUAGE:'zh_CN',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <link rel="canonical" href="https://danalaoshi.github.io/base/008-%E5%87%BD%E6%95%B0%E8%AE%B2%E4%B9%89.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f115507d"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="11. 内置函数" href="008-内置函数.html" />
-    <link rel="prev" title="9. while循环" href="007-while循环.html" /> 
+    <link rel="next" title="11. 内置函数" href="008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html" />
+    <link rel="prev" title="9. while循环" href="007-while%E5%BE%AA%E7%8E%AF.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> Python新全栈教程
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            Python新全栈教程
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="001.html">1. 开学典礼-不讲知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="001Python语言概述.html">2. Python语言概述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="001注释.html">3. 注释和帮助</a></li>
-<li class="toctree-l1"><a class="reference internal" href="002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001%E6%B3%A8%E9%87%8A.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html">4. 变量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="003str.html">5. 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="004运算符.html">6. 表达式 和 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="005-if分支语句.html">7. 分支语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="006-for循环.html">8. 循环语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="007-while循环.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="004%E8%BF%90%E7%AE%97%E7%AC%A6.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="006-for%E5%BE%AA%E7%8E%AF.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="007-while%E5%BE%AA%E7%8E%AF.html">9. while循环</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">10. 函数</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">10.1. 一个函数的定义小栗子</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">10.2. 函数的参数</a></li>
@@ -131,97 +79,57 @@
 <li class="toctree-l2"><a class="reference internal" href="#id14">10.6. 函数的一个小栗子</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="008-内置函数.html">11. 内置函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-内置结构.html">12. 内置数据结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="009-类.html">13. OOP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="010-内置模块.html">14. 常用内置模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="011-持久化和文件.html">15. 文件和序列化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-%E5%86%85%E7%BD%AE%E7%BB%93%E6%9E%84.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="009-%E7%B1%BB.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011-%E6%8C%81%E4%B9%85%E5%8C%96%E5%92%8C%E6%96%87%E4%BB%B6.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">16. Python异常的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="013-tkinter.html">17. Tkinter</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../adv/101-函数高级.html">1. 函数高级</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/102-类高级.html">2. OOP高级编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/103_调试技术.html">3. 调试技术</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/1021-单元测试.html">4. 单元测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/104_模块和包.html">5. 模块和包</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/105多线程.html">6. 多线程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/101-%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/103_%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html">7. 计算机编码问题</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adv/107_log.html">8. 日志(logging)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/108_携程.html">9. 协程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/109_网络编程.html">10. 1. 网络通信概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/108_%E6%90%BA%E7%A8%8B.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">10. 1. 网络通信概述</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Python新全栈教程</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>10. 函数</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">10. </span>函数</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/base/008-函数讲义.md.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/base/008-函数讲义.md.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>10. 函数<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+             
+  <section id="id1">
+<h1><span class="section-number">10. </span>函数<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <blockquote>
-<div>函数部分内容比较多，也比较杂，为了避免同学们觉得枯燥，我们把它分成了两部分，第二部分放入高级语法部分，这样
-对于一些同学掌握第一部分就可以了。</div></blockquote>
+<div><p>函数部分内容比较多，也比较杂，为了避免同学们觉得枯燥，我们把它分成了两部分，第二部分放入高级语法部分，这样
+对于一些同学掌握第一部分就可以了。</p>
+</div></blockquote>
 <p>函数是代码的一种组织形式。</p>
 <p>我们从开始到现在的代码都是一句一句的，从上到下执行而来，但这种结构在 实际工作中肯定是不行的，我们不能写一万行代码都从头撸到尾，这个时候比较合理的
 做法是把我们的任务按照一定的规则进行分类，分解成小的任务，小的任务或许还要继续分解，这样一个小的任务有一段代码来完成，这段代码相对比较独立，我们把这种
@@ -230,21 +138,21 @@
 复制粘贴一遍，但有了函数，我们可以给完成某个任务的代码起个名字，然后每次需要这个功能的时候直接用这个名字代替就好，即所谓的函数调用。</p>
 <p>把任务分解成函数的原则有两个比较主要的：</p>
 <ul class="simple">
-<li>高内聚：通俗的讲就是一个函数完成一个单一功能，而且只完成一个聚焦的单一功能</li>
-<li>低耦合：可以理解成是函数的代码或者功能跟外部的联系或者依赖比较少，这样的代码复用性比较大，后期维护成本低</li>
+<li><p>高内聚：通俗的讲就是一个函数完成一个单一功能，而且只完成一个聚焦的单一功能</p></li>
+<li><p>低耦合：可以理解成是函数的代码或者功能跟外部的联系或者依赖比较少，这样的代码复用性比较大，后期维护成本低</p></li>
 </ul>
 <p>函数的使用规则一般要这两步：</p>
 <ul class="simple">
-<li>函数需要先定义</li>
-<li>使用函数，俗称调用</li>
+<li><p>函数需要先定义</p></li>
+<li><p>使用函数，俗称调用</p></li>
 </ul>
 <p>函数的顶一个格式大概如下：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">func_name</span><span class="p">(</span><span class="n">para1</span><span class="p">,</span> <span class="n">para2</span><span class="p">,</span> <span class="o">...</span> <span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span><span class="w"> </span><span class="nf">func_name</span><span class="p">(</span><span class="n">para1</span><span class="p">,</span> <span class="n">para2</span><span class="p">,</span> <span class="o">...</span> <span class="p">):</span>
     <span class="n">func_body</span>
 </pre></div>
 </div>
-<div class="section" id="id2">
-<h2>10.1. 一个函数的定义小栗子<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<section id="id2">
+<h2><span class="section-number">10.1. </span>一个函数的定义小栗子<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <p>下面代码展示了如何定义一个函数，此处的关键字 <code class="docutils literal notranslate"><span class="pre">def</span></code> 需要顶格写，</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定义一个函数</span>
 <span class="c1"># 只是定义的话不会执行</span>
@@ -253,7 +161,7 @@
 <span class="c1"># 3. 后面括号和冒号不能省，括号内可以由参数</span>
 <span class="c1"># 4. 函数内所有代码缩进</span>
 
-<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是一个函数&quot;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我要完成一定功能&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我结束了&quot;</span><span class="p">)</span>
@@ -280,21 +188,21 @@
 <span class="n">我要完成一定功能</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
-<h2>10.2. 函数的参数<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id3">
+<h2><span class="section-number">10.2. </span>函数的参数<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <p>在完成某一个具体任务前，往往有很多前提条件，比如需要一定数据才能正常工作，那么这种情况我们可以通过称之为
 参数的功能实现。</p>
 <p>参数是负责给函数传递一些必要的数据或者信息的变量，在定义的时候需要在定义函数第一行的小括号内写出来，Python
 直接写出变量的名称就好，不需要指定变量的类型，两个问题：</p>
 <ul class="simple">
-<li>命名规则： 参看变量命名规则，要求望文意，跟前面变量没有任何关系</li>
-<li>变量位置： 多个参数摆放位置有一定规则，同类型参数位置可调</li>
+<li><p>命名规则： 参看变量命名规则，要求望文意，跟前面变量没有任何关系</p></li>
+<li><p>变量位置： 多个参数摆放位置有一定规则，同类型参数位置可调</p></li>
 </ul>
 <p>参数分类根据不同的分法有不同的分类，这里先介绍一种分法，即按照参数的使用场景分为两类：</p>
 <ul class="simple">
-<li>形参（形式参数）： 在函数定义的时候用到的参数没有具体值，只是一个占位的符号，成为形参</li>
-<li>实参（实际参数）： 在调用函数的时候输入的值</li>
+<li><p>形参（形式参数）： 在函数定义的时候用到的参数没有具体值，只是一个占位的符号，成为形参</p></li>
+<li><p>实参（实际参数）： 在调用函数的时候输入的值</p></li>
 </ul>
 <p>下面案例定义了一个参数，变量名称是<code class="docutils literal notranslate"><span class="pre">person</span></code>，这里通过名称我们猜测是一个人，那么对于整个函数来说，
 他用到这个变量的时候都拿<code class="docutils literal notranslate"><span class="pre">person</span></code>这个变量做为例子使用，这个就是式形式，具体<code class="docutils literal notranslate"><span class="pre">person</span></code>的值是多少，其实
@@ -303,7 +211,7 @@
 <span class="c1"># 参数person只是一个符号，代表的是调用的时候的某一个数据</span>
 <span class="c1"># 调用的时候，会用p的值代替函数中所有的person</span>
 
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">, 你肿么咧&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sir, 你不理额额就走咧&quot;</span><span class="p">)</span>
 </pre></div>
@@ -321,9 +229,9 @@
     <span class="n">Sir</span><span class="p">,</span> <span class="n">你不理额额就走咧</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
-<h2>10.3. 函数的返回值<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id4">
+<h2><span class="section-number">10.3. </span>函数的返回值<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
 <p>执行一个任务总得有个结果，我们的函数有时候需要把结果返回给调用者，所谓件件有着落事事有结果，本小姐研究下返回结果的问题。</p>
 <p>返回结果即函数的调用执行结果，这个结果如果我们需要，可以把他直接赋值给一个变量，如下所示：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># 执行函数后，结果会赋值给变量result</span>
@@ -331,14 +239,14 @@
 </pre></div>
 </div>
 <p>函数中如果需要返回，我们需要用到关键字<code class="docutils literal notranslate"><span class="pre">return</span></code>， 关键字后面跟需要返回的结果。</p>
-<div class="section" id="id5">
-<h3>10.3.1. 返回一个值<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
-<p>很多语言里函数可以不返还结果，有的语言甚至把返回结果的和不返回结果的函数用名称做出了区分，Python比较特殊，如果没有返回，则系统会默认给返回一个<code class="docutils literal notranslate"><span class="pre">None</span></code>，所以，任何Python’函数调用都可以把调用值赋值给变量，跟上面调用的格式一样。</p>
+<section id="id5">
+<h3><span class="section-number">10.3.1. </span>返回一个值<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>很多语言里函数可以不返还结果，有的语言甚至把返回结果的和不返回结果的函数用名称做出了区分，Python比较特殊，如果没有返回，则系统会默认给返回一个<code class="docutils literal notranslate"><span class="pre">None</span></code>，所以，任何Python'函数调用都可以把调用值赋值给变量，跟上面调用的格式一样。</p>
 <p>这里关键字<code class="docutils literal notranslate"><span class="pre">return</span></code>一但被执行，则函数调用会被无条件终止，直接返回结果，后面无论什么代码都不会被执行。</p>
 <p>下面函数返回一个填充完毕的字符串，我们可以调用函数并把执行结果返回给一个变量:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># return语句的基本使用</span>
     <span class="c1"># 函数打完招呼后返回一句话</span>
-    <span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">, 你肿么咧&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">))</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sir, 你不理额额就走咧&quot;</span><span class="p">)</span>
 
@@ -360,7 +268,7 @@ Sir, 你不理额额就走咧
 </div>
 <p>关于函数返回值的终止执行功能，我们看下面的案例：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># return案例2</span>
-<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">person</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2">, 你肿么咧&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">person</span><span class="p">))</span>
     <span class="k">return</span> <span class="s2">&quot;哈哈，我提前结束了&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sir, 你不理额额就走咧&quot;</span><span class="p">)</span>
@@ -376,20 +284,21 @@ Sir, 你不理额额就走咧
     哈哈，我提前结束了
 </pre></div>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>10.3.2. 返回多个值<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id6">
+<h3><span class="section-number">10.3.2. </span>返回多个值<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>有同学可能比较疑惑，函数如果返回多个值怎么办？ 或者如果我需要函数返回多个值的时候，what should I do?</p>
 <p>这个其实很简单，两句话的事儿：</p>
 <ol class="simple">
-<li>Python只允许返回一个值</li>
-<li>如果你返回多个值，函数自动把多个值当成一个叫<code class="docutils literal notranslate"><span class="pre">tuple</span></code>类型的数据，且要求返回的时候多个值用逗号分开</li>
+<li><p>Python只允许返回一个值</p></li>
+<li><p>如果你返回多个值，函数自动把多个值当成一个叫<code class="docutils literal notranslate"><span class="pre">tuple</span></code>类型的数据，且要求返回的时候多个值用逗号分开</p></li>
 </ol>
 <blockquote>
-<div>多个结果自动打包成tuple类型返回，tuple后面会讲</div></blockquote>
+<div><p>多个结果自动打包成tuple类型返回，tuple后面会讲</p>
+</div></blockquote>
 <p>古人日， 说不清楚的事就吃个栗子吧, 安排：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="c1"># 定义一个函数</span>
-   <span class="k">def</span> <span class="nf">more_return</span><span class="p">(</span><span class="n">curse</span><span class="p">):</span>
+   <span class="k">def</span><span class="w"> </span><span class="nf">more_return</span><span class="p">(</span><span class="n">curse</span><span class="p">):</span>
         <span class="c1"># 函数返回三个内容，分别是两个字符串和一个数字</span>
         <span class="c1"># 中间用逗号隔开</span>
         <span class="k">return</span> <span class="s1">&#39;有情人&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;眷属&#39;</span>
@@ -405,14 +314,14 @@ Sir, 你不理额额就走咧
     返回结果是： (&#39;有情人&#39;, 100, &#39;眷属&#39;)
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id7">
-<h2>10.4. 函数帮助文档<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id7">
+<h2><span class="section-number">10.4. </span>函数帮助文档<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
 <p>Python自带电池，面对这么多的电池，我们到底如何选择？ 这个时候帮助文档就显得尤其重要，如果我们不明白某一个函数的功能，Python给我们提供了
 一个可以快速查看对方文档的函数-<code class="docutils literal notranslate"><span class="pre">help</span></code>。</p>
-<div class="section" id="id8">
-<h3>10.4.1. 帮助文档的查看<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<section id="id8">
+<h3><span class="section-number">10.4.1. </span>帮助文档的查看<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">help</span></code>是系统内置函数，我们对任何不明白的功能，可以知己使用<code class="docutils literal notranslate"><span class="pre">help(function_name)</span></code>来查看别的函数的文档，例如下面，我们对系统提供的打印功能<code class="docutils literal notranslate"><span class="pre">print</span></code>不太
 明白，则可以直接<code class="docutils literal notranslate"><span class="pre">help(print)</span></code>来查看<code class="docutils literal notranslate"><span class="pre">print</span></code>函数的功能，但这里需要注意的是，<code class="docutils literal notranslate"><span class="pre">print</span></code>函数只需要把名字写出来就好，不需要也不能跟这个后面的小括号<code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span></code>。</p>
 <p>运行<code class="docutils literal notranslate"><span class="pre">help(print)</span></code>后的结果如下所示，为了帮助大家看懂帮助文档，这里中文的内容是我添加的注释：</p>
@@ -439,14 +348,14 @@ Sir, 你不理额额就走咧
 </div>
 <p>好了，通过上面的查看，我们应该能了解个关于<code class="docutils literal notranslate"><span class="pre">print</span></code>函数的七七八八，基本够用了，这其中包含了功能介绍，参数的说明，甚至个别难理解的函数或者不常用的
 会有使用小示例。</p>
-</div>
-<div class="section" id="id9">
-<h3>10.4.2. 帮助文档的编写<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id9">
+<h3><span class="section-number">10.4.2. </span>帮助文档的编写<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <p>人们越来越把软件开发看做一个工程而不是个人行为，这里要求程序员要有完备的文档，作为后期维护，交接甚至自己修改的有力助手，否则很可能在某个时候
 你会发现一段很土鳖的代码，在你边骂边理解的折腾半天后才豁然开朗，这就是当年你自己写的。</p>
 <p>函数文档的编写，在函数定义的的第一行使用三引号直接定义就可以，使用<code class="docutils literal notranslate"><span class="pre">help</span></code>对帮助文档的查看也是调用的这一部分内容。</p>
 <p>请看下面函数的文档编写：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func_doc</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func_doc</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">只是一个测试函数，用来测试函数的文档</span>
 <span class="sd">param name: 文档的参数，用来表示文档的名字</span>
@@ -464,26 +373,26 @@ func_doc(name)
     param name: 文档的参数，用来表示文档的名字
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id10">
-<h2>10.5. 细说参数<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id10">
+<h2><span class="section-number">10.5. </span>细说参数<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
 <p>我们上面学习过，所谓函数的参数就是在函数执行的时候给函数提供一些必要的数据，具体参数从是否有具体的值角度可以分为实参和形参，从另一个维度
 上讲，别入位置，形式等，参数还可以分为以下四种：</p>
 <ul class="simple">
-<li>普通参数</li>
-<li>默认参数</li>
-<li>关键字参数</li>
-<li>收集参数</li>
+<li><p>普通参数</p></li>
+<li><p>默认参数</p></li>
+<li><p>关键字参数</p></li>
+<li><p>收集参数</p></li>
 </ul>
-<p>下面我们分别对着四种参数进行介绍，希望大家听完后能豁然开朗蓦然回首长叹一声怅然若失百折不挠…</p>
-<div class="section" id="positionalargument">
-<h3>10.5.1. 普通参数/位置参数(PositionalArgument)<a class="headerlink" href="#positionalargument" title="永久链接至标题">¶</a></h3>
+<p>下面我们分别对着四种参数进行介绍，希望大家听完后能豁然开朗蓦然回首长叹一声怅然若失百折不挠...</p>
+<section id="positionalargument">
+<h3><span class="section-number">10.5.1. </span>普通参数/位置参数(PositionalArgument)<a class="headerlink" href="#positionalargument" title="Link to this heading"></a></h3>
 <p>在函数定义中，常见的是普通参数，此类参数在函数定义中只是一变量名称，具体需要注意的是：</p>
 <ul class="simple">
-<li>可以有多个普通参数，中间用逗号隔开就好</li>
-<li>参数顺序不重要，调用的时候根据位置传入的值和参数一一对应即可，注意，位置是唯一对应的依据，参考英文名称(PositionalArg)</li>
-<li>普通参数要放在所有其他类函数前面</li>
+<li><p>可以有多个普通参数，中间用逗号隔开就好</p></li>
+<li><p>参数顺序不重要，调用的时候根据位置传入的值和参数一一对应即可，注意，位置是唯一对应的依据，参考英文名称(PositionalArg)</p></li>
+<li><p>普通参数要放在所有其他类函数前面</p></li>
 </ul>
 <p>普通函数的定义格式如下所示：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        def 函数名(参数名，参数名...):
@@ -495,7 +404,7 @@ func_doc(name)
 </pre></div>
 </div>
 <p>来一个简单的栗子吧：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">intro</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">school</span><span class="p">,</span> <span class="n">slogan</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">intro</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">school</span><span class="p">,</span> <span class="n">slogan</span><span class="p">):</span>
         <span class="n">info</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">, i am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s1"> years old,</span>
 <span class="s1">                I 毕业于</span><span class="si">{</span><span class="n">school</span><span class="si">}</span><span class="s1">, our slogan is </span><span class="si">{</span><span class="n">slogan</span><span class="si">}</span><span class="s1">&#39;&#39;&#39;</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
@@ -519,9 +428,9 @@ func_doc(name)
 </pre></div>
 </div>
 <p>结果陷入驴唇不对马嘴了，这里我想说的是，这种调用仅限于参数个数相同的时候，即调用参数和定义的时候参数个数相同，如果不相同，会报错的。</p>
-</div>
-<div class="section" id="id11">
-<h3>10.5.2. 默认参数<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id11">
+<h3><span class="section-number">10.5.2. </span>默认参数<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
 <p>如果采用默认参数，我们在调用的时候不但一定要给出相应个数的参数，而且参数顺序也不能改变，但在实际时候用当中，还有两外一种情况，比如
 我们要求我们学校的所有学生都做一个自我介绍，问题是，学生肯定都是我们学校的，这个时候我们如果每次调用都输入一遍<code class="docutils literal notranslate"><span class="pre">北京图灵学院</span></code>作为学校
 名称，显得很傻，能不能给一个默认的值，如果我们不对这个参数赋值，就用默认的值，如果我们不想用默认的值，就直接给出，这样就把选择权交给了
@@ -542,7 +451,7 @@ func_doc(name)
 </pre></div>
 </div>
 <p>下面栗子中，默认参数<code class="docutils literal notranslate"><span class="pre">school</span></code>放在了参数列表最后，定义或者调用的时候有个规则，即形式参数必须放在位置参数后面，否则报错:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="k">def</span> <span class="nf">intro</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">school</span><span class="o">=</span><span class="s1">&#39;北京图灵学院&#39;</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="k">def</span><span class="w"> </span><span class="nf">intro</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">school</span><span class="o">=</span><span class="s1">&#39;北京图灵学院&#39;</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">school</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -563,13 +472,14 @@ func_doc(name)
     <span class="n">刘大拿</span> <span class="mi">19</span> <span class="n">北京大学</span>            
 </pre></div>
 </div>
-</div>
-<div class="section" id="id12">
-<h3>10.5.3. 关键字参数<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id12">
+<h3><span class="section-number">10.5.3. </span>关键字参数<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
 <p>在传入参数的时候，我们有时候防止顺序出现问题，可以用<code class="docutils literal notranslate"><span class="pre">参数名称=参数值</span></code>的方式调用函数，参数这样用称为关键字参数。</p>
 <blockquote>
-<div>关键字参数用于调用函数的时候
-默认参数用于定义函数</div></blockquote>
+<div><p>关键字参数用于调用函数的时候
+默认参数用于定义函数</p>
+</div></blockquote>
 <p>关键词参数消除了参数调用时候的参数传入顺序问题，个人比较喜欢，省的因为顺序问题导致错误。</p>
 <p>关键字参数的调用形式为：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        调用函数：
@@ -577,10 +487,11 @@ func_doc(name)
 </pre></div>
 </div>
 <blockquote>
-<div>需要注意的是，利用关键字参数调用，关键字参数必须统一放在普通参数后面，否则出错</div></blockquote>
+<div><p>需要注意的是，利用关键字参数调用，关键字参数必须统一放在普通参数后面，否则出错</p>
+</div></blockquote>
 <p>关键字参数的案例跟默认参数案例相同, 编程如果很多参数，除了前面几个比较常用或者习惯用法外，一般后面
 的参数都为默认参数或者调用的时候用关键字参数调用，防止混淆：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">intro</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">school</span><span class="o">=</span><span class="s1">&#39;北京图灵学院&#39;</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">intro</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">school</span><span class="o">=</span><span class="s1">&#39;北京图灵学院&#39;</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">school</span><span class="p">)</span>
         
     <span class="c1"># 利用位置调用参数</span>
@@ -594,16 +505,16 @@ func_doc(name)
     <span class="c1"># intro(age=19, &#39;刘大拿&#39;, school=&#39;北京大学&#39;)                      </span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="args">
-<h3>10.5.4. 收集参数/可变参数（<code class="docutils literal notranslate"><span class="pre">*args</span></code>）<a class="headerlink" href="#args" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="args">
+<h3><span class="section-number">10.5.4. </span>收集参数/可变参数（<code class="docutils literal notranslate"><span class="pre">*args</span></code>）<a class="headerlink" href="#args" title="Link to this heading"></a></h3>
 <p>Python有一个很聪明的方法，如果不确定参数调用的时候会输入多少个参数，或者允许调用者输入随意个参数的时候，
 这个时候可以定义一个收集参数，也叫可变参数，在调用的时候，如果函数定义只定义了一个普通参数，这个时候如果调用的时候
 传入了多个普通参数，此时除了第一个，其余所有的否放入了一个特定的变量里，收集参数或者可变参数的名称由此得来。</p>
 <p>收集参数分为两种，分别用来收集位置参数和关键词字参数：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">*args</span></code>： 收集默认/位置参数</li>
-<li><code class="docutils literal notranslate"><span class="pre">**kargs</span></code>： 收集关键字参数</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*args</span></code>： 收集默认/位置参数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**kargs</span></code>： 收集关键字参数</p></li>
 </ul>
 <p>默认参数收集参数大概格式如下，此处需要注意点是星号是必须的，后面的变量名称<code class="docutils literal notranslate"><span class="pre">args</span></code>只是约定俗成，一般不用更改名称：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        def 函数名(*args)：
@@ -615,15 +526,16 @@ func_doc(name)
 </pre></div>
 </div>
 <blockquote>
-<div>Achtung:</div></blockquote>
+<div><p>Achtung:</p>
+</div></blockquote>
 <ol class="simple">
-<li>使用收集参数进行形参的书写，需要在形参名之前添加*</li>
-<li>*形参格式的收集参数会收集到调用函数时传入的所有没有关键字的形参</li>
-<li>收集参数收集到的最终数据是由所有非关键字实参组成的元组(元祖后面讲)。</li>
-<li>收集参数和普通的参数（关键字参数）可以共存</li>
+<li><p>使用收集参数进行形参的书写，需要在形参名之前添加*</p></li>
+<li><p>*形参格式的收集参数会收集到调用函数时传入的所有没有关键字的形参</p></li>
+<li><p>收集参数收集到的最终数据是由所有非关键字实参组成的元组(元祖后面讲)。</p></li>
+<li><p>收集参数和普通的参数（关键字参数）可以共存</p></li>
 </ol>
 <p>请看下面代码：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">intro</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">intro</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
         
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Args类型:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">args</span><span class="p">))</span>
         
@@ -649,9 +561,9 @@ func_doc(name)
     北京图灵学院
 </pre></div>
 </div>
-</div>
-<div class="section" id="kargs">
-<h3>10.5.5. 关键字参数收集参数(<code class="docutils literal notranslate"><span class="pre">**kargs</span></code>)<a class="headerlink" href="#kargs" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="kargs">
+<h3><span class="section-number">10.5.5. </span>关键字参数收集参数(<code class="docutils literal notranslate"><span class="pre">**kargs</span></code>)<a class="headerlink" href="#kargs" title="Link to this heading"></a></h3>
 <p>除了位置参数收集参数外，还有一个专门用于收集关键字参数的收集参数，定义格式如下所示：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        def 函数名(**kargs):
             函数中的代码（python语句）
@@ -662,15 +574,16 @@ func_doc(name)
 </pre></div>
 </div>
 <blockquote>
-<div>Attention:</div></blockquote>
+<div><p>Attention:</p>
+</div></blockquote>
 <ol class="simple">
-<li>使用收集参数收集关键字实参的方法需要在形参名之前加**</li>
-<li>**形参格式会收集调用函数时传入函数的所有关键字参数</li>
-<li>收集的所有关键字参数最终组成的数据为字典类型</li>
-<li>关键字参数收集的方式可以和普通形参共存，但是必须在最后</li>
+<li><p>使用收集参数收集关键字实参的方法需要在形参名之前加**</p></li>
+<li><p>**形参格式会收集调用函数时传入函数的所有关键字参数</p></li>
+<li><p>收集的所有关键字参数最终组成的数据为字典类型</p></li>
+<li><p>关键字参数收集的方式可以和普通形参共存，但是必须在最后</p></li>
 </ol>
 <p>请看案例：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">intro</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">intro</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;kargs类型:&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">kargs</span><span class="p">))</span>
         <span class="c1"># 高端的代码往往采用简单的烹饪方式，后面会讲</span>
         <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">kargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -691,24 +604,25 @@ func_doc(name)
     slogan Ich liebe Wangxiaojin
 </pre></div>
 </div>
-</div>
-<div class="section" id="id13">
-<h3>10.5.6. 函数参数最后的啰嗦<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id13">
+<h3><span class="section-number">10.5.6. </span>函数参数最后的啰嗦<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
 <p>函数参数比较繁琐，最后的陈词总结如下：</p>
 <ul class="simple">
-<li>函数定义时参数要有一定顺序：<ol>
-<li>最先定义默认参数/位置参数</li>
-<li>其次是默认参数</li>
-<li>其次是位置参数收集参数</li>
-<li>最后是关键字参数收集参数</li>
+<li><p>函数定义时参数要有一定顺序：</p>
+<ol class="simple">
+<li><p>最先定义默认参数/位置参数</p></li>
+<li><p>其次是默认参数</p></li>
+<li><p>其次是位置参数收集参数</p></li>
+<li><p>最后是关键字参数收集参数</p></li>
 </ol>
 </li>
-<li>同类型参数顺序可以颠倒</li>
-<li>调用的时候收集参数只接收前面没有匹配上的参数</li>
-<li>可以把元祖/列表或者字典作为参数直接传给函数，但是需要星号(*)配合</li>
+<li><p>同类型参数顺序可以颠倒</p></li>
+<li><p>调用的时候收集参数只接收前面没有匹配上的参数</p></li>
+<li><p>可以把元祖/列表或者字典作为参数直接传给函数，但是需要星号(*)配合</p></li>
 </ul>
 <p>请看下面一个关于解包的例子，这个例子我们以后学了元祖和字典后会理解，这里先了解下：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">intro</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span><span class="w"> </span><span class="nf">intro</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kargs</span><span class="p">):</span>
         
         <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
@@ -733,10 +647,10 @@ func_doc(name)
     <span class="n">slogan</span> <span class="n">Ich</span> <span class="n">liebe</span> <span class="n">Wangxiaojing</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id14">
-<h2>10.6. 函数的一个小栗子<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id14">
+<h2><span class="section-number">10.6. </span>函数的一个小栗子<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <p>这节课理论多点，加个例子吧，相关案例在习题课里介绍的很多，大家可以去学习，谢谢。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 九九乘法表</span>
 <span class="c1"># version 1.0</span>
@@ -762,7 +676,7 @@ func_doc(name)
 </div>
 <p>把打印九九乘法表中的一行做成一个函数试试：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定义一个函数，打印一行九九乘法表</span>
-<span class="k">def</span> <span class="nf">printLine</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">printLine</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="c1"># print函数默认任务打印完毕后换行</span>
         <span class="nb">print</span><span class="p">(</span> <span class="n">row</span> <span class="o">*</span> <span class="n">col</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
@@ -786,55 +700,38 @@ func_doc(name)
     <span class="mi">9</span> <span class="mi">18</span> <span class="mi">27</span> <span class="mi">36</span> <span class="mi">45</span> <span class="mi">54</span> <span class="mi">63</span> <span class="mi">72</span> <span class="mi">81</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="008-内置函数.html" class="btn btn-neutral float-right" title="11. 内置函数" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="007-while循环.html" class="btn btn-neutral float-left" title="9. while循环" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="007-while%E5%BE%AA%E7%8E%AF.html" class="btn btn-neutral float-left" title="9. while循环" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html" class="btn btn-neutral float-right" title="11. 内置函数" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2020, 北京图灵学院.
-
-    </p>
+    <p>&#169; 版权所有 2020, 北京图灵学院。</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

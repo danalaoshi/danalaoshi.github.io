@@ -1,126 +1,74 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="zh-CN" >
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>6. 多线程 &mdash; Python新全栈教程 1.0 文档</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'1.0',
-              LANGUAGE:'zh_CN',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <link rel="canonical" href="https://danalaoshi.github.io/adv/105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f115507d"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="7. 计算机编码问题" href="106_编码问题.html" />
-    <link rel="prev" title="5. 模块和包" href="104_模块和包.html" /> 
+    <link rel="next" title="7. 计算机编码问题" href="106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html" />
+    <link rel="prev" title="5. 模块和包" href="104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> Python新全栈教程
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            Python新全栈教程
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../base/001.html">1. 开学典礼-不讲知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/001Python语言概述.html">2. Python语言概述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/001注释.html">3. 注释和帮助</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001%E6%B3%A8%E9%87%8A.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html">4. 变量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/003str.html">5. 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/004运算符.html">6. 表达式 和 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/005-if分支语句.html">7. 分支语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/006-for循环.html">8. 循环语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/007-while循环.html">9. while循环</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/008-函数讲义.html">10. 函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/008-内置函数.html">11. 内置函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/09-内置结构.html">12. 内置数据结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/009-类.html">13. OOP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/010-内置模块.html">14. 常用内置模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/011-持久化和文件.html">15. 文件和序列化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/004%E8%BF%90%E7%AE%97%E7%AC%A6.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/006-for%E5%BE%AA%E7%8E%AF.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/007-while%E5%BE%AA%E7%8E%AF.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-%E5%87%BD%E6%95%B0%E8%AE%B2%E4%B9%89.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/09-%E5%86%85%E7%BD%AE%E7%BB%93%E6%9E%84.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/009-%E7%B1%BB.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/010-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/011-%E6%8C%81%E4%B9%85%E5%8C%96%E5%92%8C%E6%96%87%E4%BB%B6.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/012-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">16. Python异常的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/013-tkinter.html">17. Tkinter</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="101-函数高级.html">1. 函数高级</a></li>
-<li class="toctree-l1"><a class="reference internal" href="102-类高级.html">2. OOP高级编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="103_调试技术.html">3. 调试技术</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1021-单元测试.html">4. 单元测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="104_模块和包.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="101-%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="103_%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html">5. 模块和包</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6. 多线程</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#thread">6.1. thread包实现多线程</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">6.1.1. 顺序执行案例</a></li>
@@ -162,7 +110,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#run">6.6.2.1. <code class="docutils literal notranslate"><span class="pre">run</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#call">6.6.2.2. <code class="docutils literal notranslate"><span class="pre">call</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id14">6.6.2.3. 其他调用函数</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#popen">6.6.2.4. ‘Popen’类</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#popen">6.6.2.4. 'Popen'类</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id17">6.6.2.5. <code class="docutils literal notranslate"><span class="pre">subprocess</span></code>常见坑</a></li>
 </ul>
 </li>
@@ -185,7 +133,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id23">6.9. 线程池/进程池</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#multiprocessing-pool">6.9.1. <code class="docutils literal notranslate"><span class="pre">multiprocessing.Pool</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#concurrent-futures">6.9.2. ‘concurrent.futures’</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#concurrent-futures">6.9.2. 'concurrent.futures'</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#concurrent-futures-executor">6.9.2.1. <code class="docutils literal notranslate"> <span class="pre">concurrent.futures.Executor</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#future">6.9.2.2. <code class="docutils literal notranslate"><span class="pre">Future</span></code></a></li>
 </ul>
@@ -194,131 +142,89 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html">7. 计算机编码问题</a></li>
 <li class="toctree-l1"><a class="reference internal" href="107_log.html">8. 日志(logging)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="108_携程.html">9. 协程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="109_网络编程.html">10. 1. 网络通信概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="108_%E6%90%BA%E7%A8%8B.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">10. 1. 网络通信概述</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Python新全栈教程</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>6. 多线程</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6. </span>多线程</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/adv/105多线程.md.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/adv/105多线程.md.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>6. 多线程<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+             
+  <section id="id1">
+<h1><span class="section-number">6. </span>多线程<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <p>在开始之前我们先了解接个概念，出于理解的目的，都属于口头定义。</p>
 <ul>
-<li><p class="first">程序：一堆代码以文本形式存入一个文档，可以被解释或者编译后让计算机去执行。</p>
-</li>
-<li><p class="first">进程：</p>
+<li><p>程序：一堆代码以文本形式存入一个文档，可以被解释或者编译后让计算机去执行。</p></li>
+<li><p>进程：</p>
 <ul class="simple">
-<li>是程序运行的一个状态</li>
-<li>因为程序在运行，所以包含程序运行的时候的地址空间，内存，数据栈等</li>
-<li>每个进程由自己完全独立的运行环境</li>
-<li>多进程共享数据是一个问题,一般要借助于一个独立于进程的内容</li>
+<li><p>是程序运行的一个状态</p></li>
+<li><p>因为程序在运行，所以包含程序运行的时候的地址空间，内存，数据栈等</p></li>
+<li><p>每个进程由自己完全独立的运行环境</p></li>
+<li><p>多进程共享数据是一个问题,一般要借助于一个独立于进程的内容</p></li>
 </ul>
 <p>进程可以看做是你打开某一个程序后的运行状态，比如打开QQ那就启动了一个QQ进程，如果再打开一个QQ，你虽然
 电脑上运行了两个QQ，但这两个QQ之间的运行数据其实不共享，你登录的也是两个号码。</p>
 </li>
-<li><p class="first">线程:</p>
+<li><p>线程:</p>
 <ul class="simple">
-<li>把一个进程，也就是一个程序的的运行细分成几个片段，每一个片段理解成一个线程，比如我教python是一个
-进程的话，那么备课，上课，讲作业，答疑可以看做教python这件事的子任务，也可以理解成都是教python这个进程的线程。</li>
-<li>一个进程的多个线程间共享共享同一套数据和上下文运行环境</li>
-<li>因为贡献共同一套资源，可能会存在资源的共享互斥问题，比如我备课要用电脑，上课也要用电脑，如果我一边上课
-一边备课的话，我的电脑到底应该打开上课的课件还是出现备课的内容？</li>
+<li><p>把一个进程，也就是一个程序的的运行细分成几个片段，每一个片段理解成一个线程，比如我教python是一个
+进程的话，那么备课，上课，讲作业，答疑可以看做教python这件事的子任务，也可以理解成都是教python这个进程的线程。</p></li>
+<li><p>一个进程的多个线程间共享共享同一套数据和上下文运行环境</p></li>
+<li><p>因为贡献共同一套资源，可能会存在资源的共享互斥问题，比如我备课要用电脑，上课也要用电脑，如果我一边上课
+一边备课的话，我的电脑到底应该打开上课的课件还是出现备课的内容？</p></li>
 </ul>
 </li>
-<li><p class="first">全局解释器锁（GIL:GlobalInterpreterLock):</p>
+<li><p>全局解释器锁（GIL:GlobalInterpreterLock):</p>
 <ul class="simple">
-<li>Python开发的时候为了彻底解决多线程共享资源的问题，cPython解释器禁止真正的多线程，即一个CPU内不允许同时
-运行两个线程，注意是同时，这个机制成为GIL,如果是单核CPU问题还不太大,但CPU跨入多核时代就显得限制太多了</li>
+<li><p>Python开发的时候为了彻底解决多线程共享资源的问题，cPython解释器禁止真正的多线程，即一个CPU内不允许同时
+运行两个线程，注意是同时，这个机制成为GIL,如果是单核CPU问题还不太大,但CPU跨入多核时代就显得限制太多了</p></li>
 </ul>
 </li>
-<li><p class="first">举一个栗子：</p>
+<li><p>举一个栗子：</p>
 <ul class="simple">
-<li>把程序运行当成做饭就好了，做一桌饭就是一个进程, 一般只有一个，必须要同时准备两桌饭的情况少</li>
-<li>做饭的妈妈就是CPU，在做饭过程中，红烧肉，炒白菜，炖肘子就是三个线程</li>
-<li>效率最低的就是做好红烧肉再炒白菜，炒好白菜在准备做炖肘子，这样其实三个线程每个执行完后再执行，等于不分线程，即单线程</li>
-<li>在做饭过程中我们使用同一套资源，比如案板，菜刀，锅等，还有同一个妈妈</li>
-<li>妈妈都是超人，她的正常顺序是红烧肉放上水炖着就收拾肘子，红烧肉好了把肘子炖上后开始洗菜切菜，肘子好了直接开炒白菜</li>
-<li>如果按照方案2做的饭时间缩短好多，前提是提高了资源（厨房用具）的利用率和妈妈的或火气值(CPU的温度，CPU利用率)</li>
-<li>如果很着急，可以让爸爸也进厨房帮忙(增加一个CPU，多核), 爸爸炒菜做红烧肉，妈妈炖肘子</li>
-<li>一般程序没有GIL，所以爸爸妈妈可以同时在厨房干活，但Python这个厨房有GIL锁，规定一个时间厨房里只能有一个人，这样
-如果一定要让爸爸帮忙，只能妈妈出来爸爸再进去(不是真正的多核多线程)</li>
+<li><p>把程序运行当成做饭就好了，做一桌饭就是一个进程, 一般只有一个，必须要同时准备两桌饭的情况少</p></li>
+<li><p>做饭的妈妈就是CPU，在做饭过程中，红烧肉，炒白菜，炖肘子就是三个线程</p></li>
+<li><p>效率最低的就是做好红烧肉再炒白菜，炒好白菜在准备做炖肘子，这样其实三个线程每个执行完后再执行，等于不分线程，即单线程</p></li>
+<li><p>在做饭过程中我们使用同一套资源，比如案板，菜刀，锅等，还有同一个妈妈</p></li>
+<li><p>妈妈都是超人，她的正常顺序是红烧肉放上水炖着就收拾肘子，红烧肉好了把肘子炖上后开始洗菜切菜，肘子好了直接开炒白菜</p></li>
+<li><p>如果按照方案2做的饭时间缩短好多，前提是提高了资源（厨房用具）的利用率和妈妈的或火气值(CPU的温度，CPU利用率)</p></li>
+<li><p>如果很着急，可以让爸爸也进厨房帮忙(增加一个CPU，多核), 爸爸炒菜做红烧肉，妈妈炖肘子</p></li>
+<li><p>一般程序没有GIL，所以爸爸妈妈可以同时在厨房干活，但Python这个厨房有GIL锁，规定一个时间厨房里只能有一个人，这样
+如果一定要让爸爸帮忙，只能妈妈出来爸爸再进去(不是真正的多核多线程)</p></li>
 </ul>
 </li>
 </ul>
-<p>多线程很多时候我们会感觉是这个程序好几个任务在”同时”执行， 但其实是CPU利用自己超高的执行速度把时间片段
+<p>多线程很多时候我们会感觉是这个程序好几个任务在&quot;同时&quot;执行， 但其实是CPU利用自己超高的执行速度把时间片段
 分化的很细，每个任务轮流去执行，只不过轮换的速度极快，你不会感觉到卡顿。</p>
-<div class="section" id="thread">
-<h2>6.1. thread包实现多线程<a class="headerlink" href="#thread" title="永久链接至标题">¶</a></h2>
+<section id="thread">
+<h2><span class="section-number">6.1. </span>thread包实现多线程<a class="headerlink" href="#thread" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">thread</span></code>这个模块可以实现多线程，因为历史原因，<code class="docutils literal notranslate"><span class="pre">thread</span></code>也有些问题，所以并不推荐，但这个模块对
 多线程的使用比较底层，<code class="docutils literal notranslate"><span class="pre">python3</span></code>中把这个模块改成了<code class="docutils literal notranslate"><span class="pre">_thread</span></code>。</p>
 <p>下面我用代码展示thread模块的时候用。</p>
-<div class="section" id="id2">
-<h3>6.1.1. 顺序执行案例<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<section id="id2">
+<h3><span class="section-number">6.1.1. </span>顺序执行案例<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <p>在<code class="docutils literal notranslate"><span class="pre">time</span></code>模块中有个函数<code class="docutils literal notranslate"><span class="pre">ctime</span></code>可以用来得到当前的时间，我们程序每次执行开头和结束得到这个时间，然后
 就可以大致测量一个函数的执行时间。</p>
 <p>看下面代码：</p>
@@ -327,19 +233,19 @@
 <span class="sd">顺序调用</span>
 <span class="sd">计算总的运行时间</span>
 <span class="sd">&#39;&#39;&#39;</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
-<span class="k">def</span> <span class="nf">loop1</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">loop1</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start loop 1 at :&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End loop 1 at:&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
 
-<span class="k">def</span> <span class="nf">loop2</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">loop2</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start loop 2 at :&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End loop 2 at:&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting at:&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
     <span class="n">loop1</span><span class="p">()</span>
     <span class="n">loop2</span><span class="p">()</span>
@@ -359,9 +265,9 @@
 <span class="n">All</span> <span class="n">done</span> <span class="n">at</span><span class="p">:</span> <span class="n">Tue</span> <span class="n">Apr</span> <span class="mi">27</span> <span class="mi">14</span><span class="p">:</span><span class="mi">42</span><span class="p">:</span><span class="mi">02</span> <span class="mi">2021</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
-<h3>6.1.2. 第一个多线程案例<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id3">
+<h3><span class="section-number">6.1.2. </span>第一个多线程案例<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <p>如果我们把这两个函数改成度线程，则在这个程序执行中，这是一个进程，但在进程里有两个线程，线程是
 并行执行的，所以程序总执行时间应该大体等于这两个函数执行时间最长的时间。</p>
 <p>如果使用<code class="docutils literal notranslate"><span class="pre">_thread</span></code>创建多线程，则需要用函数<code class="docutils literal notranslate"><span class="pre">start_new_thread</span></code>创建一个县城并执行，
@@ -377,20 +283,20 @@
 <span class="sd">顺序调用</span>
 <span class="sd">计算总的运行时间</span>
 <span class="sd">&#39;&#39;&#39;</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">_thread</span> <span class="k">as</span> <span class="nn">thread</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">_thread</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">thread</span>
 
-<span class="k">def</span> <span class="nf">loop1</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">loop1</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start loop 1 at :&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End loop 1 at:&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
 
-<span class="k">def</span> <span class="nf">loop2</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">loop2</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start loop 2 at :&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End loop 2 at:&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting at:&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
     <span class="c1"># 启动多线程的意思是用多线程去执行某个函数</span>
     <span class="c1"># 启动多线程函数为start_new_thead</span>
@@ -422,27 +328,27 @@
 </div>
 <p>上面代码子线程<code class="docutils literal notranslate"><span class="pre">loop1</span></code>和<code class="docutils literal notranslate"><span class="pre">loop2</span></code>执行时间分别是4秒和2秒，而主线程只是启动了两个线程然后就结束了，
 理论上执行时间可以忽略掉，所以，这个程序总共执行时间基本上是 <code class="docutils literal notranslate"><span class="pre">max(4,2)</span></code>。</p>
-</div>
-<div class="section" id="id4">
-<h3>6.1.3. 子线程带参数调用<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id4">
+<h3><span class="section-number">6.1.3. </span>子线程带参数调用<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <p>下面案例展示了一个启动一个需要参数的子线程的案例，其余的都一样，不做过多解释。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 练习带参数的多线程启动方法</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">_thread</span> <span class="k">as</span> <span class="nn">thread</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">_thread</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">thread</span>
 
-<span class="k">def</span> <span class="nf">loop1</span><span class="p">(</span><span class="n">in1</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">loop1</span><span class="p">(</span><span class="n">in1</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start loop 1 at :&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是参数 &quot;</span><span class="p">,</span><span class="n">in1</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End loop 1 at:&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
 
-<span class="k">def</span> <span class="nf">loop2</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">loop2</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start loop 2 at :&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是参数 &quot;</span> <span class="p">,</span><span class="n">in1</span> <span class="p">,</span> <span class="s2">&quot;和参数  &quot;</span><span class="p">,</span> <span class="n">in2</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End loop 2 at:&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting at:&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
     <span class="c1"># 启动多线程的意思是用多线程去执行某个函数</span>
     <span class="c1"># 启动多线程函数为start_new_thead</span>
@@ -460,21 +366,21 @@
 </pre></div>
 </div>
 <p>因为<code class="docutils literal notranslate"><span class="pre">_thread</span></code>已不再推荐使用，所以我们不在深入讲解，下面讲解常用的多线程调用方法。</p>
-</div>
-</div>
-<div class="section" id="threading">
-<h2>6.2. <code class="docutils literal notranslate"><span class="pre">threading</span></code>的使用<a class="headerlink" href="#threading" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="threading">
+<h2><span class="section-number">6.2. </span><code class="docutils literal notranslate"><span class="pre">threading</span></code>的使用<a class="headerlink" href="#threading" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">threading</span></code>是我们多线程代码中常用到的模块，我们在本章中进行介绍。</p>
-<div class="section" id="id5">
-<h3>6.2.1. <code class="docutils literal notranslate"><span class="pre">threading</span></code>的基本使用<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<section id="id5">
+<h3><span class="section-number">6.2.1. </span><code class="docutils literal notranslate"><span class="pre">threading</span></code>的基本使用<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">threading</span></code>模块使用多线程的过程一般分为这两步：</p>
 <ul>
-<li><p class="first">直接利用threading.Thread生成Thread实例</p>
+<li><p>直接利用threading.Thread生成Thread实例</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">xxx</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">xxx</span><span class="p">,))</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">启动生成的实例去执行</p>
+<li><p>启动生成的实例去执行</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="c1"># 启动多线程</span>
    <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
    <span class="c1"># 等待多线程执行完成</span>
@@ -485,33 +391,33 @@
 </ul>
 <p>我们还是从一个案例开始, 其中<code class="docutils literal notranslate"><span class="pre">threading.Thread</span></code>实例生成至少需要两个参数：target和arg：</p>
 <ul class="simple">
-<li>target：多线程的执行代码块，这里是一个函数</li>
-<li>args：启动多线程代码的参数元祖</li>
+<li><p>target：多线程的执行代码块，这里是一个函数</p></li>
+<li><p>args：启动多线程代码的参数元祖</p></li>
 </ul>
 <p>一旦生成<code class="docutils literal notranslate"><span class="pre">Thread</span></code>实例后，需要利用:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">Thread.start</span></code>: 启动多线程的执行</li>
-<li><code class="docutils literal notranslate"><span class="pre">Thread.join</span></code>: 告诉主线程等待多线程执行完毕</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Thread.start</span></code>: 启动多线程的执行</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Thread.join</span></code>: 告诉主线程等待多线程执行完毕</p></li>
 </ul>
 <p>正是因为有了<code class="docutils literal notranslate"><span class="pre">Thread.join</span></code>函数，在主线程的代码中才不再需要死循环来强制主线程的执行时间长过子线程的执行。</p>
 <p>代码如下，指向效果跟上面的代码一致：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="c1"># 导入多线程处理包</span>
-<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
 
-<span class="k">def</span> <span class="nf">loop1</span><span class="p">(</span><span class="n">in1</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">loop1</span><span class="p">(</span><span class="n">in1</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start loop 1 at :&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是参数 &quot;</span><span class="p">,</span><span class="n">in1</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End loop 1 at:&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
 
-<span class="k">def</span> <span class="nf">loop2</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">loop2</span><span class="p">(</span><span class="n">in1</span><span class="p">,</span> <span class="n">in2</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start loop 2 at :&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是参数 &quot;</span> <span class="p">,</span><span class="n">in1</span> <span class="p">,</span> <span class="s2">&quot;和参数  &quot;</span><span class="p">,</span> <span class="n">in2</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End loop 2 at:&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting at:&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
     <span class="c1"># 生成threading.Thread实例</span>
     <span class="n">t1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">loop1</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;王老大&quot;</span><span class="p">,))</span>
@@ -532,20 +438,20 @@
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="threaidngdaemon">
-<h3>6.2.2. <code class="docutils literal notranslate"><span class="pre">threaidng</span></code>的守护线程<code class="docutils literal notranslate"><span class="pre">daemon</span></code><a class="headerlink" href="#threaidngdaemon" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="threaidngdaemon">
+<h3><span class="section-number">6.2.2. </span><code class="docutils literal notranslate"><span class="pre">threaidng</span></code>的守护线程<code class="docutils literal notranslate"><span class="pre">daemon</span></code><a class="headerlink" href="#threaidngdaemon" title="Link to this heading"></a></h3>
 <p>守护线程就是看线程离开主线程后是否能独立运行：</p>
 <ul class="simple">
-<li>如果在程序中将子线程设置成守护现成，则子线程会在主线程结束的时候自动退出</li>
-<li>一般认为，守护线程不中要或者不允许离开主线程独立运行</li>
-<li>守护线程案例能否有效果跟环境相关</li>
+<li><p>如果在程序中将子线程设置成守护现成，则子线程会在主线程结束的时候自动退出</p></li>
+<li><p>一般认为，守护线程不中要或者不允许离开主线程独立运行</p></li>
+<li><p>守护线程案例能否有效果跟环境相关</p></li>
 </ul>
 <p>下面案例没有设置守护进程，则子线程在主线程结束后也能运行：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">threading</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
 
-<span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Start fun&quot;</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;end fun&quot;</span><span class="p">)</span>
@@ -567,10 +473,10 @@
 </pre></div>
 </div>
 <p>下面案例是一个守护进程的案例，注意已经设置了守护进程：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">threading</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
 
-<span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Start fun&quot;</span><span class="p">)</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;end fun&quot;</span><span class="p">)</span>
@@ -593,24 +499,24 @@
 </div>
 <p>除此之外线程还有一些常见的属性，在实际使用中可以利用：</p>
 <ul class="simple">
-<li>threading.currentThread：返回当前线程变量</li>
-<li>threading.enumerate:返回一个包含正在运行的线程的list，正在运行的线程指的是线程启动后，结束前的状态</li>
-<li>threading.activeCount: 返回正在运行的线程数量，效果跟 len(threading.enumerate)相同</li>
-<li>thr.setName: 给线程设置名字</li>
-<li>thr.getName: 得到线程的名字</li>
+<li><p>threading.currentThread：返回当前线程变量</p></li>
+<li><p>threading.enumerate:返回一个包含正在运行的线程的list，正在运行的线程指的是线程启动后，结束前的状态</p></li>
+<li><p>threading.activeCount: 返回正在运行的线程数量，效果跟 len(threading.enumerate)相同</p></li>
+<li><p>thr.setName: 给线程设置名字</p></li>
+<li><p>thr.getName: 得到线程的名字</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-    <span class="kn">import</span> <span class="nn">time</span>
-    <span class="kn">import</span> <span class="nn">threading</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
 
-    <span class="k">def</span> <span class="nf">loop1</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">loop1</span><span class="p">():</span>
         <span class="c1"># ctime 得到当前时间</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start loop 1 at :&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
         <span class="c1"># 睡眠多长时间，单位是秒</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End loop 1 at:&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
 
-    <span class="k">def</span> <span class="nf">loop2</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">loop2</span><span class="p">():</span>
         <span class="c1"># ctime 得到当前时间</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start loop 2 at :&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
         <span class="c1"># 睡眠多长时间，单位是秒</span>
@@ -618,14 +524,14 @@
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End loop 2 at:&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
 
 
-    <span class="k">def</span> <span class="nf">loop3</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">loop3</span><span class="p">():</span>
         <span class="c1"># ctime 得到当前时间</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Start loop 3 at :&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
         <span class="c1"># 睡眠多长时间，单位是秒</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;End loop 3 at:&#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
 
-    <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting at:&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
         <span class="c1"># 生成threading.Thread实例</span>
         <span class="n">t1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">loop1</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span> <span class="p">))</span>
@@ -680,24 +586,24 @@
 (&#39;End loop 1 at:&#39;, &#39;Tue May 11 15:11:42 2021&#39;)
 </pre></div>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>6.2.3. <code class="docutils literal notranslate"><span class="pre">threading</span></code>的面向对象写法<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id6">
+<h3><span class="section-number">6.2.3. </span><code class="docutils literal notranslate"><span class="pre">threading</span></code>的面向对象写法<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>有时候线程可以时候用面向对象技术，这样会最大程度利用OOP的好处，特别是子线程需要处理的内容比较复杂的时候。
 使用方法可以直接继承<code class="docutils literal notranslate"><span class="pre">threading.Thread</span></code>，这时候只要重写<code class="docutils literal notranslate"><span class="pre">run</span></code>函数就可以，或者也可以
 把子线程携程一个类，然后调用类的实例的方法。</p>
 <p>下面案例直接重写<code class="docutils literal notranslate"><span class="pre">threading.run</span></code>，继承<code class="docutils literal notranslate"><span class="pre">threading.Thread</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="c1"># 1. 类需要继承自threading.Thread</span>
-<span class="k">class</span> <span class="nc">MyThread</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyThread</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">MyThread</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">arg</span> <span class="o">=</span> <span class="n">arg</span>
 
     <span class="c1"># 2 必须重写run函数，run函数代表的是真正执行的功能</span>
-    <span class="k">def</span>  <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w">  </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The args for this class is </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">arg</span><span class="p">))</span>
 
@@ -711,18 +617,18 @@
 </div>
 <p>下面这个案例的写法比较成熟：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#coding=utf-8</span>
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span><span class="p">,</span> <span class="n">ctime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span><span class="p">,</span> <span class="n">ctime</span>
 
 <span class="n">loop</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
 
-<span class="k">class</span> <span class="nc">ThreadFunc</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ThreadFunc</span><span class="p">:</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 
-    <span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nloop</span><span class="p">,</span> <span class="n">nsec</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nloop</span><span class="p">,</span> <span class="n">nsec</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        :param nloop: loop函数的名称</span>
 <span class="sd">        :param nsec: 系统休眠时间</span>
 <span class="sd">        :return:</span>
@@ -731,7 +637,7 @@
         <span class="n">sleep</span><span class="p">(</span><span class="n">nsec</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done loop &#39;</span><span class="p">,</span> <span class="n">nloop</span><span class="p">,</span> <span class="s1">&#39; at &#39;</span><span class="p">,</span> <span class="n">ctime</span><span class="p">())</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting at: &quot;</span><span class="p">,</span> <span class="n">ctime</span><span class="p">())</span>
 
     <span class="c1"># ThreadFunc(&quot;loop&quot;).loop 跟一下两个式子相等：</span>
@@ -761,28 +667,28 @@
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id7">
-<h2>6.3. 多线程变量共享问题<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id7">
+<h2><span class="section-number">6.3. </span>多线程变量共享问题<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>共享变量： 当多个线程同时访问一个变量的时候，会产生共享变量的问题</li>
+<li><p>共享变量： 当多个线程同时访问一个变量的时候，会产生共享变量的问题</p></li>
 </ul>
-<p>虽然线程访问同一变量很少”撞车”, 但这种情况并不意味着没有, 一旦两个变量”同时”对一个变量/内存进行写操作, 注意如果
-只是读的话问题不大, 同时写可能就会造成一个”写了一半”, 结果另一个线程”写了另一半”, 造成结果混乱</p>
+<p>虽然线程访问同一变量很少&quot;撞车&quot;, 但这种情况并不意味着没有, 一旦两个变量&quot;同时&quot;对一个变量/内存进行写操作, 注意如果
+只是读的话问题不大, 同时写可能就会造成一个&quot;写了一半&quot;, 结果另一个线程&quot;写了另一半&quot;, 造成结果混乱</p>
 <p>请看下面案例:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
 
 <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">loopSum</span> <span class="o">=</span> <span class="mi">1000000</span>
 
-<span class="k">def</span> <span class="nf">myAdd</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">myAdd</span><span class="p">():</span>
   <span class="k">global</span>  <span class="nb">sum</span><span class="p">,</span> <span class="n">loopSum</span>
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">loopSum</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="k">def</span> <span class="nf">myMinu</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">myMinu</span><span class="p">():</span>
   <span class="k">global</span>  <span class="nb">sum</span><span class="p">,</span> <span class="n">loopSum</span>
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">loopSum</span><span class="p">):</span>
     <span class="nb">sum</span> <span class="o">-=</span> <span class="mi">1</span>
@@ -803,33 +709,34 @@
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done .... </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">sum</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>上面代码一个函数负责对变量进行加操作, 一个函数负责减操作, 这两个都属于”写”操作, 在每个执行
+<p>上面代码一个函数负责对变量进行加操作, 一个函数负责减操作, 这两个都属于&quot;写&quot;操作, 在每个执行
 10000次后,理论上变量等于没有改变,因为加减次数相当,但实际运行结果却是不可控的, 请多运行几次,就会
 发现每次运行结果其实不一致.</p>
 <p>通常解决上面问题就是我们常说的琐或者信号灯, 总体思想就是利用一个变量做为令牌,每次执行写操作的时候
 要申请令牌, 只有拿到令牌的线程才有资格对变量进行操作,这样只要都遵循这个规矩就不会造成混乱.</p>
-<div class="section" id="id8">
-<h3>6.3.1. 线程安全<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<section id="id8">
+<h3><span class="section-number">6.3.1. </span>线程安全<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>如果一个资源/变量，他对于多线程来讲，不用加锁也不会引起任何问题，则称为线程安全</li>
-<li>python中线程不安全变量类型： list, set, dict, 这种变量类型如果涉及到多线程使用,需要加锁控制共享问题</li>
-<li>线程安全变量类型： queue, 此种变量不会出现多线程共享问题</li>
+<li><p>如果一个资源/变量，他对于多线程来讲，不用加锁也不会引起任何问题，则称为线程安全</p></li>
+<li><p>python中线程不安全变量类型： list, set, dict, 这种变量类型如果涉及到多线程使用,需要加锁控制共享问题</p></li>
+<li><p>线程安全变量类型： queue, 此种变量不会出现多线程共享问题</p></li>
 </ul>
-</div>
-<div class="section" id="lock">
-<h3>6.3.2. 线程锁(Lock)<a class="headerlink" href="#lock" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="lock">
+<h3><span class="section-number">6.3.2. </span>线程锁(Lock)<a class="headerlink" href="#lock" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>是一个标志/令牌/变量，表示一个线程在占用一些资源, 线程如果相对一个资源操作, 就要查看这个锁的状态,只有锁的状态在打开状态
-才可以被申请, 所谓申请就是对锁进行一个赋值,表示锁被关闭,此时意味着别的线程不能再操作共享变量</li>
-<li>使用方法<ul>
-<li>上锁(lock.acquire)</li>
-<li>使用共享资源，放心的用</li>
-<li>取消锁，释放锁(lock.release)</li>
+<li><p>是一个标志/令牌/变量，表示一个线程在占用一些资源, 线程如果相对一个资源操作, 就要查看这个锁的状态,只有锁的状态在打开状态
+才可以被申请, 所谓申请就是对锁进行一个赋值,表示锁被关闭,此时意味着别的线程不能再操作共享变量</p></li>
+<li><p>使用方法</p>
+<ul>
+<li><p>上锁(lock.acquire)</p></li>
+<li><p>使用共享资源，放心的用</p></li>
+<li><p>取消锁，释放锁(lock.release)</p></li>
 </ul>
 </li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
 
 <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">loopSum</span> <span class="o">=</span> <span class="mi">1000000</span>
@@ -838,7 +745,7 @@
 <span class="n">lock</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">myAdd</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">myAdd</span><span class="p">():</span>
   <span class="k">global</span>  <span class="nb">sum</span><span class="p">,</span> <span class="n">loopSum</span>
 
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">loopSum</span><span class="p">):</span>
@@ -849,7 +756,7 @@
     <span class="n">lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">myMinu</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">myMinu</span><span class="p">():</span>
   <span class="k">global</span>  <span class="nb">sum</span><span class="p">,</span> <span class="n">loopSum</span>
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">loopSum</span><span class="p">):</span>
     <span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
@@ -879,38 +786,39 @@
 <p>我们使用厨房做饭作为案例, 线程就是一个一个的厨师, 一个厨师肯定效率慢,此时我们会让两个厨师进厨房, 但两个厨师可能会带来
 对共享变量的使用问题,比如两个厨师都想用炒锅炒菜, 此时就应该解决这个冲突,我们用锁解决:</p>
 <ul class="simple">
-<li>应该锁谁: 锁使用比较危险, 如果简化版,<ul>
-<li>可以把整个代码上一把锁, 即一个厨师进入厨房后把厨房锁住,此时其实还是一个厨师,
-另一个厨师是不会进入厨房的, 因为他没钥匙, 此时的多线程就多了个寂寞</li>
-<li>可以把每个资源,每个调料瓶,每个锅碗瓢盆都锁上, 需要的时候开锁,但这个时候效率可能反而会降低, 两个厨师光忙着开锁上锁了</li>
-<li>所以究竟对那个资源上锁是个问题, 不能太多,但太细密了可能也不好</li>
+<li><p>应该锁谁: 锁使用比较危险, 如果简化版,</p>
+<ul>
+<li><p>可以把整个代码上一把锁, 即一个厨师进入厨房后把厨房锁住,此时其实还是一个厨师,
+另一个厨师是不会进入厨房的, 因为他没钥匙, 此时的多线程就多了个寂寞</p></li>
+<li><p>可以把每个资源,每个调料瓶,每个锅碗瓢盆都锁上, 需要的时候开锁,但这个时候效率可能反而会降低, 两个厨师光忙着开锁上锁了</p></li>
+<li><p>所以究竟对那个资源上锁是个问题, 不能太多,但太细密了可能也不好</p></li>
 </ul>
 </li>
-<li>锁是什么: 锁我们在使用的时候其实理解成一个令牌, 只有申请到了锁/令牌才能进入下面的代码执行,否则只能等待</li>
+<li><p>锁是什么: 锁我们在使用的时候其实理解成一个令牌, 只有申请到了锁/令牌才能进入下面的代码执行,否则只能等待</p></li>
 </ul>
-</div>
-<div class="section" id="id9">
-<h3>6.3.3. 死锁问题<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id9">
+<h3><span class="section-number">6.3.3. </span>死锁问题<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <p>如果对于两个变量A,B, 两个线程one,two, 如果一个线程锁住/占用了一个变量, 同时要想完成整个任务还需要另一个变量,
 这种情况就会发生死锁, 即都等待对方完成后释放资源,但如果完成任务又需要你先释放资源.</p>
 <p>这个情况类似西游记里孙悟空去打水里妖怪的情形, 妖怪陆地上打不过孙悟空,孙悟空又不习惯水战, 于是就会出现妖怪站水里
-让孙悟空下来, 孙悟空站岸上让妖怪上来,于是台词就简单变成了 “ 你上来, 你下来, 你上来,你下来, 你上来,你下来……..”</p>
+让孙悟空下来, 孙悟空站岸上让妖怪上来,于是台词就简单变成了 &quot; 你上来, 你下来, 你上来,你下来, 你上来,你下来........&quot;</p>
 <p>死锁出现的条件:</p>
 <ol class="simple">
-<li>多个变量需要上锁</li>
-<li>完成任务需要分批锁多余一个变量</li>
-<li>多个线程</li>
+<li><p>多个变量需要上锁</p></li>
+<li><p>完成任务需要分批锁多余一个变量</p></li>
+<li><p>多个线程</p></li>
 </ol>
 <p>我们看下面案例:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="n">lock_1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
 <span class="n">lock_2</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">func_1</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">func_1</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;func_1 starting.........&quot;</span><span class="p">)</span>
   <span class="n">lock_1</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;func_1 申请了 lock_1....&quot;</span><span class="p">)</span>
@@ -928,7 +836,7 @@
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;func_1 done..........&quot;</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">func_2</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">func_2</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;func_2 starting.........&quot;</span><span class="p">)</span>
   <span class="n">lock_2</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;func_2 申请了 lock_2....&quot;</span><span class="p">)</span>
@@ -962,20 +870,20 @@
 </div>
 <p>上面两个线程, 完成任务需要在锁住一个变量的时候申请另一个, 同样两个任务都是这种执行逻辑, 这样在多个线程执行不同的任务的时候
 就可能两个多都在等待对方释放资源,于是死锁,程序没法继续执行下去.</p>
-<div class="section" id="id10">
-<h4>6.3.3.1. 死锁的解决<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h4>
+<section id="id10">
+<h4><span class="section-number">6.3.3.1. </span>死锁的解决<a class="headerlink" href="#id10" title="Link to this heading"></a></h4>
 <p>死锁产生根本原因就是多个线程都是<code class="docutils literal notranslate"><span class="pre">死心眼</span></code>, 等待对方资源就是死等, 你不给我我就等,直到天荒地老. 就像你追一个姑娘, 你就等,
 姑娘有男朋友了你等她分手,姑娘结婚了你等她丧偶, 姑娘有娃了你等娃考上大学了姑娘(也可能变成老娘了)就自由了, 这样等下去大概率会
 伤心的, 所以要想办法,而不是死等.</p>
 <p>知道原因了解决方案也就简单多了, 别那么实诚, 设定一个时间, 在一定时间内等不到你就把手里资源释放, 在从新开始,.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="n">lock_1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
 <span class="n">lock_2</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
 
-<span class="k">def</span> <span class="nf">func_1</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">func_1</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;func_1 starting.........&quot;</span><span class="p">)</span>
   <span class="n">lock_1</span><span class="o">.</span><span class="n">acquire</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;func_1 申请了 lock_1....&quot;</span><span class="p">)</span>
@@ -996,7 +904,7 @@
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;func_1 done..........&quot;</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">func_2</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">func_2</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;func_2 starting.........&quot;</span><span class="p">)</span>
   <span class="n">lock_2</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;func_2 申请了 lock_2....&quot;</span><span class="p">)</span>
@@ -1031,21 +939,21 @@
 </div>
 <p>注意上面代码, 每个锁在申请等等时候都加了时间,即在一定时间内申请不到就释放手里
 所有资源,以便让其他线程执行下去.</p>
-</div>
-</div>
-<div class="section" id="semphore">
-<h3>6.3.4. 信号灯(Semphore)<a class="headerlink" href="#semphore" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+<section id="semphore">
+<h3><span class="section-number">6.3.4. </span>信号灯(Semphore)<a class="headerlink" href="#semphore" title="Link to this heading"></a></h3>
 <p>锁就有排他性,就一把锁, 你锁了别人就不能用,但有时候我们需要对变量/共享区域
 进行限制, 比如一个共享变量最多只能5个线程使用,此时锁就不合适了,我们对于这种
 允许多个线程同时使用,只需要控制最多同时共享数量的时候就需要用信号灯(semphore)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="c1"># 参数定义最多几个线程同时使用资源</span>
 <span class="n">semaphore</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Semaphore</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">():</span>
   <span class="k">if</span> <span class="n">semaphore</span><span class="o">.</span><span class="n">acquire</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
       <span class="nb">print</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">currentThread</span><span class="p">()</span><span class="o">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39; get semaphore&#39;</span><span class="p">)</span>
@@ -1060,19 +968,19 @@
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Semphore</span></code>使用和锁基本一直, 不同的是定义的时候需要制定最多同时容纳的线程数量</p>
-</div>
-<div class="section" id="id11">
-<h3>6.3.5. 可重入锁<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id11">
+<h3><span class="section-number">6.3.5. </span>可重入锁<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>一个锁，可以被一个线程多次申请, 注意是同一个线程</li>
-<li>主要解决递归调用的时候，需要申请锁的情况</li>
+<li><p>一个锁，可以被一个线程多次申请, 注意是同一个线程</p></li>
+<li><p>主要解决递归调用的时候，需要申请锁的情况</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
-<span class="k">class</span> <span class="nc">MyThread</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
-  <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MyThread</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">num</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
@@ -1089,7 +997,7 @@
 <span class="n">mutex</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">RLock</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">testTh</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">testTh</span><span class="p">():</span>
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="n">MyThread</span><span class="p">()</span>
     <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
@@ -1099,24 +1007,24 @@
   <span class="n">testTh</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="event">
-<h3>6.3.6. Event<a class="headerlink" href="#event" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="event">
+<h3><span class="section-number">6.3.6. </span>Event<a class="headerlink" href="#event" title="Link to this heading"></a></h3>
 <p>在初始情况下,Event对象中的信号标志被设置为假。
 如果有线程等待的一个Event对象的标志为假,那么这个线程将会被一直阻塞直至该标志为真。
 一个线程如果将一个Event对象的信号标志设置为真,它将唤醒所有等待这个Event对象的线程。</p>
 <p>wait方法可接受一个超时参数，加入这个超时参数之后，如果阻塞时间超过这个参数设定的值之后，wait方法会返回。</p>
-<div class="section" id="id12">
-<h4>6.3.6.1. Event相关方法<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h4>
+<section id="id12">
+<h4><span class="section-number">6.3.6.1. </span>Event相关方法<a class="headerlink" href="#id12" title="Link to this heading"></a></h4>
 <ul class="simple">
-<li>event.isSet()：返回event的状态值；</li>
-<li>event.wait()：如果 event.isSet()==False将阻塞线程；</li>
-<li>event.set()： 设置event的状态值为True，所有阻塞池的线程激活进入就绪状态， 等待操作系统调度；</li>
-<li>event.clear()：恢复event的状态值为False。</li>
+<li><p>event.isSet()：返回event的状态值；</p></li>
+<li><p>event.wait()：如果 event.isSet()==False将阻塞线程；</p></li>
+<li><p>event.set()： 设置event的状态值为True，所有阻塞池的线程激活进入就绪状态， 等待操作系统调度；</p></li>
+<li><p>event.clear()：恢复event的状态值为False。</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">threading</span><span class="o">,</span><span class="nn">time</span>
-<span class="k">class</span> <span class="nc">Teacher</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">threading</span><span class="o">,</span><span class="nn">time</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Teacher</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;teacher：拖堂两分钟哈&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">isSet</span><span class="p">())</span>
         <span class="n">event</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
@@ -1124,8 +1032,8 @@
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;teacher下课！！！&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">isSet</span><span class="p">())</span>
         <span class="n">event</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
-<span class="k">class</span> <span class="nc">Students</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Students</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">event</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;students：啊啊啊啊啊！&quot;</span><span class="p">)</span>
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -1147,61 +1055,66 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ending&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="queue">
-<h2>6.4. queue队列<a class="headerlink" href="#queue" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="queue">
+<h2><span class="section-number">6.4. </span>queue队列<a class="headerlink" href="#queue" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">queue</span></code> 是一个用来存放变量的数据结构，特点是先进先出，内部元素排队，
 可以理解成一个特殊的list, 但它是线程安全的</p>
 <blockquote>
-<div>编程里常会出现消息队列的概念,常见的消息队列产品有kafka, rabitMQ, RocketMQ等,同类产品很多
-可以把消息队列理解成扩展功能的queue</div></blockquote>
+<div><p>编程里常会出现消息队列的概念,常见的消息队列产品有kafka, rabitMQ, RocketMQ等,同类产品很多
+可以把消息队列理解成扩展功能的queue</p>
+</div></blockquote>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">=</span> <span class="pre">queue.Queue(maxsize</span> <span class="pre">=</span> <span class="pre">10)</span></code><ul>
-<li>创建一个“队列”对象</li>
-<li>queue.Queue类即是一个队列的同步实现。队列长度可为无限或者有限。</li>
-<li>可通过Queue的构造函数的可选参数maxsize来设定队列长度。如果maxsize小于1就表示队列长度无限。</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q</span> <span class="pre">=</span> <span class="pre">queue.Queue(maxsize</span> <span class="pre">=</span> <span class="pre">10)</span></code></p>
+<ul>
+<li><p>创建一个“队列”对象</p></li>
+<li><p>queue.Queue类即是一个队列的同步实现。队列长度可为无限或者有限。</p></li>
+<li><p>可通过Queue的构造函数的可选参数maxsize来设定队列长度。如果maxsize小于1就表示队列长度无限。</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">q.put(10)</span></code><ul>
-<li>将一个值放入队列中</li>
-<li>调用队列对象的put()方法在队尾插入一个项目。</li>
-<li>put()有两个参数，<ul>
-<li>第一个item为必需的，为插入项目的值</li>
-<li>第二个block为可选参数，默认为1。</li>
-<li>如果队列当前为空且block为1，put()方法就使调用线程暂停,直到空出一个数据单元。</li>
-<li>如果block为0，put方法将引发Full异常。</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q.put(10)</span></code></p>
+<ul>
+<li><p>将一个值放入队列中</p></li>
+<li><p>调用队列对象的put()方法在队尾插入一个项目。</p></li>
+<li><p>put()有两个参数，</p>
+<ul>
+<li><p>第一个item为必需的，为插入项目的值</p></li>
+<li><p>第二个block为可选参数，默认为1。</p></li>
+<li><p>如果队列当前为空且block为1，put()方法就使调用线程暂停,直到空出一个数据单元。</p></li>
+<li><p>如果block为0，put方法将引发Full异常。</p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">q.get()</span></code><ul>
-<li>将一个值从队列中取出</li>
-<li>调用队列对象的get()方法从队头删除并返回一个项目。可选参数为block，默认为True。</li>
-<li>如果队列为空且block为True，get()就使调用线程暂停，直至有项目可用。</li>
-<li>如果队列为空且block为False，队列将引发Empty异常。</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q.get()</span></code></p>
+<ul>
+<li><p>将一个值从队列中取出</p></li>
+<li><p>调用队列对象的get()方法从队头删除并返回一个项目。可选参数为block，默认为True。</p></li>
+<li><p>如果队列为空且block为True，get()就使调用线程暂停，直至有项目可用。</p></li>
+<li><p>如果队列为空且block为False，队列将引发Empty异常。</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">q.qsize()</span></code>: #返回队列的大小</li>
-<li><code class="docutils literal notranslate"><span class="pre">q.empty()</span></code>: #如果队列为空，返回True,反之False</li>
-<li><code class="docutils literal notranslate"><span class="pre">q.full()</span></code>: #如果队列满了，返回True,反之False</li>
-<li><code class="docutils literal notranslate"><span class="pre">q.get([block[,</span> <span class="pre">timeout]])</span></code>: #获取队列，timeout等待时间</li>
-<li><code class="docutils literal notranslate"><span class="pre">q.get_nowait()</span></code>: #相当q.get(False)非阻塞</li>
-<li><code class="docutils literal notranslate"><span class="pre">q.put(item)</span></code>: # 写入队列，timeout等待时间</li>
-<li><code class="docutils literal notranslate"><span class="pre">q.put_nowait(item)</span></code>: #相当于q.put(item, False)</li>
-<li><code class="docutils literal notranslate"><span class="pre">q.task_done()</span></code>: #在完成一项工作之后，q.task_done() 函数向任务已经完成的队列发送一个信号</li>
-<li><code class="docutils literal notranslate"><span class="pre">q.join()</span></code>: #实际上意味着等到队列为空，再执行别的操作</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q.qsize()</span></code>: #返回队列的大小</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q.empty()</span></code>: #如果队列为空，返回True,反之False</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q.full()</span></code>: #如果队列满了，返回True,反之False</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q.get([block[,</span> <span class="pre">timeout]])</span></code>: #获取队列，timeout等待时间</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q.get_nowait()</span></code>: #相当q.get(False)非阻塞</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q.put(item)</span></code>: # 写入队列，timeout等待时间</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q.put_nowait(item)</span></code>: #相当于q.put(item, False)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q.task_done()</span></code>: #在完成一项工作之后，q.task_done() 函数向任务已经完成的队列发送一个信号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q.join()</span></code>: #实际上意味着等到队列为空，再执行别的操作</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">Queue</span></code>具体使用又根据特性分成以下三个类型, 只有存取特性区分,功能和方法基本一致:</p>
 <ul class="simple">
-<li>Queue: 普通队列, 具有FIFO特性</li>
-<li>LifoQueue: 跟普通Queue相反,</li>
-<li>PriorityQueue: 进出规则根据放入内容权重来</li>
+<li><p>Queue: 普通队列, 具有FIFO特性</p></li>
+<li><p>LifoQueue: 跟普通Queue相反,</p></li>
+<li><p>PriorityQueue: 进出规则根据放入内容权重来</p></li>
 </ul>
-<div class="section" id="queue-fifo">
-<h3>6.4.1. 普通的queue(FIFO)<a class="headerlink" href="#queue-fifo" title="永久链接至标题">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">queue</span>
+<section id="queue-fifo">
+<h3><span class="section-number">6.4.1. </span>普通的queue(FIFO)<a class="headerlink" href="#queue-fifo" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
 <span class="n">q</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
 <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;he&quot;</span><span class="p">)</span>
@@ -1213,10 +1126,10 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;$$$$$$$$$$$$$$$$$&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="lifoqueue">
-<h3>6.4.2. LifoQueue<a class="headerlink" href="#lifoqueue" title="永久链接至标题">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">queue</span>
+</section>
+<section id="lifoqueue">
+<h3><span class="section-number">6.4.2. </span>LifoQueue<a class="headerlink" href="#lifoqueue" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
 <span class="n">q</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">LifoQueue</span><span class="p">()</span>
 <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="s2">&quot;he&quot;</span><span class="p">)</span>
@@ -1228,10 +1141,10 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;$$$$$$$$$$$$$$$$$&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="priorityqueue">
-<h3>6.4.3. PriorityQueue<a class="headerlink" href="#priorityqueue" title="永久链接至标题">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">queue</span>
+</section>
+<section id="priorityqueue">
+<h3><span class="section-number">6.4.3. </span>PriorityQueue<a class="headerlink" href="#priorityqueue" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
 <span class="n">q</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">PriorityQueue</span><span class="p">()</span>
 <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;he&quot;</span><span class="p">])</span>
@@ -1244,21 +1157,21 @@
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;$$$$$$$$$$$$$$$$$&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="threading-timer">
-<h2>6.5. threading.Timer<a class="headerlink" href="#threading-timer" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="threading-timer">
+<h2><span class="section-number">6.5. </span>threading.Timer<a class="headerlink" href="#threading-timer" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>Timer是利用多线程，在指定时间后启动一个功能</li>
+<li><p>Timer是利用多线程，在指定时间后启动一个功能</p></li>
 </ul>
 <p>下面代码我们定义一个多线程, 但需要一定时间后多线程才启动,而不是
 我们执行<code class="docutils literal notranslate"><span class="pre">start</span></code>的时候直接开始, 此时就用到了<code class="docutils literal notranslate"><span class="pre">Timer</span></code>功能,</p>
 <p>请看下面案例:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
-<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am running.........&quot;</span><span class="p">)</span>
   <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am done......&quot;</span><span class="p">)</span>
@@ -1276,18 +1189,18 @@
     <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="subprocess">
-<h2>6.6. subprocess<a class="headerlink" href="#subprocess" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="subprocess">
+<h2><span class="section-number">6.6. </span>subprocess<a class="headerlink" href="#subprocess" title="Link to this heading"></a></h2>
 <p>对于多线程, 我们有一些其他的替代方案, 常见的有<code class="docutils literal notranslate"><span class="pre">subprocess</span></code>和<code class="docutils literal notranslate"><span class="pre">multiprocess</span></code></p>
 <p>如果需要执行其他的程序并获得结果,可能直接使用<code class="docutils literal notranslate"><span class="pre">os</span></code>模块来完成:</p>
-<div class="section" id="os">
-<h3>6.6.1. <code class="docutils literal notranslate"><span class="pre">os</span></code>模块关于调用其他命令/程序的处理<a class="headerlink" href="#os" title="永久链接至标题">¶</a></h3>
+<section id="os">
+<h3><span class="section-number">6.6.1. </span><code class="docutils literal notranslate"><span class="pre">os</span></code>模块关于调用其他命令/程序的处理<a class="headerlink" href="#os" title="Link to this heading"></a></h3>
 <p>在<code class="docutils literal notranslate"><span class="pre">os</span></code>模块中有些功能可以调用其他的程序或者命令, 然后读取结果.</p>
 <ul>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">os.system</span></code>: 执行某一个命令, 结果直接显示出来</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">os.system</span></code>: 执行某一个命令, 结果直接显示出来</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s2">&quot;ls -l &quot;</span><span class="p">)</span>
 </pre></div>
@@ -1308,8 +1221,8 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">os.popen</span></code>: 跟上面命令类似,但命令执行结果需要读取出来才会显示, 作为函数执行结果返回</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<li><p><code class="docutils literal notranslate"><span class="pre">os.popen</span></code>: 跟上面命令类似,但命令执行结果需要读取出来才会显示, 作为函数执行结果返回</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="n">res</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s2">&quot;ls -l &quot;</span><span class="p">)</span>
 
@@ -1318,39 +1231,38 @@
 </div>
 <p>执行结果需要读取出来,否则看不到结果.</p>
 </li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">os.spawn*</span></code> 类</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">os.spawn*</span></code> 类</p>
 <p>使用操作系统的<code class="docutils literal notranslate"><span class="pre">fork</span></code>函数, 直接启动外部命令运行,但根据函数的不同使用时稍微还有区别.</p>
 </li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">spawn*</span></code> 可执行可执行文件和<code class="docutils literal notranslate"><span class="pre">shell</span></code>, <code class="docutils literal notranslate"><span class="pre">system</span></code>只能执行<code class="docutils literal notranslate"><span class="pre">shell</span></code>命令</p>
-</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spawn*</span></code> 可执行可执行文件和<code class="docutils literal notranslate"><span class="pre">shell</span></code>, <code class="docutils literal notranslate"><span class="pre">system</span></code>只能执行<code class="docutils literal notranslate"><span class="pre">shell</span></code>命令</p></li>
 </ul>
-</div>
-<div class="section" id="id13">
-<h3>6.6.2. <code class="docutils literal notranslate"><span class="pre">subprocess</span></code><a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id13">
+<h3><span class="section-number">6.6.2. </span><code class="docutils literal notranslate"><span class="pre">subprocess</span></code><a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">subprocess</span></code>允许我们启动一个新进程, 并接管新进程的输入/输出/错误管道,并且获得返回值.</p>
 <p>他是<code class="docutils literal notranslate"><span class="pre">os.fork()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">os.execve()</span></code> 的封装。 他启动的进程不会把父进程的模块加载一遍</p>
 <ul class="simple">
-<li>完全跳过线程，使用进程</li>
-<li>是派生进程的主要替代方案</li>
-<li>使用<code class="docutils literal notranslate"><span class="pre">subprocess</span></code>的通信机制比较少，可以使用管道或者信号机制.</li>
-<li>python&gt;=2.4
-功能上用以替代上面介绍的<code class="docutils literal notranslate"><span class="pre">os</span></code>相关内容.</li>
+<li><p>完全跳过线程，使用进程</p></li>
+<li><p>是派生进程的主要替代方案</p></li>
+<li><p>使用<code class="docutils literal notranslate"><span class="pre">subprocess</span></code>的通信机制比较少，可以使用管道或者信号机制.</p></li>
+<li><p>python&gt;=2.4
+功能上用以替代上面介绍的<code class="docutils literal notranslate"><span class="pre">os</span></code>相关内容.</p></li>
 </ul>
 <p>常用功能有:</p>
 <ul class="simple">
-<li>run</li>
-<li>call</li>
-<li>Popen函数/类</li>
+<li><p>run</p></li>
+<li><p>call</p></li>
+<li><p>Popen函数/类</p></li>
 </ul>
 <p>下面我们分别介绍:</p>
-<div class="section" id="run">
-<h4>6.6.2.1. <code class="docutils literal notranslate"><span class="pre">run</span></code><a class="headerlink" href="#run" title="永久链接至标题">¶</a></h4>
+<section id="run">
+<h4><span class="section-number">6.6.2.1. </span><code class="docutils literal notranslate"><span class="pre">run</span></code><a class="headerlink" href="#run" title="Link to this heading"></a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">run</span></code>函数用来调用外部命令/程序, 然后返回执行结果, 内部是<code class="docutils literal notranslate"><span class="pre">Popen</span></code>类实现.</p>
 <ul class="simple">
-<li>Python &gt;= 3.5</li>
+<li><p>Python &gt;= 3.5</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 接口</span>
-<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span>
         <span class="nb">input</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 <span class="c1"># popenrgs：表示要执行的命令</span>
 <span class="c1"># timeout：设置命令超时时间。如果命令执行时间超时，子进程将被杀死，并弹出 TimeoutExpired 异常。</span>
@@ -1360,7 +1272,7 @@
 </pre></div>
 </div>
 <p>下面代码中利用<code class="docutils literal notranslate"><span class="pre">run</span></code>来运行一个<code class="docutils literal notranslate"><span class="pre">shell</span></code>命令, 通过返回结果读取不同的运行结果:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
 
 <span class="n">rst</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;ls&quot;</span><span class="p">,</span> <span class="s2">&quot;-l&quot;</span><span class="p">,</span> <span class="s2">&quot;/dev/null&quot;</span><span class="p">])</span>
 
@@ -1368,14 +1280,14 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">rst</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="call">
-<h4>6.6.2.2. <code class="docutils literal notranslate"><span class="pre">call</span></code><a class="headerlink" href="#call" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="call">
+<h4><span class="section-number">6.6.2.2. </span><code class="docutils literal notranslate"><span class="pre">call</span></code><a class="headerlink" href="#call" title="Link to this heading"></a></h4>
 <p>本身也是<code class="docutils literal notranslate"><span class="pre">Popen</span></code>类的实现, 阻塞进程,等待执行完毕后返回结果.</p>
 <p>源代码为:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot;Run command with arguments.  Wait for command to complete or</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">call</span><span class="p">(</span><span class="o">*</span><span class="n">popenargs</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&quot;&quot;&quot;Run command with arguments.  Wait for command to complete or</span>
 <span class="sd">  timeout, then return the returncode attribute.</span>
 
 <span class="sd">  The arguments are the same as for the Popen constructor.  Example:</span>
@@ -1384,23 +1296,23 @@
 <span class="sd">  &quot;&quot;&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id14">
-<h4>6.6.2.3. 其他调用函数<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="id14">
+<h4><span class="section-number">6.6.2.3. </span>其他调用函数<a class="headerlink" href="#id14" title="Link to this heading"></a></h4>
 <p>-<code class="docutils literal notranslate"><span class="pre">check_call</span></code>: 执行命令，返回结果和状态，正常为0 ，执行错误则抛出异常</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">getstatusoutput</span></code>: 返回 一个元组形式的结果，第一个元素是命令执行状态，第二个为执行结果</li>
-<li><code class="docutils literal notranslate"><span class="pre">getoutput</span></code>: 接受字符串形式的命令，放回执行结果</li>
-<li><code class="docutils literal notranslate"><span class="pre">check_output</span></code>: 执行命令，返回执行的结果，而不是打印</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getstatusoutput</span></code>: 返回 一个元组形式的结果，第一个元素是命令执行状态，第二个为执行结果</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getoutput</span></code>: 接受字符串形式的命令，放回执行结果</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">check_output</span></code>: 执行命令，返回执行的结果，而不是打印</p></li>
 </ul>
-</div>
-<div class="section" id="popen">
-<h4>6.6.2.4. ‘Popen’类<a class="headerlink" href="#popen" title="永久链接至标题">¶</a></h4>
-<div class="section" id="id15">
-<h5>6.6.2.4.1. 类构造函数<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h5>
+</section>
+<section id="popen">
+<h4><span class="section-number">6.6.2.4. </span>'Popen'类<a class="headerlink" href="#popen" title="Link to this heading"></a></h4>
+<section id="id15">
+<h5><span class="section-number">6.6.2.4.1. </span>类构造函数<a class="headerlink" href="#id15" title="Link to this heading"></a></h5>
 <p>这个构造函数参数比较多,函数签名如下:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">bufsize</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">executable</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">bufsize</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">executable</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
              <span class="n">stdin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
              <span class="n">preexec_fn</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">close_fds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
              <span class="n">shell</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">env</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">universal_newlines</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -1477,13 +1389,13 @@
 <span class="c1"># startupinfo: 如果给出，startupinfo 将是一个将被传递给底层的 CreateProcess 函数的 STARTUPINFO 对象。</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="pipe">
-<h5>6.6.2.4.2. <code class="docutils literal notranslate"><span class="pre">PIPE</span></code><a class="headerlink" href="#pipe" title="永久链接至标题">¶</a></h5>
+</section>
+<section id="pipe">
+<h5><span class="section-number">6.6.2.4.2. </span><code class="docutils literal notranslate"><span class="pre">PIPE</span></code><a class="headerlink" href="#pipe" title="Link to this heading"></a></h5>
 <p>在对<code class="docutils literal notranslate"><span class="pre">subprcess</span></code>的使用中可能会用到<code class="docutils literal notranslate"><span class="pre">PIPE</span></code>, 可以把<code class="docutils literal notranslate"><span class="pre">PIPE</span></code>当做一个特殊的缓冲区, 输入输出都经过这个缓存进行输送,
 我们在需要的时候对这个缓冲读取或者写入操作即可.</p>
 <p>参加下面案例,对管道<code class="docutils literal notranslate"><span class="pre">PIPE</span></code>的使用:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="kn">import</span> <span class="nn">subprocess</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
 <span class="o">&gt;&gt;</span><span class="n">rst</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="s2">&quot;ls -l&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
 <span class="o">&gt;&gt;</span><span class="nb">print</span><span class="p">(</span><span class="n">rst</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
 <span class="o">&gt;&gt;&lt;</span><span class="n">_io</span><span class="o">.</span><span class="n">BufferedReader</span> <span class="n">name</span><span class="o">=</span><span class="mi">12</span><span class="o">&gt;</span>
@@ -1493,13 +1405,13 @@
 <span class="o">&gt;&gt;</span><span class="sa">b</span><span class="s1">&#39;total 24</span><span class="se">\n</span><span class="s1">drwxr-xr-x  28 bbb  staff    896 May 13 14:23 book</span><span class="se">\n</span><span class="s1">drwxr-xr-x   7 bbb  staff    224 May 29 22:40 qqbot</span><span class="se">\n</span><span class="s1">drwxr-xr-x  10 bbb  staff    320 May 30 11:31 tel</span><span class="se">\n</span><span class="s1">-rw-r--r--   1 bbb  staff  12105 May 17 13:39 tel.zip</span><span class="se">\n</span><span class="s1">drwxr-xr-x   7 bbb  staff    224 May 26 14:57 tk</span><span class="se">\n</span><span class="s1">drwxr-xr-x   3 bbb  staff     96 May 29 10:32 yt</span><span class="se">\n</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="poll">
-<h5>6.6.2.4.3. <code class="docutils literal notranslate"><span class="pre">poll</span></code>函数<a class="headerlink" href="#poll" title="永久链接至标题">¶</a></h5>
+</section>
+<section id="poll">
+<h5><span class="section-number">6.6.2.4.3. </span><code class="docutils literal notranslate"><span class="pre">poll</span></code>函数<a class="headerlink" href="#poll" title="Link to this heading"></a></h5>
 <p>用来查询执行结果, 如果执行完毕则返回<code class="docutils literal notranslate"><span class="pre">0</span></code>, 否则是<code class="docutils literal notranslate"><span class="pre">None</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="n">rst</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="s2">&quot;sleep 5;echo &#39;hello&#39;&quot;</span><span class="p">,</span><span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span><span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
 
@@ -1528,13 +1440,13 @@
 <span class="n">宝儿</span><span class="p">,</span> <span class="n">来信了</span><span class="p">,</span> <span class="mf">0.</span><span class="o">...</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="wait">
-<h5>6.6.2.4.4. <code class="docutils literal notranslate"><span class="pre">wait</span></code><a class="headerlink" href="#wait" title="永久链接至标题">¶</a></h5>
+</section>
+<section id="wait">
+<h5><span class="section-number">6.6.2.4.4. </span><code class="docutils literal notranslate"><span class="pre">wait</span></code><a class="headerlink" href="#wait" title="Link to this heading"></a></h5>
 <p>等待执行结果,阻塞式等待:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting......</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span>
@@ -1547,15 +1459,15 @@
 </pre></div>
 </div>
 <p>上面执行结果会显示出当前时间戳, 两次打印相差5秒, 说明是阻塞了程序执行.</p>
-</div>
-<div class="section" id="terminate">
-<h5>6.6.2.4.5. <code class="docutils literal notranslate"><span class="pre">terminate</span></code><a class="headerlink" href="#terminate" title="永久链接至标题">¶</a></h5>
+</section>
+<section id="terminate">
+<h5><span class="section-number">6.6.2.4.5. </span><code class="docutils literal notranslate"><span class="pre">terminate</span></code><a class="headerlink" href="#terminate" title="Link to this heading"></a></h5>
 <p>强行终止进程, 向进程发送结束信号<code class="docutils literal notranslate"><span class="pre">SIGTERM</span></code>(POSIX), 在 <code class="docutils literal notranslate"><span class="pre">Windows</span></code> 上则会调用 <code class="docutils literal notranslate"><span class="pre">Win32</span> <span class="pre">API</span></code> 函数
 <code class="docutils literal notranslate"><span class="pre">TerminateProcess</span></code>来停止子进程</p>
 <p>下面案例用<code class="docutils literal notranslate"><span class="pre">terminate</span></code>结束进程后用<code class="docutils literal notranslate"><span class="pre">wait</span></code>拿结果,显示非正常死亡信号.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Starting......</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()))</span>
 <span class="n">rst</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="s2">&quot;sleep 5;echo &#39;hello&#39;&quot;</span><span class="p">,</span><span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span><span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
@@ -1573,24 +1485,24 @@
 <span class="n">ending</span><span class="o">.....</span><span class="mf">.1654482969.992843</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="kill">
-<h5>6.6.2.4.6. <code class="docutils literal notranslate"><span class="pre">kill</span></code><a class="headerlink" href="#kill" title="永久链接至标题">¶</a></h5>
+</section>
+<section id="kill">
+<h5><span class="section-number">6.6.2.4.6. </span><code class="docutils literal notranslate"><span class="pre">kill</span></code><a class="headerlink" href="#kill" title="Link to this heading"></a></h5>
 <p>强行终止进程, 向进程发送结束信号<code class="docutils literal notranslate"><span class="pre">SIGKILL</span></code>(POSIX), 在 <code class="docutils literal notranslate"><span class="pre">Windows</span></code> 上跟<code class="docutils literal notranslate"><span class="pre">terminate</span></code>一样.</p>
-</div>
-<div class="section" id="communicate">
-<h5>6.6.2.4.7. <code class="docutils literal notranslate"><span class="pre">communicate</span></code><a class="headerlink" href="#communicate" title="永久链接至标题">¶</a></h5>
+</section>
+<section id="communicate">
+<h5><span class="section-number">6.6.2.4.7. </span><code class="docutils literal notranslate"><span class="pre">communicate</span></code><a class="headerlink" href="#communicate" title="Link to this heading"></a></h5>
 <p>与进程交互:</p>
 <ul class="simple">
-<li>将数据发送到 <code class="docutils literal notranslate"><span class="pre">stdin</span></code></li>
-<li>从 <code class="docutils literal notranslate"><span class="pre">stdout</span></code> 和 <code class="docutils literal notranslate"><span class="pre">stderr</span></code> 读取数据，直到抵达文件结尾</li>
-<li>等待进程终止并设置<code class="docutils literal notranslate"><span class="pre">retuencode</span></code>属性</li>
-<li><code class="docutils literal notranslate"><span class="pre">input</span></code> 参数应为要发送到下级进程的数据</li>
-<li>返回一个(stdout_data,stderr_data) 元组</li>
-<li>要向进程的<code class="docutils literal notranslate"><span class="pre">stdin</span></code>传输数据，需要通过stdin=PIPE创建此<code class="docutils literal notranslate"><span class="pre">Popen</span></code> 对象</li>
-<li>要从结果元组获取任何非<code class="docutils literal notranslate"><span class="pre">None</span></code> 值，你同样需要设置 <code class="docutils literal notranslate"><span class="pre">stdout=PIPE</span></code>或者 <code class="docutils literal notranslate"><span class="pre">stderr=PIPE</span></code></li>
-<li>如果进程在 <code class="docutils literal notranslate"><span class="pre">timeout</span></code> 秒后未终止，一个<code class="docutils literal notranslate"><span class="pre">TimeoutExpired</span></code>异常将被抛</li>
-<li>如果超时到期，子进程不会被杀死，所以为了正确清理一个行为良好的应用程序应该杀死子进程并完成通讯。</li>
+<li><p>将数据发送到 <code class="docutils literal notranslate"><span class="pre">stdin</span></code></p></li>
+<li><p>从 <code class="docutils literal notranslate"><span class="pre">stdout</span></code> 和 <code class="docutils literal notranslate"><span class="pre">stderr</span></code> 读取数据，直到抵达文件结尾</p></li>
+<li><p>等待进程终止并设置<code class="docutils literal notranslate"><span class="pre">retuencode</span></code>属性</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input</span></code> 参数应为要发送到下级进程的数据</p></li>
+<li><p>返回一个(stdout_data,stderr_data) 元组</p></li>
+<li><p>要向进程的<code class="docutils literal notranslate"><span class="pre">stdin</span></code>传输数据，需要通过stdin=PIPE创建此<code class="docutils literal notranslate"><span class="pre">Popen</span></code> 对象</p></li>
+<li><p>要从结果元组获取任何非<code class="docutils literal notranslate"><span class="pre">None</span></code> 值，你同样需要设置 <code class="docutils literal notranslate"><span class="pre">stdout=PIPE</span></code>或者 <code class="docutils literal notranslate"><span class="pre">stderr=PIPE</span></code></p></li>
+<li><p>如果进程在 <code class="docutils literal notranslate"><span class="pre">timeout</span></code> 秒后未终止，一个<code class="docutils literal notranslate"><span class="pre">TimeoutExpired</span></code>异常将被抛</p></li>
+<li><p>如果超时到期，子进程不会被杀死，所以为了正确清理一个行为良好的应用程序应该杀死子进程并完成通讯。</p></li>
 </ul>
 <p>正确用法参看下面案例:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
@@ -1603,8 +1515,8 @@
 </div>
 <p>关于<code class="docutils literal notranslate"><span class="pre">communicate</span></code>另一个案例:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="s2">&quot;ifconfig&quot;</span><span class="p">,</span><span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span><span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
 <span class="n">rst</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
@@ -1630,40 +1542,44 @@
 <span class="c1">#......do something more</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id16">
-<h5>6.6.2.4.8. <code class="docutils literal notranslate"><span class="pre">Popen</span></code>的属性<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h5>
+</section>
+<section id="id16">
+<h5><span class="section-number">6.6.2.4.8. </span><code class="docutils literal notranslate"><span class="pre">Popen</span></code>的属性<a class="headerlink" href="#id16" title="Link to this heading"></a></h5>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">Popen.args</span></code>:  参数, 传递一个程序参数的序列或者一个简单字符串</li>
-<li><code class="docutils literal notranslate"><span class="pre">Popen.stdin</span></code>:<ul>
-<li>如果 <code class="docutils literal notranslate"><span class="pre">stdin</span></code> 参数为<code class="docutils literal notranslate"><span class="pre">PIPE</span></code>，此属性是一个类似 <code class="docutils literal notranslate"><span class="pre">open()</span></code>返回的可写的流对象。</li>
-<li>如果 <code class="docutils literal notranslate"><span class="pre">encoding</span></code> 或 <code class="docutils literal notranslate"><span class="pre">errors</span></code> 参数被指定或者 <code class="docutils literal notranslate"><span class="pre">universal_newlines</span></code> 参数为<code class="docutils literal notranslate"><span class="pre">True</span></code>，则此流是一个文本流，否则是字节流</li>
-<li>如果 <code class="docutils literal notranslate"><span class="pre">stdin</span></code> 参数非<code class="docutils literal notranslate"><span class="pre">PIPE</span></code>， 此属性为 <code class="docutils literal notranslate"><span class="pre">None</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Popen.args</span></code>:  参数, 传递一个程序参数的序列或者一个简单字符串</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Popen.stdin</span></code>:</p>
+<ul>
+<li><p>如果 <code class="docutils literal notranslate"><span class="pre">stdin</span></code> 参数为<code class="docutils literal notranslate"><span class="pre">PIPE</span></code>，此属性是一个类似 <code class="docutils literal notranslate"><span class="pre">open()</span></code>返回的可写的流对象。</p></li>
+<li><p>如果 <code class="docutils literal notranslate"><span class="pre">encoding</span></code> 或 <code class="docutils literal notranslate"><span class="pre">errors</span></code> 参数被指定或者 <code class="docutils literal notranslate"><span class="pre">universal_newlines</span></code> 参数为<code class="docutils literal notranslate"><span class="pre">True</span></code>，则此流是一个文本流，否则是字节流</p></li>
+<li><p>如果 <code class="docutils literal notranslate"><span class="pre">stdin</span></code> 参数非<code class="docutils literal notranslate"><span class="pre">PIPE</span></code>， 此属性为 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">Popen.stdout</span></code>: 参考<code class="docutils literal notranslate"><span class="pre">Popen.stdin</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">Popen.stderr</span></code>: 参考<code class="docutils literal notranslate"><span class="pre">Popen.stdin</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Popen.stdout</span></code>: 参考<code class="docutils literal notranslate"><span class="pre">Popen.stdin</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Popen.stderr</span></code>: 参考<code class="docutils literal notranslate"><span class="pre">Popen.stdin</span></code></p></li>
 </ul>
 <blockquote>
-<div>警告: 尽量使用<code class="docutils literal notranslate"><span class="pre">communicate()</span></code>而非 <code class="docutils literal notranslate"><span class="pre">stdin.write</span></code>，<code class="docutils literal notranslate"><span class="pre">stdout.read</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">stderr.read</span></code>, 否则由于任意其他 <code class="docutils literal notranslate"><span class="pre">OS</span></code> 管道被子进程填满阻塞可能会死锁</div></blockquote>
+<div><p>警告: 尽量使用<code class="docutils literal notranslate"><span class="pre">communicate()</span></code>而非 <code class="docutils literal notranslate"><span class="pre">stdin.write</span></code>，<code class="docutils literal notranslate"><span class="pre">stdout.read</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">stderr.read</span></code>, 否则由于任意其他 <code class="docutils literal notranslate"><span class="pre">OS</span></code> 管道被子进程填满阻塞可能会死锁</p>
+</div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">Popen.pid</span></code>: 子进程的进程号, 如果设置了<code class="docutils literal notranslate"><span class="pre">shell=True</span></code>，则这是生成的子 <code class="docutils literal notranslate"><span class="pre">shell</span></code> 的进程号</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">Popen.returncode</span></code>: 进程的退出码, <code class="docutils literal notranslate"><span class="pre">None</span></code>表示此进程仍未结束</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Popen.returncode</span></code>: 进程的退出码, <code class="docutils literal notranslate"><span class="pre">None</span></code>表示此进程仍未结束</p></li>
 </ul>
 <blockquote>
-<div>一个负值<code class="docutils literal notranslate"><span class="pre">-N</span></code>表示子进程被信号 <code class="docutils literal notranslate"><span class="pre">N</span></code>中断 (仅 POSIX)</div></blockquote>
-</div>
-</div>
-<div class="section" id="id17">
-<h4>6.6.2.5. <code class="docutils literal notranslate"><span class="pre">subprocess</span></code>常见坑<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h4>
+<div><p>一个负值<code class="docutils literal notranslate"><span class="pre">-N</span></code>表示子进程被信号 <code class="docutils literal notranslate"><span class="pre">N</span></code>中断 (仅 POSIX)</p>
+</div></blockquote>
+</section>
+</section>
+<section id="id17">
+<h4><span class="section-number">6.6.2.5. </span><code class="docutils literal notranslate"><span class="pre">subprocess</span></code>常见坑<a class="headerlink" href="#id17" title="Link to this heading"></a></h4>
 <p>使用<code class="docutils literal notranslate"><span class="pre">subprocess</span></code>模块需要特别注意死锁问题, 官方也一直强调会有死锁问题</p>
 <blockquote>
-<div>旧版本的文档明确说明会引发死锁问题, 但我的版本(3.7)中删除了这个说明,不知道是否做了改进, 尽量避免吧</div></blockquote>
+<div><p>旧版本的文档明确说明会引发死锁问题, 但我的版本(3.7)中删除了这个说明,不知道是否做了改进, 尽量避免吧</p>
+</div></blockquote>
 <ul>
-<li><p class="first">坑1-死锁的原因：</p>
+<li><p>坑1-死锁的原因：</p>
 <p>管道的大小是有所限制的，当子进程一直向 stdout 管道写数据且写满的时候，子进程将发生 <code class="docutils literal notranslate"><span class="pre">I/O</span></code> 阻塞</p>
 <p>而此时父进程只是干等子进程退出，也处于阻塞状态；</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
 
 <span class="n">child</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;./B&#39;</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
 <span class="n">child</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
@@ -1671,18 +1587,18 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">坑2:</p>
+<li><p>坑2:</p>
 <p>这是官方推荐的方式，但是也有坑
 <code class="docutils literal notranslate"><span class="pre">communicate</span></code> 其实是循环读取管道中的数据（每次32768字节（32KB））并将其存在一个 <code class="docutils literal notranslate"><span class="pre">list</span></code> 里面，
 到最后将 <code class="docutils literal notranslate"><span class="pre">list</span></code> 中的所有数据连接起来 <code class="docutils literal notranslate"><span class="pre">b''.join(list)</span></code> 返回给用户</p>
 <p>但如果子进程输出内容非常多甚至无限输出，则机器内存会被撑爆</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">subprocess</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
 <span class="n">child</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">([</span><span class="s1">&#39;./B&#39;</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">)</span>
 <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span> <span class="o">=</span> <span class="n">child</span><span class="o">.</span><span class="n">communicate</span><span class="p">()</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">比较好的方式:</p>
+<li><p>比较好的方式:</p>
 <p>如果不可预测子进程是否会产生大量输出, 可以参考下面案例,</p>
 <p>当子进程的可能输出非常大的时候，直接将<code class="docutils literal notranslate"><span class="pre">stdout</span></code> 或 <code class="docutils literal notranslate"><span class="pre">stderr</span></code> 重定向到文件，避免了撑爆内存的问题</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">outputfile</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;test.txt&#39;</span>
@@ -1693,23 +1609,23 @@
 </div>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="section" id="multiprocessiong">
-<h2>6.7. multiprocessiong<a class="headerlink" href="#multiprocessiong" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="multiprocessiong">
+<h2><span class="section-number">6.7. </span>multiprocessiong<a class="headerlink" href="#multiprocessiong" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>使用threadiing借口派生，使用子进程</li>
-<li>允许为多核或者多cpu派生进程，接口跟threading非常相似</li>
-<li>python&gt;=2.6</li>
+<li><p>使用threadiing借口派生，使用子进程</p></li>
+<li><p>允许为多核或者多cpu派生进程，接口跟threading非常相似</p></li>
+<li><p>python&gt;=2.6</p></li>
 </ul>
 <p>下面代码利用多进程调用函数:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">multiprocessing</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span><span class="p">,</span> <span class="n">ctime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span><span class="p">,</span> <span class="n">ctime</span>
 
 
-<span class="k">def</span> <span class="nf">clock</span><span class="p">(</span><span class="n">interval</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">clock</span><span class="p">(</span><span class="n">interval</span><span class="p">):</span>
   <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The time is </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">ctime</span><span class="p">())</span>
     <span class="n">sleep</span><span class="p">(</span><span class="n">interval</span><span class="p">)</span>
@@ -1727,22 +1643,22 @@
 </div>
 <p>多进程的函数实现, 注意实现方法,跟<code class="docutils literal notranslate"><span class="pre">threading</span></code>类似, 实现<code class="docutils literal notranslate"><span class="pre">run</span></code>函数后自动会自动调用这个函数:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">multiprocessing</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span><span class="p">,</span> <span class="n">ctime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">sleep</span><span class="p">,</span> <span class="n">ctime</span>
 
 
-<span class="k">class</span> <span class="nc">ClockProcess</span><span class="p">(</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>
-  <span class="sd">&#39;&#39;&#39;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">ClockProcess</span><span class="p">(</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">Process</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  两个函数比较重要</span>
 <span class="sd">  1. init构造函数</span>
 <span class="sd">  2. run</span>
 <span class="sd">  &#39;&#39;&#39;</span>
 
-  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
+  <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interval</span><span class="p">):</span>
     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">interval</span> <span class="o">=</span> <span class="n">interval</span>
 
-  <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
       <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The time is </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">ctime</span><span class="p">())</span>
       <span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interval</span><span class="p">)</span>
@@ -1759,11 +1675,11 @@
 </div>
 <p>另一个案例:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">multiprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 
-<span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">info</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;module name:&#39;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">)</span>
   <span class="c1"># 得到父亲进程的id</span>
@@ -1773,7 +1689,7 @@
 
 
 
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
   <span class="n">info</span><span class="p">(</span><span class="s1">&#39;function f&#39;</span><span class="p">)</span>
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
 
@@ -1784,21 +1700,21 @@
   <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </pre></div>
 </div>
-<div class="section" id="id18">
-<h3>6.7.1. 进程通讯<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<section id="id18">
+<h3><span class="section-number">6.7.1. </span>进程通讯<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
 <p>多线程可以使用共享资源, 但需要注意资源冲突, 但多进程直接的相互通讯就不择一些,因为进程的
 隔离度比线程更高.</p>
 <p>进程之间通讯可以使用过:</p>
 <ul class="simple">
-<li>Queue</li>
-<li>Pip</li>
-<li>Manager</li>
+<li><p>Queue</p></li>
+<li><p>Pip</p></li>
+<li><p>Manager</p></li>
 </ul>
-<div class="section" id="id19">
-<h4>6.7.1.1. 进程通讯-Queue<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">queue</span><span class="o">,</span><span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">multiprocessing</span>
-<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
+<section id="id19">
+<h4><span class="section-number">6.7.1.1. </span>进程通讯-Queue<a class="headerlink" href="#id19" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">queue</span><span class="o">,</span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">foo</span><span class="p">(</span><span class="n">q</span><span class="p">):</span>
     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;son process&quot;</span><span class="p">,</span><span class="nb">id</span><span class="p">(</span><span class="n">q</span><span class="p">))</span>
     <span class="n">q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
@@ -1813,14 +1729,14 @@
     <span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="pip">
-<h4>6.7.1.2. 进程通讯-Pip<a class="headerlink" href="#pip" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="pip">
+<h4><span class="section-number">6.7.1.2. </span>进程通讯-Pip<a class="headerlink" href="#pip" title="Link to this heading"></a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Pipe()</span></code>返回的两个连接对象代表管道的两端。
 每个连接对象都有<code class="docutils literal notranslate"><span class="pre">send()</span></code>和<code class="docutils literal notranslate"><span class="pre">recv()</span></code>方法（等等），如果两个进程（或线程）
 尝试同时读取或写入管道的同一端，管道中的数据可能会损坏</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span><span class="n">Pipe</span>
-<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">conn</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">multiprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span><span class="p">,</span><span class="n">Pipe</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="n">conn</span><span class="p">):</span>
     <span class="n">conn</span><span class="o">.</span><span class="n">send</span><span class="p">([</span><span class="mi">111</span><span class="p">,{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;dazui&quot;</span><span class="p">},</span><span class="s2">&quot;hello world!&quot;</span><span class="p">])</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">recv</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;response:&quot;</span><span class="p">,</span><span class="n">response</span><span class="p">)</span>
@@ -1837,13 +1753,13 @@
     <span class="n">p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="manager">
-<h4>6.7.1.3. 近程通讯-Manager<a class="headerlink" href="#manager" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="manager">
+<h4><span class="section-number">6.7.1.3. </span>近程通讯-Manager<a class="headerlink" href="#manager" title="Link to this heading"></a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">Manager</span></code>负责共享变量的管理</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Process</span><span class="p">,</span><span class="n">Manager</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">multiprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Process</span><span class="p">,</span><span class="n">Manager</span>
  
-<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
     <span class="n">d</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="n">d</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -1863,11 +1779,11 @@
         <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="id20">
-<h2>6.8. 生产者消费者模型<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="id20">
+<h2><span class="section-number">6.8. </span>生产者消费者模型<a class="headerlink" href="#id20" title="Link to this heading"></a></h2>
 <p>这是个模型, 是计算机常用模型之一,一般用来模拟对消息/命令等的处理</p>
 <p>加入你在一家公司, 有8个老板, 每个老板都可以给你们部门发布命令, 你们部门的任务是按时完成老板的指令,
 此时8个老板不定时给你们任务,有可能会出现任务来了你们都在干活没时间搭理他的情况, 怎么办,我们让老板
@@ -1877,21 +1793,21 @@
 queue来实现, 在工业产品中用消息队列就好</p>
 <p>看一个生产者消费者的模拟:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="c1"># Python2</span>
 <span class="c1"># from Queue import Queue</span>
 
 <span class="c1"># Python3</span>
-<span class="kn">import</span> <span class="nn">queue</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">queue</span>
 
 <span class="c1"># 模拟生产者</span>
-<span class="k">class</span> <span class="nc">Producer</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
-  <span class="sd">&#39;&#39;&#39;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Producer</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  模拟生产者, 即不断往任务盒子里放命令</span>
 <span class="sd">  &#39;&#39;&#39;</span>
-  <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">queue</span>
     <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -1906,12 +1822,12 @@ queue来实现, 在工业产品中用消息队列就好</p>
       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 
 
-<span class="k">class</span> <span class="nc">Consumer</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
-  <span class="sd">&#39;&#39;&#39;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Consumer</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+<span class="w">  </span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  消费者</span>
 <span class="sd">  即不断从任务盒子拿出任务并执行</span>
 <span class="sd">  &#39;&#39;&#39;</span>
-  <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">queue</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
       <span class="k">if</span> <span class="n">queue</span><span class="o">.</span><span class="n">qsize</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
@@ -1936,14 +1852,14 @@ queue来实现, 在工业产品中用消息队列就好</p>
 </pre></div>
 </div>
 <p>上面代码请仔细观察结果和代码进行对比理解.</p>
-<div class="section" id="id21">
-<h3>6.8.1. 利用多进程实现模型<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
+<section id="id21">
+<h3><span class="section-number">6.8.1. </span>利用多进程实现模型<a class="headerlink" href="#id21" title="Link to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">multiprocessing</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">ctime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">ctime</span>
 
 
-<span class="k">def</span> <span class="nf">consumer</span><span class="p">(</span><span class="n">input_q</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">consumer</span><span class="p">(</span><span class="n">input_q</span><span class="p">):</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Into consumer:&quot;</span><span class="p">,</span> <span class="n">ctime</span><span class="p">())</span>
   <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="c1"># 处理项</span>
@@ -1953,7 +1869,7 @@ queue来实现, 在工业产品中用消息队列就好</p>
   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Out of consumer:&quot;</span><span class="p">,</span> <span class="n">ctime</span><span class="p">())</span> <span class="c1">##此句未执行，因为q.join()收集到四个task_done()信号后，主进程启动，未等到print此句完成，程序就结束了</span>
 
 
-<span class="k">def</span> <span class="nf">producer</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">output_q</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">producer</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">output_q</span><span class="p">):</span>
   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Into procuder:&quot;</span><span class="p">,</span> <span class="n">ctime</span><span class="p">())</span>
   <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
     <span class="n">output_q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
@@ -1977,18 +1893,18 @@ queue来实现, 在工业产品中用消息队列就好</p>
   <span class="n">q</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id22">
-<h3>6.8.2. 模型设置哨兵用来进行特殊提示<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id22">
+<h3><span class="section-number">6.8.2. </span>模型设置哨兵用来进行特殊提示<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
 <p>哨兵就是某一种特殊类型/值的变量, 拿到这个变量或者值后就代表某种意思,比如循环结束</p>
 <p>本质上哨兵是为了让队列两端的对象进行简单通信.</p>
 <p>下面案例哨兵就是<code class="docutils literal notranslate"><span class="pre">None</span></code>的值</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">multiprocessing</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">ctime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">ctime</span>
 
 <span class="c1"># 设置哨兵问题</span>
-<span class="k">def</span> <span class="nf">consumer</span><span class="p">(</span><span class="n">input_q</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">consumer</span><span class="p">(</span><span class="n">input_q</span><span class="p">):</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Into consumer:&quot;</span><span class="p">,</span> <span class="n">ctime</span><span class="p">())</span>
   <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">item</span> <span class="o">=</span> <span class="n">input_q</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
@@ -1998,7 +1914,7 @@ queue来实现, 在工业产品中用消息队列就好</p>
   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Out of consumer:&quot;</span><span class="p">,</span> <span class="n">ctime</span><span class="p">())</span> <span class="c1">## 此句执行完成，再转入主进程</span>
 
 
-<span class="k">def</span> <span class="nf">producer</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">output_q</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">producer</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">output_q</span><span class="p">):</span>
   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Into procuder:&quot;</span><span class="p">,</span> <span class="n">ctime</span><span class="p">())</span>
   <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
     <span class="n">output_q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
@@ -2017,18 +1933,18 @@ queue来实现, 在工业产品中用消息队列就好</p>
   <span class="n">cons_p</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="joinablequeue">
-<h3>6.8.3. 使用JoinableQueue<a class="headerlink" href="#joinablequeue" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="joinablequeue">
+<h3><span class="section-number">6.8.3. </span>使用JoinableQueue<a class="headerlink" href="#joinablequeue" title="Link to this heading"></a></h3>
 <p>为了生产者消费者做到通信, 使用Queue的话使用哨兵, 但如果
 使用JoinableQueue的话跟简介, JoinableQueue具有函数
 <code class="docutils literal notranslate"><span class="pre">task_done</span></code>, 用来每个任务完成后通知队列.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">multiprocessing</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">ctime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">time</span><span class="w"> </span><span class="kn">import</span> <span class="n">ctime</span>
 
 
-<span class="k">def</span> <span class="nf">consumer</span><span class="p">(</span><span class="n">input_q</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">consumer</span><span class="p">(</span><span class="n">input_q</span><span class="p">):</span>
   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Into consumer:&quot;</span><span class="p">,</span> <span class="n">ctime</span><span class="p">())</span>
   <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="c1"># 处理项</span>
@@ -2038,7 +1954,7 @@ queue来实现, 在工业产品中用消息队列就好</p>
   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Out of consumer:&quot;</span><span class="p">,</span> <span class="n">ctime</span><span class="p">())</span> <span class="c1">##此句未执行，因为q.join()收集到四个task_done()信号后，主进程启动，未等到print此句完成，程序就结束了</span>
 
 
-<span class="k">def</span> <span class="nf">producer</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">output_q</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">producer</span><span class="p">(</span><span class="n">sequence</span><span class="p">,</span> <span class="n">output_q</span><span class="p">):</span>
   <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Into procuder:&quot;</span><span class="p">,</span> <span class="n">ctime</span><span class="p">())</span>
   <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
     <span class="n">output_q</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
@@ -2062,19 +1978,19 @@ queue来实现, 在工业产品中用消息队列就好</p>
   <span class="n">q</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id23">
-<h2>6.9. 线程池/进程池<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h2>
-<p>创建线程/进程会消耗资源, 但创建多线程多进程的目的是为了提高效率, 这样就有点矛盾, 对于实际任务很’小’, 一执行就完,
+</section>
+</section>
+<section id="id23">
+<h2><span class="section-number">6.9. </span>线程池/进程池<a class="headerlink" href="#id23" title="Link to this heading"></a></h2>
+<p>创建线程/进程会消耗资源, 但创建多线程多进程的目的是为了提高效率, 这样就有点矛盾, 对于实际任务很'小', 一执行就完,
 但数量很多的情况, 我们需要频繁创建线程/进程, 这样显得就不太划算.</p>
 <p>一张解决方案就是线程池/进程池, 即我提前创建固定数量的线程/进程, 此时多线程/进程只是不断的执行任务, 执行完任务后并不会
 被销毁, 而是家在任务继续执行, 这样就可以尽可能降低了创建和销毁的开销.</p>
-<div class="section" id="multiprocessing-pool">
-<h3>6.9.1. <code class="docutils literal notranslate"><span class="pre">multiprocessing.Pool</span></code><a class="headerlink" href="#multiprocessing-pool" title="永久链接至标题">¶</a></h3>
+<section id="multiprocessing-pool">
+<h3><span class="section-number">6.9.1. </span><code class="docutils literal notranslate"><span class="pre">multiprocessing.Pool</span></code><a class="headerlink" href="#multiprocessing-pool" title="Link to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code>提供的进程池, 用来创建多进程.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">processes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">initializer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">initargs</span><span class="o">=</span><span class="p">(),</span>
+<span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">processes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">initializer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">initargs</span><span class="o">=</span><span class="p">(),</span>
              <span class="n">maxtasksperchild</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="c1"># processes：进程数量，如果 processes 是 None那么使用 os.cpu_count()返回的数量</span>
 <span class="c1"># initializer： 如果 initializer不是 None，那么每一个工作进程在开始的时候会调用initializer(*initargs)</span>
@@ -2085,37 +2001,41 @@ queue来实现, 在工业产品中用消息队列就好</p>
 <p>利用进程池对象直接创建进程池即可, 池内有一定数量的闲散进程, 等待分配任务, 下面就可以进行分配任务, 池内进程在得到任务后
 就可以自动执行并得到结果:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">apply()</span></code>：<ul>
-<li>同步阻塞执行，上一个子进程结束后才能进行下一个子进程</li>
-<li><code class="docutils literal notranslate"><span class="pre">apply(func,</span> <span class="pre">args=(),</span> <span class="pre">kwds={},</span> <span class="pre">callback=None,</span> <span class="pre">error_callback=None)</span>&#160; </code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apply()</span></code>：</p>
+<ul>
+<li><p>同步阻塞执行，上一个子进程结束后才能进行下一个子进程</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apply(func,</span> <span class="pre">args=(),</span> <span class="pre">kwds={},</span> <span class="pre">callback=None,</span> <span class="pre">error_callback=None)</span>&#160; </code></p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">apply_async()</span></code>：<ul>
-<li>异步非阻塞执行，每个子进程都是异步执行的（并行)</li>
-<li><code class="docutils literal notranslate"><span class="pre">apply_async(func,</span> <span class="pre">args=(),</span> <span class="pre">kwds={},</span> <span class="pre">callback=None,</span> <span class="pre">error_callback=None)</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apply_async()</span></code>：</p>
+<ul>
+<li><p>异步非阻塞执行，每个子进程都是异步执行的（并行)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">apply_async(func,</span> <span class="pre">args=(),</span> <span class="pre">kwds={},</span> <span class="pre">callback=None,</span> <span class="pre">error_callback=None)</span></code></p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">map()</span></code>：<ul>
-<li>同步阻塞,返回值是<code class="docutils literal notranslate"><span class="pre">list</span></code>类型</li>
-<li><code class="docutils literal notranslate"><span class="pre">map(func,</span> <span class="pre">iterable,</span> <span class="pre">chunksize=None)</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map()</span></code>：</p>
+<ul>
+<li><p>同步阻塞,返回值是<code class="docutils literal notranslate"><span class="pre">list</span></code>类型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map(func,</span> <span class="pre">iterable,</span> <span class="pre">chunksize=None)</span></code></p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">map_async()</span></code>：异步非阻塞<ul>
-<li><code class="docutils literal notranslate"><span class="pre">map_async(func,</span> <span class="pre">iterable,</span> <span class="pre">chunksize=None,</span> <span class="pre">callback=None,</span> <span class="pre">error_callback=None)</span> </code> - 返回 <code class="docutils literal notranslate"><span class="pre">MapResult</span></code> 实例，使用 <code class="docutils literal notranslate"><span class="pre">get()</span></code> 方法，获取结果（<code class="docutils literal notranslate"><span class="pre">list</span></code> 方法）</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map_async()</span></code>：异步非阻塞</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">map_async(func,</span> <span class="pre">iterable,</span> <span class="pre">chunksize=None,</span> <span class="pre">callback=None,</span> <span class="pre">error_callback=None)</span> </code> - 返回 <code class="docutils literal notranslate"><span class="pre">MapResult</span></code> 实例，使用 <code class="docutils literal notranslate"><span class="pre">get()</span></code> 方法，获取结果（<code class="docutils literal notranslate"><span class="pre">list</span></code> 方法）</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">imap()</span></code>：内存不够用可以采用此种方式，速度慢于 map()</li>
-<li><code class="docutils literal notranslate"><span class="pre">imap_unordered</span></code>：<code class="docutils literal notranslate"><span class="pre">imap</span></code> 的无序版本（不会按照调用顺序返回，而是按照结束顺序返回），返回迭代器实例</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">imap()</span></code>：内存不够用可以采用此种方式，速度慢于 map()</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">imap_unordered</span></code>：<code class="docutils literal notranslate"><span class="pre">imap</span></code> 的无序版本（不会按照调用顺序返回，而是按照结束顺序返回），返回迭代器实例</p></li>
 </ul>
 <p>下面案例展示了一个进程池, 并用来计算1000次数字平方操作, 操作完后执行回调函数
 保存结果:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
 
-<span class="k">def</span> <span class="nf">cb</span><span class="p">(</span><span class="n">rst</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cb</span><span class="p">(</span><span class="n">rst</span><span class="p">):</span>
   <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;liudana.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a+&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">rst</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
   <span class="k">return</span> <span class="n">n</span> <span class="o">**</span> <span class="mi">2</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -2129,15 +2049,15 @@ queue来实现, 在工业产品中用消息队列就好</p>
 </pre></div>
 </div>
 <p>下面是上面代码的改版, 使用了<code class="docutils literal notranslate"><span class="pre">map_async</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
-<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
   <span class="k">return</span> <span class="n">n</span> <span class="o">**</span> <span class="mi">2</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="k">def</span> <span class="nf">cb</span><span class="p">(</span><span class="n">rst</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cb</span><span class="p">(</span><span class="n">rst</span><span class="p">):</span>
   <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rst</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
@@ -2157,60 +2077,63 @@ queue来实现, 在工业产品中用消息队列就好</p>
 
   <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
-  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;总耗时：</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">st</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;总耗时：</span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">st</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="concurrent-futures">
-<h3>6.9.2. ‘concurrent.futures’<a class="headerlink" href="#concurrent-futures" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="concurrent-futures">
+<h3><span class="section-number">6.9.2. </span>'concurrent.futures'<a class="headerlink" href="#concurrent-futures" title="Link to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">concurrent.futures</span></code> 是 <code class="docutils literal notranslate"><span class="pre">python3.2</span></code> 中引入的新模块，
 它为异步执行可调用对象提供了高层接口，分为两类：</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">ThreadPoolExecutor</span></code>：多线程编程</li>
-<li><code class="docutils literal notranslate"><span class="pre">ProcessPoolExecutor</span></code>：多进程编程</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ThreadPoolExecutor</span></code>：多线程编程</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProcessPoolExecutor</span></code>：多进程编程</p></li>
 </ul>
 <p>两者使用接口基本一致,我们以线程为例讲解.</p>
 <p>使用思路大致是:</p>
 <ol class="simple">
-<li>创建<code class="docutils literal notranslate"><span class="pre">ProcessPoolExecutor</span></code></li>
-<li><code class="docutils literal notranslate"><span class="pre">submiut</span></code>或类似指令提交任务</li>
-<li>利用<code class="docutils literal notranslate"><span class="pre">result</span></code>收集结果</li>
+<li><p>创建<code class="docutils literal notranslate"><span class="pre">ProcessPoolExecutor</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">submiut</span></code>或类似指令提交任务</p></li>
+<li><p>利用<code class="docutils literal notranslate"><span class="pre">result</span></code>收集结果</p></li>
 </ol>
 <p>使用上主要关注两个类:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">Executor</span></code>: 负责管理进程,执行任务</li>
-<li><code class="docutils literal notranslate"><span class="pre">Future</span></code>: 管理任务结果</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Executor</span></code>: 负责管理进程,执行任务</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Future</span></code>: 管理任务结果</p></li>
 </ul>
-<div class="section" id="concurrent-futures-executor">
-<h4>6.9.2.1. <code class="docutils literal notranslate"> <span class="pre">concurrent.futures.Executor</span></code><a class="headerlink" href="#concurrent-futures-executor" title="永久链接至标题">¶</a></h4>
+<section id="concurrent-futures-executor">
+<h4><span class="section-number">6.9.2.1. </span><code class="docutils literal notranslate"> <span class="pre">concurrent.futures.Executor</span></code><a class="headerlink" href="#concurrent-futures-executor" title="Link to this heading"></a></h4>
 <p>主要的工作函数有:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">submit</span></code>:<ul>
-<li>调用对象执行<code class="docutils literal notranslate"><span class="pre">fn(*args,</span> <span class="pre">**kwargs)</span></code></li>
-<li>返回<code class="docutils literal notranslate"><span class="pre">Future</span></code> 对象，可用 <code class="docutils literal notranslate"><span class="pre">future.result()</span> </code>获取执行结果</li>
-<li><code class="docutils literal notranslate"><span class="pre">submit(fn,</span> <span class="pre">*args,</span> <span class="pre">**kwargs)</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">submit</span></code>:</p>
+<ul>
+<li><p>调用对象执行<code class="docutils literal notranslate"><span class="pre">fn(*args,</span> <span class="pre">**kwargs)</span></code></p></li>
+<li><p>返回<code class="docutils literal notranslate"><span class="pre">Future</span></code> 对象，可用 <code class="docutils literal notranslate"><span class="pre">future.result()</span> </code>获取执行结果</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">submit(fn,</span> <span class="pre">*args,</span> <span class="pre">**kwargs)</span></code></p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">map</span></code>:<ul>
-<li>异步执行 <code class="docutils literal notranslate"><span class="pre">func</span></code>，并支持多次并发调用，返回一个迭代器</li>
-<li><code class="docutils literal notranslate"><span class="pre">timeout</span></code> 如果设置为 <code class="docutils literal notranslate"><span class="pre">None</span></code> 或者不指定，则不限制等待时间</li>
-<li><code class="docutils literal notranslate"><span class="pre">ProcessPoolExecutor</span></code> 这个方法将 <code class="docutils literal notranslate"><span class="pre">iterables</span></code> 划分为多块，作为独立的任务提交到进程池显著提升性能</li>
-<li><code class="docutils literal notranslate"><span class="pre">map(func,</span> <span class="pre">*iterables,</span> <span class="pre">timeout=None,</span> <span class="pre">chunksize=1)</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map</span></code>:</p>
+<ul>
+<li><p>异步执行 <code class="docutils literal notranslate"><span class="pre">func</span></code>，并支持多次并发调用，返回一个迭代器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeout</span></code> 如果设置为 <code class="docutils literal notranslate"><span class="pre">None</span></code> 或者不指定，则不限制等待时间</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ProcessPoolExecutor</span></code> 这个方法将 <code class="docutils literal notranslate"><span class="pre">iterables</span></code> 划分为多块，作为独立的任务提交到进程池显著提升性能</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map(func,</span> <span class="pre">*iterables,</span> <span class="pre">timeout=None,</span> <span class="pre">chunksize=1)</span></code></p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">shutdown</span></code>:<ul>
-<li>告诉当执行器 <code class="docutils literal notranslate"><span class="pre">executor</span></code> 在当前所有等待的<code class="docutils literal notranslate"> <span class="pre">future</span></code> 对象运行完毕后，应该释放执行器用到的所有资源</li>
-<li><code class="docutils literal notranslate"><span class="pre">wait=True</span></code> 会等待所有 <code class="docutils literal notranslate"><span class="pre">future</span></code> 执行完毕，且 <code class="docutils literal notranslate"><span class="pre">executor</span></code> 的资源都释放完会才会返回</li>
-<li><code class="docutils literal notranslate"><span class="pre">wait=False</span></code> 会立即返回，<code class="docutils literal notranslate"><span class="pre">executor</span></code> 的资源会在 <code class="docutils literal notranslate"><span class="pre">future</span></code> 执行完后释放</li>
-<li><code class="docutils literal notranslate"><span class="pre">shutdown(wait=True)</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shutdown</span></code>:</p>
+<ul>
+<li><p>告诉当执行器 <code class="docutils literal notranslate"><span class="pre">executor</span></code> 在当前所有等待的<code class="docutils literal notranslate"> <span class="pre">future</span></code> 对象运行完毕后，应该释放执行器用到的所有资源</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wait=True</span></code> 会等待所有 <code class="docutils literal notranslate"><span class="pre">future</span></code> 执行完毕，且 <code class="docutils literal notranslate"><span class="pre">executor</span></code> 的资源都释放完会才会返回</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wait=False</span></code> 会立即返回，<code class="docutils literal notranslate"><span class="pre">executor</span></code> 的资源会在 <code class="docutils literal notranslate"><span class="pre">future</span></code> 执行完后释放</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shutdown(wait=True)</span></code></p></li>
 </ul>
 </li>
 </ul>
 <p>参看下面案例:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ProcessPoolExecutor</span><span class="p">,</span> <span class="n">as_completed</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessPoolExecutor</span><span class="p">,</span> <span class="n">as_completed</span>
 
-<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
   <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
     <span class="k">return</span> <span class="mi">1</span>
   <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
@@ -2236,40 +2159,43 @@ queue来实现, 在工业产品中用消息队列就好</p>
 </pre></div>
 </div>
 <p>上面代码函数<code class="docutils literal notranslate"><span class="pre">as_completed</span></code>是等待任务执行完毕.</p>
-</div>
-<div class="section" id="future">
-<h4>6.9.2.2. <code class="docutils literal notranslate"><span class="pre">Future</span></code><a class="headerlink" href="#future" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="future">
+<h4><span class="section-number">6.9.2.2. </span><code class="docutils literal notranslate"><span class="pre">Future</span></code><a class="headerlink" href="#future" title="Link to this heading"></a></h4>
 <p>程序将任务通过<code class="docutils literal notranslate"><span class="pre">submit</span></code>方法提交给线程池之后，线程池会返回一个<code class="docutils literal notranslate"><span class="pre">Future</span></code>对象，该对象的作用主要是用于获取线程任务函数的返回值</p>
 <p><code class="docutils literal notranslate"><span class="pre">Future</span></code>的功能有:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">cancel()</span></code>：<ul>
-<li>取消该<code class="docutils literal notranslate"><span class="pre">Future</span></code>代表的线程任务</li>
-<li>如果该任务正在执行，不可取消，则该方法返回<code class="docutils literal notranslate"><span class="pre">False</span></code></li>
-<li>程序会取消该任务，并返回<code class="docutils literal notranslate"><span class="pre">True</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cancel()</span></code>：</p>
+<ul>
+<li><p>取消该<code class="docutils literal notranslate"><span class="pre">Future</span></code>代表的线程任务</p></li>
+<li><p>如果该任务正在执行，不可取消，则该方法返回<code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>程序会取消该任务，并返回<code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">result(timeout=None)</span></code>:<ul>
-<li>获取该 <code class="docutils literal notranslate"><span class="pre">Future</span></code> 代表的线程任务最后返回的结果</li>
-<li>如果 <code class="docutils literal notranslate"><span class="pre">Future</span></code> 代表的线程任务还未完成，该方法将会阻塞当前线程</li>
-<li>其中 <code class="docutils literal notranslate"><span class="pre">timeout</span></code> 参数指定最多阻塞多少秒</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">result(timeout=None)</span></code>:</p>
+<ul>
+<li><p>获取该 <code class="docutils literal notranslate"><span class="pre">Future</span></code> 代表的线程任务最后返回的结果</p></li>
+<li><p>如果 <code class="docutils literal notranslate"><span class="pre">Future</span></code> 代表的线程任务还未完成，该方法将会阻塞当前线程</p></li>
+<li><p>其中 <code class="docutils literal notranslate"><span class="pre">timeout</span></code> 参数指定最多阻塞多少秒</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">add_done_callback(fn)</span></code>：<ul>
-<li>为该 <code class="docutils literal notranslate"><span class="pre">Future</span></code> 代表的线程任务注册一个“回调函数”</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add_done_callback(fn)</span></code>：</p>
+<ul>
+<li><p>为该 <code class="docutils literal notranslate"><span class="pre">Future</span></code> 代表的线程任务注册一个“回调函数”</p></li>
 </ul>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">done()</span></code>:如果该<code class="docutils literal notranslate"><span class="pre">Future</span></code>代表的线程任务被成功取消或执行完成，则该方法返回<code class="docutils literal notranslate"><span class="pre">True</span></code></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">done()</span></code>:如果该<code class="docutils literal notranslate"><span class="pre">Future</span></code>代表的线程任务被成功取消或执行完成，则该方法返回<code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 </ul>
 <p>举个例子:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
-<span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
 
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 
-<span class="k">def</span> <span class="nf">async_add</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">async_add</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
   <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
@@ -2308,14 +2234,14 @@ queue来实现, 在工业产品中用消息队列就好</p>
 <p>上面代码会得到正确结果因为<code class="docutils literal notranslate"><span class="pre">result</span></code>函数是阻塞的, 所以会有结果, 如果去掉这个
 函数, 结果不等出来就执行完毕了, 参考下面代码, 等待时间也做了修改:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
-<span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
 
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 
-<span class="k">def</span> <span class="nf">async_add</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">async_add</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
   <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
@@ -2340,14 +2266,14 @@ queue来实现, 在工业产品中用消息队列就好</p>
 <p>如果需要非阻塞的方式运行代码, 可以尝试添加回到函数, 执行任务完毕后自动调用回调
 函数收集结果:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
-<span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">concurrent.futures</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessPoolExecutor</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">multiprocessing</span>
 
-<span class="kn">import</span> <span class="nn">threading</span>
-<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 
-<span class="k">def</span> <span class="nf">async_add</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">async_add</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
   <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
@@ -2364,7 +2290,7 @@ queue来实现, 在工业产品中用消息队列就好</p>
 
 
   <span class="c1"># 定义获取结果的函数</span>
-  <span class="k">def</span> <span class="nf">get_result</span><span class="p">(</span><span class="n">future</span><span class="p">):</span>
+  <span class="k">def</span><span class="w"> </span><span class="nf">get_result</span><span class="p">(</span><span class="n">future</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">multiprocessing</span><span class="o">.</span><span class="n">current_process</span><span class="p">()</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;运行结果：&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()))</span>
 
 
@@ -2376,64 +2302,47 @@ queue来实现, 在工业产品中用消息队列就好</p>
 </pre></div>
 </div>
 <p>上面代码执行完毕后结果如下:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>------------主线程执行结束----
-ForkProcess-1执行求和操作求得的和是=190
-MainProcess运行结果：190
-ForkProcess-2执行求和操作求得的和是=1225
-MainProcess运行结果：1225
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">------------</span><span class="n">主线程执行结束</span><span class="o">----</span>
+<span class="n">ForkProcess</span><span class="o">-</span><span class="mi">1</span><span class="n">执行求和操作求得的和是</span><span class="o">=</span><span class="mi">190</span>
+<span class="n">MainProcess运行结果</span><span class="err">：</span><span class="mi">190</span>
+<span class="n">ForkProcess</span><span class="o">-</span><span class="mi">2</span><span class="n">执行求和操作求得的和是</span><span class="o">=</span><span class="mi">1225</span>
+<span class="n">MainProcess运行结果</span><span class="err">：</span><span class="mi">1225</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="106_编码问题.html" class="btn btn-neutral float-right" title="7. 计算机编码问题" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="104_模块和包.html" class="btn btn-neutral float-left" title="5. 模块和包" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html" class="btn btn-neutral float-left" title="5. 模块和包" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html" class="btn btn-neutral float-right" title="7. 计算机编码问题" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2020, 北京图灵学院.
-
-    </p>
+    <p>&#169; 版权所有 2020, 北京图灵学院。</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

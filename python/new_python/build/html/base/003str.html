@@ -1,106 +1,54 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="zh-CN" >
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>5. 字符串 &mdash; Python新全栈教程 1.0 文档</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'1.0',
-              LANGUAGE:'zh_CN',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <link rel="canonical" href="https://danalaoshi.github.io/base/003str.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f115507d"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="6. 表达式 和 运算符" href="004运算符.html" />
-    <link rel="prev" title="4. 变量" href="002变量和变量类型.html" /> 
+    <link rel="next" title="6. 表达式 和 运算符" href="004%E8%BF%90%E7%AE%97%E7%AC%A6.html" />
+    <link rel="prev" title="4. 变量" href="002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> Python新全栈教程
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            Python新全栈教程
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="001.html">1. 开学典礼-不讲知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="001Python语言概述.html">2. Python语言概述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="001注释.html">3. 注释和帮助</a></li>
-<li class="toctree-l1"><a class="reference internal" href="002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001%E6%B3%A8%E9%87%8A.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html">4. 变量</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5. 字符串</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">5.1. 转义字符</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">5.2. 字符串的格式化</a></li>
@@ -115,103 +63,62 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="004运算符.html">6. 表达式 和 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="005-if分支语句.html">7. 分支语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="006-for循环.html">8. 循环语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="007-while循环.html">9. while循环</a></li>
-<li class="toctree-l1"><a class="reference internal" href="008-函数讲义.html">10. 函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="008-内置函数.html">11. 内置函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-内置结构.html">12. 内置数据结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="009-类.html">13. OOP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="010-内置模块.html">14. 常用内置模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="011-持久化和文件.html">15. 文件和序列化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="004%E8%BF%90%E7%AE%97%E7%AC%A6.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="006-for%E5%BE%AA%E7%8E%AF.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="007-while%E5%BE%AA%E7%8E%AF.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-%E5%87%BD%E6%95%B0%E8%AE%B2%E4%B9%89.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-%E5%86%85%E7%BD%AE%E7%BB%93%E6%9E%84.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="009-%E7%B1%BB.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011-%E6%8C%81%E4%B9%85%E5%8C%96%E5%92%8C%E6%96%87%E4%BB%B6.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">16. Python异常的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="013-tkinter.html">17. Tkinter</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../adv/101-函数高级.html">1. 函数高级</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/102-类高级.html">2. OOP高级编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/103_调试技术.html">3. 调试技术</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/1021-单元测试.html">4. 单元测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/104_模块和包.html">5. 模块和包</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/105多线程.html">6. 多线程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/101-%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/103_%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html">7. 计算机编码问题</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adv/107_log.html">8. 日志(logging)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/108_携程.html">9. 协程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/109_网络编程.html">10. 1. 网络通信概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/108_%E6%90%BA%E7%A8%8B.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">10. 1. 网络通信概述</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Python新全栈教程</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>5. 字符串</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">5. </span>字符串</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/base/003str.md.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/base/003str.md.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>5. 字符串<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+             
+  <section id="id1">
+<h1><span class="section-number">5. </span>字符串<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <p>字符串通常用来表示文字信息</p>
 <p>字符串定义有四种方式，分别是：</p>
 <ul>
-<li><p class="first">单引号</p>
+<li><p>单引号</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> slogan = &#39;我爱王晓静&#39;
  print(slogan)
  输出：
@@ -219,7 +126,7 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">双引号, 跟单引号效果完全一样</p>
+<li><p>双引号, 跟单引号效果完全一样</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  slogan = &quot;我是北京图灵学院的刘大拿&quot;
   print(slogan)
   输出：
@@ -227,7 +134,7 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">三单引号, 跟单双引号不同的是，它的字符串可以有换行，输出结果也是自动换行</p>
+<li><p>三单引号, 跟单双引号不同的是，它的字符串可以有换行，输出结果也是自动换行</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  a = &#39;&#39;&#39;我是刘大拿，
           我们的学校叫北京图灵学院，
           我们的校训是：我爱王晓静
@@ -240,26 +147,25 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">三双引号， 作用和意义跟三个单引号一致</p>
-</li>
+<li><p>三双引号， 作用和意义跟三个单引号一致</p></li>
 </ul>
-<div class="section" id="id2">
-<h2>5.1. 转义字符<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<section id="id2">
+<h2><span class="section-number">5.1. </span>转义字符<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <p>在字符串中，有些字符因为特殊的作用，直接表示出来不太方便，常见的比如引号，我们把引号作为字符串的边界
 符号，这时候字符串中如果出现引号就可能造成错误，另外，在我们的文本中也常出现一些不容易表示的符号，比如：换行符号，此类符号我们用一种特殊的方法表示出来，通常称为转义。</p>
 <p>转义一般利用反斜杠表示，借助反斜杠字符，一旦字符串中出现反斜杠，则反斜杠后面所表示的字符表示已经不是原来的意思了，进行了转义</p>
 <blockquote>
-<div>在字符串中，一旦出现反斜杠就要加倍小心，可能有转义字符出现</div></blockquote>
+<div><p>在字符串中，一旦出现反斜杠就要加倍小心，可能有转义字符出现</p>
+</div></blockquote>
 <ul>
-<li><p class="first">常见的转义字符有回车换行，空格，制表符等</p>
-</li>
-<li><p class="first">不同系统对换行操作符有不同的表示, 常见的例子是换行符号, win系统和linux系统表示不一致，文本操作类程序需要特别注意：</p>
+<li><p>常见的转义字符有回车换行，空格，制表符等</p></li>
+<li><p>不同系统对换行操作符有不同的表示, 常见的例子是换行符号, win系统和linux系统表示不一致，文本操作类程序需要特别注意：</p>
 <ul class="simple">
-<li>windows： 用<code class="docutils literal notranslate"><span class="pre">\r\n</span></code>来表示换行符号</li>
-<li>Linux:  用<code class="docutils literal notranslate"><span class="pre">\n</span></code>来表示换行符号</li>
+<li><p>windows： 用<code class="docutils literal notranslate"><span class="pre">\r\n</span></code>来表示换行符号</p></li>
+<li><p>Linux:  用<code class="docutils literal notranslate"><span class="pre">\n</span></code>来表示换行符号</p></li>
 </ul>
 </li>
-<li><p class="first">常见转义字符表：</p>
+<li><p>常见转义字符表：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  转义字符	描述
   \(在行尾时)	续行符	
   \\	        反斜杠符号  	
@@ -319,25 +225,26 @@
      <span class="n">wangixoajing</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
-<h2>5.2. 字符串的格式化<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id3">
+<h2><span class="section-number">5.2. </span>字符串的格式化<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <p>字符串的格式化就是把字符串按照一定格式进行打印或者填充。</p>
 <ul class="simple">
-<li>格式化有三种方法<ul>
-<li>利用百分号（%）</li>
-<li>利用format函数</li>
-<li>f-formatting</li>
+<li><p>格式化有三种方法</p>
+<ul>
+<li><p>利用百分号（%）</p></li>
+<li><p>利用format函数</p></li>
+<li><p>f-formatting</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id4">
-<h2>5.3. 利用百分号格式化<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id4">
+<h2><span class="section-number">5.3. </span>利用百分号格式化<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>在字符串中，利用%表示一个特殊的含义，表示对字符进行格式化</li>
-<li>%d: 此处应该放入一个整数， 即整数占位符号</li>
-<li>%s: 表示此处应该放入一个字符串， 即字符串占位符号</li>
+<li><p>在字符串中，利用%表示一个特殊的含义，表示对字符进行格式化</p></li>
+<li><p>%d: 此处应该放入一个整数， 即整数占位符号</p></li>
+<li><p>%s: 表示此处应该放入一个字符串， 即字符串占位符号</p></li>
 </ul>
 <p>照例炒几个栗子：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I love </span><span class="si">%s</span><span class="s2">&quot;</span>
@@ -413,10 +320,11 @@
 </div>
 <p>以上错误是填充的个数和占位符的个数不匹配造成的。</p>
 <blockquote>
-<div>占位符的长度还可以自行定义，有需要的小伙伴儿可以自行百度。</div></blockquote>
-</div>
-<div class="section" id="format">
-<h2>5.4. format函数格式化字符串<a class="headerlink" href="#format" title="永久链接至标题">¶</a></h2>
+<div><p>占位符的长度还可以自行定义，有需要的小伙伴儿可以自行百度。</p>
+</div></blockquote>
+</section>
+<section id="format">
+<h2><span class="section-number">5.4. </span>format函数格式化字符串<a class="headerlink" href="#format" title="Link to this heading"></a></h2>
 <p>利用<code class="docutils literal notranslate"><span class="pre">%</span></code>格式化是一个古老的方式，现在基本不再提倡， 通常Python会使用<code class="docutils literal notranslate"><span class="pre">format</span></code>函数来进行格式化，函数的
 概念虽然还没有介绍，这里还是要先给大家做一个介绍。</p>
 <p><code class="docutils literal notranslate"><span class="pre">format</span></code>函数格式化在使用上，以{}代替%号，后面用format带参数完成对字符串的填充。</p>
@@ -451,9 +359,9 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Yes</span><span class="p">,</span> <span class="n">i</span> <span class="n">am</span> <span class="mi">18</span> <span class="n">years</span> <span class="n">old</span><span class="p">,</span> <span class="n">I</span> <span class="n">love</span> <span class="n">Tulingxueyuan</span> <span class="ow">and</span> <span class="n">i</span> <span class="n">am</span> <span class="mi">18</span> <span class="n">years</span> <span class="n">old</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="f">
-<h2>5.5. f-字符串格式化<a class="headerlink" href="#f" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="f">
+<h2><span class="section-number">5.5. </span>f-字符串格式化<a class="headerlink" href="#f" title="Link to this heading"></a></h2>
 <p>f-字符串格式化是Python3.6添加的新功能，相对比<code class="docutils literal notranslate"><span class="pre">format</span></code>等方便一些。</p>
 <p>在字符串开头使用<code class="docutils literal notranslate"><span class="pre">f</span></code>或者<code class="docutils literal notranslate"><span class="pre">F</span></code>，然后字符串中留下相应的变量名，则Python会根据变量名称自动填充，当然前提是你得有这个变量。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;刘大拿&quot;</span>
@@ -471,7 +379,8 @@
 <p>f格式化中，还可以使用字典等进行填充，同时使用更精细的格式控制字符，功能比前两种强悍：</p>
 <p>下面的例子定义一个字典，直接使用字典的内容进行填充，同时使用了格式控制符对输出格式进行了精确控制。</p>
 <blockquote>
-<div>格式化的格式控制符，在每种格式化中都有，只是用的比较少，我们不过多的介绍</div></blockquote>
+<div><p>格式化的格式控制符，在每种格式化中都有，只是用的比较少，我们不过多的介绍</p>
+</div></blockquote>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">dana</span>  <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;刘大拿&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span> <span class="s2">&quot;wifi&quot;</span><span class="p">:</span><span class="s2">&quot;王晓静&quot;</span><span class="p">}</span>
 
@@ -483,34 +392,32 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>我叫刘大拿, 今年 19.00, 人生苦短，I need 王晓静
 </pre></div>
 </div>
-</div>
-<div class="section" id="id5">
-<h2>5.6. 字符串的控制格式输出<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id5">
+<h2><span class="section-number">5.6. </span>字符串的控制格式输出<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
 <p>有时候字符串输出需要精细控制格式，比如输出字符串需要占用固定宽度等，下面分别介绍：</p>
-<div class="section" id="id6">
-<h3>5.6.1. <code class="docutils literal notranslate"><span class="pre">%</span></code>控制格式<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<section id="id6">
+<h3><span class="section-number">5.6.1. </span><code class="docutils literal notranslate"><span class="pre">%</span></code>控制格式<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <ol>
-<li><p class="first">指定自小输出宽度：此时格式为 <code class="docutils literal notranslate"><span class="pre">%ns</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span></code>为字符串<code class="docutils literal notranslate"><span class="pre">s</span></code>所占的最小宽度</p>
+<li><p>指定自小输出宽度：此时格式为 <code class="docutils literal notranslate"><span class="pre">%ns</span></code>, <code class="docutils literal notranslate"><span class="pre">n</span></code>为字符串<code class="docutils literal notranslate"><span class="pre">s</span></code>所占的最小宽度</p>
 <p>n = 1234567
-print(“n(10):%10d.” % n) #n最小占10个宽度
-print(“n(5):%5d.” % n)</p>
-<p>url = “http://c.biancheng.net/python/”
-print(“url(35):%35s.” % url)
-print(“url(20):%20s.” % url)</p>
+print(&quot;n(10):%10d.&quot; % n) #n最小占10个宽度
+print(&quot;n(5):%5d.&quot; % n)</p>
+<p>url = &quot;http://c.biancheng.net/python/&quot;
+print(&quot;url(35):%35s.&quot; % url)
+print(&quot;url(20):%20s.&quot; % url)</p>
 </li>
-<li><p class="first">左右对齐用符号控制</p>
+<li><p>左右对齐用符号控制</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">-</span></code>: 指定左对齐</li>
-<li><code class="docutils literal notranslate"><span class="pre">+</span></code>: 表示输出的数字总要带着符号；正数带+，负数带-。</li>
-<li><code class="docutils literal notranslate"><span class="pre">0</span></code>: 宽度不足时补充 0，而不是补充空格。</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code>: 指定左对齐</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code>: 表示输出的数字总要带着符号；正数带+，负数带-。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code>: 宽度不足时补充 0，而不是补充空格。</p></li>
 </ul>
 <p>其中：</p>
 <ol>
-<li><p class="first">对于整数，指定左对齐时，在右边补 0 是没有效果的，因为这样会改变整数的值。</p>
-</li>
-<li><p class="first">对于小数，以上三个标志可以同时存在。</p>
-</li>
-<li><p class="first">对于字符串，只能使用-标志，因为符号对于字符串没有意义，而补 0 会改变字符串的值。</p>
+<li><p>对于整数，指定左对齐时，在右边补 0 是没有效果的，因为这样会改变整数的值。</p></li>
+<li><p>对于小数，以上三个标志可以同时存在。</p></li>
+<li><p>对于字符串，只能使用-标志，因为符号对于字符串没有意义，而补 0 会改变字符串的值。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">n</span> <span class="o">=</span> <span class="mi">123456</span>
  <span class="c1"># %09d 表示最小宽度为9，左边补0</span>
  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n(09):</span><span class="si">%09d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">n</span><span class="p">)</span>
@@ -534,7 +441,7 @@ print(“url(20):%20s.” % url)</p>
 </li>
 </ol>
 </li>
-<li><p class="first">指定小数精度好用<code class="docutils literal notranslate"><span class="pre">%m.nf</span></code>或者<code class="docutils literal notranslate"><span class="pre">%.nf</span></code>表示</p>
+<li><p>指定小数精度好用<code class="docutils literal notranslate"><span class="pre">%m.nf</span></code>或者<code class="docutils literal notranslate"><span class="pre">%.nf</span></code>表示</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">f</span> <span class="o">=</span> <span class="mf">3.141592653</span>
  <span class="c1"># 最小宽度为8，小数点后保留3位</span>
  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%8.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">f</span><span class="p">)</span>
@@ -552,69 +459,52 @@ print(“url(20):%20s.” % url)</p>
 </div>
 </li>
 </ol>
-</div>
-<div class="section" id="id7">
-<h3>5.6.2. <code class="docutils literal notranslate"><span class="pre">format</span></code>控制格式<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id7">
+<h3><span class="section-number">5.6.2. </span><code class="docutils literal notranslate"><span class="pre">format</span></code>控制格式<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
 <p><img alt="../_images/d01.png" src="../_images/d01.png" /></p>
 <ol class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">^,</span> <span class="pre">&lt;,</span> <span class="pre">&gt;</span> </code>分别是居中、左对齐、右对齐，后面带宽度， <code class="docutils literal notranslate"><span class="pre">:</span></code> 号后面带填充的字符，只能是一个字符，不指定则默认是用空格填充。</li>
-<li><code class="docutils literal notranslate"><span class="pre">+</span></code> 表示在正数前显示 <code class="docutils literal notranslate"><span class="pre">+</span></code>，负数前显示 <code class="docutils literal notranslate"><span class="pre">-</span></code>；  （空格）表示在正数前加空格</li>
-<li><code class="docutils literal notranslate"><span class="pre">b、d、o、x</span></code> 分别是二进制、十进制、八进制、十六进制。</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">^,</span> <span class="pre">&lt;,</span> <span class="pre">&gt;</span> </code>分别是居中、左对齐、右对齐，后面带宽度， <code class="docutils literal notranslate"><span class="pre">:</span></code> 号后面带填充的字符，只能是一个字符，不指定则默认是用空格填充。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> 表示在正数前显示 <code class="docutils literal notranslate"><span class="pre">+</span></code>，负数前显示 <code class="docutils literal notranslate"><span class="pre">-</span></code>；  （空格）表示在正数前加空格</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">b、d、o、x</span></code> 分别是二进制、十进制、八进制、十六进制。</p></li>
 </ol>
-</div>
-<div class="section" id="f-string">
-<h3>5.6.3. <code class="docutils literal notranslate"><span class="pre">f-string</span></code>控制格式<a class="headerlink" href="#f-string" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="f-string">
+<h3><span class="section-number">5.6.3. </span><code class="docutils literal notranslate"><span class="pre">f-string</span></code>控制格式<a class="headerlink" href="#f-string" title="Link to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">f</span></code>字符串的控制符号参考<code class="docutils literal notranslate"><span class="pre">format</span></code>控制符号即可。</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="004运算符.html" class="btn btn-neutral float-right" title="6. 表达式 和 运算符" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="002变量和变量类型.html" class="btn btn-neutral float-left" title="4. 变量" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html" class="btn btn-neutral float-left" title="4. 变量" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="004%E8%BF%90%E7%AE%97%E7%AC%A6.html" class="btn btn-neutral float-right" title="6. 表达式 和 运算符" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2020, 北京图灵学院.
-
-    </p>
+    <p>&#169; 版权所有 2020, 北京图灵学院。</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

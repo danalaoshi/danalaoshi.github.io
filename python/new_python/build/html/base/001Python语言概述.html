@@ -1,101 +1,49 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="zh-CN" >
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>2. Python语言概述 &mdash; Python新全栈教程 1.0 文档</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'1.0',
-              LANGUAGE:'zh_CN',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <link rel="canonical" href="https://danalaoshi.github.io/base/001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f115507d"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="3. 注释和帮助" href="001注释.html" />
+    <link rel="next" title="3. 注释和帮助" href="001%E6%B3%A8%E9%87%8A.html" />
     <link rel="prev" title="1. 开学典礼-不讲知识" href="001.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> Python新全栈教程
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            Python新全栈教程
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="001.html">1. 开学典礼-不讲知识</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Python语言概述</a><ul>
@@ -109,127 +57,88 @@
 <li class="toctree-l2"><a class="reference internal" href="#id6">2.3. 环境安装</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="001注释.html">3. 注释和帮助</a></li>
-<li class="toctree-l1"><a class="reference internal" href="002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001%E6%B3%A8%E9%87%8A.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html">4. 变量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="003str.html">5. 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="004运算符.html">6. 表达式 和 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="005-if分支语句.html">7. 分支语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="006-for循环.html">8. 循环语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="007-while循环.html">9. while循环</a></li>
-<li class="toctree-l1"><a class="reference internal" href="008-函数讲义.html">10. 函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="008-内置函数.html">11. 内置函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-内置结构.html">12. 内置数据结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="009-类.html">13. OOP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="010-内置模块.html">14. 常用内置模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="011-持久化和文件.html">15. 文件和序列化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="004%E8%BF%90%E7%AE%97%E7%AC%A6.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="006-for%E5%BE%AA%E7%8E%AF.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="007-while%E5%BE%AA%E7%8E%AF.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-%E5%87%BD%E6%95%B0%E8%AE%B2%E4%B9%89.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-%E5%86%85%E7%BD%AE%E7%BB%93%E6%9E%84.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="009-%E7%B1%BB.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011-%E6%8C%81%E4%B9%85%E5%8C%96%E5%92%8C%E6%96%87%E4%BB%B6.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">16. Python异常的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="013-tkinter.html">17. Tkinter</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../adv/101-函数高级.html">1. 函数高级</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/102-类高级.html">2. OOP高级编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/103_调试技术.html">3. 调试技术</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/1021-单元测试.html">4. 单元测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/104_模块和包.html">5. 模块和包</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/105多线程.html">6. 多线程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/101-%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/103_%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html">7. 计算机编码问题</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adv/107_log.html">8. 日志(logging)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/108_携程.html">9. 协程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/109_网络编程.html">10. 1. 网络通信概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/108_%E6%90%BA%E7%A8%8B.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">10. 1. 网络通信概述</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Python新全栈教程</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>2. Python语言概述</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Python语言概述</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/base/001Python语言概述.md.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/base/001Python语言概述.md.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="python">
-<h1>2. Python语言概述<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h1>
+             
+  <section id="python">
+<h1><span class="section-number">2. </span>Python语言概述<a class="headerlink" href="#python" title="Link to this heading"></a></h1>
 <p>我等俗人遇到不爽的事情骂骂呖呖叽叽歪歪，最后终于免不了一个忍字。</p>
 <p>龟叔这等神人，不爽了就改改这个世界，于是有了Python。</p>
-<div class="section" id="id1">
-<h2>2.1. 计算机名词解释<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<section id="id1">
+<h2><span class="section-number">2.1. </span>计算机名词解释<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>计算机: 高速计算/执行的电子机器，广义上包含Pad，智能手机，各种传感器，集成板</li>
-<li>操作系统：Windows/Linux/MacOS</li>
-<li>编程语言通俗的讲可以包含两方面：<ul>
-<li>语言代码(Code)</li>
-<li>执行器(编译器/解释器)</li>
+<li><p>计算机: 高速计算/执行的电子机器，广义上包含Pad，智能手机，各种传感器，集成板</p></li>
+<li><p>操作系统：Windows/Linux/MacOS</p></li>
+<li><p>编程语言通俗的讲可以包含两方面：</p>
+<ul>
+<li><p>语言代码(Code)</p></li>
+<li><p>执行器(编译器/解释器)</p></li>
 </ul>
 </li>
-<li>我们的学习目的：<ul>
-<li>学会编码规则，coding</li>
-<li>利用执行器对你的代码进行执行</li>
+<li><p>我们的学习目的：</p>
+<ul>
+<li><p>学会编码规则，coding</p></li>
+<li><p>利用执行器对你的代码进行执行</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id2">
-<h2>2.2. Python语言的前世今生<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id2">
+<h2><span class="section-number">2.2. </span>Python语言的前世今生<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>创始人是吉多·范罗苏姆(Guido van Rossum)。</li>
-<li>1989年的圣诞节期间，阿姆斯特丹</li>
-<li>读音是派森/拍桑, 美国人读拍桑</li>
+<li><p>创始人是吉多·范罗苏姆(Guido van Rossum)。</p></li>
+<li><p>1989年的圣诞节期间，阿姆斯特丹</p></li>
+<li><p>读音是派森/拍桑, 美国人读拍桑</p></li>
 </ul>
 <blockquote>
 <div><p>龟叔:</p>
@@ -238,125 +147,111 @@
 <p>依然掌握着Python发展的核⼼方向，被称为仁慈的独裁者。</p>
 <p>2019年光荣退休</p>
 </div></blockquote>
-<div class="section" id="id3">
-<h3>2.2.1. Python的发展历史<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<section id="id3">
+<h3><span class="section-number">2.2.1. </span>Python的发展历史<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <p>Python众多版本中两个大系列，2.x 和 3.x 系列，彼此并不兼容，代码同样的甚至结果不同。</p>
 <ul class="simple">
-<li>1989年年，为了打发圣诞节假期，Guido开始写Python语⾔的编译器。</li>
-<li>1991年，第⼀个Python编译器诞生。它是⽤用C语言实现的，并能够调⽤用C语⾔的库文件。</li>
-<li>Python 1.0 - January 1994 增加了 lambda, map, filterand reduce.</li>
-<li>Python 2.0 - October 16, 2000，加⼊了内存回收机制，构成了现在Python语言框架的基础</li>
-<li>Python 2.4 - November 30, 2004, 同年⽬前最流行的WEB框架Django 诞⽣</li>
-<li><strong>Python 2.7 - July 3, 2010</strong> 2014年年11⽉月，宣布Python2.7支持到2020年年，并重申不会发布2.8版本，因为预计⽤户将尽快转向 Python3.4+</li>
-<li>Python 3.0 - December 3, 2008</li>
-<li><strong>Python 3.4 - March 16, 2014</strong></li>
-<li>Python 3.5 - September 13, 2015</li>
-<li>Python 3.6 - December 16,2016</li>
-<li><strong>Python 3.7 - 2018年6⽉27日</strong></li>
-<li>Python 3.8 - 2019年10⽉15⽇</li>
+<li><p>1989年年，为了打发圣诞节假期，Guido开始写Python语⾔的编译器。</p></li>
+<li><p>1991年，第⼀个Python编译器诞生。它是⽤用C语言实现的，并能够调⽤用C语⾔的库文件。</p></li>
+<li><p>Python 1.0 - January 1994 增加了 lambda, map, filterand reduce.</p></li>
+<li><p>Python 2.0 - October 16, 2000，加⼊了内存回收机制，构成了现在Python语言框架的基础</p></li>
+<li><p>Python 2.4 - November 30, 2004, 同年⽬前最流行的WEB框架Django 诞⽣</p></li>
+<li><p><strong>Python 2.7 - July 3, 2010</strong> 2014年年11⽉月，宣布Python2.7支持到2020年年，并重申不会发布2.8版本，因为预计⽤户将尽快转向 Python3.4+</p></li>
+<li><p>Python 3.0 - December 3, 2008</p></li>
+<li><p><strong>Python 3.4 - March 16, 2014</strong></p></li>
+<li><p>Python 3.5 - September 13, 2015</p></li>
+<li><p>Python 3.6 - December 16,2016</p></li>
+<li><p><strong>Python 3.7 - 2018年6⽉27日</strong></p></li>
+<li><p>Python 3.8 - 2019年10⽉15⽇</p></li>
 </ul>
-</div>
-<div class="section" id="id4">
-<h3>2.2.2. Python的优点<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id4">
+<h3><span class="section-number">2.2.2. </span>Python的优点<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <ul>
-<li><p class="first">Python的数据分析能力非常突出</p>
+<li><p>Python的数据分析能力非常突出</p>
 <p>它经常被⽤于数据分析领域，甚⾄成了大数据的标配，就因为Python语⾔对数据的统计和分析的⽅便。随着时间的发展，这个软件已经是⼀一个⽣态了，在数据领域已经是⼀个杀⼿锏级的应⽤，⼈工智能也已经离不开python了。</p>
 </li>
-<li><p class="first">Python的语法⾮常的简单，可读性⾮常强</p>
+<li><p>Python的语法⾮常的简单，可读性⾮常强</p>
 <p>配合Markdown语言，你甚至不需要怎么调整，就能写出⼀篇不错的可用于发表的文章来。学习这门语言的要求基础几乎就是0。</p>
 </li>
-<li><p class="first">Python的学习资源⾮常丰富</p>
+<li><p>Python的学习资源⾮常丰富</p>
 <p>因为使⽤广泛，学习⽅便，所以相关的资源也是⾮常的多，⾮常适合新手来学习。</p>
 </li>
 </ul>
-</div>
-<div class="section" id="id5">
-<h3>2.2.3. Python的主要应⽤用领域<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id5">
+<h3><span class="section-number">2.2.3. </span>Python的主要应⽤用领域<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><strong>云计算:</strong><ul>
-<li>云计算最火的语言， 典型应用OpenStack</li>
+<li><p><strong>云计算:</strong></p>
+<ul>
+<li><p>云计算最火的语言， 典型应用OpenStack</p></li>
 </ul>
 </li>
-<li><strong>WEB开发:</strong></li>
-<li>众多优秀的WEB框架，众多大型⽹站均为Python开发，Youtube, Dropbox, 豆瓣。。。</li>
-<li><strong>科学运算、⼈工智能</strong>:</li>
-<li>典型库NumPy, SciPy, Matplotlib, Enthought librarys,pandas</li>
-<li><strong>系统运维</strong>:</li>
-<li>运维⼈员必备语言</li>
-<li><strong>爬虫</strong>:</li>
-<li>通过代码来模拟人进⾏⻚面访问,对信息进行批量的获取</li>
-<li><strong>金融</strong>:<ul>
-<li>量化交易，⾦融分析，在⾦融工程领域，Python不但在用，且用的最多，⽽且重要性逐年提⾼。</li>
-<li>原因:作为动态语言的Python，语⾔结构清晰简单，库丰富，成熟稳定，科学计算和统计分析都很⽜逼，生产效率远远高于c,c++,java,尤其擅⻓策略回测</li>
+<li><p><strong>WEB开发:</strong></p></li>
+<li><p>众多优秀的WEB框架，众多大型⽹站均为Python开发，Youtube, Dropbox, 豆瓣。。。</p></li>
+<li><p><strong>科学运算、⼈工智能</strong>:</p></li>
+<li><p>典型库NumPy, SciPy, Matplotlib, Enthought librarys,pandas</p></li>
+<li><p><strong>系统运维</strong>:</p></li>
+<li><p>运维⼈员必备语言</p></li>
+<li><p><strong>爬虫</strong>:</p></li>
+<li><p>通过代码来模拟人进⾏⻚面访问,对信息进行批量的获取</p></li>
+<li><p><strong>金融</strong>:</p>
+<ul>
+<li><p>量化交易，⾦融分析，在⾦融工程领域，Python不但在用，且用的最多，⽽且重要性逐年提⾼。</p></li>
+<li><p>原因:作为动态语言的Python，语⾔结构清晰简单，库丰富，成熟稳定，科学计算和统计分析都很⽜逼，生产效率远远高于c,c++,java,尤其擅⻓策略回测</p></li>
 </ul>
 </li>
-<li><strong>图形GUI</strong>: PyQT, WxPython,TkInter</li>
+<li><p><strong>图形GUI</strong>: PyQT, WxPython,TkInter</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>2.3. 环境安装<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id6">
+<h2><span class="section-number">2.3. </span>环境安装<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
 <p>此内容在习题课中会讲</p>
 <ul class="simple">
-<li>推荐 虚拟环境 + Ubuntu</li>
-<li>套件推荐 Anaconda3+pycharm<ul>
-<li>如果机器内存大于4G，推荐虚拟机下启动系统</li>
-<li>小于4G的话，推荐用Windows下的 Anaconda+pycharm</li>
+<li><p>推荐 虚拟环境 + Ubuntu</p></li>
+<li><p>套件推荐 Anaconda3+pycharm</p>
+<ul>
+<li><p>如果机器内存大于4G，推荐虚拟机下启动系统</p></li>
+<li><p>小于4G的话，推荐用Windows下的 Anaconda+pycharm</p></li>
 </ul>
 </li>
-<li>Anaconda安装参见群文件教程</li>
-<li>虚拟环境和Ubuntu安装参见群文件中教程</li>
-<li>教程地址： <a class="reference external" href="http://www.mycode.wang/t/user/171325">http://www.mycode.wang/t/user/171325</a></li>
+<li><p>Anaconda安装参见群文件教程</p></li>
+<li><p>虚拟环境和Ubuntu安装参见群文件中教程</p></li>
+<li><p>教程地址： <a class="reference external" href="http://www.mycode.wang/t/user/171325">http://www.mycode.wang/t/user/171325</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="001注释.html" class="btn btn-neutral float-right" title="3. 注释和帮助" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="001.html" class="btn btn-neutral float-left" title="1. 开学典礼-不讲知识" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="001.html" class="btn btn-neutral float-left" title="1. 开学典礼-不讲知识" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="001%E6%B3%A8%E9%87%8A.html" class="btn btn-neutral float-right" title="3. 注释和帮助" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2020, 北京图灵学院.
-
-    </p>
+    <p>&#169; 版权所有 2020, 北京图灵学院。</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

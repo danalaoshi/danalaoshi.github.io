@@ -1,210 +1,118 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="zh-CN" >
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>3. 注释和帮助 &mdash; Python新全栈教程 1.0 文档</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'1.0',
-              LANGUAGE:'zh_CN',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <link rel="canonical" href="https://danalaoshi.github.io/base/001%E6%B3%A8%E9%87%8A.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f115507d"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="4. 变量" href="002变量和变量类型.html" />
-    <link rel="prev" title="2. Python语言概述" href="001Python语言概述.html" /> 
+    <link rel="next" title="4. 变量" href="002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html" />
+    <link rel="prev" title="2. Python语言概述" href="001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> Python新全栈教程
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            Python新全栈教程
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="001.html">1. 开学典礼-不讲知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="001Python语言概述.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html">2. Python语言概述</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3. 注释和帮助</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#hello-world">3.1. Hello World</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">3.2. 注释</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">3.3. 帮助的获取</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html">4. 变量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="003str.html">5. 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="004运算符.html">6. 表达式 和 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="005-if分支语句.html">7. 分支语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="006-for循环.html">8. 循环语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="007-while循环.html">9. while循环</a></li>
-<li class="toctree-l1"><a class="reference internal" href="008-函数讲义.html">10. 函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="008-内置函数.html">11. 内置函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-内置结构.html">12. 内置数据结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="009-类.html">13. OOP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="010-内置模块.html">14. 常用内置模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="011-持久化和文件.html">15. 文件和序列化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="004%E8%BF%90%E7%AE%97%E7%AC%A6.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="006-for%E5%BE%AA%E7%8E%AF.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="007-while%E5%BE%AA%E7%8E%AF.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-%E5%87%BD%E6%95%B0%E8%AE%B2%E4%B9%89.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-%E5%86%85%E7%BD%AE%E7%BB%93%E6%9E%84.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="009-%E7%B1%BB.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011-%E6%8C%81%E4%B9%85%E5%8C%96%E5%92%8C%E6%96%87%E4%BB%B6.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">16. Python异常的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="013-tkinter.html">17. Tkinter</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../adv/101-函数高级.html">1. 函数高级</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/102-类高级.html">2. OOP高级编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/103_调试技术.html">3. 调试技术</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/1021-单元测试.html">4. 单元测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/104_模块和包.html">5. 模块和包</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/105多线程.html">6. 多线程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/101-%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/103_%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html">7. 计算机编码问题</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adv/107_log.html">8. 日志(logging)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/108_携程.html">9. 协程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/109_网络编程.html">10. 1. 网络通信概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/108_%E6%90%BA%E7%A8%8B.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">10. 1. 网络通信概述</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Python新全栈教程</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>3. 注释和帮助</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>注释和帮助</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/base/001注释.md.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/base/001注释.md.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>3. 注释和帮助<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="hello-world">
-<h2>3.1. Hello World<a class="headerlink" href="#hello-world" title="永久链接至标题">¶</a></h2>
+             
+  <section id="id1">
+<h1><span class="section-number">3. </span>注释和帮助<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="hello-world">
+<h2><span class="section-number">3.1. </span>Hello World<a class="headerlink" href="#hello-world" title="Link to this heading"></a></h2>
 <p>根据学计算机的行规，第一行我们一定要打印<code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">world</span></code>,我们尝试在jupyter notebook里输入以下内容后运行，得出以下结果：</p>
 <blockquote>
-<div>JupyterNotebook的简单使用在习题课里给大家做了讲解</div></blockquote>
+<div><p>JupyterNotebook的简单使用在习题课里给大家做了讲解</p>
+</div></blockquote>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span> 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span> <span class="c1">#打印hellow world出来</span>
  
@@ -222,17 +130,18 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">我爱王晓静</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id2">
-<h2>3.2. 注释<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id2">
+<h2><span class="section-number">3.2. </span>注释<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>给程序员看到一些内容为注释</li>
-<li>机器不去执行注释内容</li>
-<li>注释一般用自然语言书写</li>
-<li>注释的分类：<ul>
-<li>行注释： 以井号开头，可以单独行，也可以在某行代码后边</li>
-<li>块注释： 好几行代码或者内容，以三个连续单引号或双引号开始和结束，中间任何内容机器都忽略</li>
-<li>函数和类注释： 在函数或类定义下面之间使用块注释</li>
+<li><p>给程序员看到一些内容为注释</p></li>
+<li><p>机器不去执行注释内容</p></li>
+<li><p>注释一般用自然语言书写</p></li>
+<li><p>注释的分类：</p>
+<ul>
+<li><p>行注释： 以井号开头，可以单独行，也可以在某行代码后边</p></li>
+<li><p>块注释： 好几行代码或者内容，以三个连续单引号或双引号开始和结束，中间任何内容机器都忽略</p></li>
+<li><p>函数和类注释： 在函数或类定义下面之间使用块注释</p></li>
 </ul>
 </li>
 </ul>
@@ -247,8 +156,8 @@
 <span class="sd">可以有好多行</span>
 <span class="sd">&quot;&quot;&quot;</span> 
 
-<span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
-    <span class="sd">&#39;&#39;&#39;这个函数主要作用是打印出helloworld </span>
+<span class="k">def</span><span class="w"> </span><span class="nf">hello_world</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;这个函数主要作用是打印出helloworld </span>
 <span class="sd">    同时演示函数内的注释</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello world&#39;</span><span class="p">)</span>
@@ -263,14 +172,14 @@
 可以有好多行
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
-<h2>3.3. 帮助的获取<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id3">
+<h2><span class="section-number">3.3. </span>帮助的获取<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>对于系统提供的一些内容，包括模块，函数或者功能，我们如果不确定具体使用方法或者含义可以借助系统提供的帮助文档。</li>
-<li>一般可通过help来获取帮助，需要注意函数类等只需要把名字打出来就可以</li>
-<li>百度是最好的老师</li>
-<li>在群里(QQ群: 9990960)提问的时候需要截图，不允许贴代码，可读性太差</li>
+<li><p>对于系统提供的一些内容，包括模块，函数或者功能，我们如果不确定具体使用方法或者含义可以借助系统提供的帮助文档。</p></li>
+<li><p>一般可通过help来获取帮助，需要注意函数类等只需要把名字打出来就可以</p></li>
+<li><p>百度是最好的老师</p></li>
+<li><p>在群里(QQ群: 9990960)提问的时候需要截图，不允许贴代码，可读性太差</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 比如问我对print这个不太了解，是个啥子呢</span>
 
@@ -287,55 +196,38 @@
         <span class="o">...</span> <span class="o">...</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="002变量和变量类型.html" class="btn btn-neutral float-right" title="4. 变量" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="001Python语言概述.html" class="btn btn-neutral float-left" title="2. Python语言概述" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html" class="btn btn-neutral float-left" title="2. Python语言概述" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html" class="btn btn-neutral float-right" title="4. 变量" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2020, 北京图灵学院.
-
-    </p>
+    <p>&#169; 版权所有 2020, 北京图灵学院。</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

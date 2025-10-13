@@ -1,105 +1,53 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="zh-CN" >
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>4. 变量 &mdash; Python新全栈教程 1.0 文档</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'1.0',
-              LANGUAGE:'zh_CN',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <link rel="canonical" href="https://danalaoshi.github.io/base/002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f115507d"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="5. 字符串" href="003str.html" />
-    <link rel="prev" title="3. 注释和帮助" href="001注释.html" /> 
+    <link rel="prev" title="3. 注释和帮助" href="001%E6%B3%A8%E9%87%8A.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> Python新全栈教程
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            Python新全栈教程
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="001.html">1. 开学典礼-不讲知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="001Python语言概述.html">2. Python语言概述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="001注释.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001%E6%B3%A8%E9%87%8A.html">3. 注释和帮助</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4. 变量</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">4.1. 什么是变量</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id3">4.2. 变量声明</a></li>
@@ -125,114 +73,73 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="003str.html">5. 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="004运算符.html">6. 表达式 和 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="005-if分支语句.html">7. 分支语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="006-for循环.html">8. 循环语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="007-while循环.html">9. while循环</a></li>
-<li class="toctree-l1"><a class="reference internal" href="008-函数讲义.html">10. 函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="008-内置函数.html">11. 内置函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-内置结构.html">12. 内置数据结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="009-类.html">13. OOP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="010-内置模块.html">14. 常用内置模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="011-持久化和文件.html">15. 文件和序列化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="004%E8%BF%90%E7%AE%97%E7%AC%A6.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="006-for%E5%BE%AA%E7%8E%AF.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="007-while%E5%BE%AA%E7%8E%AF.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-%E5%87%BD%E6%95%B0%E8%AE%B2%E4%B9%89.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-%E5%86%85%E7%BD%AE%E7%BB%93%E6%9E%84.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="009-%E7%B1%BB.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011-%E6%8C%81%E4%B9%85%E5%8C%96%E5%92%8C%E6%96%87%E4%BB%B6.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">16. Python异常的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="013-tkinter.html">17. Tkinter</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../adv/101-函数高级.html">1. 函数高级</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/102-类高级.html">2. OOP高级编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/103_调试技术.html">3. 调试技术</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/1021-单元测试.html">4. 单元测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/104_模块和包.html">5. 模块和包</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/105多线程.html">6. 多线程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/101-%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/103_%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html">7. 计算机编码问题</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adv/107_log.html">8. 日志(logging)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/108_携程.html">9. 协程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/109_网络编程.html">10. 1. 网络通信概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/108_%E6%90%BA%E7%A8%8B.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">10. 1. 网络通信概述</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Python新全栈教程</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>4. 变量</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4. </span>变量</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/base/002变量和变量类型.md.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/base/002变量和变量类型.md.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>4. 变量<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id2">
-<h2>4.1. 什么是变量<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+             
+  <section id="id1">
+<h1><span class="section-number">4. </span>变量<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="id2">
+<h2><span class="section-number">4.1. </span>什么是变量<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>程序=数据结构+算法</li>
-<li>变量就是可以重复使用的一个量，或者一个代号，我们可以把变量理解成是计算机中的一个存储单元，用来专门
-存放数据，但我们需要对这个单元进行命名，这就是变量的名称，同样，变量存储的数据的类型，也被叫做变量的类型</li>
+<li><p>程序=数据结构+算法</p></li>
+<li><p>变量就是可以重复使用的一个量，或者一个代号，我们可以把变量理解成是计算机中的一个存储单元，用来专门
+存放数据，但我们需要对这个单元进行命名，这就是变量的名称，同样，变量存储的数据的类型，也被叫做变量的类型</p></li>
 </ul>
-</div>
-<div class="section" id="id3">
-<h2>4.2. 变量声明<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id3">
+<h2><span class="section-number">4.2. </span>变量声明<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <p>变量在使用之前必须声明，即告诉系统开辟出内存来，并把相应内容放入对应内存。<br />变量声明一般有三种方式:</p>
 <ul class="simple">
-<li>var_name = var_value</li>
-<li>var1 = var2 = var3 = var_value</li>
-<li>var1, var2, var3 = v1, v2, v3</li>
+<li><p>var_name = var_value</p></li>
+<li><p>var1 = var2 = var3 = var_value</p></li>
+<li><p>var1, var2, var3 = v1, v2, v3</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定义变量gae，把18放入变量age中</span>
 <span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
@@ -264,68 +171,78 @@
 </pre></div>
 </div>
 <blockquote>
-<div>Python中交换两个变量可以使用 <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">b,</span> <span class="pre">a</span></code> 来进行交换</div></blockquote>
-</div>
-<div class="section" id="id4">
-<h2>4.3. 变量命名的规则<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div><p>Python中交换两个变量可以使用 <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">b,</span> <span class="pre">a</span></code> 来进行交换</p>
+</div></blockquote>
+</section>
+<section id="id4">
+<h2><span class="section-number">4.3. </span>变量命名的规则<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>大小写敏感, 即同样内容，大写和小写不是一个</li>
-<li>变量命名可以包含数字，大小写字母，下划线或者更多，但是我们不推荐除了前三种内容之外的符号</li>
-<li>数字不可以打头<ul>
-<li>4man, 5for 是不可以的</li>
-<li>man4, for5是可以的</li>
+<li><p>大小写敏感, 即同样内容，大写和小写不是一个</p></li>
+<li><p>变量命名可以包含数字，大小写字母，下划线或者更多，但是我们不推荐除了前三种内容之外的符号</p></li>
+<li><p>数字不可以打头</p>
+<ul>
+<li><p>4man, 5for 是不可以的</p></li>
+<li><p>man4, for5是可以的</p></li>
 </ul>
 </li>
-<li>一般在python中，以下划线开头的内容具有特殊含义，不建议使用<ul>
-<li>比如 _age, _name，理论可以，但强烈不推荐，包括但不限于一个下划线开头和两个连续下划线开头</li>
+<li><p>一般在python中，以下划线开头的内容具有特殊含义，不建议使用</p>
+<ul>
+<li><p>比如 _age, _name，理论可以，但强烈不推荐，包括但不限于一个下划线开头和两个连续下划线开头</p></li>
 </ul>
 </li>
-<li>大小写不一样，俗称大小写敏感<ul>
-<li>ForMan 跟 forMan不是一个变量名称</li>
+<li><p>大小写不一样，俗称大小写敏感</p>
+<ul>
+<li><p>ForMan 跟 forMan不是一个变量名称</p></li>
 </ul>
 </li>
-<li>不能使用关键字, 即系统自己使用的变量或者命令</li>
-<li>系统中定义的有特定名称的功能或者具有通用含义的单词<ul>
-<li>此条没有具体规定，常用后会了解</li>
-<li>例如 print, help, len</li>
+<li><p>不能使用关键字, 即系统自己使用的变量或者命令</p></li>
+<li><p>系统中定义的有特定名称的功能或者具有通用含义的单词</p>
+<ul>
+<li><p>此条没有具体规定，常用后会了解</p></li>
+<li><p>例如 print, help, len</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id5">
-<h2>4.4. 推荐命名方式<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id5">
+<h2><span class="section-number">4.4. </span>推荐命名方式<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>使用具有固定含义的英文单词或者缩写， srv=server skt=socket,一般以posix命名规则为主</li>
-<li>驼峰命名法<ul>
-<li>名称以单词自动连接，且每个单词首字母大写<ul>
-<li>大驼峰，每个单词第一个字母均大写<ul>
-<li>在Python中给类命名使用此法</li>
-<li>MyFirstLove, IntOne</li>
+<li><p>使用具有固定含义的英文单词或者缩写， srv=server skt=socket,一般以posix命名规则为主</p></li>
+<li><p>驼峰命名法</p>
+<ul>
+<li><p>名称以单词自动连接，且每个单词首字母大写</p>
+<ul>
+<li><p>大驼峰，每个单词第一个字母均大写</p>
+<ul>
+<li><p>在Python中给类命名使用此法</p></li>
+<li><p>MyFirstLove, IntOne</p></li>
 </ul>
 </li>
-<li>小驼峰，类似大驼峰，但第一个字母小写<ul>
-<li>在Python中一般给普通变量或者函数命名</li>
-<li>myFirstLove, intOne</li>
+<li><p>小驼峰，类似大驼峰，但第一个字母小写</p>
+<ul>
+<li><p>在Python中一般给普通变量或者函数命名</p></li>
+<li><p>myFirstLove, intOne</p></li>
 </ul>
 </li>
-<li>linux系列常用的命名规范<ul>
-<li>多个单词用下划线链接</li>
-<li>单词全部小写</li>
-<li>my_first_love, int_one</li>
+<li><p>linux系列常用的命名规范</p>
+<ul>
+<li><p>多个单词用下划线链接</p></li>
+<li><p>单词全部小写</p></li>
+<li><p>my_first_love, int_one</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>python中，变量命名使用linux中变量习惯写法，类命名使用大驼峰</li>
+<li><p>python中，变量命名使用linux中变量习惯写法，类命名使用大驼峰</p></li>
 </ul>
-</div>
-<div class="section" id="python">
-<h2>4.5. Python目前所有关键字查看方法<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="python">
+<h2><span class="section-number">4.5. </span>Python目前所有关键字查看方法<a class="headerlink" href="#python" title="Link to this heading"></a></h2>
 <p>通过以下方法可以查看Python中所有的关键字</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 查看关键字的方法</span>
-<span class="kn">import</span> <span class="nn">keyword</span> <span class="c1">#引入关键字模块</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">keyword</span> <span class="c1">#引入关键字模块</span>
 <span class="c1"># 打印出系统全部关键字</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">keyword</span><span class="o">.</span><span class="n">kwlist</span><span class="p">)</span>
 </pre></div>
@@ -333,25 +250,27 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;False&#39;</span><span class="p">,</span> <span class="s1">&#39;None&#39;</span><span class="p">,</span> <span class="s1">&#39;True&#39;</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;as&#39;</span><span class="p">,</span> <span class="s1">&#39;assert&#39;</span><span class="p">,</span> <span class="s1">&#39;break&#39;</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="s1">&#39;continue&#39;</span><span class="p">,</span> <span class="s1">&#39;def&#39;</span><span class="p">,</span> <span class="s1">&#39;del&#39;</span><span class="p">,</span> <span class="s1">&#39;elif&#39;</span><span class="p">,</span> <span class="s1">&#39;else&#39;</span><span class="p">,</span> <span class="s1">&#39;except&#39;</span><span class="p">,</span> <span class="s1">&#39;finally&#39;</span><span class="p">,</span> <span class="s1">&#39;for&#39;</span><span class="p">,</span> <span class="s1">&#39;from&#39;</span><span class="p">,</span> <span class="s1">&#39;global&#39;</span><span class="p">,</span> <span class="s1">&#39;if&#39;</span><span class="p">,</span> <span class="s1">&#39;import&#39;</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="s1">&#39;is&#39;</span><span class="p">,</span> <span class="s1">&#39;lambda&#39;</span><span class="p">,</span> <span class="s1">&#39;nonlocal&#39;</span><span class="p">,</span> <span class="s1">&#39;not&#39;</span><span class="p">,</span> <span class="s1">&#39;or&#39;</span><span class="p">,</span> <span class="s1">&#39;pass&#39;</span><span class="p">,</span> <span class="s1">&#39;raise&#39;</span><span class="p">,</span> <span class="s1">&#39;return&#39;</span><span class="p">,</span> <span class="s1">&#39;try&#39;</span><span class="p">,</span> <span class="s1">&#39;while&#39;</span><span class="p">,</span> <span class="s1">&#39;with&#39;</span><span class="p">,</span> <span class="s1">&#39;yield&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id6">
-<h2>4.6. 变量类型<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id6">
+<h2><span class="section-number">4.6. </span>变量类型<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>严格意义上讲，Python只有一个类型</li>
-<li>宽泛的讲，Python标准数据一共六种<ul>
-<li>数字类型Number</li>
-<li>字符串类型str</li>
-<li>列表list</li>
-<li>元组tuple</li>
-<li>字典 Dictionary</li>
-<li>集合 set</li>
+<li><p>严格意义上讲，Python只有一个类型</p></li>
+<li><p>宽泛的讲，Python标准数据一共六种</p>
+<ul>
+<li><p>数字类型Number</p></li>
+<li><p>字符串类型str</p></li>
+<li><p>列表list</p></li>
+<li><p>元组tuple</p></li>
+<li><p>字典 Dictionary</p></li>
+<li><p>集合 set</p></li>
 </ul>
 </li>
-<li>None类型，也是一种特殊的类型<ul>
-<li>表示什么都没有</li>
-<li>如果函数没有返回值，可以返回 None</li>
-<li>用来占位置</li>
-<li>用来解除变量绑定</li>
+<li><p>None类型，也是一种特殊的类型</p>
+<ul>
+<li><p>表示什么都没有</p></li>
+<li><p>如果函数没有返回值，可以返回 None</p></li>
+<li><p>用来占位置</p></li>
+<li><p>用来解除变量绑定</p></li>
 </ul>
 </li>
 </ul>
@@ -363,13 +282,13 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kc">None</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id7">
-<h2>4.7. 变量类型的查看<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id7">
+<h2><span class="section-number">4.7. </span>变量类型的查看<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
 <p>如何判断一个变量的类型，一般有两种方式：</p>
 <ul class="simple">
-<li>type: 可以直接查看任何一个变量的类型</li>
-<li>isinstance: 判断一个变量是否是某个类型，如果被判断的类型是变量的类型的子类型，同样会返回<code class="docutils literal notranslate"><span class="pre">True</span></code></li>
+<li><p>type: 可以直接查看任何一个变量的类型</p></li>
+<li><p>isinstance: 判断一个变量是否是某个类型，如果被判断的类型是变量的类型的子类型，同样会返回<code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">5.0</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span>
 
@@ -386,46 +305,52 @@
 True
 </pre></div>
 </div>
-</div>
-<div class="section" id="number">
-<h2>4.8. Number数字类型<a class="headerlink" href="#number" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="number">
+<h2><span class="section-number">4.8. </span>Number数字类型<a class="headerlink" href="#number" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>数字类型没有大小限制</li>
-<li>基本不像Ｃ语言或者Java语言那种考虑数字的长度</li>
-<li>数字类型包括其他语言的所有数字相关类型，比如：<ul>
-<li>整数</li>
-<li>小数/浮点数</li>
-<li>复数</li>
+<li><p>数字类型没有大小限制</p></li>
+<li><p>基本不像Ｃ语言或者Java语言那种考虑数字的长度</p></li>
+<li><p>数字类型包括其他语言的所有数字相关类型，比如：</p>
+<ul>
+<li><p>整数</p></li>
+<li><p>小数/浮点数</p></li>
+<li><p>复数</p></li>
 </ul>
 </li>
 </ul>
-<div class="section" id="id8">
-<h3>4.8.1. 整数<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<section id="id8">
+<h3><span class="section-number">4.8.1. </span>整数<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>没有小数部分，表示个数的数字</li>
-<li>包括: 自然数，0，负自然数</li>
-<li>整数是分进制,常见进制有：<ul>
-<li>二进制<ul>
-<li>计算机常用</li>
-<li>是计算机唯一能直接理解的数字</li>
-<li>表示为0b开头的0,1代码</li>
-<li>例如 0b01101, 0b10001</li>
+<li><p>没有小数部分，表示个数的数字</p></li>
+<li><p>包括: 自然数，0，负自然数</p></li>
+<li><p>整数是分进制,常见进制有：</p>
+<ul>
+<li><p>二进制</p>
+<ul>
+<li><p>计算机常用</p></li>
+<li><p>是计算机唯一能直接理解的数字</p></li>
+<li><p>表示为0b开头的0,1代码</p></li>
+<li><p>例如 0b01101, 0b10001</p></li>
 </ul>
 </li>
-<li>八进制<ul>
-<li>不常用</li>
-<li>以0o开头的包含0-7的数字</li>
+<li><p>八进制</p>
+<ul>
+<li><p>不常用</p></li>
+<li><p>以0o开头的包含0-7的数字</p></li>
 </ul>
 </li>
-<li>十六进制<ul>
-<li>逢16进1</li>
-<li>其实是每四位二进制表示一位十六进制数</li>
-<li>包含0-9， a-f</li>
-<li>数字上以0x开头表示</li>
+<li><p>十六进制</p>
+<ul>
+<li><p>逢16进1</p></li>
+<li><p>其实是每四位二进制表示一位十六进制数</p></li>
+<li><p>包含0-9， a-f</p></li>
+<li><p>数字上以0x开头表示</p></li>
 </ul>
 </li>
-<li>十进制<ul>
-<li>18， 89， 178</li>
+<li><p>十进制</p>
+<ul>
+<li><p>18， 89， 178</p></li>
 </ul>
 </li>
 </ul>
@@ -450,15 +375,15 @@ True
 <span class="mi">255</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id9">
-<h3>4.8.2. 各进制数字直接的转换<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id9">
+<h3><span class="section-number">4.8.2. </span>各进制数字直接的转换<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <p>Python提供了相应的转换函数，可以把数字转换成想要的进制，此类函数包括:</p>
 <ul class="simple">
-<li>int: 转换成十进制整数</li>
-<li>bin：转换成二进制数</li>
-<li>oct：转换成八进制</li>
-<li>hex：转换成十六进制</li>
+<li><p>int: 转换成十进制整数</p></li>
+<li><p>bin：转换成二进制数</p></li>
+<li><p>oct：转换成八进制</p></li>
+<li><p>hex：转换成十六进制</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 不同进制之间的转换</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span>
@@ -491,23 +416,25 @@ True
 <span class="n">十六转2</span><span class="p">:</span> <span class="mb">0b11111111</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id10">
-<h3>4.8.3. 浮点数<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id10">
+<h3><span class="section-number">4.8.3. </span>浮点数<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>小数在计算机里称为浮点数</li>
-<li>计算机里边表示浮点数可以有条件省略，比如以下都表示小数：<ul>
-<li>3.1415</li>
-<li>3.: 3.0的省略</li>
-<li>0.5</li>
-<li>.5 ： 0.5的省略</li>
+<li><p>小数在计算机里称为浮点数</p></li>
+<li><p>计算机里边表示浮点数可以有条件省略，比如以下都表示小数：</p>
+<ul>
+<li><p>3.1415</p></li>
+<li><p>3.: 3.0的省略</p></li>
+<li><p>0.5</p></li>
+<li><p>.5 ： 0.5的省略</p></li>
 </ul>
 </li>
-<li>科学计数法<ul>
-<li>定义跟数学定义一致</li>
-<li>写法是用e/E后面跟整数表示10的指数</li>
-<li>176.23 == 1.7634e2</li>
-<li>0.876 == 8.76e-1</li>
+<li><p>科学计数法</p>
+<ul>
+<li><p>定义跟数学定义一致</p></li>
+<li><p>写法是用e/E后面跟整数表示10的指数</p></li>
+<li><p>176.23 == 1.7634e2</p></li>
+<li><p>0.876 == 8.76e-1</p></li>
 </ul>
 </li>
 </ul>
@@ -527,15 +454,16 @@ True
 <span class="mf">1234.0</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="complex">
-<h3>4.8.4. 复数complex<a class="headerlink" href="#complex" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="complex">
+<h3><span class="section-number">4.8.4. </span>复数complex<a class="headerlink" href="#complex" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>定义同数学定义一致,即表示一个由实部和虚部构成的数字</li>
-<li>虚部用j/J表示, 例如：<ul>
-<li>5+3j</li>
-<li>3j</li>
-<li>(3j)</li>
+<li><p>定义同数学定义一致,即表示一个由实部和虚部构成的数字</p></li>
+<li><p>虚部用j/J表示, 例如：</p>
+<ul>
+<li><p>5+3j</p></li>
+<li><p>3j</p></li>
+<li><p>(3j)</p></li>
 </ul>
 </li>
 </ul>
@@ -551,12 +479,12 @@ True
 <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">8</span><span class="n">j</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id11">
-<h3>4.8.5. 布尔值<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id11">
+<h3><span class="section-number">4.8.5. </span>布尔值<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>表示真假的值</li>
-<li>只有两个值， True/False, 这是两个值，不需要引号，不是字符串</li>
+<li><p>表示真假的值</p></li>
+<li><p>只有两个值， True/False, 这是两个值，不需要引号，不是字符串</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -570,8 +498,9 @@ True
 </pre></div>
 </div>
 <ul class="simple">
-<li>布尔值可以跟数字直接操作<ul>
-<li>此时True被看做数字1， False被看做数字0</li>
+<li><p>布尔值可以跟数字直接操作</p>
+<ul>
+<li><p>此时True被看做数字1， False被看做数字0</p></li>
 </ul>
 </li>
 </ul>
@@ -589,9 +518,10 @@ True
 </pre></div>
 </div>
 <ul class="simple">
-<li>在需要逻辑值的地方，我们也可以使用数字来表示<ul>
-<li>此时数字0被当做False</li>
-<li>其余的，包括负数，被当做True</li>
+<li><p>在需要逻辑值的地方，我们也可以使用数字来表示</p>
+<ul>
+<li><p>此时数字0被当做False</p></li>
+<li><p>其余的，包括负数，被当做True</p></li>
 </ul>
 </li>
 </ul>
@@ -607,27 +537,30 @@ True
 <span class="mi">0</span><span class="n">是False</span> 
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id12">
-<h2>4.9. 数据类型转换<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id12">
+<h2><span class="section-number">4.9. </span>数据类型转换<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>什么是数据类型转换？<ul>
-<li>把一个数据类型转换为另一个数据类型，例如字符串转为数字</li>
+<li><p>什么是数据类型转换？</p>
+<ul>
+<li><p>把一个数据类型转换为另一个数据类型，例如字符串转为数字</p></li>
 </ul>
 </li>
-<li>为什么需要数据类型转换？<ul>
-<li>因为不同的数据类型之间不能运算</li>
+<li><p>为什么需要数据类型转换？</p>
+<ul>
+<li><p>因为不同的数据类型之间不能运算</p></li>
 </ul>
 </li>
-<li>数据类型转换的形式？<ul>
-<li>自动类型转换</li>
-<li>强制类型转换</li>
+<li><p>数据类型转换的形式？</p>
+<ul>
+<li><p>自动类型转换</p></li>
+<li><p>强制类型转换</p></li>
 </ul>
 </li>
 </ul>
-<div class="section" id="id13">
-<h3>4.9.1. 自动类型转换<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<section id="id13">
+<h3><span class="section-number">4.9.1. </span>自动类型转换<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 自动类型转换</span>
 <span class="c1"># 当两个不同的值进行运算时，结果会向更高的精度进行计算</span>
 <span class="c1"># True ==&gt; 整型 ==&gt; 浮点 ==&gt; 复数</span>
@@ -638,108 +571,98 @@ True
 <span class="c1"># print(True+3.14)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id14">
-<h3>4.9.2. 强制类型转换<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id14">
+<h3><span class="section-number">4.9.2. </span>强制类型转换<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
 <blockquote>
-<div>python中的每个数据类型都有对应的方法，可以对数据类型进行转换</div></blockquote>
+<div><p>python中的每个数据类型都有对应的方法，可以对数据类型进行转换</p>
+</div></blockquote>
 <ul class="simple">
-<li>str() 可以把所有的其它数据类型转换为字符串类型</li>
-<li>int() 字符串转数字类型时，如果字符串中时纯数字，可以转换<ul>
-<li>其它容器类型不能转为数字int类型</li>
+<li><p>str() 可以把所有的其它数据类型转换为字符串类型</p></li>
+<li><p>int() 字符串转数字类型时，如果字符串中时纯数字，可以转换</p>
+<ul>
+<li><p>其它容器类型不能转为数字int类型</p></li>
 </ul>
 </li>
-<li>float() 浮点类型的转换和int类型一样，不过转换的结果是浮点类型</li>
-<li>bool() 可以把其它类型转换布尔类型的True或False<ul>
-<li>总结，哪些情况转bool的结果是 False</li>
-<li><code class="docutils literal notranslate"><span class="pre">'',0,0.0,False,[],{},(),set()</span></code></li>
+<li><p>float() 浮点类型的转换和int类型一样，不过转换的结果是浮点类型</p></li>
+<li><p>bool() 可以把其它类型转换布尔类型的True或False</p>
+<ul>
+<li><p>总结，哪些情况转bool的结果是 False</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'',0,0.0,False,[],{},(),set()</span></code></p></li>
 </ul>
 </li>
-<li>list() 列表<ul>
-<li>数字类型是 非容器类型，不能转换为列表</li>
-<li>字符串 转换为列表时  会把字符串中的每一个字符当做列表的元素</li>
-<li>集合 可以转换为 list列表类型</li>
-<li>元组 可以转换为 list列表类型</li>
-<li>字典 可以转换为 list列表类型,只保留了字典中的键</li>
+<li><p>list() 列表</p>
+<ul>
+<li><p>数字类型是 非容器类型，不能转换为列表</p></li>
+<li><p>字符串 转换为列表时  会把字符串中的每一个字符当做列表的元素</p></li>
+<li><p>集合 可以转换为 list列表类型</p></li>
+<li><p>元组 可以转换为 list列表类型</p></li>
+<li><p>字典 可以转换为 list列表类型,只保留了字典中的键</p></li>
 </ul>
 </li>
-<li>tuple() 元组<ul>
-<li>数字类型非容器类型，不能转换为元组</li>
-<li>其它容器类型的数据进行转换时，和列表一样</li>
+<li><p>tuple() 元组</p>
+<ul>
+<li><p>数字类型非容器类型，不能转换为元组</p></li>
+<li><p>其它容器类型的数据进行转换时，和列表一样</p></li>
 </ul>
 </li>
-<li>set() 集合<ul>
-<li>数字类型 非容器类型，不能转换为集合</li>
-<li>字符串,列表，元组可以转为 集合结果是无序的</li>
-<li>字典转换为集合时，只保留了字典的键 key</li>
+<li><p>set() 集合</p>
+<ul>
+<li><p>数字类型 非容器类型，不能转换为集合</p></li>
+<li><p>字符串,列表，元组可以转为 集合结果是无序的</p></li>
+<li><p>字典转换为集合时，只保留了字典的键 key</p></li>
 </ul>
 </li>
-<li>dict() 字典<ul>
-<li>数字类型 非容器类型，不能转换为字典</li>
-<li>字符串不能直接转换为 字典</li>
-<li>列表可以转换为字典，要求是一个二级列表，并且每个二级元素只能有两个值</li>
-<li>元组可以转换为字典，要求是一个二级元组，并且每个二级元素只能有两个值</li>
+<li><p>dict() 字典</p>
+<ul>
+<li><p>数字类型 非容器类型，不能转换为字典</p></li>
+<li><p>字符串不能直接转换为 字典</p></li>
+<li><p>列表可以转换为字典，要求是一个二级列表，并且每个二级元素只能有两个值</p></li>
+<li><p>元组可以转换为字典，要求是一个二级元组，并且每个二级元素只能有两个值</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id15">
-<h3>4.9.3. Python的二进制<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id15">
+<h3><span class="section-number">4.9.3. </span>Python的二进制<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">python</span></code>并没有二进制的类型，数字可以转换成二进制数字，但在<code class="docutils literal notranslate"><span class="pre">python</span></code>内被当做
 <code class="docutils literal notranslate"><span class="pre">byte</span></code>类型或者字符串类型处理。</p>
 <p>为了弥补二进制的处理带来的问题，<code class="docutils literal notranslate"><span class="pre">python</span></code>有个单独的模块<code class="docutils literal notranslate"><span class="pre">struct</span></code>用来单独处理二进制
 相关的操作。</p>
 <p><a class="reference external" href="http://www.mycode.wang/t/lpLmD5eyg">Python的struct操作二进制</a></p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="003str.html" class="btn btn-neutral float-right" title="5. 字符串" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="001注释.html" class="btn btn-neutral float-left" title="3. 注释和帮助" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="001%E6%B3%A8%E9%87%8A.html" class="btn btn-neutral float-left" title="3. 注释和帮助" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="003str.html" class="btn btn-neutral float-right" title="5. 字符串" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2020, 北京图灵学院.
-
-    </p>
+    <p>&#169; 版权所有 2020, 北京图灵学院。</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

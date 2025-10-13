@@ -1,123 +1,71 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="zh-CN" >
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>3. 调试技术 &mdash; Python新全栈教程 1.0 文档</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'1.0',
-              LANGUAGE:'zh_CN',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <link rel="canonical" href="https://danalaoshi.github.io/adv/103_%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f115507d"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="4. 单元测试" href="1021-单元测试.html" />
-    <link rel="prev" title="2. OOP高级编程" href="102-类高级.html" /> 
+    <link rel="next" title="4. 单元测试" href="1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html" />
+    <link rel="prev" title="2. OOP高级编程" href="102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> Python新全栈教程
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            Python新全栈教程
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../base/001.html">1. 开学典礼-不讲知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/001Python语言概述.html">2. Python语言概述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/001注释.html">3. 注释和帮助</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001%E6%B3%A8%E9%87%8A.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html">4. 变量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/003str.html">5. 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/004运算符.html">6. 表达式 和 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/005-if分支语句.html">7. 分支语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/006-for循环.html">8. 循环语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/007-while循环.html">9. while循环</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/008-函数讲义.html">10. 函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/008-内置函数.html">11. 内置函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/09-内置结构.html">12. 内置数据结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/009-类.html">13. OOP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/010-内置模块.html">14. 常用内置模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/011-持久化和文件.html">15. 文件和序列化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/004%E8%BF%90%E7%AE%97%E7%AC%A6.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/006-for%E5%BE%AA%E7%8E%AF.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/007-while%E5%BE%AA%E7%8E%AF.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-%E5%87%BD%E6%95%B0%E8%AE%B2%E4%B9%89.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/09-%E5%86%85%E7%BD%AE%E7%BB%93%E6%9E%84.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/009-%E7%B1%BB.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/010-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/011-%E6%8C%81%E4%B9%85%E5%8C%96%E5%92%8C%E6%96%87%E4%BB%B6.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/012-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">16. Python异常的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/013-tkinter.html">17. Tkinter</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="101-函数高级.html">1. 函数高级</a></li>
-<li class="toctree-l1"><a class="reference internal" href="102-类高级.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="101-%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html">2. OOP高级编程</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3. 调试技术</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">3.1. 几个概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pdb">3.2. pdb调试</a><ul>
@@ -132,117 +80,77 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="1021-单元测试.html">4. 单元测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="104_模块和包.html">5. 模块和包</a></li>
-<li class="toctree-l1"><a class="reference internal" href="105多线程.html">6. 多线程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html">7. 计算机编码问题</a></li>
 <li class="toctree-l1"><a class="reference internal" href="107_log.html">8. 日志(logging)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="108_携程.html">9. 协程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="109_网络编程.html">10. 1. 网络通信概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="108_%E6%90%BA%E7%A8%8B.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">10. 1. 网络通信概述</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Python新全栈教程</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>3. 调试技术</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>调试技术</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/adv/103_调试技术.md.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/adv/103_调试技术.md.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>3. 调试技术<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+             
+  <section id="id1">
+<h1><span class="section-number">3. </span>调试技术<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <ul class="simple">
-<li>程序调试是将编制的程序投入实际运行前，用手工或编译程序等方法进行测试，修正语法错误和逻辑错误的过程。</li>
-<li>这是保证计算机信息系统正确性的必不可少的步骤。</li>
-<li>编完计算机程序，必须送入计算机中测试。根据测试时所发现的错误，进一步诊断，找出原因和具体的位置进行修正</li>
-<li>调试分类：<ul>
-<li>静态调试：以看为主，看源代码，输出寄存器内容，输出变量值</li>
-<li>动态调试：程序运行中人为控制运行节奏和步骤</li>
+<li><p>程序调试是将编制的程序投入实际运行前，用手工或编译程序等方法进行测试，修正语法错误和逻辑错误的过程。</p></li>
+<li><p>这是保证计算机信息系统正确性的必不可少的步骤。</p></li>
+<li><p>编完计算机程序，必须送入计算机中测试。根据测试时所发现的错误，进一步诊断，找出原因和具体的位置进行修正</p></li>
+<li><p>调试分类：</p>
+<ul>
+<li><p>静态调试：以看为主，看源代码，输出寄存器内容，输出变量值</p></li>
+<li><p>动态调试：程序运行中人为控制运行节奏和步骤</p></li>
 </ul>
 </li>
 </ul>
-<div class="section" id="id2">
-<h2>3.1. 几个概念<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<section id="id2">
+<h2><span class="section-number">3.1. </span>几个概念<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>断点(breakpoint): 程序中某一个位置,再调试模式(debug)下运行,程序执行到这个点就会停住,等待你下一步命令</li>
-<li>调试模式(debug): 程序运行,遇到断点会挺住,方便交互式运行代码</li>
-<li>运行模式(run): 程序正常执行命令,自动忽略断点</li>
+<li><p>断点(breakpoint): 程序中某一个位置,再调试模式(debug)下运行,程序执行到这个点就会停住,等待你下一步命令</p></li>
+<li><p>调试模式(debug): 程序运行,遇到断点会挺住,方便交互式运行代码</p></li>
+<li><p>运行模式(run): 程序正常执行命令,自动忽略断点</p></li>
 </ul>
-</div>
-<div class="section" id="pdb">
-<h2>3.2. pdb调试<a class="headerlink" href="#pdb" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="pdb">
+<h2><span class="section-number">3.2. </span>pdb调试<a class="headerlink" href="#pdb" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">pdb</span></code>调试是应对的命令行样式的开发, 现在用处比较少, 再个别远程调试中或许还有用到,但很少遇到了.</p>
 <p>了解<code class="docutils literal notranslate"><span class="pre">pdb</span></code>调试主要是了解调试的一些基础概念.</p>
 <p>推荐文章</p>
 <ul class="simple">
-<li><a class="reference external" href="https://docs.python.org/2/library/pdb.html">官方网页（英文)</a></li>
-<li><a class="reference external" href="http://blog.csdn.net/carolzhang8406/article/details/6923997">pdb模块介绍</a></li>
-<li><a class="reference external" href="https://www.ibm.com/developerworks/cn/linux/l-cn-pythondebugger/">pdb调试技巧</a></li>
+<li><p><a class="reference external" href="https://docs.python.org/2/library/pdb.html">官方网页（英文)</a></p></li>
+<li><p><a class="reference external" href="http://blog.csdn.net/carolzhang8406/article/details/6923997">pdb模块介绍</a></p></li>
+<li><p><a class="reference external" href="https://www.ibm.com/developerworks/cn/linux/l-cn-pythondebugger/">pdb调试技巧</a></p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">pdb</span></code>调试启动方式分两种：</p>
 <ul class="simple">
-<li>命令行启动</li>
-<li>代码中加入调试包, 直接命令启动</li>
+<li><p>命令行启动</p></li>
+<li><p>代码中加入调试包, 直接命令启动</p></li>
 </ul>
-<div class="section" id="id3">
-<h3>3.2.1. 命令行启动<code class="docutils literal notranslate"><span class="pre">pdb</span></code><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<section id="id3">
+<h3><span class="section-number">3.2.1. </span>命令行启动<code class="docutils literal notranslate"><span class="pre">pdb</span></code><a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <p>下面代码是被测代码:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 01.py, 这个名字起的很魔幻,请自动忽略</span>
 <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;i love chian&quot;</span>
@@ -317,13 +225,13 @@
 </pre></div>
 </div>
 <p>敲入继续命令后, 则继续执行知道程序末尾(因为没设置端点), 最后会打印出相应错误信息,并告诉你可以通过<code class="docutils literal notranslate"><span class="pre">cont</span></code>或者<code class="docutils literal notranslate"><span class="pre">step</span></code>命令重启调试.</p>
-</div>
-<div class="section" id="id4">
-<h3>3.2.2. 代码启动<code class="docutils literal notranslate"><span class="pre">pdb</span></code><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id4">
+<h3><span class="section-number">3.2.2. </span>代码启动<code class="docutils literal notranslate"><span class="pre">pdb</span></code><a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <p>如果想经常调试,可以再代码中直接写入调试命令,下面代码则是直接把调试模块导入后执行:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 文件名  02.py</span>
 <span class="c1"># 导入调试后设置</span>
-<span class="kn">import</span> <span class="nn">pdb</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pdb</span>
 <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
 <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;i love chian&quot;</span>
 <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;and you&quot;</span>
@@ -339,13 +247,13 @@
 </pre></div>
 </div>
 <p>剩下的跟上面打开方式的调试一致.</p>
-</div>
-<div class="section" id="id5">
-<h3>3.2.3. <code class="docutils literal notranslate"><span class="pre">pdb</span></code>调试案例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id5">
+<h3><span class="section-number">3.2.3. </span><code class="docutils literal notranslate"><span class="pre">pdb</span></code>调试案例<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <p>参看下面代码:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pdb</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pdb</span>
 <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
-<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LOOP </span><span class="si">{0}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 
@@ -417,18 +325,18 @@ Func is done!!!
 Software is done !!!!!!!!
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="pycharm">
-<h2>3.3. pycharm调试<a class="headerlink" href="#pycharm" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="pycharm">
+<h2><span class="section-number">3.3. </span>pycharm调试<a class="headerlink" href="#pycharm" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">Pycharm</span></code>只是一个工具, 调试的目的跟<code class="docutils literal notranslate"><span class="pre">pdb</span></code>一致,所以, 用法上除了这是一个图形用户界面的产品, 跟命令行调试本质上一致.</p>
 <ul class="simple">
-<li>运行分为 <code class="docutils literal notranslate"><span class="pre">run/debug</span></code>模式, 菜单<code class="docutils literal notranslate"><span class="pre">run</span></code>下面有相关按钮, 并配有相应快捷键</li>
+<li><p>运行分为 <code class="docutils literal notranslate"><span class="pre">run/debug</span></code>模式, 菜单<code class="docutils literal notranslate"><span class="pre">run</span></code>下面有相关按钮, 并配有相应快捷键</p></li>
 </ul>
-<div class="section" id="id6">
-<h3>3.3.1. 案例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<section id="id6">
+<h3><span class="section-number">3.3.1. </span>案例<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>调试以下代码:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">SayHello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">SayHello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I want to say hello with your, </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done...............&quot;</span><span class="p">)</span>
@@ -451,56 +359,39 @@ Software is done !!!!!!!!
 <p>右侧是快捷按钮:
 <img alt="../_images/1004.png" src="../_images/1004.png" />
 <img alt="../_images/1005.png" src="../_images/1005.png" /></p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="1021-单元测试.html" class="btn btn-neutral float-right" title="4. 单元测试" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="102-类高级.html" class="btn btn-neutral float-left" title="2. OOP高级编程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html" class="btn btn-neutral float-left" title="2. OOP高级编程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html" class="btn btn-neutral float-right" title="4. 单元测试" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2020, 北京图灵学院.
-
-    </p>
+    <p>&#169; 版权所有 2020, 北京图灵学院。</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

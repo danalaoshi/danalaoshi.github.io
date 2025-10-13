@@ -1,106 +1,54 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="zh-CN" >
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>6. 表达式 和 运算符 &mdash; Python新全栈教程 1.0 文档</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'1.0',
-              LANGUAGE:'zh_CN',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <link rel="canonical" href="https://danalaoshi.github.io/base/004%E8%BF%90%E7%AE%97%E7%AC%A6.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f115507d"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="7. 分支语句" href="005-if分支语句.html" />
+    <link rel="next" title="7. 分支语句" href="005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html" />
     <link rel="prev" title="5. 字符串" href="003str.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> Python新全栈教程
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            Python新全栈教程
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="001.html">1. 开学典礼-不讲知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="001Python语言概述.html">2. Python语言概述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="001注释.html">3. 注释和帮助</a></li>
-<li class="toctree-l1"><a class="reference internal" href="002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001%E6%B3%A8%E9%87%8A.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html">4. 变量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="003str.html">5. 字符串</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">6. 表达式 和 运算符</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id2">6.1. 算数运算符</a><ul>
@@ -133,155 +81,119 @@
 <li class="toctree-l2"><a class="reference internal" href="#id17">6.10. 运算符的优先级问题</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="005-if分支语句.html">7. 分支语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="006-for循环.html">8. 循环语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="007-while循环.html">9. while循环</a></li>
-<li class="toctree-l1"><a class="reference internal" href="008-函数讲义.html">10. 函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="008-内置函数.html">11. 内置函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="09-内置结构.html">12. 内置数据结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="009-类.html">13. OOP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="010-内置模块.html">14. 常用内置模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="011-持久化和文件.html">15. 文件和序列化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="006-for%E5%BE%AA%E7%8E%AF.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="007-while%E5%BE%AA%E7%8E%AF.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-%E5%87%BD%E6%95%B0%E8%AE%B2%E4%B9%89.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-%E5%86%85%E7%BD%AE%E7%BB%93%E6%9E%84.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="009-%E7%B1%BB.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011-%E6%8C%81%E4%B9%85%E5%8C%96%E5%92%8C%E6%96%87%E4%BB%B6.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">16. Python异常的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="013-tkinter.html">17. Tkinter</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../adv/101-函数高级.html">1. 函数高级</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/102-类高级.html">2. OOP高级编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/103_调试技术.html">3. 调试技术</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/1021-单元测试.html">4. 单元测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/104_模块和包.html">5. 模块和包</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/105多线程.html">6. 多线程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/101-%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/103_%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html">7. 计算机编码问题</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adv/107_log.html">8. 日志(logging)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/108_携程.html">9. 协程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/109_网络编程.html">10. 1. 网络通信概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/108_%E6%90%BA%E7%A8%8B.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">10. 1. 网络通信概述</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Python新全栈教程</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>6. 表达式 和 运算符</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6. </span>表达式 和 运算符</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/base/004运算符.md.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/base/004运算符.md.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>6. 表达式 和 运算符<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+             
+  <section id="id1">
+<h1><span class="section-number">6. </span>表达式 和 运算符<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <p>运算符就是对数据进行运算的符号，我们小时候学数学的加减乘除就是运算符的代表。</p>
 <p>因为运算总离不开数据，我们这里把运算符和数据类型一并讲解。</p>
 <p>先上两个概念作为开胃菜：</p>
 <ul class="simple">
-<li>表达式<ul>
-<li>由一个或者几个数字或者变量和运算符组合成的一行代码</li>
-<li>通常会返回一个结果</li>
+<li><p>表达式</p>
+<ul>
+<li><p>由一个或者几个数字或者变量和运算符组合成的一行代码</p></li>
+<li><p>通常会返回一个结果</p></li>
 </ul>
 </li>
-<li>运算符<ul>
-<li>由一个或以上的值经过变化得到新值的过程就叫运算</li>
-<li>用于运算的符号叫运算符, 对于数字来说，加减乘除就是数字运算符</li>
+<li><p>运算符</p>
+<ul>
+<li><p>由一个或以上的值经过变化得到新值的过程就叫运算</p></li>
+<li><p>用于运算的符号叫运算符, 对于数字来说，加减乘除就是数字运算符</p></li>
 </ul>
 </li>
-<li>运算符分类：<ul>
-<li>算数运算符</li>
-<li>字符串运算符</li>
-<li>比较或者关系运算符</li>
-<li>赋值运算符</li>
-<li>逻辑运算符</li>
-<li>位运算</li>
-<li>成员运算</li>
-<li>身份运算符</li>
+<li><p>运算符分类：</p>
+<ul>
+<li><p>算数运算符</p></li>
+<li><p>字符串运算符</p></li>
+<li><p>比较或者关系运算符</p></li>
+<li><p>赋值运算符</p></li>
+<li><p>逻辑运算符</p></li>
+<li><p>位运算</p></li>
+<li><p>成员运算</p></li>
+<li><p>身份运算符</p></li>
 </ul>
 </li>
 </ul>
-<div class="section" id="id2">
-<h2>6.1. 算数运算符<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<section id="id2">
+<h2><span class="section-number">6.1. </span>算数运算符<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <p>进行算数运算的符号成为算术运算符，算术运算符操作的数据类型是数字类型。</p>
-<div class="section" id="id3">
-<h3>6.1.1. 数字类型<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<section id="id3">
+<h3><span class="section-number">6.1.1. </span>数字类型<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <p>Python的数字类型包括：</p>
 <ul class="simple">
-<li>整数, 即我们数学意义上的整数，包括0， 正整数，负整数</li>
-<li>浮点数：即我们数学意淫上的小数， 带小数点，常见的写法有<ul>
-<li>正常小数，即 3.1415</li>
-<li>如果整数部分是0， 则可以省略整数部分，例如 <code class="docutils literal notranslate"><span class="pre">0.9</span></code> 可以写成 <code class="docutils literal notranslate"><span class="pre">.9</span></code></li>
-<li>科学计数法， <code class="docutils literal notranslate"><span class="pre">31415</span></code> 可以写成 <code class="docutils literal notranslate"><span class="pre">3.1415e4</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">3.14315E4</span></code>, 此处<code class="docutils literal notranslate"><span class="pre">e</span></code>可以大小写</li>
+<li><p>整数, 即我们数学意义上的整数，包括0， 正整数，负整数</p></li>
+<li><p>浮点数：即我们数学意淫上的小数， 带小数点，常见的写法有</p>
+<ul>
+<li><p>正常小数，即 3.1415</p></li>
+<li><p>如果整数部分是0， 则可以省略整数部分，例如 <code class="docutils literal notranslate"><span class="pre">0.9</span></code> 可以写成 <code class="docutils literal notranslate"><span class="pre">.9</span></code></p></li>
+<li><p>科学计数法， <code class="docutils literal notranslate"><span class="pre">31415</span></code> 可以写成 <code class="docutils literal notranslate"><span class="pre">3.1415e4</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">3.14315E4</span></code>, 此处<code class="docutils literal notranslate"><span class="pre">e</span></code>可以大小写</p></li>
 </ul>
 </li>
-<li>复数， 即数学意义上的复数<ul>
-<li>例如： <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4j</span></code>， 此复数包括实部<code class="docutils literal notranslate"><span class="pre">3</span></code>和虚部<code class="docutils literal notranslate"><span class="pre">4j</span></code></li>
-<li>如果只有虚部，也是可以的，例如 <code class="docutils literal notranslate"><span class="pre">0+4j</span></code> 可以写成 <code class="docutils literal notranslate"><span class="pre">4j</span></code></li>
-<li>如果只有 <code class="docutils literal notranslate"><span class="pre">1j</span></code> 则不可以省略成 <code class="docutils literal notranslate"><span class="pre">j</span></code>， 只有虚部<code class="docutils literal notranslate"><span class="pre">j</span></code>则被认为是变量，不是复数的虚部</li>
+<li><p>复数， 即数学意义上的复数</p>
+<ul>
+<li><p>例如： <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4j</span></code>， 此复数包括实部<code class="docutils literal notranslate"><span class="pre">3</span></code>和虚部<code class="docutils literal notranslate"><span class="pre">4j</span></code></p></li>
+<li><p>如果只有虚部，也是可以的，例如 <code class="docutils literal notranslate"><span class="pre">0+4j</span></code> 可以写成 <code class="docutils literal notranslate"><span class="pre">4j</span></code></p></li>
+<li><p>如果只有 <code class="docutils literal notranslate"><span class="pre">1j</span></code> 则不可以省略成 <code class="docutils literal notranslate"><span class="pre">j</span></code>， 只有虚部<code class="docutils literal notranslate"><span class="pre">j</span></code>则被认为是变量，不是复数的虚部</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id4">
-<h3>6.1.2. 对数字的运算符号<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id4">
+<h3><span class="section-number">6.1.2. </span>对数字的运算符号<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>python没有自增自减运算符, 即没有Java语言中的 <code class="docutils literal notranslate"><span class="pre">i++,</span> <span class="pre">i--</span></code>等写法</li>
-<li>除常见运算符外，python的math包内有很多数学运算函数，可以使用做复杂科学计算</li>
-<li>算数运算符表</li>
+<li><p>python没有自增自减运算符, 即没有Java语言中的 <code class="docutils literal notranslate"><span class="pre">i++,</span> <span class="pre">i--</span></code>等写法</p></li>
+<li><p>除常见运算符外，python的math包内有很多数学运算函数，可以使用做复杂科学计算</p></li>
+<li><p>算数运算符表</p></li>
 </ul>
 <p>| 运算符  | 描述                                            | 实例                      |
-| :—– | :————— | :———————————— |
+| :----- | :--------------- | :------------------------------------ |
 | +      | 加: 两个对象相加                                |a + b 输出结果 31         |
 | -      | 减: 得到负数或是一个数减去另一个数                  | a - b 输出结果 -11        |
 | *      | 乘: 两个数相乘或是返回一个被重复若干次的字符串        | a * b 输出结果 210        |
@@ -290,7 +202,7 @@
 | **     | 幂: 返回x的y次幂                                | a**b 为10的21次方         |
 | //     | 取整除: 向下取接近除数的整数                      | 9//2 == 4                |</p>
 <ul class="simple">
-<li>+,- 跟正常算术运算符一模一样</li>
+<li><p>+,- 跟正常算术运算符一模一样</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">9</span><span class="o">+</span><span class="mi">3</span><span class="o">-</span><span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -301,7 +213,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>乘号用星号(*)代替</li>
+<li><p>乘号用星号(*)代替</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">9</span> <span class="o">*</span> <span class="mi">4</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -312,7 +224,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>除号用斜杠(/)代替, 此处的运算符结果一定是个小数，跟数学上的除号结果一致</li>
+<li><p>除号用斜杠(/)代替, 此处的运算符结果一定是个小数，跟数学上的除号结果一致</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在Python2.x 和python3.x 中，除号(/)结果不一致，此处以3系列为准</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">4</span>
@@ -324,7 +236,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>%: 取余运算，此处结果是数学上的整除取余方法后的余数部分</li>
+<li><p>%: 取余运算，此处结果是数学上的整除取余方法后的余数部分</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 两个数字相除应该有商数有余数</span>
 <span class="c1"># % 只会得到余数</span>
@@ -337,7 +249,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>//: 整数除法中的取商, 此处结果是数学上的整除取余方法后的余数部分</li>
+<li><p>//: 整数除法中的取商, 此处结果是数学上的整除取余方法后的余数部分</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># // 表示取商运算，也叫地板除</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">9</span> <span class="o">//</span> <span class="mi">4</span>
@@ -349,7 +261,7 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li>**: 幂运算</li>
+<li><p>**: 幂运算</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ** 表示幂运算</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">3</span>
@@ -360,17 +272,17 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">27</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id5">
-<h2>6.2. 字符串运算符<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id5">
+<h2><span class="section-number">6.2. </span>字符串运算符<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
 <p>字符串也可以运算，一般Python不把这个单独列出，只是作为字符串的一个知识点讲解，我们会因为是以运算符为主导讲解
 数据类型，所以单独列出来。</p>
-<div class="section" id="id6">
-<h3>6.2.1. 字符串<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<section id="id6">
+<h3><span class="section-number">6.2.1. </span>字符串<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>字符串运算符我们此处特指加好和称号。</p>
 <ul>
-<li><p class="first">加号(<code class="docutils literal notranslate"><span class="pre">+</span></code>), 字符串相加表示两个字符串自动连接在一起成为一个新的字符串</p>
+<li><p>加号(<code class="docutils literal notranslate"><span class="pre">+</span></code>), 字符串相加表示两个字符串自动连接在一起成为一个新的字符串</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  a = &#39;我是刘大拿&#39;
   b = &#39;我爱王晓静&#39;
 
@@ -383,7 +295,7 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">称号(*), 称号是加法的省略，此处意义基本相同，表示多个字符串重复N遍</p>
+<li><p>称号(*), 称号是加法的省略，此处意义基本相同，表示多个字符串重复N遍</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  a =  &#39;我爱王晓静&#39;
 
   c = a * 3
@@ -396,23 +308,24 @@
 </div>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="id7">
-<h2>6.3. 比较运算符<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id7">
+<h2><span class="section-number">6.3. </span>比较运算符<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
 <p>比较运算符的结果是逻辑值，而参与比较运算的数据可以是数字，字符串等，在Python中基本万物皆可比较，但是
 他们的结果只能是逻辑值。</p>
-<div class="section" id="id8">
-<h3>6.3.1. 逻辑值<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<section id="id8">
+<h3><span class="section-number">6.3.1. </span>逻辑值<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <p>逻辑值也叫布尔值(bool, boolean), 表示真假，只有两个值：</p>
 <ul class="simple">
-<li>True： 表示正向的，积极的，对的结果</li>
-<li>False：表示负面的，消极的，错误的结果</li>
+<li><p>True： 表示正向的，积极的，对的结果</p></li>
+<li><p>False：表示负面的，消极的，错误的结果</p></li>
 </ul>
 <blockquote>
-<div>注意两个的写法，只是两个单词，没有引号，第一个字母大写，其余小写</div></blockquote>
+<div><p>注意两个的写法，只是两个单词，没有引号，第一个字母大写，其余小写</p>
+</div></blockquote>
 <ul>
-<li><p class="first">两个值可以直接使用，也可以参与预算。</p>
+<li><p>两个值可以直接使用，也可以参与预算。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> # 逻辑值可以直接赋值给一个变量
  a = True
  print(a)
@@ -422,11 +335,10 @@
 </pre></div>
 </div>
 </li>
-<li><p class="first">逻辑值也可以参与算术运算，在算术运算中，</p>
+<li><p>逻辑值也可以参与算术运算，在算术运算中，</p>
 <ul>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">True</span></code>被自动转换成数字<code class="docutils literal notranslate"><span class="pre">1</span></code></p>
-</li>
-<li><p class="first"><code class="docutils literal notranslate"><span class="pre">False</span></code>被自动转换成数字<code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>被自动转换成数字<code class="docutils literal notranslate"><span class="pre">1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code>被自动转换成数字<code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#逻辑值作为算术运算
 #此时发生自动转换，True被当做数字1
 a = 100 + True
@@ -447,17 +359,18 @@ print(b)
 </li>
 </ul>
 <blockquote>
-<div>同样，数字在需要逻辑值的时候也会自动转换成逻辑值，稍后会讲解</div></blockquote>
-</div>
-<div class="section" id="id9">
-<h3>6.3.2. 比较运算符<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<div><p>同样，数字在需要逻辑值的时候也会自动转换成逻辑值，稍后会讲解</p>
+</div></blockquote>
+</section>
+<section id="id9">
+<h3><span class="section-number">6.3.2. </span>比较运算符<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>对两个变量或者值进行比较的运算符</li>
-<li>比较的结果是布尔值，即True/False</li>
-<li>以下是6个比较运算符</li>
+<li><p>对两个变量或者值进行比较的运算符</p></li>
+<li><p>比较的结果是布尔值，即True/False</p></li>
+<li><p>以下是6个比较运算符</p></li>
 </ul>
 <p>| 运算符  | 描述                                                         | 实例                  |
-| :—– | :————— | :———————————— |
+| :----- | :--------------- | :------------------------------------ |
 | ==     | 等于: 比较对象是否相等                                        | (a == b) 返回 False。 |
 | !=     | 不等于: 比较两个对象是否不相等                                  | (a != b) 返回 True。  |
 | &gt;      | 大于:  返回x是否大于y                                          | (a &gt; b) 返回 False。  |
@@ -492,17 +405,17 @@ print(b)
 <span class="kc">True</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id10">
-<h2>6.4. 赋值运算符<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id10">
+<h2><span class="section-number">6.4. </span>赋值运算符<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
 <p>赋值运算符通常用来对一个变量进行赋值，可以看做是把右边的值或者经过计算最后得出的值存入左边变量中.</p>
 <blockquote>
 <div><p>赋值号<code class="docutils literal notranslate"><span class="pre">=</span></code>是把右边所有的式子都执行完后得到一个结果，然后把结果赋值给左边变量，即赋值号的运算优先级是最低的</p>
 <p>其余的复合运算符号仅仅是相应算术运算符号的缩写</p>
 </div></blockquote>
 <p>| 运算符 | 描述             | 实例                                  |
-| :—– | :————— | :———————————— |
+| :----- | :--------------- | :------------------------------------ |
 | =      | 简单的赋值运算符 | c = a + b 将 a + b 的运算结果赋值为 c |
 | +=     | 加法赋值运算符   | c += a 等效于 c = c + a               |
 | -=     | 减法赋值运算符   | c -= a 等效于 c = c - a               |
@@ -531,21 +444,22 @@ print(b)
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id11">
-<h2>6.5. 逻辑运算符<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id11">
+<h2><span class="section-number">6.5. </span>逻辑运算符<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
 <p>逻辑运算符是对布尔值进行计算的符号, 要求参与运算的是逻辑值，如果不是，则自动转换成逻辑值再运算。</p>
 <p>运算符只有三个：</p>
 <ul class="simple">
-<li>and: 逻辑与, 可以理解成我们语言中的<code class="docutils literal notranslate"><span class="pre">和</span></code>， 即参与运算的两边都是<code class="docutils literal notranslate"><span class="pre">True</span></code>的时候结果是<code class="docutils literal notranslate"><span class="pre">True</span></code>，否则是<code class="docutils literal notranslate"><span class="pre">False</span></code></li>
-<li>or: 逻辑或, 可以理解成我们语言中的<code class="docutils literal notranslate"><span class="pre">或者</span></code>，即参与运算的两边有一个是<code class="docutils literal notranslate"><span class="pre">True</span></code>则结果就是<code class="docutils literal notranslate"><span class="pre">True</span></code></li>
-<li>not: 逻辑非, 也叫取反运算，即把后面的结果翻转，此运算符是单目运算符，即要求一个数据参与运算就可以</li>
-<li>python中逻辑运算没有异或运算</li>
-<li>运算规则可以以下解释：<ul>
-<li>and看做乘法， or看做加法，</li>
-<li>True看做1， False看做0</li>
-<li>则逻辑运算就能转换成整数数学运算</li>
-<li>最后结果如果是0则为False， 否则为True</li>
+<li><p>and: 逻辑与, 可以理解成我们语言中的<code class="docutils literal notranslate"><span class="pre">和</span></code>， 即参与运算的两边都是<code class="docutils literal notranslate"><span class="pre">True</span></code>的时候结果是<code class="docutils literal notranslate"><span class="pre">True</span></code>，否则是<code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p>or: 逻辑或, 可以理解成我们语言中的<code class="docutils literal notranslate"><span class="pre">或者</span></code>，即参与运算的两边有一个是<code class="docutils literal notranslate"><span class="pre">True</span></code>则结果就是<code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>not: 逻辑非, 也叫取反运算，即把后面的结果翻转，此运算符是单目运算符，即要求一个数据参与运算就可以</p></li>
+<li><p>python中逻辑运算没有异或运算</p></li>
+<li><p>运算规则可以以下解释：</p>
+<ul>
+<li><p>and看做乘法， or看做加法，</p></li>
+<li><p>True看做1， False看做0</p></li>
+<li><p>则逻辑运算就能转换成整数数学运算</p></li>
+<li><p>最后结果如果是0则为False， 否则为True</p></li>
 </ul>
 </li>
 </ul>
@@ -574,9 +488,9 @@ print(b)
 <span class="kc">False</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id12">
-<h2>6.6. 逻辑运算的短路问题<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id12">
+<h2><span class="section-number">6.6. </span>逻辑运算的短路问题<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
 <p>短路问题是编程经常会遇到的一个问题，当我们进行逻辑运算的时候，我们按照运算顺序计算，
 一旦能够确定整个式子未来的值，则不再进行计算，直接返回。</p>
 <p>比如在继续逻辑运算的时候，逻辑与会看做乘号，而<code class="docutils literal notranslate"><span class="pre">False</span></code>会看做<code class="docutils literal notranslate"><span class="pre">0</span></code>， 根据数学知识我们知道，
@@ -600,7 +514,7 @@ print(b)
 <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span>
 
 <span class="c1"># 定义函数，在判断中被调用</span>
-<span class="k">def</span> <span class="nf">fun_call</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fun_call</span><span class="p">():</span>
     <span class="c1"># 在函数中修改全局变量a</span>
     <span class="c1"># 此用法只做实验用，谨慎使用</span>
     <span class="k">global</span> <span class="n">a</span> 
@@ -634,14 +548,14 @@ print(b)
 <span class="mi">101</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id13">
-<h2>6.7. 成员运算符号<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id13">
+<h2><span class="section-number">6.7. </span>成员运算符号<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
 <p>成员运算符用来检测某一个变量是否是另一个变量的成员</p>
 <p>成员运算符号可以分为两个：</p>
 <ul class="simple">
-<li>in: 用来判断是否包含在某个成员里面</li>
-<li>not in: 可以看做是<code class="docutils literal notranslate"><span class="pre">in</span></code>的取反操作</li>
+<li><p>in: 用来判断是否包含在某个成员里面</p></li>
+<li><p>not in: 可以看做是<code class="docutils literal notranslate"><span class="pre">in</span></code>的取反操作</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 案例， l是一个列表，里面包含五个数字，我们判断a是否也在里面</span>
 <span class="c1"># 列表的知识会在后期介绍</span>
@@ -663,17 +577,17 @@ print(b)
 <span class="kc">False</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id14">
-<h2>6.8. 身份运算<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id14">
+<h2><span class="section-number">6.8. </span>身份运算<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <p>用来判断两个变量是否是一个，这种判断并不是简单判断是否同一个值，而是判断是否有同一个内存区域，如果仅仅是值
 相等，而内存区域不一样，身份运算也会返回否定的结果。</p>
 <p>由于Python不同意别的语言的内存管理机制，对于<code class="docutils literal notranslate"><span class="pre">小</span></code>的数据，Python会使用同一个内存，后面会提到，所以<code class="docutils literal notranslate"><span class="pre">is</span></code>用来判断
 <code class="docutils literal notranslate"><span class="pre">小</span></code>数据可能并不会返回期望的结果。</p>
 <p>身份运算符包含两个：</p>
 <ul class="simple">
-<li>is: 用来检测两个变量是否是同一个变量，依据是内存地址, 只有同一个内存，即同一片数据区域才会返回<code class="docutils literal notranslate"><span class="pre">True</span></code></li>
-<li>is not: 两个变量不是同一个变量</li>
+<li><p>is: 用来检测两个变量是否是同一个变量，依据是内存地址, 只有同一个内存，即同一片数据区域才会返回<code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>is not: 两个变量不是同一个变量</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">9</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">9</span>
@@ -692,17 +606,18 @@ print(b)
 <span class="kc">False</span>
 </pre></div>
 </div>
-<div class="section" id="is">
-<h3>6.8.1. is运算符和 == 的区别<a class="headerlink" href="#is" title="永久链接至标题">¶</a></h3>
+<section id="is">
+<h3><span class="section-number">6.8.1. </span>is运算符和 == 的区别<a class="headerlink" href="#is" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">is</span></code> 是比较两个变量是否同一内存，内存地址可以用id()来获取</li>
-<li><code class="docutils literal notranslate"><span class="pre">==</span></code> 是比较两个变量的值是否一样</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is</span></code> 是比较两个变量是否同一内存，内存地址可以用id()来获取</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> 是比较两个变量的值是否一样</p></li>
 </ul>
 <blockquote>
-<div><code class="docutils literal notranslate"><span class="pre">id()</span></code> 可以用来检测变量的id，应该把这个id理解成是变量的内存地址</div></blockquote>
-</div>
-<div class="section" id="id15">
-<h3>6.8.2. 小数据/小数据池<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<div><p><code class="docutils literal notranslate"><span class="pre">id()</span></code> 可以用来检测变量的id，应该把这个id理解成是变量的内存地址</p>
+</div></blockquote>
+</section>
+<section id="id15">
+<h3><span class="section-number">6.8.2. </span>小数据/小数据池<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
 <p>程序每定义一个变量会生成一块新的内存，然后把值放入相应内存中，这也导致了即使声明两个内容一样的变量，
 但用is来测试两个变量也可能不一样的原因。<br />示例如下面代码所示：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">123456</span>
@@ -726,13 +641,13 @@ print(b)
 <p>Python为了提高效率，会采用一个数据池，用来存放常用的且体积不大的数据，这样每次声明对应值的变量的时候，就不需要开辟内存和拷贝内容，而是直接指向对应的已经存在的地址，这样会导致如果定义两个变量，变量内容一致，则is返回结果为真的情况。</p>
 <p>小数据池包含的内容分为三类：</p>
 <ul class="simple">
-<li>数字</li>
-<li>布尔值</li>
-<li>字符串</li>
+<li><p>数字</p></li>
+<li><p>布尔值</p></li>
+<li><p>字符串</p></li>
 </ul>
 <p>对小数据的规定如果是数字和布尔值比较简单，但对字符串比较繁琐，我们一一讲述：</p>
 <ul>
-<li><p class="first">数字： [-5,256]之间的整数为小数据，在内存常驻</p>
+<li><p>数字： [-5,256]之间的整数为小数据，在内存常驻</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 小数据定义的不同变量，如果值一样，则is返回真</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">67</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">67</span>
@@ -750,7 +665,7 @@ print(b)
 </pre></div>
 </div>
 </li>
-<li><p class="first">布尔值： 布尔值一共就两个，常驻小数据池，妥妥滴~~~~</p>
+<li><p>布尔值： 布尔值一共就两个，常驻小数据池，妥妥滴~~~~</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 逻辑值常驻内存</span>
 <span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">b</span> <span class="o">=</span> <span class="kc">True</span>
@@ -763,9 +678,9 @@ print(b)
 </pre></div>
 </div>
 </li>
-<li><p class="first">字符串： 这个比较繁琐了，它的规则包含以下几个方面：</p>
+<li><p>字符串： 这个比较繁琐了，它的规则包含以下几个方面：</p>
 <ul>
-<li><p class="first">字符串的长度为0或者1，默认都采用了驻留机制（小数据池)</p>
+<li><p>字符串的长度为0或者1，默认都采用了驻留机制（小数据池)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 字符串长度为1或者0的都入住小数据池</span>
 <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
@@ -784,7 +699,7 @@ print(b)
 </pre></div>
 </div>
 </li>
-<li><p class="first">字符串的长度&gt;1,且只含有大小写字母，数字，下划线时，才会默认驻留</p>
+<li><p>字符串的长度&gt;1,且只含有大小写字母，数字，下划线时，才会默认驻留</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 小数据池存的字符串要求只包含三类内容</span>
 <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;9898ABCabc_&quot;</span>
 <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;9898ABCabc_&quot;</span>
@@ -802,7 +717,7 @@ print(b)
 </pre></div>
 </div>
 </li>
-<li><p class="first">乘法得到的字符串，如果乘数为1，则驻留内存池，参加以下案例</p>
+<li><p>乘法得到的字符串，如果乘数为1，则驻留内存池，参加以下案例</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;#$$</span><span class="si">%a</span><span class="s2">kiekk dkki lsldafaewfa asdf asfd afa  aef  &quot;</span>
  <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="mi">1</span>
  <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;#$$</span><span class="si">%a</span><span class="s2">kiekk dkki lsldafaewfa asdf asfd afa  aef  &quot;</span>
@@ -823,15 +738,15 @@ print(b)
 &gt;</p>
 </div></blockquote>
 <ul>
-<li><p class="first">乘法得到的字符串，乘数大于1</p>
+<li><p>乘法得到的字符串，乘数大于1</p>
 <ul class="simple">
-<li>如果字符串只包含数字，大小写字母，下划线，则如果总长度不大于20，驻留内存</li>
-<li>其余的单独开辟内存空间</li>
+<li><p>如果字符串只包含数字，大小写字母，下划线，则如果总长度不大于20，驻留内存</p></li>
+<li><p>其余的单独开辟内存空间</p></li>
 </ul>
 <blockquote>
 <div><p>实验采用Python3.8， 得到的结果跟上述规则相反，没找到更详细资料，详见代码：
 &gt;
-aa = “aaa”</p>
+aa = &quot;aaa&quot;</p>
 </div></blockquote>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">bb</span> <span class="o">=</span> <span class="n">aa</span> <span class="o">*</span> <span class="mi">4</span>
    <span class="n">cc</span> <span class="o">=</span> <span class="n">aa</span> <span class="o">*</span> <span class="mi">4</span>
@@ -850,29 +765,31 @@ aa = “aaa”</p>
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="python">
-<h2>6.9. Python位运算符<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="python">
+<h2><span class="section-number">6.9. </span>Python位运算符<a class="headerlink" href="#python" title="Link to this heading"></a></h2>
 <blockquote>
-<div>对于非计算机专业来讲，此内容除非明确要用，暂时不推荐学习</div></blockquote>
+<div><p>对于非计算机专业来讲，此内容除非明确要用，暂时不推荐学习</p>
+</div></blockquote>
 <p>按位运算符是把数字看作二进制来进行计算， 按位逐个位置进行计算。</p>
 <p>就是在二进制基础上进行的逻辑运算，将0视为False，将1 视为True进行的运算。</p>
 <blockquote>
-<div>bin()函数可以把数字转为二进制</div></blockquote>
+<div><p>bin()函数可以把数字转为二进制</p>
+</div></blockquote>
 <p>按位运算如下：</p>
 <ul>
-<li><p class="first">按位与运算(<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>):按位与运算就是将数据转化为2进制数据然后进行每个位上的逻辑与运算</p>
+<li><p>按位与运算(<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>):按位与运算就是将数据转化为2进制数据然后进行每个位上的逻辑与运算</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">变量</span> <span class="o">=</span> <span class="n">值1</span>  <span class="o">&amp;</span>  <span class="n">值2</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">按位或运算(<code class="docutils literal notranslate"><span class="pre">|</span></code>): 按位或运算就是将数据转化为2进制数据然后进行每个位上的逻辑或运算</p>
+<li><p>按位或运算(<code class="docutils literal notranslate"><span class="pre">|</span></code>): 按位或运算就是将数据转化为2进制数据然后进行每个位上的逻辑或运算</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">变量</span> <span class="o">=</span> <span class="n">值1</span> <span class="o">|</span> <span class="n">值2</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">按位非运算(<code class="docutils literal notranslate"><span class="pre">~</span></code>): 按位非运算就是将数据转化为2进制数据然后进行每个位上的逻辑非运算</p>
+<li><p>按位非运算(<code class="docutils literal notranslate"><span class="pre">~</span></code>): 按位非运算就是将数据转化为2进制数据然后进行每个位上的逻辑非运算</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">变量</span> <span class="o">=</span> <span class="o">~</span><span class="n">值</span>
 </pre></div>
 </div>
@@ -880,12 +797,12 @@ aa = “aaa”</p>
 <div><p>注意：按位非运算之后计算机会进行反码和补码的相关操作之后进行数据存储。</p>
 </div></blockquote>
 </li>
-<li><p class="first">按位抑或运算(<code class="docutils literal notranslate"><span class="pre">^</span></code>):按位抑或运算就是将数据转化为2进制数据然后进行每个位上的逻辑抑或运算</p>
+<li><p>按位抑或运算(<code class="docutils literal notranslate"><span class="pre">^</span></code>):按位抑或运算就是将数据转化为2进制数据然后进行每个位上的逻辑抑或运算</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">变量</span> <span class="o">=</span> <span class="n">值1</span> <span class="o">^</span> <span class="n">值2</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">左移运算(<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>): 将数据转化为二进制之后，将二进制数据的所有数据向左移动指定的位数</p>
+<li><p>左移运算(<code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code>): 将数据转化为二进制之后，将二进制数据的所有数据向左移动指定的位数</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">变量</span> <span class="o">=</span> <span class="n">值</span> <span class="o">&lt;&lt;</span> <span class="n">移动位数</span>
 </pre></div>
 </div>
@@ -893,7 +810,7 @@ aa = “aaa”</p>
 <div><p>特征：左移N位相当于乘以2的N次方，此方法速度远高于乘法</p>
 </div></blockquote>
 </li>
-<li><p class="first">右移运算(<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>): 将数据转化为二进制之后，将二进制数据的所有数据向右移动指定的位数，如果数据移除右侧边界，则会被删除，实际上相当于采用了地板除！</p>
+<li><p>右移运算(<code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code>): 将数据转化为二进制之后，将二进制数据的所有数据向右移动指定的位数，如果数据移除右侧边界，则会被删除，实际上相当于采用了地板除！</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">变量</span> <span class="o">=</span> <span class="n">值</span> <span class="o">&gt;&gt;</span> <span class="n">移动位数</span>
 </pre></div>
 </div>
@@ -903,13 +820,13 @@ aa = “aaa”</p>
 </li>
 </ul>
 <p>| 运算符 | 描述                                                         | 实例                                                         |
-| :—– | :———————————————————– | :———————————————————– |
+| :----- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | &amp;      | 按位与运算符：参与运算的两个值,如果两个相应位都为1,则该位的结果为1,否则为0 | (a &amp; b) 输出结果 12 ，二进制解释： 0000 1100                 |
 |  | | 按位或运算符：只要对应的二个二进位有一个为1时，结果位就为1。 | (a | b) 输出结果 61 ，二进制解释： 0011 1101                |
 | ^      | 按位异或运算符：当两对应的二进位相异时，结果为1              | (a ^ b) 输出结果 49 ，二进制解释： 0011 0001                 |
 | ~      | 按位取反运算符：对数据的每个二进制位取反,即把1变为0,把0变为1。<strong>~x</strong> 类似于 <strong>-x-1</strong> | (~a ) 输出结果 -61 ，二进制解释： 1100 0011， 在一个有符号二进制数的补码形式。 |
-| &lt;&lt;     | 左移动运算符：运算数的各二进位全部左移若干位，由”&lt;&lt;”右边的数指定移动的位数，高位丢弃，低位补0。 | a &lt;&lt; 2 输出结果 240 ，二进制解释： 1111 0000                 |
-| &gt;&gt;     | 右移动运算符：把”&gt;&gt;”左边的运算数的各二进位全部右移若干位，”&gt;&gt;”右边的数指定移动的位数 | a &gt;&gt; 2 输出结果 15 ，二进制解释： 0000 1111                  |</p>
+| &lt;&lt;     | 左移动运算符：运算数的各二进位全部左移若干位，由&quot;&lt;&lt;&quot;右边的数指定移动的位数，高位丢弃，低位补0。 | a &lt;&lt; 2 输出结果 240 ，二进制解释： 1111 0000                 |
+| &gt;&gt;     | 右移动运算符：把&quot;&gt;&gt;&quot;左边的运算数的各二进位全部右移若干位，&quot;&gt;&gt;&quot;右边的数指定移动的位数 | a &gt;&gt; 2 输出结果 15 ，二进制解释： 0000 1111                  |</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mb">0b1001100</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mb">0b111</span>
 
@@ -952,7 +869,8 @@ aa = “aaa”</p>
 </pre></div>
 </div>
 <blockquote>
-<div>简单解释下上面原因，在计算机里，a按位反会的到一个负数，负数在计算机中需要用补码表示～～～～</div></blockquote>
+<div><p>简单解释下上面原因，在计算机里，a按位反会的到一个负数，负数在计算机中需要用补码表示～～～～</p>
+</div></blockquote>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#右移N位相当于除以2的N次方，舍弃小数部分。此方法速度远高于除法</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="mb">0b10011</span>
@@ -1003,30 +921,30 @@ aa = “aaa”</p>
 <span class="n">a</span><span class="o">&lt;&lt;</span><span class="mi">2</span><span class="o">=</span> <span class="o">-</span><span class="mi">52</span>
 </pre></div>
 </div>
-<div class="section" id="id16">
-<h3>6.9.1. 原码/反码/补码<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<section id="id16">
+<h3><span class="section-number">6.9.1. </span>原码/反码/补码<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
 <p>数字在计算机内部使用二进制来表示，考虑到运算的方便性，正数负数会采用不同的码制表示：</p>
 <ul class="simple">
-<li>正数的原、反、补码都是它本身</li>
-<li>负数的原码最高位为1开头，反码是最高符号位不变，其余位在原码的基础上取反</li>
-<li>补码是在反码的基础上+1即可得到.</li>
+<li><p>正数的原、反、补码都是它本身</p></li>
+<li><p>负数的原码最高位为1开头，反码是最高符号位不变，其余位在原码的基础上取反</p></li>
+<li><p>补码是在反码的基础上+1即可得到.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id17">
-<h2>6.10. 运算符的优先级问题<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="id17">
+<h2><span class="section-number">6.10. </span>运算符的优先级问题<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>永远记住，括号具有最高优先级, 赋值符具有最低优先级</li>
-<li>优先级表格</li>
+<li><p>永远记住，括号具有最高优先级, 赋值符具有最低优先级</p></li>
+<li><p>优先级表格</p></li>
 </ul>
 <p>| 运算符                   | 描述                                                   |
-| :———————– | :—————————————————– |
+| :----------------------- | :----------------------------------------------------- |
 | **                       | 指数 (最高优先级)                                      |
 | ~ + -                    | 按位翻转, 一元加号和减号 (最后两个的方法名为 +&#64; 和 -&#64;) |
 | * / % //                 | 乘，除，取模和取整除                                   |
 | + -                      | 加法减法                                               |
 | &gt;&gt; &lt;&lt;                    | 右移，左移运算符                                       |
-| &amp;                        | 位 ‘AND’                                               |
+| &amp;                        | 位 'AND'                                               |
 | ^ |                     | 位运算符                                               |
 | &lt;= &lt; &gt; &gt;=                | 比较运算符                                             |
 | == !=                    | 等于运算符                                             |
@@ -1034,55 +952,38 @@ aa = “aaa”</p>
 | is is not                | 身份运算符                                             |
 | in not in                | 成员运算符                                             |
 | not and or               | 逻辑运算符                                             |</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="005-if分支语句.html" class="btn btn-neutral float-right" title="7. 分支语句" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="003str.html" class="btn btn-neutral float-left" title="5. 字符串" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="003str.html" class="btn btn-neutral float-left" title="5. 字符串" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html" class="btn btn-neutral float-right" title="7. 分支语句" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2020, 北京图灵学院.
-
-    </p>
+    <p>&#169; 版权所有 2020, 北京图灵学院。</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

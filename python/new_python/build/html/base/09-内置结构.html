@@ -1,113 +1,61 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="zh-CN" >
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>12. 内置数据结构 &mdash; Python新全栈教程 1.0 文档</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'1.0',
-              LANGUAGE:'zh_CN',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <link rel="canonical" href="https://danalaoshi.github.io/base/09-%E5%86%85%E7%BD%AE%E7%BB%93%E6%9E%84.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f115507d"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="13. OOP" href="009-类.html" />
-    <link rel="prev" title="11. 内置函数" href="008-内置函数.html" /> 
+    <link rel="next" title="13. OOP" href="009-%E7%B1%BB.html" />
+    <link rel="prev" title="11. 内置函数" href="008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> Python新全栈教程
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            Python新全栈教程
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="001.html">1. 开学典礼-不讲知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="001Python语言概述.html">2. Python语言概述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="001注释.html">3. 注释和帮助</a></li>
-<li class="toctree-l1"><a class="reference internal" href="002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001%E6%B3%A8%E9%87%8A.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html">4. 变量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="003str.html">5. 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="004运算符.html">6. 表达式 和 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="005-if分支语句.html">7. 分支语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="006-for循环.html">8. 循环语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="007-while循环.html">9. while循环</a></li>
-<li class="toctree-l1"><a class="reference internal" href="008-函数讲义.html">10. 函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="008-内置函数.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="004%E8%BF%90%E7%AE%97%E7%AC%A6.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="006-for%E5%BE%AA%E7%8E%AF.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="007-while%E5%BE%AA%E7%8E%AF.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-%E5%87%BD%E6%95%B0%E8%AE%B2%E4%B9%89.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html">11. 内置函数</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">12. 内置数据结构</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#list">12.1. 列表 list</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">12.1.1. 列表的定义方式</a></li>
@@ -150,107 +98,66 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="009-类.html">13. OOP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="010-内置模块.html">14. 常用内置模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="011-持久化和文件.html">15. 文件和序列化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="009-%E7%B1%BB.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011-%E6%8C%81%E4%B9%85%E5%8C%96%E5%92%8C%E6%96%87%E4%BB%B6.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">16. Python异常的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="013-tkinter.html">17. Tkinter</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../adv/101-函数高级.html">1. 函数高级</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/102-类高级.html">2. OOP高级编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/103_调试技术.html">3. 调试技术</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/1021-单元测试.html">4. 单元测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/104_模块和包.html">5. 模块和包</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/105多线程.html">6. 多线程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/101-%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/103_%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html">7. 计算机编码问题</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../adv/107_log.html">8. 日志(logging)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/108_携程.html">9. 协程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../adv/109_网络编程.html">10. 1. 网络通信概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/108_%E6%90%BA%E7%A8%8B.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">10. 1. 网络通信概述</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Python新全栈教程</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>12. 内置数据结构</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">12. </span>内置数据结构</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/base/09-内置结构.md.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/base/09-内置结构.md.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="id1">
-<h1>12. 内置数据结构<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+             
+  <section id="id1">
+<h1><span class="section-number">12. </span>内置数据结构<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <p>Python给提供了四种内置基本结构，这四种内置基本结构是：</p>
 <ul class="simple">
-<li>list： 列表</li>
-<li>set： 集合</li>
-<li>dict： 字典</li>
-<li>tuple：元祖</li>
+<li><p>list： 列表</p></li>
+<li><p>set： 集合</p></li>
+<li><p>dict： 字典</p></li>
+<li><p>tuple：元祖</p></li>
 </ul>
 <p>我们把这四种基本结构作为Python提供的标准变量类型使用。</p>
-<div class="section" id="list">
-<h2>12.1. 列表 list<a class="headerlink" href="#list" title="永久链接至标题">¶</a></h2>
+<section id="list">
+<h2><span class="section-number">12.1. </span>列表 list<a class="headerlink" href="#list" title="Link to this heading"></a></h2>
 <p>列表内数据是有顺序的，但对数据的类型没有限制，一般类型(包括我们后面学的实例，类等)基本都可以作为列表内数据的类型，
 即列表基本不挑食，啥都能装。</p>
 <p>列表内数据有顺序就意味着我们可以对列表的数据按它的排列顺序进行访问。</p>
-<div class="section" id="id2">
-<h3>12.1.1. 列表的定义方式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<section id="id2">
+<h3><span class="section-number">12.1.1. </span>列表的定义方式<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <p>列表的定义相对简单，一般有三种方式，参看下面案例：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定义一个空列表</span>
 <span class="n">l1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
@@ -306,16 +213,16 @@
 []
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
-<h3>12.1.2. 列表常用操作<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id3">
+<h3><span class="section-number">12.1.2. </span>列表常用操作<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <p>在对列表的操作中，两类操作十分重要，分别是：</p>
 <ul class="simple">
-<li>下标访问</li>
-<li>分片操作</li>
+<li><p>下标访问</p></li>
+<li><p>分片操作</p></li>
 </ul>
-<div class="section" id="id4">
-<h4>12.1.2.1. 下标访问<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h4>
+<section id="id4">
+<h4><span class="section-number">12.1.2.1. </span>下标访问<a class="headerlink" href="#id4" title="Link to this heading"></a></h4>
 <p>我们的对列表内元素的访问一般可以通过下表来近行。</p>
 <p>我们在上面提到过，列表内元素是有顺序的，这种顺序就可以让我们对其按顺序访问，比如我们班级成绩有一个成绩排名，我们可以说班里的第一名，第二名和
 第三名用来指代班级的前三名的同学名称，此处这个顺序就是我们访问列表用到的下标(index)，需要注意的是在计算机的世界里，下标一般是个比较
@@ -332,9 +239,9 @@ print(&quot;第四个元素是：&quot;， l[3])
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>第四个元素是： 4
 </pre></div>
 </div>
-</div>
-<div class="section" id="id5">
-<h4>12.1.2.2. 切片操作<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="id5">
+<h4><span class="section-number">12.1.2.2. </span>切片操作<a class="headerlink" href="#id5" title="Link to this heading"></a></h4>
 <p>既然列表内容是排好队的，我们也可以用一个区域来表示一批元素，比如你们班从第四名开始到第十名的同学，都是很有潜力的好苗子，此处第四名到
 第十名就表示一个区域，此类操作我们叫做切片，即通过开始和结束下标截取列表的一段内容的操作。</p>
 <p>切片操作的符号一般是 <code class="docutils literal notranslate"><span class="pre">[start:end]</span></code>，此处<code class="docutils literal notranslate"><span class="pre">start</span></code>和<code class="docutils literal notranslate"><span class="pre">end</span></code> 表示开始和结束的下标， 参见下面案例：</p>
@@ -351,11 +258,11 @@ print(&quot;第四个元素是：&quot;， l[3])
 </div>
 <p>上面案例需要作出几点说明：</p>
 <ol class="simple">
-<li>切片的语法<code class="docutils literal notranslate"><span class="pre">【1：4】</span></code>表示下标区间是一个左闭区间右开区间的范围<code class="docutils literal notranslate"><span class="pre">[1,4)</span></code>,  <code class="docutils literal notranslate"><span class="pre">l[1:4]</span></code>表示从下标<code class="docutils literal notranslate"><span class="pre">1</span></code>开始到下标<code class="docutils literal notranslate"><span class="pre">4</span></code>结束的所有内容，
-但不包括下标<code class="docutils literal notranslate"><span class="pre">4</span></code>的元素。</li>
-<li>开始和结束下标都可以采用默认值，但分割符号<code class="docutils literal notranslate"><span class="pre">:</span></code>不能省略。</li>
-<li>开始下标省略则从<code class="docutils literal notranslate"><span class="pre">0</span></code>开始，结束下标省略则到最后一个元素。</li>
-<li>结束下标可以超过列表的下标最大值，此时自动到最后一个元素结束。</li>
+<li><p>切片的语法<code class="docutils literal notranslate"><span class="pre">【1：4】</span></code>表示下标区间是一个左闭区间右开区间的范围<code class="docutils literal notranslate"><span class="pre">[1,4)</span></code>,  <code class="docutils literal notranslate"><span class="pre">l[1:4]</span></code>表示从下标<code class="docutils literal notranslate"><span class="pre">1</span></code>开始到下标<code class="docutils literal notranslate"><span class="pre">4</span></code>结束的所有内容，
+但不包括下标<code class="docutils literal notranslate"><span class="pre">4</span></code>的元素。</p></li>
+<li><p>开始和结束下标都可以采用默认值，但分割符号<code class="docutils literal notranslate"><span class="pre">:</span></code>不能省略。</p></li>
+<li><p>开始下标省略则从<code class="docutils literal notranslate"><span class="pre">0</span></code>开始，结束下标省略则到最后一个元素。</p></li>
+<li><p>结束下标可以超过列表的下标最大值，此时自动到最后一个元素结束。</p></li>
 </ol>
 <p>根据上面的规则，上面代码运行结果如下：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -410,9 +317,9 @@ print(&quot;第四个元素是：&quot;， l[3])
 <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id6">
-<h4>12.1.2.3. 分片操作是生成一个新的list<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="id6">
+<h4><span class="section-number">12.1.2.3. </span>分片操作是生成一个新的list<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
 <p>现在的问题是， 我们利用切片操作可以得到一个新的列表，Python规定，切片操作得到的列表都是原来列表的
 内容的复制，即切片生成了一个新的列表，这个通过<code class="docutils literal notranslate"><span class="pre">id</span></code>函数可以得到验证。</p>
 <p>下面案例验证了列表的切片操作是重新生成列表的判断：</p>
@@ -446,10 +353,10 @@ print(&quot;第四个元素是：&quot;， l[3])
 <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id7">
-<h3>12.1.3. 列表的遍历<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+</section>
+</section>
+<section id="id7">
+<h3><span class="section-number">12.1.3. </span>列表的遍历<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
 <p>对列表进行遍历一般用 <code class="docutils literal notranslate"><span class="pre">for</span></code>循环，当然如果需要，也可以用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环。</p>
 <p>因为已经学习过循环结构，我们直接看下案例：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># for in list</span>
@@ -490,11 +397,12 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 <blockquote>
-<div>for，while循环一般可以互换，但在实际使用中，这俩有比较明显的使用场景，一般也不互换使用，此处
-只是作为案例讲解。</div></blockquote>
-</div>
-<div class="section" id="id8">
-<h3>12.1.4. 列表的嵌套<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<div><p>for，while循环一般可以互换，但在实际使用中，这俩有比较明显的使用场景，一般也不互换使用，此处
+只是作为案例讲解。</p>
+</div></blockquote>
+</section>
+<section id="id8">
+<h3><span class="section-number">12.1.4. </span>列表的嵌套<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
 <p>列表可以放入的内容类型比较多，包括列表本身，这样就形成了嵌套列表，我们对嵌套列表的访问一般需要
 用到嵌套循环，但有些比较特殊的情况需要注意，就是如果列表中内容比较少，我们可以利用一起定义几个变量
 的方法，此时被嵌套的列表的内容会按顺序赋值给变量，请看下面案例：</p>
@@ -512,7 +420,8 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 <blockquote>
-<div>上面这种情况有一个前提就是小列表中内容个数和前面定义的变量个数必须一致，否则报错</div></blockquote>
+<div><p>上面这种情况有一个前提就是小列表中内容个数和前面定义的变量个数必须一致，否则报错</p>
+</div></blockquote>
 <p>当然，这里的数量并没有明确限制，只要变量数量和小列表长度能对应上就可以了。</p>
 <p>下面案例是三个变量的案例：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 双层列表循环变异</span>
@@ -530,14 +439,14 @@ print(&quot;第四个元素是：&quot;， l[3])
 <span class="n">three</span> <span class="o">--</span> <span class="mi">3</span> <span class="o">--</span> <span class="n">drei</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id9">
-<h3>12.1.5. 列表生成式<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id9">
+<h3><span class="section-number">12.1.5. </span>列表生成式<a class="headerlink" href="#id9" title="Link to this heading"></a></h3>
 <p>列表生成式就是通过一些简单的方法生成一个列表。</p>
 <p>下面案例就是一共列表生成式，我们通过列表的内容遍历生成了一个新的列表，需要注意格式，
 这是一种固定写法。</p>
 <ul>
-<li><p class="first">简单列表生成式</p>
+<li><p>简单列表生成式</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
   <span class="c1"># 用list a创建一个list b</span>
   <span class="c1"># 下面代码的含义是，对于所有a中的元素，逐个放入新列表b中</span>
@@ -548,7 +457,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 <p>在使用列表生成式的时候，还可以对内容进行简单处理，这种处理一般相对简单，限定在一行内，过于复杂
 请使用<code class="docutils literal notranslate"><span class="pre">for</span></code>循环处理。</p>
 </li>
-<li><p class="first">列表生成式对内容进行统一操作</p>
+<li><p>列表生成式对内容进行统一操作</p>
 <p>下面案例在生成列表的时候，对源列表内容进行了乘法操作：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 对a中所有元素乘以10，生成一个新list</span>
   <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
@@ -558,7 +467,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">加入选择条件的列表生成式</p>
+<li><p>加入选择条件的列表生成式</p>
 <p>在使用列表生成式的时候，有时候需要对源列表内元素进行筛选，也就是加上一些条件，此时需要使用
 更复杂的列表生成式，即加入限定条件。</p>
 <p>如果需要加入限定条件，直接在后面使用<code class="docutils literal notranslate"><span class="pre">if</span></code>语句即可。</p>
@@ -571,7 +480,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">嵌套列表生成式</p>
+<li><p>嵌套列表生成式</p>
 <p>列表生成式可以嵌套使用，可以把嵌套列表生成式看做是嵌套循环，最后生成一个结果。</p>
 <p>只不过写法是固定格式，写成一列而已。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 由两个列表a，b</span>
@@ -590,7 +499,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">带条件的嵌套列表生成式</p>
+<li><p>带条件的嵌套列表生成式</p>
 <p>把嵌套列表生成式和判断条件加在一起组合成一个复杂的东东，其实完全可以看做是一个嵌套循环，在最里面执行
 了一个判断条件：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 嵌套的列表生城市也可以用条件表达式</span>
@@ -599,13 +508,13 @@ print(&quot;第四个元素是：&quot;， l[3])
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="id10">
-<h3>12.1.6. 列表的常用内容功能<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id10">
+<h3><span class="section-number">12.1.6. </span>列表的常用内容功能<a class="headerlink" href="#id10" title="Link to this heading"></a></h3>
 <p>函数内置数据结构不仅仅是一堆数据，还有依赖于这些数据的一系列功能，我们把此类功能叫做函数(见函数章节)， 这里先把列表的函数或者功能
 给大家做个简单介绍。</p>
 <ul>
-<li><p class="first">del: 删除列表内某个元素</p>
+<li><p>del: 删除列表内某个元素</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">del</span></code>命令比较特殊，他可以删除机会任何东西，包括列表本身，变量等</p>
 </div></blockquote>
@@ -653,7 +562,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">列表相加操作</p>
+<li><p>列表相加操作</p>
 <p>列表可以用数学上的加号(<code class="docutils literal notranslate"><span class="pre">+</span></code>)操作，结果是两个列表内容组合在了一起，注意这种组合是完全的按先后顺序拼接在了一起：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 使用加号链接两个列表</span>
   <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
@@ -671,7 +580,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 <div><p>通过加号操作会生成新的列表，id的值跟任何一个列表都不同</p>
 </div></blockquote>
 </li>
-<li><p class="first">列表和数字相乘</p>
+<li><p>列表和数字相乘</p>
 <p>乘法是加法的省略，所以，列表也可以跟数字相乘，此时代表多少个列表相加。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 使用乘号操作列表</span>
   <span class="c1"># 列表直接跟一个整数相乘 </span>
@@ -686,7 +595,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">in 操作</p>
+<li><p>in 操作</p>
 <p><code class="docutils literal notranslate"><span class="pre">in</span></code>应该属于操作符的一种，学名成员运算符，用来判断一个变量内容是否在一个列表里，同样也可以在字典等类型上使用。</p>
 <p><code class="docutils literal notranslate"><span class="pre">in</span></code>操作的结果是一个布尔值。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 成员资格运算</span>
@@ -720,7 +629,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">max/min函数，求最大/最小值</p>
+<li><p>max/min函数，求最大/最小值</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># max:求列表中的最大值</span>
   <span class="c1"># min： 同理</span>
   <span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
@@ -730,7 +639,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">list定义函数</p>
+<li><p>list定义函数</p>
 <p>用一个值定义一个列表，这个值可以是别的不是列表的内容，比如后面要讲的元祖。</p>
 <p>需要注意的是，如果尝试把一个字符串放入列表中，默认会把字符串拆成一个由各个字符组成的列表，举个栗子：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I love wangxiaojing&quot;</span>
@@ -743,7 +652,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">append:末尾追加元素</p>
+<li><p>append:末尾追加元素</p>
 <p>append是在列表末尾追加一个元素。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># append 插入一个内容, 在末尾追加</span>
   <span class="n">a</span> <span class="o">=</span> <span class="p">[</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span>
@@ -758,7 +667,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">insert: 插入元素</p>
+<li><p>insert: 插入元素</p>
 <p>向列表中插入元素不但要知道插入的值，还要知道插入的位置，这里的位置下标指的是在此下标前插入。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># insert: 制定位置插入</span>
   <span class="c1"># insert(index, data), 插入位置是index前面</span>
@@ -773,7 +682,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">pop: 弹出元素</p>
+<li><p>pop: 弹出元素</p>
 <p><code class="docutils literal notranslate"><span class="pre">pop</span></code>是从列表中弹出某个元素，此操作返回结果是弹出的那个元素值，同时因为元素弹出了就不在列表里面，所以
 也当做删除使用。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 删除</span>
@@ -792,7 +701,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">remove: 删除</p>
+<li><p>remove: 删除</p>
 <p>此删除操作要求明确知道删除哪个值，操作的参数是删除元素具体的值。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  remove:在列表中删除指定的值的元素
   如果被删除的值没在list中，则报错
@@ -802,7 +711,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">clear:清空操作</p>
+<li><p>clear:清空操作</p>
 <p>这个操作把列表内容清空，需要注意的是如果只是需要一个空列表，完全可以在生成一个空列表赋值给变量就可以，
 <code class="docutils literal notranslate"><span class="pre">clear</span></code>只在还不想更改原来列表地址的时候使用。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># clear:清空</span>
@@ -825,7 +734,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">reverse:翻转列表内容，原地翻转</p>
+<li><p>reverse:翻转列表内容，原地翻转</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
   <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
@@ -844,7 +753,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">extend:扩展列表，两个列表，把一个直接拼接到后一个上</p>
+<li><p>extend:扩展列表，两个列表，把一个直接拼接到后一个上</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
  <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -864,7 +773,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">count:查找列表中指定值或元素的个数</p>
+<li><p>count:查找列表中指定值或元素的个数</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
   <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
   <span class="n">a</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
@@ -880,7 +789,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">copy: 拷贝，此函数是浅拷贝，</p>
+<li><p>copy: 拷贝，此函数是浅拷贝，</p>
 <p><code class="docutils literal notranslate"><span class="pre">copy</span></code>函数属于浅拷贝，建议慎用。</p>
 <blockquote>
 <div><p>深浅拷贝建议参考相关资料，这里可以粗暴的理解成，浅拷贝如果遇到嵌套列表，则只把列表第一层内容拷贝过去，
@@ -960,17 +869,17 @@ print(&quot;第四个元素是：&quot;， l[3])
 </div>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="tuple">
-<h2>12.2. 元组:tuple<a class="headerlink" href="#tuple" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="tuple">
+<h2><span class="section-number">12.2. </span>元组:tuple<a class="headerlink" href="#tuple" title="Link to this heading"></a></h2>
 <p>元组就是一个不可更改的list，把列表中跟更改相关的操作删掉基本就是一个元祖。</p>
 <p>元祖存在的意义就是当一个列表不需要进行更改，或者为了防止列表被中途更改，则直接定义成元祖。</p>
-<div class="section" id="id11">
-<h3>12.2.1. 元组创建<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<section id="id11">
+<h3><span class="section-number">12.2.1. </span>元组创建<a class="headerlink" href="#id11" title="Link to this heading"></a></h3>
 <p>元祖创建只能在定义的时候创建，然后就只能进行读操作。</p>
 <ul>
-<li><p class="first">创建一个空元组</p>
+<li><p>创建一个空元组</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">t</span> <span class="o">=</span> <span class="p">()</span>
   <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 
@@ -979,7 +888,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">创建一个只有一个值的元组</p>
+<li><p>创建一个只有一个值的元组</p>
 <p>此时在括号内需要使用逗号，因为如果没有逗号，则应该被理解成括号内有一个数字，此时括号不起作用，最终得到的是一个数字。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
   <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
@@ -992,7 +901,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">创建多个值的元组</p>
+<li><p>创建多个值的元组</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
  <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
  <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
@@ -1003,7 +912,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">使用其他结构创建</p>
+<li><p>使用其他结构创建</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
   <span class="n">t</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
   <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
@@ -1012,15 +921,15 @@ print(&quot;第四个元素是：&quot;， l[3])
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="id12">
-<h3>12.2.2. 元组的特性<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id12">
+<h3><span class="section-number">12.2.2. </span>元组的特性<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>是序列表，有序</li>
-<li>元组数据值可以访问，不能修改，不能修改，不能修改</li>
-<li>元组数据可以是任意类型</li>
-<li>总之，list所有特性，除了可修改外，元组都具有</li>
-<li>也就意味着，list具有的一些操作，比如索引，分片，序列相加，相乘，成员资格操作等，一模一样</li>
+<li><p>是序列表，有序</p></li>
+<li><p>元组数据值可以访问，不能修改，不能修改，不能修改</p></li>
+<li><p>元组数据可以是任意类型</p></li>
+<li><p>总之，list所有特性，除了可修改外，元组都具有</p></li>
+<li><p>也就意味着，list具有的一些操作，比如索引，分片，序列相加，相乘，成员资格操作等，一模一样</p></li>
 </ul>
 <p>上面千言万语就一句话：元祖就是不可以更改的列表</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 索引操作</span>
@@ -1058,41 +967,41 @@ print(&quot;第四个元素是：&quot;， l[3])
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NO&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="set">
-<h2>12.3. 集合: set<a class="headerlink" href="#set" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="set">
+<h2><span class="section-number">12.3. </span>集合: set<a class="headerlink" href="#set" title="Link to this heading"></a></h2>
 <p>此处集合和高中数学中的集合概念一致。</p>
 <p>用来表示一堆确定的无序的无重复的数据集。</p>
-<div class="section" id="id13">
-<h3>12.3.1. 集合的定义<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<section id="id13">
+<h3><span class="section-number">12.3.1. </span>集合的定义<a class="headerlink" href="#id13" title="Link to this heading"></a></h3>
 <p>集合的定义比较简单，分为定义空集合和有内容的集合两种：</p>
 <ul>
-<li><p class="first">定义空集合</p>
+<li><p>定义空集合</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">定义有内容的集合</p>
+<li><p>定义有内容的集合</p>
 <p>用大括号来定义有内容的集合，此时，大括号内一定要有值，否则定义出的是一个字典，不是集合类型。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">}</span>
 </pre></div>
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="id14">
-<h3>12.3.2. 集合的特征<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id14">
+<h3><span class="section-number">12.3.2. </span>集合的特征<a class="headerlink" href="#id14" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>集合内数据无序，即无法使用索引和分片</li>
-<li>集合内部数据元素具有唯一性，可以用来排除重复数据</li>
-<li>集合内的数据，可以是str, int, float, tuple,冰冻集合等，但必须是可哈希数据</li>
+<li><p>集合内数据无序，即无法使用索引和分片</p></li>
+<li><p>集合内部数据元素具有唯一性，可以用来排除重复数据</p></li>
+<li><p>集合内的数据，可以是str, int, float, tuple,冰冻集合等，但必须是可哈希数据</p></li>
 </ul>
-</div>
-<div class="section" id="id15">
-<h3>12.3.3. 集合操作<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id15">
+<h3><span class="section-number">12.3.3. </span>集合操作<a class="headerlink" href="#id15" title="Link to this heading"></a></h3>
 <ul>
-<li><p class="first">成员检测: in, not in</p>
+<li><p>成员检测: in, not in</p>
 <p>此类操作返回结果是布尔值，一般常用来做分支语句的条件：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;love&quot;</span><span class="p">,</span> <span class="s2">&quot;wangxiaojing&quot;</span><span class="p">}</span>
 
@@ -1103,7 +1012,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">集合遍历操作</p>
+<li><p>集合遍历操作</p>
 <p>遍历集合一般用循环来完成：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># for 循环</span>
       <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;love&quot;</span><span class="p">,</span> <span class="s2">&quot;wangxiaojing&quot;</span><span class="p">}</span>
@@ -1121,7 +1030,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">集合的生成式</p>
+<li><p>集合的生成式</p>
 <p>跟列表类似，集合也可以用生成式来自动生成。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 普通集合内涵</span>
   <span class="c1"># 以下集合在初始化后自动过滤掉重复元素</span>
@@ -1154,7 +1063,7 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">len, max, min:跟其他基本函数一致</p>
+<li><p>len, max, min:跟其他基本函数一致</p>
 <p>分别返回集合的长度，最大值，最小值，这个跟列表操作基本一致。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">43</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">223</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1222</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">323</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span>
   <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
@@ -1163,13 +1072,13 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">add：向集合内添加元素</p>
+<li><p>add：向集合内添加元素</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">}</span>
   <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">334</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">clear: 清空集合</p>
+<li><p>clear: 清空集合</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>
   <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
   <span class="n">s</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
@@ -1183,11 +1092,9 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">copy:拷贝</p>
-</li>
-<li><p class="first">remove:移除制定的值，直接改变原有值，如果要删除的值不存在，报错</p>
-</li>
-<li><p class="first">discard:移除集合中指定的值，跟remove一样，但是要删除的值不在也不报错</p>
+<li><p>copy:拷贝</p></li>
+<li><p>remove:移除制定的值，直接改变原有值，如果要删除的值不存在，报错</p></li>
+<li><p>discard:移除集合中指定的值，跟remove一样，但是要删除的值不在也不报错</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">23</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
   <span class="n">s</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
   <span class="n">s</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -1196,24 +1103,20 @@ print(&quot;第四个元素是：&quot;， l[3])
 </pre></div>
 </div>
 </li>
-<li><p class="first">pop: 随机移除一个元素</p>
+<li><p>pop: 随机移除一个元素</p>
 <p>列表中的<code class="docutils literal notranslate"><span class="pre">pop</span></code>默认是把最后一个取出来，但集合没有顺序概念，所以，这个函数最后取出哪个值，完全
 不是我们想象的，等同于<code class="docutils literal notranslate"><span class="pre">随机</span></code>删除。</p>
 </li>
-<li><p class="first">集合特有的操作</p>
+<li><p>集合特有的操作</p>
 <p>集合因为他的概念，有一些特有的操作，比如交差并补，是否是子集等，每个都对应相应的操作函数</p>
 </li>
-<li><p class="first">intersection: 交集</p>
-</li>
-<li><p class="first">difference:差集</p>
-</li>
-<li><p class="first">union: 并集</p>
-</li>
-<li><p class="first">判断类操作</p>
+<li><p>intersection: 交集</p></li>
+<li><p>difference:差集</p></li>
+<li><p>union: 并集</p></li>
+<li><p>判断类操作</p>
 <ul>
-<li><p class="first">issubset: 检查一个集合是否为另一个子集</p>
-</li>
-<li><p class="first">issuperset: 检查一个集合是否为另一个超集</p>
+<li><p>issubset: 检查一个集合是否为另一个子集</p></li>
+<li><p>issuperset: 检查一个集合是否为另一个超集</p>
 <p>s1 = {1,2,3,4,5,6}
 s2 = {5,6,7,8,9}</p>
 <p>s_1 = s1.intersection(s2)
@@ -1250,13 +1153,13 @@ print(s_3)</p>
 </div>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="frozen-set">
-<h2>12.4. 冰冻集合:  frozen set<a class="headerlink" href="#frozen-set" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="frozen-set">
+<h2><span class="section-number">12.4. </span>冰冻集合:  frozen set<a class="headerlink" href="#frozen-set" title="Link to this heading"></a></h2>
 <p>冰冻集合就是不能进行写操作的集合，除了定义和不能进行修改，其余的跟集合一致。</p>
 <ul>
-<li><p class="first">创建</p>
+<li><p>创建</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">()</span>
   <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -1269,14 +1172,14 @@ print(s_3)</p>
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="dict">
-<h2>12.5. 字典: dict<a class="headerlink" href="#dict" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="dict">
+<h2><span class="section-number">12.5. </span>字典: dict<a class="headerlink" href="#dict" title="Link to this heading"></a></h2>
 <p>字典是一种组合数据，是一种没有顺序的组合数据，数据以键值对形式出现。</p>
-<div class="section" id="id16">
-<h3>12.5.1. 字典的定义<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<section id="id16">
+<h3><span class="section-number">12.5.1. </span>字典的定义<a class="headerlink" href="#id16" title="Link to this heading"></a></h3>
 <ul>
-<li><p class="first">空字典定义</p>
+<li><p>空字典定义</p>
 <p>可以使用大括号直接定义一个空的字典, 也可以使用字典类直接定义。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># 字典的创建</span>
       <span class="c1"># 创建空字典1</span>
@@ -1287,7 +1190,7 @@ print(s_3)</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">有数据的字典</p>
+<li><p>有数据的字典</p>
 <p>因为字典内数据为键值对，可以直接使用键值对来定义有数据的字典。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># 创建有值的字典， 每一组数据用冒号隔开， 每一对键值对用逗号隔开</span>
       <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
@@ -1314,23 +1217,24 @@ print(s_3)</p>
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="id17">
-<h3>12.5.2. 字典的特征<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id17">
+<h3><span class="section-number">12.5.2. </span>字典的特征<a class="headerlink" href="#id17" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>字典是序列类型，但是是无序序列，所以没有分片和索引</li>
-<li>字典中的数据每个都由键值对组成，即kv对(key:value)<ul>
-<li>key: 必须是可哈希的值，比如int,string,float,tuple, 但是，list,set,dict 不行</li>
-<li>value: 基本是任何值</li>
+<li><p>字典是序列类型，但是是无序序列，所以没有分片和索引</p></li>
+<li><p>字典中的数据每个都由键值对组成，即kv对(key:value)</p>
+<ul>
+<li><p>key: 必须是可哈希的值，比如int,string,float,tuple, 但是，list,set,dict 不行</p></li>
+<li><p>value: 基本是任何值</p></li>
 </ul>
 </li>
-<li>为了方便循环操作，可以利用字典内置的功能分别把键，值作或键值对作为可迭代的内容返回</li>
+<li><p>为了方便循环操作，可以利用字典内置的功能分别把键，值作或键值对作为可迭代的内容返回</p></li>
 </ul>
-</div>
-<div class="section" id="id18">
-<h3>12.5.3. 字典常见操作<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id18">
+<h3><span class="section-number">12.5.3. </span>字典常见操作<a class="headerlink" href="#id18" title="Link to this heading"></a></h3>
 <ul>
-<li><p class="first">访问字典数据</p>
+<li><p>访问字典数据</p>
 <p>通常来讲访问字典内数据采用键来访问，参见下面代码：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># 访问数据</span>
       <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
@@ -1355,7 +1259,7 @@ print(s_3)</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">成员操作：in，not in</p>
+<li><p>成员操作：in，not in</p>
 <p>成员检测符<code class="docutils literal notranslate"><span class="pre">in</span></code>和 <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>。</p>
 <p>字典也可以有成员操作，如果用单个值直接对字典使用成员操作，则默认是检测这个值是否在字典的key中：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># 成员检测检测的是key内容</span>
@@ -1376,7 +1280,7 @@ print(s_3)</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">遍历操作</p>
+<li><p>遍历操作</p>
 <p>字典的遍历操作在<code class="docutils literal notranslate"><span class="pre">Python2.x</span></code>和<code class="docutils literal notranslate"><span class="pre">Python3.x</span></code>中差别比较大，完全不通用。</p>
 <p>以下遍历分别对键，值，键值对进行遍历，写法相对固定。</p>
 <p>下面代码是<code class="docutils literal notranslate"><span class="pre">Python2.x</span></code>代码的一个示例：</p>
@@ -1408,12 +1312,12 @@ print(s_3)</p>
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="id19">
-<h3>12.5.4. 字典生成式<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id19">
+<h3><span class="section-number">12.5.4. </span>字典生成式<a class="headerlink" href="#id19" title="Link to this heading"></a></h3>
 <p>字典也可以时候用生成式来完成新字典的创建。使用方式跟列表类似。</p>
 <ul>
-<li><p class="first">普通青年的字典生成式</p>
+<li><p>普通青年的字典生成式</p>
 <p>以下代码使用字典生成式创建新的字典：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
 
@@ -1422,26 +1326,25 @@ print(s_3)</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">加限制条件的字典生成式</p>
+<li><p>加限制条件的字典生成式</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 只有值为偶数的才会生成新的字典</span>
   <span class="n">dd</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">}</span>
 </pre></div>
 </div>
 </li>
 </ul>
-</div>
-<div class="section" id="id20">
-<h3>12.5.5. 字典相关函数<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id20">
+<h3><span class="section-number">12.5.5. </span>字典相关函数<a class="headerlink" href="#id20" title="Link to this heading"></a></h3>
 <p>字典相关函数操作比较多，这里我就介绍几个比较重要的。</p>
 <ul>
-<li><p class="first">clear: 清空字典</p>
-</li>
-<li><p class="first">items/keys/values: 返回字典的键值对/键/值组成的元组格式</p>
+<li><p>clear: 清空字典</p></li>
+<li><p>items/keys/values: 返回字典的键值对/键/值组成的元组格式</p>
 <p>这三个函数比较常用，我们在上面案例中已经有了展示， 这里需要注意的是它们返回的格式，分别是
 dict_items/dict_keys/dict_values格式，不用过多关注这三个格式的具体形式，只需要记住这三个
 格式是可迭代的就好，可迭代概念我们在语法高级部分讲述。</p>
 </li>
-<li><p class="first">get: 根据制定键返回相应的值</p>
+<li><p>get: 根据制定键返回相应的值</p>
 <p>对字典的值的访问，我们可以通过形如<code class="docutils literal notranslate"><span class="pre">dict_var['key']</span></code>来使用，但这个有个问题是如果访问的键并不在
 字典里面，会直接引发错误，而使用<code class="docutils literal notranslate"><span class="pre">get</span></code>函数相对温和一些，可以指定当键不存在的时候我们返回什么。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
@@ -1460,7 +1363,7 @@ dict_items/dict_keys/dict_values格式，不用过多关注这三个格式的具
 </pre></div>
 </div>
 </li>
-<li><p class="first">fromkeys: 快速生成字典</p>
+<li><p>fromkeys: 快速生成字典</p>
 <p>字典可以快速生成，比如我们有一个列表保存的是字典的键，则可以使用<code class="docutils literal notranslate"><span class="pre">fromkeys</span></code>把列表内的值作为键，此时
 可以指定一个值作为这些键的值。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># fromkeys: 使用指定的序列作为键，使用一个值作为字典的所有的键的值</span>
@@ -1477,16 +1380,16 @@ dict_items/dict_keys/dict_values格式，不用过多关注这三个格式的具
 </div>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="str">
-<h2>12.6. str相关操作<a class="headerlink" href="#str" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+<section id="str">
+<h2><span class="section-number">12.6. </span>str相关操作<a class="headerlink" href="#str" title="Link to this heading"></a></h2>
 <blockquote>
 <div><p>官方文档：内置类型：字符串</p>
 <p>https://docs.python.org/3.7/library/stdtypes.html#text-sequence-type-str</p>
 </div></blockquote>
-<div class="section" id="id21">
-<h3>12.6.1. (一) 英文字符与字符检测相关函数<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
+<section id="id21">
+<h3><span class="section-number">12.6.1. </span>(一) 英文字符与字符检测相关函数<a class="headerlink" href="#id21" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 字符串相关函数 (一) 英文字符与字符检测相关函数</span>
 <span class="nb">vars</span> <span class="o">=</span> <span class="s1">&#39;iloveyou&#39;</span>
 <span class="c1"># 返回字符串的副本，该字符串的首个字符大写，其余小写。</span>
@@ -1526,9 +1429,9 @@ dict_items/dict_keys/dict_values格式，不用过多关注这三个格式的具
 <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id22">
-<h3>12.6.2. （二）字符串 查找与操作相关函数 重点重点重点<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id22">
+<h3><span class="section-number">12.6.2. </span>（二）字符串 查找与操作相关函数 重点重点重点<a class="headerlink" href="#id22" title="Link to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  ** find() 方法 ，找到则返回字符中符合条件的第一个字符出现的索引位置。未找到返回 -1</span>
 <span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;you&#39;</span><span class="p">)</span>
 <span class="c1"># print(vars[res:res+3])</span>
@@ -1579,56 +1482,39 @@ dict_items/dict_keys/dict_values格式，不用过多关注这三个格式的具
 <span class="c1"># print(res)</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="009-类.html" class="btn btn-neutral float-right" title="13. OOP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="008-内置函数.html" class="btn btn-neutral float-left" title="11. 内置函数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html" class="btn btn-neutral float-left" title="11. 内置函数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="009-%E7%B1%BB.html" class="btn btn-neutral float-right" title="13. OOP" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2020, 北京图灵学院.
-
-    </p>
+    <p>&#169; 版权所有 2020, 北京图灵学院。</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

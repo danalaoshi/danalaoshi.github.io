@@ -1,128 +1,76 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html4" lang="zh-CN" >
+<html class="writer-html5" lang="zh-CN" data-content_root="../">
 <head>
-  <meta charset="utf-8" />
-  
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>8. 日志(logging) &mdash; Python新全栈教程 1.0 文档</title>
-  
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
 
   
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript">
-          var DOCUMENTATION_OPTIONS = {
-              URL_ROOT:'../',
-              VERSION:'1.0',
-              LANGUAGE:'zh_CN',
-              COLLAPSE_INDEX:false,
-              FILE_SUFFIX:'.html',
-              HAS_SOURCE:  true,
-              SOURCELINK_SUFFIX: '.txt'
-          };
-      </script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/translations.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
+    <link rel="canonical" href="https://danalaoshi.github.io/adv/107_log.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=f115507d"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/translations.js?v=beaddf03"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="9. 协程" href="108_携程.html" />
-    <link rel="prev" title="7. 计算机编码问题" href="106_编码问题.html" /> 
+    <link rel="next" title="9. 协程" href="108_%E6%90%BA%E7%A8%8B.html" />
+    <link rel="prev" title="7. 计算机编码问题" href="106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../index.html" class="icon icon-home"> Python新全栈教程
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            Python新全栈教程
           </a>
-
-          
-            
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../base/001.html">1. 开学典礼-不讲知识</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/001Python语言概述.html">2. Python语言概述</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/001注释.html">3. 注释和帮助</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001Python%E8%AF%AD%E8%A8%80%E6%A6%82%E8%BF%B0.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001%E6%B3%A8%E9%87%8A.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/002%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B.html">4. 变量</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/003str.html">5. 字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/004运算符.html">6. 表达式 和 运算符</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/005-if分支语句.html">7. 分支语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/006-for循环.html">8. 循环语句</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/007-while循环.html">9. while循环</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/008-函数讲义.html">10. 函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/008-内置函数.html">11. 内置函数</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/09-内置结构.html">12. 内置数据结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/009-类.html">13. OOP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/010-内置模块.html">14. 常用内置模块</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/011-持久化和文件.html">15. 文件和序列化</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../base/012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/004%E8%BF%90%E7%AE%97%E7%AC%A6.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/005-if%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/006-for%E5%BE%AA%E7%8E%AF.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/007-while%E5%BE%AA%E7%8E%AF.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-%E5%87%BD%E6%95%B0%E8%AE%B2%E4%B9%89.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/09-%E5%86%85%E7%BD%AE%E7%BB%93%E6%9E%84.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/009-%E7%B1%BB.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/010-%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/011-%E6%8C%81%E4%B9%85%E5%8C%96%E5%92%8C%E6%96%87%E4%BB%B6.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/012-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86.html">16. Python异常的使用</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../base/013-tkinter.html">17. Tkinter</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="101-函数高级.html">1. 函数高级</a></li>
-<li class="toctree-l1"><a class="reference internal" href="102-类高级.html">2. OOP高级编程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="103_调试技术.html">3. 调试技术</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1021-单元测试.html">4. 单元测试</a></li>
-<li class="toctree-l1"><a class="reference internal" href="104_模块和包.html">5. 模块和包</a></li>
-<li class="toctree-l1"><a class="reference internal" href="105多线程.html">6. 多线程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="101-%E5%87%BD%E6%95%B0%E9%AB%98%E7%BA%A7.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="102-%E7%B1%BB%E9%AB%98%E7%BA%A7.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="103_%E8%B0%83%E8%AF%95%E6%8A%80%E6%9C%AF.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1021-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="104_%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="105%E5%A4%9A%E7%BA%BF%E7%A8%8B.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html">7. 计算机编码问题</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">8. 日志(logging)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">8.1. 日志相关概念</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2">8.2. <code class="docutils literal notranslate"><span class="pre">logging</span></code>模块</a><ul>
@@ -146,143 +94,109 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="108_携程.html">9. 协程</a></li>
-<li class="toctree-l1"><a class="reference internal" href="109_网络编程.html">10. 1. 网络通信概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="108_%E6%90%BA%E7%A8%8B.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="109_%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B.html">10. 1. 网络通信概述</a></li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Python新全栈教程</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="页面导航">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li>8. 日志(logging)</li>
-    
-    
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">8. </span>日志(logging)</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/adv/107_log.md.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/adv/107_log.md.txt" rel="nofollow"> 查看页面源码</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="logging">
-<h1>8. 日志(logging)<a class="headerlink" href="#logging" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id1">
-<h2>8.1. 日志相关概念<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+             
+  <section id="logging">
+<h1><span class="section-number">8. </span>日志(logging)<a class="headerlink" href="#logging" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2><span class="section-number">8.1. </span>日志相关概念<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>日志: 记录系统运行状态的文件或者记录系统</li>
-<li>不同的日志使用者有<ul>
-<li>用户</li>
-<li>开发</li>
-<li>运维</li>
+<li><p>日志: 记录系统运行状态的文件或者记录系统</p></li>
+<li><p>不同的日志使用者有</p>
+<ul>
+<li><p>用户</p></li>
+<li><p>开发</p></li>
+<li><p>运维</p></li>
 </ul>
 </li>
-<li>严重性级别(Level): 日志根据用途分成不同的等级, 系统默认分类为<ul>
-<li>DEBUG</li>
-<li>INFO</li>
-<li>NOTICE</li>
-<li>WARNING</li>
-<li>ERROR</li>
-<li>CRITICAL</li>
-<li>ALERT</li>
-<li>EMERGENCY</li>
+<li><p>严重性级别(Level): 日志根据用途分成不同的等级, 系统默认分类为</p>
+<ul>
+<li><p>DEBUG</p></li>
+<li><p>INFO</p></li>
+<li><p>NOTICE</p></li>
+<li><p>WARNING</p></li>
+<li><p>ERROR</p></li>
+<li><p>CRITICAL</p></li>
+<li><p>ALERT</p></li>
+<li><p>EMERGENCY</p></li>
 </ul>
 </li>
-<li>作用:<ul>
-<li>调试</li>
-<li>了解软件运行情况</li>
-<li>时候分析定位问题</li>
+<li><p>作用:</p>
+<ul>
+<li><p>调试</p></li>
+<li><p>了解软件运行情况</p></li>
+<li><p>时候分析定位问题</p></li>
 </ul>
 </li>
-<li>日志信息:<ul>
-<li>time</li>
-<li>lcoation</li>
-<li>level</li>
-<li>content</li>
+<li><p>日志信息:</p>
+<ul>
+<li><p>time</p></li>
+<li><p>lcoation</p></li>
+<li><p>level</p></li>
+<li><p>content</p></li>
 </ul>
 </li>
-<li>成熟第三方<ul>
-<li>log4j</li>
-<li>log4php</li>
-<li>python: logging, loguru</li>
+<li><p>成熟第三方</p>
+<ul>
+<li><p>log4j</p></li>
+<li><p>log4php</p></li>
+<li><p>python: logging, loguru</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="id2">
-<h2>8.2. <code class="docutils literal notranslate"><span class="pre">logging</span></code>模块<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id2">
+<h2><span class="section-number">8.2. </span><code class="docutils literal notranslate"><span class="pre">logging</span></code>模块<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li>级别<ul>
-<li>可以自定义</li>
-<li>DEBUG</li>
-<li>INFO</li>
-<li>WARNING</li>
-<li>ERROR</li>
-<li>CRITICAL</li>
+<li><p>级别</p>
+<ul>
+<li><p>可以自定义</p></li>
+<li><p>DEBUG</p></li>
+<li><p>INFO</p></li>
+<li><p>WARNING</p></li>
+<li><p>ERROR</p></li>
+<li><p>CRITICAL</p></li>
 </ul>
 </li>
-<li>级别逐渐增加</li>
-<li>只需要指定一个日志记录的最低级别就好,高级别的自动记录</li>
-<li>使用方式:<ul>
-<li>直接使用logging(封装了其他组件)</li>
-<li>使用Logging四大组件</li>
+<li><p>级别逐渐增加</p></li>
+<li><p>只需要指定一个日志记录的最低级别就好,高级别的自动记录</p></li>
+<li><p>使用方式:</p>
+<ul>
+<li><p>直接使用logging(封装了其他组件)</p></li>
+<li><p>使用Logging四大组件</p></li>
 </ul>
 </li>
 </ul>
-<div class="section" id="id3">
-<h3>8.2.1. <code class="docutils literal notranslate"><span class="pre">logging</span></code>模块级别日志<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<section id="id3">
+<h3><span class="section-number">8.2.1. </span><code class="docutils literal notranslate"><span class="pre">logging</span></code>模块级别日志<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">logging</span></code>级别使用以下几个函数</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logging</span></code>级别使用以下几个函数</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> 	<span class="n">创建一条严重级别为DEBUG的日志记录</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> 	<span class="n">创建一条严重级别为INFO的日志记录</span>
@@ -294,19 +208,21 @@
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">logging.basicConfig(**kwargs)</span></code>函数用于指定“要记录的日志级别”、“日志格式”、“日志输出位置”、“日志文件的打开模式”等信息，其他几个都是用于记录各个级别日志的函数<ul>
-<li>只第一次调用起作用</li>
-<li>不配置使用默认值<ul>
-<li>输出: sys.stderr</li>
-<li>级别: WARNING</li>
-<li>格式: lever:log name:content</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logging.basicConfig(**kwargs)</span></code>函数用于指定“要记录的日志级别”、“日志格式”、“日志输出位置”、“日志文件的打开模式”等信息，其他几个都是用于记录各个级别日志的函数</p>
+<ul>
+<li><p>只第一次调用起作用</p></li>
+<li><p>不配置使用默认值</p>
+<ul>
+<li><p>输出: sys.stderr</p></li>
+<li><p>级别: WARNING</p></li>
+<li><p>格式: lever:log name:content</p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
 <span class="n">LOG_FORMAT</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> == </span><span class="si">%(levelname)s</span><span class="s2"> ++ </span><span class="si">%(message)s</span><span class="s2">&quot;</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;mylog.log&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">CRITICAL</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">LOG_FORMAT</span><span class="p">)</span>
@@ -327,43 +243,44 @@
 <span class="c1">#logging.log(logging.CRITICAL, &quot;This is a critical log.&quot;)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="format">
-<h3>8.2.2. <code class="docutils literal notranslate"><span class="pre">format</span></code>参数<a class="headerlink" href="#format" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="format">
+<h3><span class="section-number">8.2.2. </span><code class="docutils literal notranslate"><span class="pre">format</span></code>参数<a class="headerlink" href="#format" title="Link to this heading"></a></h3>
 <p>在设置函数中使用到了信息格式内容, 我们在使用格式内容的时候下面参数可以直接使用:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">asctime</span></code>: <code class="docutils literal notranslate"><span class="pre">%(asctime)s</span></code> -	日志事件发生的时间–人类可读时间，如：2003-07-08 16:49:45,896</li>
-<li><code class="docutils literal notranslate"><span class="pre">created</span></code>: <code class="docutils literal notranslate"><span class="pre">%(created)f</span></code> -	日志事件发生的时间–时间戳，就是当时调用time.time()函数返回的值</li>
-<li><code class="docutils literal notranslate"><span class="pre">relativeCreated</span></code>: <code class="docutils literal notranslate"><span class="pre">%(relativeCreated)d</span></code> -	日志事件发生的时间相对于logging模块加载时间的相对毫秒数（目前还不知道干嘛用的）</li>
-<li><code class="docutils literal notranslate"><span class="pre">msecs</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(msecs)d</span></code> - 	日志事件发生事件的毫秒部分</li>
-<li><code class="docutils literal notranslate"><span class="pre">levelname</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(levelname)s</span></code> - 	该日志记录的文字形式的日志级别（’DEBUG’, ‘INFO’, ‘WARNING’, ‘ERROR’, ‘CRITICAL’）</li>
-<li><code class="docutils literal notranslate"><span class="pre">levelno</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(levelno)s</span></code> - 	该日志记录的数字形式的日志级别（10, 20, 30, 40, 50）</li>
-<li><code class="docutils literal notranslate"><span class="pre">name</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(name)s</span></code> - 	所使用的日志器名称，默认是’root’，因为默认使用的是 rootLogger</li>
-<li><code class="docutils literal notranslate"><span class="pre">message</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(message)s</span></code> - 	日志记录的文本内容，通过 msg % args计算得到的</li>
-<li><code class="docutils literal notranslate"><span class="pre">pathname</span></code>: <code class="docutils literal notranslate"><span class="pre">%(pathname)s</span></code> - 	调用日志记录函数的源码文件的全路径</li>
-<li><code class="docutils literal notranslate"><span class="pre">filename</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(filename)s</span></code> - 	pathname的文件名部分，包含文件后缀</li>
-<li><code class="docutils literal notranslate"><span class="pre">module</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(module)s</span></code> - 	filename的名称部分，不包含后缀</li>
-<li><code class="docutils literal notranslate"><span class="pre">lineno</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(lineno)d</span></code> - 	调用日志记录函数的源代码所在的行号</li>
-<li><code class="docutils literal notranslate"><span class="pre">funcName</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(funcName)s</span></code> - 	调用日志记录函数的函数名</li>
-<li><code class="docutils literal notranslate"><span class="pre">process</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(process)d</span></code> - 	进程ID</li>
-<li><code class="docutils literal notranslate"><span class="pre">processName</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(processName)s</span></code> - 	进程名称，Python 3.1新增</li>
-<li><code class="docutils literal notranslate"><span class="pre">thread</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(thread)d</span></code> -	线程ID</li>
-<li><code class="docutils literal notranslate"><span class="pre">threadName</span></code>: <code class="docutils literal notranslate"><span class="pre">%(thread)s</span></code> -	线程名称</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">asctime</span></code>: <code class="docutils literal notranslate"><span class="pre">%(asctime)s</span></code> -	日志事件发生的时间--人类可读时间，如：2003-07-08 16:49:45,896</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">created</span></code>: <code class="docutils literal notranslate"><span class="pre">%(created)f</span></code> -	日志事件发生的时间--时间戳，就是当时调用time.time()函数返回的值</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">relativeCreated</span></code>: <code class="docutils literal notranslate"><span class="pre">%(relativeCreated)d</span></code> -	日志事件发生的时间相对于logging模块加载时间的相对毫秒数（目前还不知道干嘛用的）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">msecs</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(msecs)d</span></code> - 	日志事件发生事件的毫秒部分</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">levelname</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(levelname)s</span></code> - 	该日志记录的文字形式的日志级别（'DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">levelno</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(levelno)s</span></code> - 	该日志记录的数字形式的日志级别（10, 20, 30, 40, 50）</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(name)s</span></code> - 	所使用的日志器名称，默认是'root'，因为默认使用的是 rootLogger</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">message</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(message)s</span></code> - 	日志记录的文本内容，通过 msg % args计算得到的</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pathname</span></code>: <code class="docutils literal notranslate"><span class="pre">	%(pathname)s</span></code> - 	调用日志记录函数的源码文件的全路径</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filename</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(filename)s</span></code> - 	pathname的文件名部分，包含文件后缀</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">module</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(module)s</span></code> - 	filename的名称部分，不包含后缀</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lineno</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(lineno)d</span></code> - 	调用日志记录函数的源代码所在的行号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">funcName</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(funcName)s</span></code> - 	调用日志记录函数的函数名</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">process</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(process)d</span></code> - 	进程ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">processName</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(processName)s</span></code> - 	进程名称，Python 3.1新增</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">thread</span></code>: 	<code class="docutils literal notranslate"><span class="pre">%(thread)d</span></code> -	线程ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">threadName</span></code>: <code class="docutils literal notranslate"><span class="pre">%(thread)s</span></code> -	线程名称</p></li>
 </ul>
-</div>
-<div class="section" id="id4">
-<h3>8.2.3. 日志函数(日志器)<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id4">
+<h3><span class="section-number">8.2.3. </span>日志函数(日志器)<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
 <ul class="simple">
-<li>日志器有层级的概念,默认是RootLogger,以单例模式运行(后面会详细介绍)</li>
-<li>对于msg可以使用format格式, logging.debug(“%s is %d years old”, ‘dana’, 10)</li>
-<li>**kwargs参数的含义<ul>
-<li>exc_info： 其值为布尔值，如果该参数的值设置为True，则会将异常异常信息添加到日志消息中。如果没有异常信息则添加None到日志信息中。</li>
-<li>stack_info： 其值也为布尔值，默认值为False。如果该参数的值设置为True，栈信息将会被添加到日志信息中。</li>
-<li>extra： 这是一个字典（dict）参数，它可以用来自定义消息格式中所包含的字段，但是它的key不能与logging模块定义的字段冲突。</li>
+<li><p>日志器有层级的概念,默认是RootLogger,以单例模式运行(后面会详细介绍)</p></li>
+<li><p>对于msg可以使用format格式, logging.debug(&quot;%s is %d years old&quot;, 'dana', 10)</p></li>
+<li><p>**kwargs参数的含义</p>
+<ul>
+<li><p>exc_info： 其值为布尔值，如果该参数的值设置为True，则会将异常异常信息添加到日志消息中。如果没有异常信息则添加None到日志信息中。</p></li>
+<li><p>stack_info： 其值也为布尔值，默认值为False。如果该参数的值设置为True，栈信息将会被添加到日志信息中。</p></li>
+<li><p>extra： 这是一个字典（dict）参数，它可以用来自定义消息格式中所包含的字段，但是它的key不能与logging模块定义的字段冲突。</p></li>
 </ul>
 </li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
 <span class="n">LOG_FORMAT</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> == </span><span class="si">%(levelname)s</span><span class="s2"> ++ </span><span class="si">%(message)s</span><span class="s2">&quot;</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;mylog.log&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">CRITICAL</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">LOG_FORMAT</span><span class="p">)</span>
@@ -386,94 +303,102 @@
     <span class="n">logging</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s2">&quot;ERROR: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stack_info</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id5">
-<h3>8.2.4. <code class="docutils literal notranslate"><span class="pre">logging</span></code>模块日志处理流程<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id5">
+<h3><span class="section-number">8.2.4. </span><code class="docutils literal notranslate"><span class="pre">logging</span></code>模块日志处理流程<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">logging</span></code>日志系统有四大组件, 即模块由四个模块来处理日志</p>
 <ul class="simple">
-<li>日志器	(Logger): 	提供了应用程序可一致使用的接口</li>
-<li>处理器	(Handler): 	将<code class="docutils literal notranslate"><span class="pre">Logger</span></code>创建的日志记录发送到合适的目的输出</li>
-<li>过滤器	(Filter): 	提供了更细粒度的控制工具来决定输出哪条日志记录，丢弃哪条日志记录</li>
-<li>格式器	(Formatter): 	决定日志记录的最终输出格式</li>
+<li><p>日志器	(Logger): 	提供了应用程序可一致使用的接口</p></li>
+<li><p>处理器	(Handler): 	将<code class="docutils literal notranslate"><span class="pre">Logger</span></code>创建的日志记录发送到合适的目的输出</p></li>
+<li><p>过滤器	(Filter): 	提供了更细粒度的控制工具来决定输出哪条日志记录，丢弃哪条日志记录</p></li>
+<li><p>格式器	(Formatter): 	决定日志记录的最终输出格式</p></li>
 </ul>
 <p>四大组件参考下面案例:</p>
 <ul class="simple">
-<li>比如刘大拿老师就是一个日志器, 因为我只负责讲课, 从头到尾讲课就行,不考虑受众是谁</li>
-<li>我的学生就是处理器,因为他们听课的目的不一样, 有的是自己工作, 有的是某些机构的老师, 转述给学生, 有的是家长, 教自己的小孩子学python</li>
-<li>我的学生需要加一个过滤器, 因为我的学生转述python的目标不一致, 可能有些内容就不需要了, 比如家长教小孩子, 复杂内容就丢弃了, 有的
-学生听课带有强烈目的性,比如用python做爬虫, 那么后台的课程他就不需要了, 过滤了</li>
-<li>我的学生在使用python的时候可能还需要一个格式器, 我给学生讲课的时候因为学生是成人,
-所以语言系统用的是成人语言系统,但如果在转述给小孩子, 则需要转换成一套适合小朋友的语言风格, 这就是格式化器</li>
+<li><p>比如刘大拿老师就是一个日志器, 因为我只负责讲课, 从头到尾讲课就行,不考虑受众是谁</p></li>
+<li><p>我的学生就是处理器,因为他们听课的目的不一样, 有的是自己工作, 有的是某些机构的老师, 转述给学生, 有的是家长, 教自己的小孩子学python</p></li>
+<li><p>我的学生需要加一个过滤器, 因为我的学生转述python的目标不一致, 可能有些内容就不需要了, 比如家长教小孩子, 复杂内容就丢弃了, 有的
+学生听课带有强烈目的性,比如用python做爬虫, 那么后台的课程他就不需要了, 过滤了</p></li>
+<li><p>我的学生在使用python的时候可能还需要一个格式器, 我给学生讲课的时候因为学生是成人,
+所以语言系统用的是成人语言系统,但如果在转述给小孩子, 则需要转换成一套适合小朋友的语言风格, 这就是格式化器</p></li>
 </ul>
 <p>下面我们分别讲述四个模块:</p>
-<div class="section" id="logger">
-<h4>8.2.4.1. <code class="docutils literal notranslate"><span class="pre">Logger</span></code><a class="headerlink" href="#logger" title="永久链接至标题">¶</a></h4>
+<section id="logger">
+<h4><span class="section-number">8.2.4.1. </span><code class="docutils literal notranslate"><span class="pre">Logger</span></code><a class="headerlink" href="#logger" title="Link to this heading"></a></h4>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">Logger</span></code>的三大任务<ul>
-<li>向应用程序代码暴露几个方法，使应用程序可以在运行时记录日志消息；</li>
-<li>基于日志严重等级（默认的过滤设施）或filter对象来决定要对哪些日志进行后续处理；</li>
-<li>将日志消息传送给所有感兴趣的日志handlers。</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Logger</span></code>的三大任务</p>
+<ul>
+<li><p>向应用程序代码暴露几个方法，使应用程序可以在运行时记录日志消息；</p></li>
+<li><p>基于日志严重等级（默认的过滤设施）或filter对象来决定要对哪些日志进行后续处理；</p></li>
+<li><p>将日志消息传送给所有感兴趣的日志handlers。</p></li>
 </ul>
 </li>
-<li>相关功能<ul>
-<li>对日志进行配置<ul>
-<li><code class="docutils literal notranslate"><span class="pre">Logger.setLevel()</span></code>: 	设置日志器将会处理的日志消息的最低严重级别</li>
-<li><code class="docutils literal notranslate"><span class="pre">Logger.addHandler()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Logger.removeHandler()</span></code>: 	为该logger对象添加 和 移除一个handler对象</li>
-<li><code class="docutils literal notranslate"><span class="pre">Logger.addFilter()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Logger.removeFilter()</span></code>: 	为该logger对象添加 和 移除一个filter对象</li>
+<li><p>相关功能</p>
+<ul>
+<li><p>对日志进行配置</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Logger.setLevel()</span></code>: 	设置日志器将会处理的日志消息的最低严重级别</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Logger.addHandler()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Logger.removeHandler()</span></code>: 	为该logger对象添加 和 移除一个handler对象</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Logger.addFilter()</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Logger.removeFilter()</span></code>: 	为该logger对象添加 和 移除一个filter对象</p></li>
 </ul>
 </li>
-<li>创建日志<ul>
-<li><code class="docutils literal notranslate"><span class="pre">Logger.debug()</span></code>: 创建调试信息</li>
-<li><code class="docutils literal notranslate"><span class="pre">Logger.exception()</span></code>: 创建类似于Logger.error的日志消息</li>
-<li><code class="docutils literal notranslate"><span class="pre">Logger.log()</span></code>:获取一个明确的日志level参数类创建一个日志记录</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>得到<code class="docutils literal notranslate"><span class="pre">Logger</span></code>对象的方法<ul>
-<li>实例化</li>
-<li><code class="docutils literal notranslate"><span class="pre">logging.getLogger()</span></code>: 此时得到的日志名称为’root’</li>
+<li><p>创建日志</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Logger.debug()</span></code>: 创建调试信息</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Logger.exception()</span></code>: 创建类似于Logger.error的日志消息</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Logger.log()</span></code>:获取一个明确的日志level参数类创建一个日志记录</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="handler">
-<h4>8.2.4.2. <code class="docutils literal notranslate"><span class="pre">Handler</span></code><a class="headerlink" href="#handler" title="永久链接至标题">¶</a></h4>
+</li>
+<li><p>得到<code class="docutils literal notranslate"><span class="pre">Logger</span></code>对象的方法</p>
+<ul>
+<li><p>实例化</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logging.getLogger()</span></code>: 此时得到的日志名称为'root'</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="handler">
+<h4><span class="section-number">8.2.4.2. </span><code class="docutils literal notranslate"><span class="pre">Handler</span></code><a class="headerlink" href="#handler" title="Link to this heading"></a></h4>
 <ul class="simple">
-<li>功能是把消息发送到<code class="docutils literal notranslate"><span class="pre">handler</span></code>指定的位置</li>
-<li>Logger通过addHandler添加handler</li>
-<li>常用方法:<ul>
-<li>setLevel</li>
-<li>setFormat</li>
-<li>addFilter, removeFilter</li>
+<li><p>功能是把消息发送到<code class="docutils literal notranslate"><span class="pre">handler</span></code>指定的位置</p></li>
+<li><p>Logger通过addHandler添加handler</p></li>
+<li><p>常用方法:</p>
+<ul>
+<li><p>setLevel</p></li>
+<li><p>setFormat</p></li>
+<li><p>addFilter, removeFilter</p></li>
 </ul>
 </li>
-<li>不要直接使用,<code class="docutils literal notranslate"><span class="pre">Handler</span></code>是基础类, 常用的处理器有:<ul>
-<li><code class="docutils literal notranslate"><span class="pre">logging.StreamHandler</span></code>: 	将日志消息发送到输出到<code class="docutils literal notranslate"><span class="pre">Stream</span></code>，如<code class="docutils literal notranslate"><span class="pre">std.out</span></code>, <code class="docutils literal notranslate"><span class="pre">std.err</span></code>或任何<code class="docutils literal notranslate"><span class="pre">file-like</span></code>对象。</li>
-<li><code class="docutils literal notranslate"><span class="pre">logging.FileHandler</span></code>: 	将日志消息发送到磁盘文件，默认情况下文件大小会无限增长</li>
-<li><code class="docutils literal notranslate"><span class="pre">logging.handlers.RotatingFileHandler</span></code>: 	将日志消息发送到磁盘文件，并支持日志文件按大小切割</li>
-<li><code class="docutils literal notranslate"><span class="pre">logging.hanlders.TimedRotatingFileHandler</span></code>: 	将日志消息发送到磁盘文件，并支持日志文件按时间切割</li>
-<li><code class="docutils literal notranslate"><span class="pre">logging.handlers.HTTPHandler</span></code>: 	将日志消息以GET或POST的方式发送给一个HTTP服务器</li>
-<li><code class="docutils literal notranslate"><span class="pre">logging.handlers.SMTPHandler</span></code>: 	将日志消息发送给一个指定的email地址</li>
-<li><code class="docutils literal notranslate"><span class="pre">logging.NullHandler</span></code>: 	该<code class="docutils literal notranslate"><span class="pre">Handler</span></code>实例会忽略<code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">messages</span></code>，通常被想使用<code class="docutils literal notranslate"><span class="pre">logging</span></code>的<code class="docutils literal notranslate"><span class="pre">library</span></code>开发者使用来避免’No handlers could be found for logger XXX’信息的出现。</li>
+<li><p>不要直接使用,<code class="docutils literal notranslate"><span class="pre">Handler</span></code>是基础类, 常用的处理器有:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">logging.StreamHandler</span></code>: 	将日志消息发送到输出到<code class="docutils literal notranslate"><span class="pre">Stream</span></code>，如<code class="docutils literal notranslate"><span class="pre">std.out</span></code>, <code class="docutils literal notranslate"><span class="pre">std.err</span></code>或任何<code class="docutils literal notranslate"><span class="pre">file-like</span></code>对象。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logging.FileHandler</span></code>: 	将日志消息发送到磁盘文件，默认情况下文件大小会无限增长</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logging.handlers.RotatingFileHandler</span></code>: 	将日志消息发送到磁盘文件，并支持日志文件按大小切割</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logging.hanlders.TimedRotatingFileHandler</span></code>: 	将日志消息发送到磁盘文件，并支持日志文件按时间切割</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logging.handlers.HTTPHandler</span></code>: 	将日志消息以GET或POST的方式发送给一个HTTP服务器</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logging.handlers.SMTPHandler</span></code>: 	将日志消息发送给一个指定的email地址</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logging.NullHandler</span></code>: 	该<code class="docutils literal notranslate"><span class="pre">Handler</span></code>实例会忽略<code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">messages</span></code>，通常被想使用<code class="docutils literal notranslate"><span class="pre">logging</span></code>的<code class="docutils literal notranslate"><span class="pre">library</span></code>开发者使用来避免'No handlers could be found for logger XXX'信息的出现。</p></li>
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="filter">
-<h4>8.2.4.3. <code class="docutils literal notranslate"><span class="pre">Filter</span></code>类<a class="headerlink" href="#filter" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="filter">
+<h4><span class="section-number">8.2.4.3. </span><code class="docutils literal notranslate"><span class="pre">Filter</span></code>类<a class="headerlink" href="#filter" title="Link to this heading"></a></h4>
 <ul class="simple">
-<li>被<code class="docutils literal notranslate"><span class="pre">Handdler</span></code>和<code class="docutils literal notranslate"><span class="pre">Logger</span></code>使用</li>
-<li>用于具体控制传递的<code class="docutils literal notranslate"><span class="pre">record</span></code>记录是否能通过过滤</li>
+<li><p>被<code class="docutils literal notranslate"><span class="pre">Handdler</span></code>和<code class="docutils literal notranslate"><span class="pre">Logger</span></code>使用</p></li>
+<li><p>用于具体控制传递的<code class="docutils literal notranslate"><span class="pre">record</span></code>记录是否能通过过滤</p></li>
 </ul>
-</div>
-<div class="section" id="formatter">
-<h4>8.2.4.4. <code class="docutils literal notranslate"><span class="pre">Formatter</span></code>类<a class="headerlink" href="#formatter" title="永久链接至标题">¶</a></h4>
+</section>
+<section id="formatter">
+<h4><span class="section-number">8.2.4.4. </span><code class="docutils literal notranslate"><span class="pre">Formatter</span></code>类<a class="headerlink" href="#formatter" title="Link to this heading"></a></h4>
 <ul class="simple">
-<li>控制输出格式, 三个参数:<ul>
-<li>fmt：指定消息格式化字符串，如果不指定该参数则默认使用message的原始值</li>
-<li>datefmt：指定日期格式字符串，如果不指定该参数则默认使用”%Y-%m-%d %H:%M:%S”</li>
-<li>style：Python 3.2新增的参数，可取值为 ‘%’, ‘{‘和 ‘$’，如果不指定该参数则默认使用’%’</li>
+<li><p>控制输出格式, 三个参数:</p>
+<ul>
+<li><p>fmt：指定消息格式化字符串，如果不指定该参数则默认使用message的原始值</p></li>
+<li><p>datefmt：指定日期格式字符串，如果不指定该参数则默认使用&quot;%Y-%m-%d %H:%M:%S&quot;</p></li>
+<li><p>style：Python 3.2新增的参数，可取值为 '%', '{'和 '$'，如果不指定该参数则默认使用'%'</p></li>
 </ul>
 </li>
 </ul>
@@ -497,9 +422,9 @@
 <span class="sd">    4）两个日志文件的格式不同，因此需要对这两个handler分别设置格式器；</span>
 <span class="sd">&#39;&#39;&#39;</span>
 
-<span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">logging.handlers</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging.handlers</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
 
 <span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s1">&#39;mylogger&#39;</span><span class="p">)</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
@@ -521,31 +446,31 @@
 <span class="n">logger</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span><span class="s1">&#39;critical message&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="loguru">
-<h2>8.3. <code class="docutils literal notranslate"><span class="pre">loguru</span></code><a class="headerlink" href="#loguru" title="永久链接至标题">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="loguru">
+<h2><span class="section-number">8.3. </span><code class="docutils literal notranslate"><span class="pre">loguru</span></code><a class="headerlink" href="#loguru" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">loguru</span></code>是开发的方便使用的一个日志模块, 需要安装使用</p>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">loguru</span></code></p>
-<div class="section" id="id6">
-<h3>8.3.1. 简单使用<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<section id="id6">
+<h3><span class="section-number">8.3.1. </span>简单使用<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
 <p>简单实用基本可以开箱即用, 直接导入用就更好了, 参看下嘛代码:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">loguru</span> <span class="kn">import</span> <span class="n">logger</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span>
 
 <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;我是刘大拿&quot;</span><span class="p">)</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;卫星号 131 191 44223&quot;</span><span class="p">)</span>
 <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;QQ群也不能忘了, 999 0960&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id7">
-<h3>8.3.2. 添加绑定<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+</section>
+<section id="id7">
+<h3><span class="section-number">8.3.2. </span>添加绑定<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
 <p>一个日志系统需要各种设置, 比如日志文件叫啥, 相关属性, 写满了如何处置, 记录
 内容的格式等, <code class="docutils literal notranslate"><span class="pre">loguru</span></code>处理配置尽量简单,一个<code class="docutils literal notranslate"><span class="pre">add</span></code>函数满足绝大部分需要, 看下
 函数的签名:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">sink</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">PathLike</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span>
         <span class="o">*</span><span class="p">,</span>
@@ -570,79 +495,62 @@
 </pre></div>
 </div>
 <p>我们对几个参数进行解释:</p>
-</div>
-<div class="section" id="id8">
-<h3>8.3.3. 一个案例<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>第一个参数是保存日志信息的文件路径，像我写的后缀多了个 {time} ，就是获取当前时间节点，这样就会自动创建新的日志；这个time应该是库里自带的变量，如果你想自己定义time也可以的哦，具体可以看看下面封装类的实现形式！
+</section>
+<section id="id8">
+<h3><span class="section-number">8.3.3. </span>一个案例<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">第一个参数是保存日志信息的文件路径</span><span class="err">，</span><span class="n">像我写的后缀多了个</span> <span class="p">{</span><span class="n">time</span><span class="p">}</span> <span class="err">，</span><span class="n">就是获取当前时间节点</span><span class="err">，</span><span class="n">这样就会自动创建新的日志</span><span class="err">；</span><span class="n">这个time应该是库里自带的变量</span><span class="err">，</span><span class="n">如果你想自己定义time也可以的哦</span><span class="err">，</span><span class="n">具体可以看看下面封装类的实现形式</span><span class="err">！</span>
 
-当你需要输出中文日志的时候，请加上 encoding=“utf-8” ，避免出现乱码
+<span class="n">当你需要输出中文日志的时候</span><span class="err">，</span><span class="n">请加上</span> <span class="n">encoding</span><span class="o">=</span><span class="err">“</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="err">”</span> <span class="err">，</span><span class="n">避免出现乱码</span>
 
-enqueue=True 代表异步写入，官方的大概意思是：在多进程同时往日志文件写日志的时候使用队列达到异步功效
+<span class="n">enqueue</span><span class="o">=</span><span class="kc">True</span> <span class="n">代表异步写入</span><span class="err">，</span><span class="n">官方的大概意思是</span><span class="err">：</span><span class="n">在多进程同时往日志文件写日志的时候使用队列达到异步功效</span>
 
-rotation 可以理解成日志的创建时机，可以有多种写法 ◦rotation=“500 MB” ：当日志文件达到500MB时就会重新生成一个文件
+<span class="n">rotation</span> <span class="n">可以理解成日志的创建时机</span><span class="err">，</span><span class="n">可以有多种写法</span> <span class="err">◦</span><span class="n">rotation</span><span class="o">=</span><span class="err">“</span><span class="mi">500</span> <span class="n">MB</span><span class="err">”</span> <span class="err">：</span><span class="n">当日志文件达到500MB时就会重新生成一个文件</span>
 
-rotation=“12:00” ：每天12点就会创建新的文件、
+<span class="n">rotation</span><span class="o">=</span><span class="err">“</span><span class="mi">12</span><span class="p">:</span><span class="mi">00</span><span class="err">”</span> <span class="err">：</span><span class="n">每天12点就会创建新的文件</span><span class="err">、</span>
 
-rotation=“1 week” ：每隔一周创建一个log
+<span class="n">rotation</span><span class="o">=</span><span class="err">“</span><span class="mi">1</span> <span class="n">week</span><span class="err">”</span> <span class="err">：</span><span class="n">每隔一周创建一个log</span>
 
-retention 配置日志的最长保留时间，官方例子： “1 week, 3 days”、“2 months”
+<span class="n">retention</span> <span class="n">配置日志的最长保留时间</span><span class="err">，</span><span class="n">官方例子</span><span class="err">：</span> <span class="err">“</span><span class="mi">1</span> <span class="n">week</span><span class="p">,</span> <span class="mi">3</span> <span class="n">days</span><span class="err">”、“</span><span class="mi">2</span> <span class="n">months</span><span class="err">”</span>
 
-compression 配置文件的压缩格式，可以配置常见的格式 zip、tar、gz、tar.gz 等
-————————————————
-版权声明：本文为CSDN博主「不像凡人」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/weixin_43681642/article/details/115377017``
+<span class="n">compression</span> <span class="n">配置文件的压缩格式</span><span class="err">，</span><span class="n">可以配置常见的格式</span> <span class="nb">zip</span><span class="err">、</span><span class="n">tar</span><span class="err">、</span><span class="n">gz</span><span class="err">、</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="n">等</span>
+<span class="err">————————————————</span>
+<span class="n">版权声明</span><span class="err">：</span><span class="n">本文为CSDN博主</span><span class="err">「</span><span class="n">不像凡人</span><span class="err">」</span><span class="n">的原创文章</span><span class="err">，</span><span class="n">遵循CC</span> <span class="mf">4.0</span> <span class="n">BY</span><span class="o">-</span><span class="n">SA版权协议</span><span class="err">，</span><span class="n">转载请附上原文出处链接及本声明</span><span class="err">。</span>
+<span class="n">原文链接</span><span class="err">：</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">blog</span><span class="o">.</span><span class="n">csdn</span><span class="o">.</span><span class="n">net</span><span class="o">/</span><span class="n">weixin_43681642</span><span class="o">/</span><span class="n">article</span><span class="o">/</span><span class="n">details</span><span class="o">/</span><span class="mi">115377017</span><span class="err">``</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="108_携程.html" class="btn btn-neutral float-right" title="9. 协程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="106_编码问题.html" class="btn btn-neutral float-left" title="7. 计算机编码问题" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="106_%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98.html" class="btn btn-neutral float-left" title="7. 计算机编码问题" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="108_%E6%90%BA%E7%A8%8B.html" class="btn btn-neutral float-right" title="9. 协程" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; 版权所有 2020, 北京图灵学院.
-
-    </p>
+    <p>&#169; 版权所有 2020, 北京图灵学院。</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
