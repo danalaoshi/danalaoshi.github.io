@@ -1,0 +1,1634 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>12. 内置数据结构 &mdash; Python新全栈教程 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="13. OOP" href="009-类.html" />
+    <link rel="prev" title="11. 内置函数" href="008-内置函数.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python新全栈教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="001.html">1. 开学典礼-不讲知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001Python语言概述.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001注释.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="003str.html">5. 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="004运算符.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="005-if分支语句.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="006-for循环.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="007-while循环.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-函数讲义.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-内置函数.html">11. 内置函数</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12. 内置数据结构</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#list">12.1. 列表 list</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">12.1.1. 列表的定义方式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">12.1.2. 列表常用操作</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">12.1.2.1. 下标访问</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">12.1.2.2. 切片操作</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">12.1.2.3. 分片操作是生成一个新的list</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">12.1.3. 列表的遍历</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">12.1.4. 列表的嵌套</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">12.1.5. 列表生成式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">12.1.6. 列表的常用内容功能</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tuple">12.2. 元组:tuple</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">12.2.1. 元组创建</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">12.2.2. 元组的特性</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#set">12.3. 集合: set</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">12.3.1. 集合的定义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">12.3.2. 集合的特征</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">12.3.3. 集合操作</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#frozen-set">12.4. 冰冻集合:  frozen set</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dict">12.5. 字典: dict</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id16">12.5.1. 字典的定义</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">12.5.2. 字典的特征</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">12.5.3. 字典常见操作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">12.5.4. 字典生成式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">12.5.5. 字典相关函数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#str">12.6. str相关操作</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id21">12.6.1. (一) 英文字符与字符检测相关函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">12.6.2. （二）字符串 查找与操作相关函数 重点重点重点</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="009-类.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010-内置模块.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011-持久化和文件.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="013-tkinter.html">17. Tkinter</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adv/101-函数高级.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/102-类高级.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/103_调试技术.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/1021-单元测试.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/104_模块和包.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/105多线程.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/107_log.html">8. 日志(logging)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/108_携程.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/109_网络编程.html">10. 1. 网络通信概述</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python新全栈教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>12. 内置数据结构</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/base/09-内置结构.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>12. 内置数据结构<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>Python给提供了四种内置基本结构，这四种内置基本结构是：</p>
+<ul class="simple">
+<li>list： 列表</li>
+<li>set： 集合</li>
+<li>dict： 字典</li>
+<li>tuple：元祖</li>
+</ul>
+<p>我们把这四种基本结构作为Python提供的标准变量类型使用。</p>
+<div class="section" id="list">
+<h2>12.1. 列表 list<a class="headerlink" href="#list" title="永久链接至标题">¶</a></h2>
+<p>列表内数据是有顺序的，但对数据的类型没有限制，一般类型(包括我们后面学的实例，类等)基本都可以作为列表内数据的类型，
+即列表基本不挑食，啥都能装。</p>
+<p>列表内数据有顺序就意味着我们可以对列表的数据按它的排列顺序进行访问。</p>
+<div class="section" id="id2">
+<h3>12.1.1. 列表的定义方式<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>列表的定义相对简单，一般有三种方式，参看下面案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 定义一个空列表</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l1=&quot;</span><span class="p">,</span> <span class="n">l1</span><span class="p">)</span>
+
+<span class="c1"># 定义空列表简写形式</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l2=&quot;</span><span class="p">,</span><span class="n">l2</span><span class="p">)</span>
+
+<span class="c1"># 定义一个有数据的列表</span>
+<span class="c1"># 列表内数据用英文逗号隔开</span>
+<span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;l3=&quot;</span><span class="p">,</span> <span class="n">l3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>我们在上面定义了两个空的列表，还有一个列表内有数据，打印出列表来后结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span><span class="o">=</span> <span class="p">[]</span>
+<span class="n">l2</span><span class="o">=</span> <span class="p">[]</span>
+<span class="n">l3</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>如果变量是一个列表，则可以通过<code class="docutils literal notranslate"><span class="pre">type</span></code>打印出列表的类型来：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1, 创建空列表</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># type是内置函数，负责打印出变量的类型</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">l1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+
+<span class="c1"># 2. 创建带值的列表</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">l2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
+
+<span class="c1"># 3. 创建列表，带多个值</span>
+<span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">l3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l3</span><span class="p">)</span>
+
+<span class="c1"># 4. 使用list()</span>
+<span class="n">l4</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">l4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面案例打印的结果为，我们打印出了列表的类型和内容：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt;
+[]
+&lt;class &#39;list&#39;&gt;
+[100]
+&lt;class &#39;list&#39;&gt;
+[2, 3, 1, 4, 6, 4, 6]
+&lt;class &#39;list&#39;&gt;
+[]
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>12.1.2. 列表常用操作<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>在对列表的操作中，两类操作十分重要，分别是：</p>
+<ul class="simple">
+<li>下标访问</li>
+<li>分片操作</li>
+</ul>
+<div class="section" id="id4">
+<h4>12.1.2.1. 下标访问<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h4>
+<p>我们的对列表内元素的访问一般可以通过下表来近行。</p>
+<p>我们在上面提到过，列表内元素是有顺序的，这种顺序就可以让我们对其按顺序访问，比如我们班级成绩有一个成绩排名，我们可以说班里的第一名，第二名和
+第三名用来指代班级的前三名的同学名称，此处这个顺序就是我们访问列表用到的下标(index)，需要注意的是在计算机的世界里，下标一般是个比较
+常见的名词，而一般下标都是从<code class="docutils literal notranslate"><span class="pre">0</span></code>开始，这个跟我们日常使用有些区别，即你们班第<code class="docutils literal notranslate"><span class="pre">0</span></code>名同学就是学习最好的那个。</p>
+<p>对下标的访问我们使用中括号<code class="docutils literal notranslate"><span class="pre">[]</span></code>。</p>
+<p>下面栗子定义了列表，然后访问列表下标为<code class="docutils literal notranslate"><span class="pre">3</span></code>的元素，按照上面的讲述，下标从<code class="docutils literal notranslate"><span class="pre">0</span></code>开始，所以所谓的下标<code class="docutils literal notranslate"><span class="pre">3</span></code>的应该是第四个内容。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 下标访问列表
+l = [3,2,1,4,6,3,2]
+
+print(&quot;第四个元素是：&quot;， l[3])
+</pre></div>
+</div>
+<p>答案就是下面：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>第四个元素是： 4
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>12.1.2.2. 切片操作<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h4>
+<p>既然列表内容是排好队的，我们也可以用一个区域来表示一批元素，比如你们班从第四名开始到第十名的同学，都是很有潜力的好苗子，此处第四名到
+第十名就表示一个区域，此类操作我们叫做切片，即通过开始和结束下标截取列表的一段内容的操作。</p>
+<p>切片操作的符号一般是 <code class="docutils literal notranslate"><span class="pre">[start:end]</span></code>，此处<code class="docutils literal notranslate"><span class="pre">start</span></code>和<code class="docutils literal notranslate"><span class="pre">end</span></code> 表示开始和结束的下标， 参见下面案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1"># 分片操作</span>
+<span class="c1"># 注意截取的范围，包含左边的下标值，不包含右边的下标值</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="c1"># 下标值可以为空，如果不写，左边下标值默认为0， 右边下标值为最大数加一，即表示截取到最后一个数据</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+</pre></div>
+</div>
+<p>上面案例需要作出几点说明：</p>
+<ol class="simple">
+<li>切片的语法<code class="docutils literal notranslate"><span class="pre">【1：4】</span></code>表示下标区间是一个左闭区间右开区间的范围<code class="docutils literal notranslate"><span class="pre">[1,4)</span></code>,  <code class="docutils literal notranslate"><span class="pre">l[1:4]</span></code>表示从下标<code class="docutils literal notranslate"><span class="pre">1</span></code>开始到下标<code class="docutils literal notranslate"><span class="pre">4</span></code>结束的所有内容，
+但不包括下标<code class="docutils literal notranslate"><span class="pre">4</span></code>的元素。</li>
+<li>开始和结束下标都可以采用默认值，但分割符号<code class="docutils literal notranslate"><span class="pre">:</span></code>不能省略。</li>
+<li>开始下标省略则从<code class="docutils literal notranslate"><span class="pre">0</span></code>开始，结束下标省略则到最后一个元素。</li>
+<li>结束下标可以超过列表的下标最大值，此时自动到最后一个元素结束。</li>
+</ol>
+<p>根据上面的规则，上面代码运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>切片操作除了常见的开始结束下标，我们还可以控制步长，即每隔几个元素截取一次，我们用第三个参数来表示，例如 <code class="docutils literal notranslate"><span class="pre">l[1:100:5]</span></code>表示从下标为<code class="docutils literal notranslate"><span class="pre">1</span></code>的
+元素开始，每隔<code class="docutils literal notranslate"><span class="pre">5</span></code>个元素截取一个。</p>
+<p>默认的步长是<code class="docutils literal notranslate"><span class="pre">1</span></code>， 我们可以省略，看下面案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1"># 分片操作</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="c1"># 分片可以控制增长幅度，默认增长幅度为1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># 打印从下标1开始的数字，每次隔一个</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+
+<span class="c1"># 下标可以超出范围，超出后不在考虑多余下标内容</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>上面代码运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>对于切片的步长，可以为负值，此时负号表示截取的方向是从后向前截取，值表示的是步长。</p>
+<p>列表的下标也可以是负数，表示从最后一个元素开始向前标注，最后一个元素下标是<code class="docutils literal notranslate"><span class="pre">-1</span></code>， 依次向前则是<code class="docutils literal notranslate"><span class="pre">-2，-3，-4...</span> <span class="pre">...</span></code>，这个跟从前向后方向的表示
+不太一样。</p>
+<p>请看下面栗子：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 分片之负数下标</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="c1"># 下面显示的是为空，因为默认分片总是从左向右截取</span>
+<span class="c1"># 即正常情况，分片左边的值一定小于右边的值</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="c1"># 如果分片一定左边值比右边大，则步长参数需要使用负数</span>
+<span class="c1"># 此案例为一个list直接正反颠倒提供了一种思路</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>案例运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="p">[]</span>
+<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>12.1.2.3. 分片操作是生成一个新的list<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
+<p>现在的问题是， 我们利用切片操作可以得到一个新的列表，Python规定，切片操作得到的列表都是原来列表的
+内容的复制，即切片生成了一个新的列表，这个通过<code class="docutils literal notranslate"><span class="pre">id</span></code>函数可以得到验证。</p>
+<p>下面案例验证了列表的切片操作是重新生成列表的判断：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 通过id可以直接判断出分片是从新生成了一份数据还是使用的同一份数据</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">ll</span> <span class="o">=</span> <span class="n">l</span><span class="p">[:]</span>
+<span class="n">lll</span> <span class="o">=</span> <span class="n">ll</span>
+<span class="c1"># 如果两个id值一样，则表明分片产生的列表是使用的同一地址同一份数据</span>
+<span class="c1"># 否则，则表明分片是从新生成了一份数据，即一个新的列表，然后把数值拷贝到新列表中</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ll</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">lll</span><span class="p">))</span>
+
+<span class="c1"># 通过id知道，ll和lll是同一份数据，验证代码如下</span>
+<span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span>
+
+<span class="n">ll</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ll</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lll</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">140226763582408</span>
+<span class="mi">140226318124808</span>
+<span class="mi">140226318124808</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>12.1.3. 列表的遍历<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>对列表进行遍历一般用 <code class="docutils literal notranslate"><span class="pre">for</span></code>循环，当然如果需要，也可以用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环。</p>
+<p>因为已经学习过循环结构，我们直接看下案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># for in list</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="c1"># 挨个打印a里边的元素</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+<span class="mi">5</span>
+</pre></div>
+</div>
+<p>对于列表的访问，Python继承了脚本语言的一些特点，简洁明了，下面是一个幽默故事，说
+<code class="docutils literal notranslate"><span class="pre">java</span></code>程序员如果不仔细看python语法，会这样访问列表：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># java， c++ 程序员写的python代码是这样的</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>我们还可以用<code class="docutils literal notranslate"><span class="pre">while</span></code>循环访问列表，案例如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># while循环访问list</span>
+<span class="c1"># 一般不用while遍历list</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c1"># indx表示的是list的下标</span>
+<span class="n">indx</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">indx</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">indx</span><span class="p">])</span>
+    <span class="n">indx</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<blockquote>
+<div>for，while循环一般可以互换，但在实际使用中，这俩有比较明显的使用场景，一般也不互换使用，此处
+只是作为案例讲解。</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h3>12.1.4. 列表的嵌套<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>列表可以放入的内容类型比较多，包括列表本身，这样就形成了嵌套列表，我们对嵌套列表的访问一般需要
+用到嵌套循环，但有些比较特殊的情况需要注意，就是如果列表中内容比较少，我们可以利用一起定义几个变量
+的方法，此时被嵌套的列表的内容会按顺序赋值给变量，请看下面案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#a 为嵌套列表，或者叫双层列表</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;three&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">]</span>
+
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面代码执行过程中，会一次取出每个小列表，然后自动把小列表中的内容赋值给<code class="docutils literal notranslate"><span class="pre">k,v</span></code>, 代码运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">one</span> <span class="o">--</span> <span class="mi">1</span>
+<span class="n">two</span> <span class="o">--</span> <span class="mi">2</span>
+<span class="n">three</span> <span class="o">--</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<blockquote>
+<div>上面这种情况有一个前提就是小列表中内容个数和前面定义的变量个数必须一致，否则报错</div></blockquote>
+<p>当然，这里的数量并没有明确限制，只要变量数量和小列表长度能对应上就可以了。</p>
+<p>下面案例是三个变量的案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 双层列表循环变异</span>
+
+<span class="c1">#a 为嵌套列表，或者叫双层列表</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;eins&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;two&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="s2">&quot;zwei&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;three&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="s2">&quot;drei&quot;</span><span class="p">]</span> <span class="p">]</span>
+<span class="c1">#这个例子说明，k，v,w的个数应该跟解包出来的变量个数一致</span>
+<span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">w</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">one</span> <span class="o">--</span> <span class="mi">1</span> <span class="o">--</span> <span class="n">eins</span>
+<span class="n">two</span> <span class="o">--</span> <span class="mi">2</span> <span class="o">--</span> <span class="n">zwei</span>
+<span class="n">three</span> <span class="o">--</span> <span class="mi">3</span> <span class="o">--</span> <span class="n">drei</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>12.1.5. 列表生成式<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>列表生成式就是通过一些简单的方法生成一个列表。</p>
+<p>下面案例就是一共列表生成式，我们通过列表的内容遍历生成了一个新的列表，需要注意格式，
+这是一种固定写法。</p>
+<ul>
+<li><p class="first">简单列表生成式</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+  <span class="c1"># 用list a创建一个list b</span>
+  <span class="c1"># 下面代码的含义是，对于所有a中的元素，逐个放入新列表b中</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>在使用列表生成式的时候，还可以对内容进行简单处理，这种处理一般相对简单，限定在一行内，过于复杂
+请使用<code class="docutils literal notranslate"><span class="pre">for</span></code>循环处理。</p>
+</li>
+<li><p class="first">列表生成式对内容进行统一操作</p>
+<p>下面案例在生成列表的时候，对源列表内容进行了乘法操作：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 对a中所有元素乘以10，生成一个新list</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+  <span class="c1"># 用list a创建一个list b</span>
+  <span class="c1"># 下面代码的含义是，对于所有a中的元素，逐个放入新列表b中</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="mi">10</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">加入选择条件的列表生成式</p>
+<p>在使用列表生成式的时候，有时候需要对源列表内元素进行筛选，也就是加上一些条件，此时需要使用
+更复杂的列表生成式，即加入限定条件。</p>
+<p>如果需要加入限定条件，直接在后面使用<code class="docutils literal notranslate"><span class="pre">if</span></code>语句即可。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 还可以过滤原来list中的内容病放入新列表</span>
+  <span class="c1"># 比如原有列表a， 需要把所有a中的偶数生成新的列表b</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">35</span><span class="p">)]</span> <span class="c1">#生成从1到34的一个列表</span>
+  <span class="c1"># 把a中所有偶数生成一个新的列表 b</span>
+  <span class="c1"># if语句放在后面</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">if</span> <span class="n">m</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">嵌套列表生成式</p>
+<p>列表生成式可以嵌套使用，可以把嵌套列表生成式看做是嵌套循环，最后生成一个结果。</p>
+<p>只不过写法是固定格式，写成一列而已。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 由两个列表a，b</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)]</span> <span class="c1"># 生成list a</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+
+  <span class="c1"># 列表生成是可以嵌套,此时等于两个for循环嵌套</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="p">[</span>  <span class="n">m</span><span class="o">+</span><span class="n">n</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">b</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>上面代码执行结果跟嵌套循一致，但写法上简洁好多：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 上面代码跟下面代码等价</span>
+  <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+      <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="n">n</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;  &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">带条件的嵌套列表生成式</p>
+<p>把嵌套列表生成式和判断条件加在一起组合成一个复杂的东东，其实完全可以看做是一个嵌套循环，在最里面执行
+了一个判断条件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 嵌套的列表生城市也可以用条件表达式</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="p">[</span>  <span class="n">m</span><span class="o">+</span><span class="n">n</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">a</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">b</span> <span class="k">if</span> <span class="n">m</span><span class="o">+</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">250</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h3>12.1.6. 列表的常用内容功能<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>函数内置数据结构不仅仅是一堆数据，还有依赖于这些数据的一系列功能，我们把此类功能叫做函数(见函数章节)， 这里先把列表的函数或者功能
+给大家做个简单介绍。</p>
+<ul>
+<li><p class="first">del: 删除列表内某个元素</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">del</span></code>命令比较特殊，他可以删除机会任何东西，包括列表本身，变量等</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># del 删除</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+  <span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>下面案例证明了，如果列表被删除了某个元素，则生成了一个新的列表，也就是说，python并不是在原地址上对列表
+内容进行了更改，而是重新开辟了一个内存，把删除后的列表内容拷贝到了新的内存：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># del 删除</span>
+  <span class="c1"># 如果使用del之后，id的值和删除前不一样，则说明删除生成了一个新的list</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+  <span class="k">del</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">140246810905416</span>
+  <span class="mi">140246810905416</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>同时<code class="docutils literal notranslate"><span class="pre">del</span></code>还可以删除一个完整的列表，或者任意变量：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># del一个变量后不能在继续使用此变量</span>
+  <span class="k">del</span>  <span class="n">a</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行上面代码后得到下面错误信息，提示变量<code class="docutils literal notranslate"><span class="pre">a</span></code>未定义，因为已经把这个变量删除了：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="ne">NameError</span> <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+
+      <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">94</span><span class="n">bf5611738e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+            <span class="mi">1</span> <span class="k">del</span>  <span class="n">a</span>
+      <span class="o">----&gt;</span> <span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+      <span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;a&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">列表相加操作</p>
+<p>列表可以用数学上的加号(<code class="docutils literal notranslate"><span class="pre">+</span></code>)操作，结果是两个列表内容组合在了一起，注意这种组合是完全的按先后顺序拼接在了一起：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 使用加号链接两个列表</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+  <span class="n">d</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">d</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>通过加号操作会生成新的列表，id的值跟任何一个列表都不同</p>
+</div></blockquote>
+</li>
+<li><p class="first">列表和数字相乘</p>
+<p>乘法是加法的省略，所以，列表也可以跟数字相乘，此时代表多少个列表相加。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 使用乘号操作列表</span>
+  <span class="c1"># 列表直接跟一个整数相乘 </span>
+  <span class="c1"># 相当于把n个列表接在一起</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span><span class="mi">3</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">in 操作</p>
+<p><code class="docutils literal notranslate"><span class="pre">in</span></code>应该属于操作符的一种，学名成员运算符，用来判断一个变量内容是否在一个列表里，同样也可以在字典等类型上使用。</p>
+<p><code class="docutils literal notranslate"><span class="pre">in</span></code>操作的结果是一个布尔值。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 成员资格运算</span>
+  <span class="c1"># 就是判断一个元素是否在爱list里边</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">8</span>
+
+  <span class="c1">#c 的值是一个布尔值</span>
+  <span class="n">c</span> <span class="o">=</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">a</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">b</span> <span class="ow">in</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="kc">False</span>
+  <span class="kc">True</span>
+</pre></div>
+</div>
+<p>又一个栗子：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># not in </span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="mi">9</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="n">b</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运算结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="kc">True</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">max/min函数，求最大/最小值</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># max:求列表中的最大值</span>
+  <span class="c1"># min： 同理</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+  <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;man&#39;</span><span class="p">,</span> <span class="s1">&#39;film&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">list定义函数</p>
+<p>用一个值定义一个列表，这个值可以是别的不是列表的内容，比如后面要讲的元祖。</p>
+<p>需要注意的是，如果尝试把一个字符串放入列表中，默认会把字符串拆成一个由各个字符组成的列表，举个栗子：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;I love wangxiaojing&quot;</span>
+  <span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面代码运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;j&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">append:末尾追加元素</p>
+<p>append是在列表末尾追加一个元素。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># append 插入一个内容, 在末尾追加</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>执行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">insert: 插入元素</p>
+<p>向列表中插入元素不但要知道插入的值，还要知道插入的位置，这里的位置下标指的是在此下标前插入。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># insert: 制定位置插入</span>
+  <span class="c1"># insert(index, data), 插入位置是index前面</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="n">a</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">666</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">666</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">pop: 弹出元素</p>
+<p><code class="docutils literal notranslate"><span class="pre">pop</span></code>是从列表中弹出某个元素，此操作返回结果是弹出的那个元素值，同时因为元素弹出了就不在列表里面，所以
+也当做删除使用。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 删除</span>
+  <span class="c1"># del 删除</span>
+  <span class="c1"># pop，从对位拿出一个元素，即把最后一个元素取出来</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="n">last_ele</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">last_ele</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">666</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+  <span class="mi">100</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">666</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">remove: 删除</p>
+<p>此删除操作要求明确知道删除哪个值，操作的参数是删除元素具体的值。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  remove:在列表中删除指定的值的元素
+  如果被删除的值没在list中，则报错
+  即，删除list指定值的操作应该使用try。。。excepty语句，或者先行进行判断
+  if x in list:
+     list.remove(x)
+</pre></div>
+</div>
+</li>
+<li><p class="first">clear:清空操作</p>
+<p>这个操作把列表内容清空，需要注意的是如果只是需要一个空列表，完全可以在生成一个空列表赋值给变量就可以，
+<code class="docutils literal notranslate"><span class="pre">clear</span></code>只在还不想更改原来列表地址的时候使用。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># clear:清空</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+  <span class="n">a</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+  <span class="c1"># 如果不需要列表地址保持不变，则清空列表可以使用以下方式</span>
+  <span class="c1"># a = list()</span>
+  <span class="c1"># a = []</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+  <span class="mi">140249408978184</span>
+  <span class="p">[]</span>
+  <span class="mi">140249408978184</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">reverse:翻转列表内容，原地翻转</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+  <span class="n">a</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>上面案例运行结果如下，可以看出<code class="docutils literal notranslate"><span class="pre">reverse</span></code>是在原列表翻转内容。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+  <span class="mi">140249409135624</span>
+  <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+  <span class="mi">140249409135624</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">extend:扩展列表，两个列表，把一个直接拼接到后一个上</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+ <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+ <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+ <span class="n">a</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+ <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+ <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>extend是把原列表直接扩充了，列表地址保存不变：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+ <span class="mi">140249408367816</span>
+ <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+ <span class="mi">140249408367816</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">count:查找列表中指定值或元素的个数</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+  <span class="n">a</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="n">a_len</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a_len</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+  <span class="mi">4</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">copy: 拷贝，此函数是浅拷贝，</p>
+<p><code class="docutils literal notranslate"><span class="pre">copy</span></code>函数属于浅拷贝，建议慎用。</p>
+<blockquote>
+<div><p>深浅拷贝建议参考相关资料，这里可以粗暴的理解成，浅拷贝如果遇到嵌套列表，则只把列表第一层内容拷贝过去，
+但嵌套的列表只是拷贝了一个指向，并没真正生成一份子列表</p>
+</div></blockquote>
+<p>下面案例比较啰嗦，但比较好的演示了关于列表变量赋值和拷贝的问题：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 列表类型变量赋值示例</span>
+  <span class="c1"># 此类赋值，只是一个指向原列表的链接，数据并没有真正的拷贝，两个变量共用一份数据</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">666</span><span class="p">]</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="c1"># list类型，简单赋值操作，是传地址</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+  <span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">777</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>
+
+  <span class="c1"># 为了解决以上问题，list赋值需要采用copy函数</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+
+  <span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">888</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">666</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">777</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">666</span><span class="p">]</span>
+  <span class="mi">140249408975432</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">777</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">666</span><span class="p">]</span>
+  <span class="mi">140249408975432</span>
+  <span class="o">********************</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">777</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">666</span><span class="p">]</span>
+  <span class="mi">140249408975432</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">777</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">666</span><span class="p">]</span>
+  <span class="mi">140249408976776</span>
+  <span class="o">******************************</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">777</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">666</span><span class="p">]</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">888</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">666</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>下面案例压实了深浅拷贝的问题，在嵌套列表拷贝的时候，浅拷贝会带来潜在问题：</p>
+<blockquote>
+<div><p>解决方式： python模块copy中有deepcopy函数，可以进行深拷贝</p>
+</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 深拷贝跟浅拷贝的区别</span>
+  <span class="c1"># 出现下列问题的原因是，copy‘函数是个浅拷贝函数，即只拷贝一层内容</span>
+  <span class="c1"># 深拷贝需要使用特定工具</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]]</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+  <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">666</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面案例运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">140249408365768</span>
+  <span class="mi">140249409236040</span>
+  <span class="mi">140249409236232</span>
+  <span class="mi">140249409236232</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">666</span><span class="p">]]</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">666</span><span class="p">]]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="tuple">
+<h2>12.2. 元组:tuple<a class="headerlink" href="#tuple" title="永久链接至标题">¶</a></h2>
+<p>元组就是一个不可更改的list，把列表中跟更改相关的操作删掉基本就是一个元祖。</p>
+<p>元祖存在的意义就是当一个列表不需要进行更改，或者为了防止列表被中途更改，则直接定义成元祖。</p>
+<div class="section" id="id11">
+<h3>12.2.1. 元组创建<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<p>元祖创建只能在定义的时候创建，然后就只能进行读操作。</p>
+<ul>
+<li><p class="first">创建一个空元组</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">t</span> <span class="o">=</span> <span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+
+  <span class="n">t</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">创建一个只有一个值的元组</p>
+<p>此时在括号内需要使用逗号，因为如果没有逗号，则应该被理解成括号内有一个数字，此时括号不起作用，最终得到的是一个数字。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+  <span class="c1"># 省略掉小括号也可以</span>
+  <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">创建多个值的元组</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+ <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+ <span class="n">t</span> <span class="o">=</span>  <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span>
+ <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+ <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">使用其他结构创建</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+  <span class="n">t</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h3>12.2.2. 元组的特性<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>是序列表，有序</li>
+<li>元组数据值可以访问，不能修改，不能修改，不能修改</li>
+<li>元组数据可以是任意类型</li>
+<li>总之，list所有特性，除了可修改外，元组都具有</li>
+<li>也就意味着，list具有的一些操作，比如索引，分片，序列相加，相乘，成员资格操作等，一模一样</li>
+</ul>
+<p>上面千言万语就一句话：元祖就是不可以更改的列表</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 索引操作</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+
+
+<span class="c1"># 切片, 切片生成新的元祖，所以是可以的，不算写操作</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+
+<span class="c1"># 切片可以超标</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">100</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span>
+
+<span class="c1"># 序列相加</span>
+<span class="c1"># 元祖相加生成新的元组，不算写操作</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span>
+
+
+<span class="c1"># 元组相乘</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">t</span> <span class="o">*</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># 成员检测</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">if</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;YES&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NO&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="set">
+<h2>12.3. 集合: set<a class="headerlink" href="#set" title="永久链接至标题">¶</a></h2>
+<p>此处集合和高中数学中的集合概念一致。</p>
+<p>用来表示一堆确定的无序的无重复的数据集。</p>
+<div class="section" id="id13">
+<h3>12.3.1. 集合的定义<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<p>集合的定义比较简单，分为定义空集合和有内容的集合两种：</p>
+<ul>
+<li><p class="first">定义空集合</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">定义有内容的集合</p>
+<p>用大括号来定义有内容的集合，此时，大括号内一定要有值，否则定义出的是一个字典，不是集合类型。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h3>12.3.2. 集合的特征<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>集合内数据无序，即无法使用索引和分片</li>
+<li>集合内部数据元素具有唯一性，可以用来排除重复数据</li>
+<li>集合内的数据，可以是str, int, float, tuple,冰冻集合等，但必须是可哈希数据</li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h3>12.3.3. 集合操作<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p class="first">成员检测: in, not in</p>
+<p>此类操作返回结果是布尔值，一般常用来做分支语句的条件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;love&quot;</span><span class="p">,</span> <span class="s2">&quot;wangxiaojing&quot;</span><span class="p">}</span>
+
+      <span class="k">if</span> <span class="s2">&quot;love&quot;</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;爱呀&quot;</span><span class="p">)</span>
+      <span class="k">if</span>  <span class="s2">&quot;haha&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;挨个锤子&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">集合遍历操作</p>
+<p>遍历集合一般用循环来完成：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># for 循环</span>
+      <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;love&quot;</span><span class="p">,</span> <span class="s2">&quot;wangxiaojing&quot;</span><span class="p">}</span>
+
+      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>如果集合里面元素是元祖类型，我们可以使用一个简写：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 带有元组的集合遍历</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="p">{(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;love&quot;</span><span class="p">,</span> <span class="s2">&quot;wangxiaojing&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)}</span>
+
+  <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">集合的生成式</p>
+<p>跟列表类似，集合也可以用生成式来自动生成。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 普通集合内涵</span>
+  <span class="c1"># 以下集合在初始化后自动过滤掉重复元素</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">23</span><span class="p">,</span><span class="mi">223</span><span class="p">,</span><span class="mi">545</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+
+  <span class="c1"># 普通集合内涵</span>
+  <span class="n">ss</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>生成式还可以加上一些条件：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># 带条件的集合内涵</span>
+      <span class="n">sss</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>嵌套类型的也可以有：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># 多循环的集合内涵</span>
+      <span class="n">s1</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">}</span>
+      <span class="n">s2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;love&quot;</span><span class="p">,</span> <span class="s2">&quot;wangxiaojing&quot;</span><span class="p">}</span>
+
+      <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span><span class="o">*</span><span class="n">n</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">s2</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">s1</span><span class="p">}</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+      <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="n">m</span><span class="o">*</span><span class="n">n</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">s2</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">s1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span><span class="mi">2</span><span class="p">}</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面运行的结果如下,需要注意的是集合打印的时候，因为集合没有顺序，所以打印结果不是我们想的排好顺序的：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">{</span><span class="s1">&#39;iii&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;lovelovelove&#39;</span><span class="p">,</span> <span class="s1">&#39;ii&#39;</span><span class="p">,</span> <span class="s1">&#39;lovelovelovelove&#39;</span><span class="p">,</span> <span class="s1">&#39;wangxiaojingwangxiaojingwangxiaojingwangxiaojing&#39;</span><span class="p">,</span> <span class="s1">&#39;wangxiaojing&#39;</span><span class="p">,</span> <span class="s1">&#39;lovelove&#39;</span><span class="p">,</span> <span class="s1">&#39;wangxiaojingwangxiaojing&#39;</span><span class="p">,</span> <span class="s1">&#39;love&#39;</span><span class="p">,</span> <span class="s1">&#39;wangxiaojingwangxiaojingwangxiaojing&#39;</span><span class="p">,</span> <span class="s1">&#39;iiii&#39;</span><span class="p">}</span>
+  <span class="p">{</span><span class="s1">&#39;lovelove&#39;</span><span class="p">,</span> <span class="s1">&#39;wangxiaojingwangxiaojing&#39;</span><span class="p">,</span> <span class="s1">&#39;ii&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">len, max, min:跟其他基本函数一致</p>
+<p>分别返回集合的长度，最大值，最小值，这个跟列表操作基本一致。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">43</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">223</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1222</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">323</span><span class="p">,</span><span class="mi">1</span><span class="p">}</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span> <span class="nb">max</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">add：向集合内添加元素</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">}</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">334</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">clear: 清空集合</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">}</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+  <span class="c1"># 结果表明clear函数是原地清空数据</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">140040159572936</span>
+  <span class="mi">140040159572936</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">copy:拷贝</p>
+</li>
+<li><p class="first">remove:移除制定的值，直接改变原有值，如果要删除的值不存在，报错</p>
+</li>
+<li><p class="first">discard:移除集合中指定的值，跟remove一样，但是要删除的值不在也不报错</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">23</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">discard</span><span class="p">(</span><span class="mi">1100</span><span class="p">)</span>
+  <span class="n">s</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">1100</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">pop: 随机移除一个元素</p>
+<p>列表中的<code class="docutils literal notranslate"><span class="pre">pop</span></code>默认是把最后一个取出来，但集合没有顺序概念，所以，这个函数最后取出哪个值，完全
+不是我们想象的，等同于<code class="docutils literal notranslate"><span class="pre">随机</span></code>删除。</p>
+</li>
+<li><p class="first">集合特有的操作</p>
+<p>集合因为他的概念，有一些特有的操作，比如交差并补，是否是子集等，每个都对应相应的操作函数</p>
+</li>
+<li><p class="first">intersection: 交集</p>
+</li>
+<li><p class="first">difference:差集</p>
+</li>
+<li><p class="first">union: 并集</p>
+</li>
+<li><p class="first">判断类操作</p>
+<ul>
+<li><p class="first">issubset: 检查一个集合是否为另一个子集</p>
+</li>
+<li><p class="first">issuperset: 检查一个集合是否为另一个超集</p>
+<p>s1 = {1,2,3,4,5,6}
+s2 = {5,6,7,8,9}</p>
+<p>s_1 = s1.intersection(s2)
+print(s_1)</p>
+<p>s_2 = s1.difference(s2)
+print(s_2)</p>
+<p>s_3 = s1.issubset(s2)
+print(s_3)</p>
+</li>
+</ul>
+<p>代码运行结果：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">{</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">}</span>
+  <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+  <span class="kc">False</span>
+</pre></div>
+</div>
+<p>集合的交差并补每个还有一个操作符号：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+  <span class="n">s2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+
+
+  <span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">-</span><span class="n">s2</span><span class="p">)</span> <span class="c1">#差集</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">s1</span> <span class="o">&amp;</span> <span class="n">s2</span><span class="p">)</span><span class="c1">#交</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">s1</span> <span class="o">|</span> <span class="n">s2</span><span class="p">)</span><span class="c1">#并</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">s1</span> <span class="o">^</span> <span class="n">s2</span><span class="p">)</span><span class="c1">#补</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
+  <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">}</span>
+  <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">}</span>
+  <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="frozen-set">
+<h2>12.4. 冰冻集合:  frozen set<a class="headerlink" href="#frozen-set" title="永久链接至标题">¶</a></h2>
+<p>冰冻集合就是不能进行写操作的集合，除了定义和不能进行修改，其余的跟集合一致。</p>
+<ul>
+<li><p class="first">创建</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">s</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>结果显示如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  &lt;class &#39;frozenset&#39;&gt;
+  frozenset()
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="dict">
+<h2>12.5. 字典: dict<a class="headerlink" href="#dict" title="永久链接至标题">¶</a></h2>
+<p>字典是一种组合数据，是一种没有顺序的组合数据，数据以键值对形式出现。</p>
+<div class="section" id="id16">
+<h3>12.5.1. 字典的定义<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p class="first">空字典定义</p>
+<p>可以使用大括号直接定义一个空的字典, 也可以使用字典类直接定义。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># 字典的创建</span>
+      <span class="c1"># 创建空字典1</span>
+      <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+
+      <span class="c1"># 创建空字典2</span>
+      <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">有数据的字典</p>
+<p>因为字典内数据为键值对，可以直接使用键值对来定义有数据的字典。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># 创建有值的字典， 每一组数据用冒号隔开， 每一对键值对用逗号隔开</span>
+      <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+
+      <span class="c1"># 用dict创建有内容字典1</span>
+      <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">({</span><span class="s2">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>在用字典类创建字典的时候，可以使用关键字参数来完成(函数中会讲)，参加下面案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># 用dict创建有内容字典2</span>
+      <span class="c1"># 利用关键字参数</span>
+      <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">one</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">two</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">three</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>字典创建字典的时候，还可以使用列表或者元祖作为参数，此时要求创建字典的括号内是一个形如列表，列表内是键值
+对的格式的内容，下面几种都是可以的：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 列表内嵌套元祖</span>
+  <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="p">[(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;two&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;three&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">)])</span>
+  <span class="c1"># 元组内嵌套元组</span>
+  <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="p">((</span><span class="s2">&quot;one&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;two&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;three&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="p">)</span>
+  <span class="c1"># 列表内嵌套列表，最内的列表是两个元素构成的，分别代表键值</span>
+  <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span> <span class="p">[[</span><span class="s2">&quot;one&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;two&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;three&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">]]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h3>12.5.2. 字典的特征<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>字典是序列类型，但是是无序序列，所以没有分片和索引</li>
+<li>字典中的数据每个都由键值对组成，即kv对(key:value)<ul>
+<li>key: 必须是可哈希的值，比如int,string,float,tuple, 但是，list,set,dict 不行</li>
+<li>value: 基本是任何值</li>
+</ul>
+</li>
+<li>为了方便循环操作，可以利用字典内置的功能分别把键，值作或键值对作为可迭代的内容返回</li>
+</ul>
+</div>
+<div class="section" id="id18">
+<h3>12.5.3. 字典常见操作<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p class="first">访问字典数据</p>
+<p>通常来讲访问字典内数据采用键来访问，参见下面代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># 访问数据</span>
+      <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+      <span class="c1"># 注意访问格式</span>
+      <span class="c1"># 中括号内是键值</span>
+      <span class="nb">print</span><span class="p">(</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;one&quot;</span><span class="p">]</span> <span class="p">)</span>
+
+      <span class="c1"># 对字典内容赋值</span>
+      <span class="n">d</span><span class="p">[</span><span class="s2">&quot;one&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;eins&quot;</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+      <span class="c1"># 删除某个操作</span>
+      <span class="c1"># 使用del操作</span>
+      <span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="s2">&quot;one&quot;</span><span class="p">]</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上述代码运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="mi">1</span>
+      <span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="s1">&#39;eins&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+      <span class="p">{</span><span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">成员操作：in，not in</p>
+<p>成员检测符<code class="docutils literal notranslate"><span class="pre">in</span></code>和 <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>。</p>
+<p>字典也可以有成员操作，如果用单个值直接对字典使用成员操作，则默认是检测这个值是否在字典的key中：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># 成员检测检测的是key内容</span>
+      <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+
+      <span class="k">if</span> <span class="mi">2</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+
+      <span class="k">if</span> <span class="s2">&quot;two&quot;</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;key&quot;</span><span class="p">)</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="s2">&quot;two&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;kv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>最终运行结果只有一个<code class="docutils literal notranslate"><span class="pre">key</span></code>：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">key</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">遍历操作</p>
+<p>字典的遍历操作在<code class="docutils literal notranslate"><span class="pre">Python2.x</span></code>和<code class="docutils literal notranslate"><span class="pre">Python3.x</span></code>中差别比较大，完全不通用。</p>
+<p>以下遍历分别对键，值，键值对进行遍历，写法相对固定。</p>
+<p>下面代码是<code class="docutils literal notranslate"><span class="pre">Python2.x</span></code>代码的一个示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># 便利在python2 和 3 中区别比较大，代码不通用</span>
+      <span class="c1"># 按key来使用for循环</span>
+      <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+      <span class="c1"># 使用for循环，直接按key值访问</span>
+      <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span>  <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>在<code class="docutils literal notranslate"><span class="pre">Python3.x</span></code>中，我们需要使用<code class="docutils literal notranslate"><span class="pre">keys</span></code>函数来生成可迭代对象后再遍历，以下遍历为固定写法：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 上述代码可以改写成如下</span>
+  <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span>  <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>如果需要遍历字典的值的部分，则需要借助<code class="docutils literal notranslate"><span class="pre">values</span></code>来进行遍历：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 只访问字典的值</span>
+  <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>如果想同时访问字典内元素的键值，则可以借助于<code class="docutils literal notranslate"><span class="pre">items</span></code>来完成：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 注意以下特殊用法</span>
+  <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="s1">&#39;--&#39;</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h3>12.5.4. 字典生成式<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h3>
+<p>字典也可以时候用生成式来完成新字典的创建。使用方式跟列表类似。</p>
+<ul>
+<li><p class="first">普通青年的字典生成式</p>
+<p>以下代码使用字典生成式创建新的字典：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+
+      <span class="c1"># 常规字典生成式</span>
+      <span class="n">dd</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">加限制条件的字典生成式</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 只有值为偶数的才会生成新的字典</span>
+  <span class="n">dd</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="id20">
+<h3>12.5.5. 字典相关函数<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h3>
+<p>字典相关函数操作比较多，这里我就介绍几个比较重要的。</p>
+<ul>
+<li><p class="first">clear: 清空字典</p>
+</li>
+<li><p class="first">items/keys/values: 返回字典的键值对/键/值组成的元组格式</p>
+<p>这三个函数比较常用，我们在上面案例中已经有了展示， 这里需要注意的是它们返回的格式，分别是
+dict_items/dict_keys/dict_values格式，不用过多关注这三个格式的具体形式，只需要记住这三个
+格式是可迭代的就好，可迭代概念我们在语法高级部分讲述。</p>
+</li>
+<li><p class="first">get: 根据制定键返回相应的值</p>
+<p>对字典的值的访问，我们可以通过形如<code class="docutils literal notranslate"><span class="pre">dict_var['key']</span></code>来使用，但这个有个问题是如果访问的键并不在
+字典里面，会直接引发错误，而使用<code class="docutils literal notranslate"><span class="pre">get</span></code>函数相对温和一些，可以指定当键不存在的时候我们返回什么。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+  <span class="c1"># 如果 on333 并不在键里面，则默认返回None</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;on333&quot;</span><span class="p">))</span>
+
+  <span class="c1"># get可以设置键不存在时返回的值</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;one333&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>上面代码运行的结果分别是：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="kc">None</span>
+  <span class="mi">1</span>
+  <span class="mi">100</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">fromkeys: 快速生成字典</p>
+<p>字典可以快速生成，比如我们有一个列表保存的是字典的键，则可以使用<code class="docutils literal notranslate"><span class="pre">fromkeys</span></code>把列表内的值作为键，此时
+可以指定一个值作为这些键的值。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="c1"># fromkeys: 使用指定的序列作为键，使用一个值作为字典的所有的键的值</span>
+      <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;eins&quot;</span><span class="p">,</span> <span class="s2">&quot;zwei&quot;</span><span class="p">,</span> <span class="s2">&quot;drei&quot;</span><span class="p">]</span>
+      <span class="c1"># 注意fromkeys两个参数的类型</span>
+      <span class="c1"># 注意fromkeys的调用主体</span>
+      <span class="n">d</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="s2">&quot;hahahahahah&quot;</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面代码执行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">{</span><span class="s1">&#39;eins&#39;</span><span class="p">:</span> <span class="s1">&#39;hahahahahah&#39;</span><span class="p">,</span> <span class="s1">&#39;zwei&#39;</span><span class="p">:</span> <span class="s1">&#39;hahahahahah&#39;</span><span class="p">,</span> <span class="s1">&#39;drei&#39;</span><span class="p">:</span> <span class="s1">&#39;hahahahahah&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="str">
+<h2>12.6. str相关操作<a class="headerlink" href="#str" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p>官方文档：内置类型：字符串</p>
+<p>https://docs.python.org/3.7/library/stdtypes.html#text-sequence-type-str</p>
+</div></blockquote>
+<div class="section" id="id21">
+<h3>12.6.1. (一) 英文字符与字符检测相关函数<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 字符串相关函数 (一) 英文字符与字符检测相关函数</span>
+<span class="nb">vars</span> <span class="o">=</span> <span class="s1">&#39;iloveyou&#39;</span>
+<span class="c1"># 返回字符串的副本，该字符串的首个字符大写，其余小写。</span>
+<span class="c1"># str.capitalize()</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="c1"># 把字符串中的一个单词的首字母大写</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+<span class="c1"># 把字符串全部改为 大写</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="c1"># 把字符串全部改为 小写</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="c1"># 字符串中的大小写字符转换，大写转小写，小写转大写</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">swapcase</span><span class="p">()</span>
+
+<span class="c1"># 检测字符串是否为全部大写字母组成</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">isupper</span><span class="p">()</span>
+<span class="c1"># 检测字符串是否为全部小写字母组成</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span>
+<span class="c1"># 检测字符串是否符合标题title的要求</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">istitle</span><span class="p">()</span>
+<span class="c1"># 检测字符串是否由数字和字母组成，如果字符串中包含来非数字字母的其它字符，则返回False</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">isalnum</span><span class="p">()</span>
+<span class="c1"># 检测字符串是否全部由字符(包含英文字符和中文)组成</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()</span>
+<span class="c1"># 检测字符串是否由纯数字字符组成</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+<span class="c1"># 检测当前字符串是否为 空格 字符组成 &#39; &#39;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span>
+
+<span class="c1"># 检测字符串是否以指定的字符开始的，也可以指定开始和结束的位置</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="c1"># res = vars.startswith(&#39;y&#39;,5)</span>
+<span class="c1"># 检测字符串是否以 指定的字符 结束的，也可以指定开始和结束的位置</span>
+<span class="c1"># res = vars.endswith(&#39;y&#39;)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id22">
+<h3>12.6.2. （二）字符串 查找与操作相关函数 重点重点重点<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  ** find() 方法 ，找到则返回字符中符合条件的第一个字符出现的索引位置。未找到返回 -1</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;you&#39;</span><span class="p">)</span>
+<span class="c1"># print(vars[res:res+3])</span>
+
+<span class="c1"># index() 方法</span>
+<span class="c1"># res = vars.index(&#39;youe&#39;) # 找到则返回索引位置，未找到则报错 ValueError</span>
+<span class="c1"># print(res)</span>
+
+<span class="nb">vars</span> <span class="o">=</span> <span class="s1">&#39;user_admin_id_123&#39;</span>
+
+<span class="c1"># ** split() 方法 可以按照指定的分隔符，把字符串分隔成列表</span>
+<span class="c1"># res = vars.split(&#39;_&#39;) # [&#39;user&#39;, &#39;admin&#39;, &#39;id&#39;, &#39;123&#39;]</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># [&#39;user&#39;, &#39;admin&#39;, &#39;id_123&#39;]</span>
+<span class="c1"># print(res)</span>
+
+<span class="c1"># rsplit() 方法是从右向左进行，从后向前</span>
+<span class="c1"># res = vars.rsplit(&#39;_&#39;)  # [&#39;user&#39;, &#39;admin&#39;, &#39;id&#39;, &#39;123&#39;]</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># [&#39;user_admin&#39;, &#39;id&#39;, &#39;123&#39;]</span>
+<span class="c1"># print(res)</span>
+
+<span class="c1"># ** join() 方法 ，使用指定的字符串，把一个容器中的元素链接成一个字符串</span>
+<span class="n">varlist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;123&#39;</span><span class="p">]</span>
+<span class="n">res</span> <span class="o">=</span> <span class="s1">&#39;_&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">varlist</span><span class="p">)</span>
+
+<span class="c1"># ** strip() 去除字符串左右两侧的指定字符</span>
+<span class="nb">vars</span> <span class="o">=</span> <span class="s1">&#39;  zhangsan  &#39;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">vars</span> <span class="o">=</span> <span class="s1">&#39;@admin&#39;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">)</span>
+<span class="c1"># print(vars)</span>
+<span class="c1"># print(res)</span>
+
+<span class="c1"># rstrip() 去除字符串右侧的指定字符， lstrip() 去除字符串左侧的指定字符</span>
+
+<span class="c1"># ** len() 函数可以获取当前字符串的长度</span>
+<span class="c1"># print(len(vars))</span>
+<span class="c1"># print(len(res))</span>
+
+
+<span class="c1"># ** replace() 替换函数</span>
+<span class="nb">vars</span> <span class="o">=</span> <span class="s1">&#39;iloveyou&#39;</span>
+<span class="c1"># 找到 love  替换为 live</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;love&#39;</span><span class="p">,</span><span class="s1">&#39;live&#39;</span><span class="p">)</span>
+
+<span class="nb">vars</span> <span class="o">=</span> <span class="s1">&#39;aabbccddeeabcdef&#39;</span>
+<span class="c1">#  可以限制替换的次数</span>
+<span class="n">res</span> <span class="o">=</span> <span class="nb">vars</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># print(res)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="009-类.html" class="btn btn-neutral float-right" title="13. OOP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="008-内置函数.html" class="btn btn-neutral float-left" title="11. 内置函数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 北京图灵学院.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

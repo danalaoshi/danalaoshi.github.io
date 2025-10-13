@@ -1,0 +1,1238 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2. OOP高级编程 &mdash; Python新全栈教程 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="3. 调试技术" href="103_调试技术.html" />
+    <link rel="prev" title="1. 函数高级" href="101-函数高级.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python新全栈教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../base/001.html">1. 开学典礼-不讲知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001Python语言概述.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001注释.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/003str.html">5. 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/004运算符.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/005-if分支语句.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/006-for循环.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/007-while循环.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-函数讲义.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-内置函数.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/09-内置结构.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/009-类.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/010-内置模块.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/011-持久化和文件.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/013-tkinter.html">17. Tkinter</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="101-函数高级.html">1. 函数高级</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. OOP高级编程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#propety">2.1. 类属性(propety)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#property">2.1.1. 类属性值(property)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.1.2. <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2.2. 类的内置属性</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dict">2.2.1. <code class="docutils literal notranslate"><span class="pre">__dict__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#name">2.2.2. <code class="docutils literal notranslate"><span class="pre">__name__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bases-base">2.2.3. <code class="docutils literal notranslate"><span class="pre">__bases__</span></code> / <code class="docutils literal notranslate"><span class="pre">__base__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">2.3. 魔法函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#call">2.3.1. <code class="docutils literal notranslate"><span class="pre">__call__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#str">2.3.2. <code class="docutils literal notranslate"><span class="pre">__str__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#geattr">2.3.3. <code class="docutils literal notranslate"><span class="pre">__geattr__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setattr">2.3.4. <code class="docutils literal notranslate"><span class="pre">__setattr__</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gt">2.3.5. <code class="docutils literal notranslate"><span class="pre">__gt__</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">2.4. 抽象类</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">2.5. 元类</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">2.5.1. 手动组装类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methodtype">2.5.2. <code class="docutils literal notranslate"><span class="pre">MethodType</span></code> 组装类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#type">2.5.3. 利用<code class="docutils literal notranslate"><span class="pre">type</span></code>来创造类</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">2.5.4. 元类</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mixin">2.6. 迷信(Mixin)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">2.7. 类相关函数</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="103_调试技术.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1021-单元测试.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="104_模块和包.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="105多线程.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="107_log.html">8. 日志(logging)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="108_携程.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="109_网络编程.html">10. 1. 网络通信概述</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python新全栈教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>2. OOP高级编程</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/adv/102-类高级.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="oop">
+<h1>2. OOP高级编程<a class="headerlink" href="#oop" title="永久链接至标题">¶</a></h1>
+<p>本章高级编程中所谓的高级,指的是相对比较抽象,也比较实用的关于类的技术,但对于非强编程的专业,比如数据分析,办公弄自动化等,
+可能暂时并不需要, 所以对这一部分同学暂时不推荐学习, 可能您根本不需要,所以我们统一放到了高级编程中.</p>
+<div class="section" id="propety">
+<h2>2.1. 类属性(propety)<a class="headerlink" href="#propety" title="永久链接至标题">¶</a></h2>
+<p>类的属性值(attribute)经常需要被方位, 通常的访问为<code class="docutils literal notranslate"><span class="pre">get</span></code>和<code class="docutils literal notranslate"><span class="pre">set</span></code>两个, 即对属性进行复制和读取属性.</p>
+<p>如下面案例,我们对属性 <code class="docutils literal notranslate"><span class="pre">name</span></code>的访问不想让外部直接访问, 这涉及对内容的封装,此时可以通过两个函数<code class="docutils literal notranslate"><span class="pre">setName</span></code>和
+<code class="docutils literal notranslate"><span class="pre">getName</span></code>来完成, 这就避免了但对属性的直接访问:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 属性案例</span>
+<span class="c1"># 创建Student类，描述学生类</span>
+<span class="c1"># 学生具有Student.name属性</span>
+<span class="c1"># 但name格式并不统一</span>
+<span class="c1"># 可以用增加一个函数，然后自动调用的方式，但很蠢</span>
+<span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+        
+        <span class="c1"># 如果不想修改代码</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setName</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        
+    <span class="c1"># 介绍下自己</span>
+    <span class="k">def</span> <span class="nf">intro</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hai, my name is </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+        
+    <span class="k">def</span> <span class="nf">setName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        
+<span class="n">s1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;LIU Ying&quot;</span><span class="p">,</span> <span class="mf">19.8</span><span class="p">)</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;michi stangle&quot;</span><span class="p">,</span> <span class="mf">24.0</span><span class="p">)</span>
+
+<span class="n">s1</span><span class="o">.</span><span class="n">intro</span><span class="p">()</span>
+<span class="n">s2</span><span class="o">.</span><span class="n">intro</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>访问结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hai</span><span class="p">,</span> <span class="n">my</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">LIU</span> <span class="n">YING</span>
+<span class="n">Hai</span><span class="p">,</span> <span class="n">my</span> <span class="n">name</span> <span class="ow">is</span> <span class="n">MICHI</span> <span class="n">STANGLE</span>
+</pre></div>
+</div>
+<p>此时虽然我们给出了避免类的属性直接被访问的方式, 即通过函数访问,但并不能避免属性真的被外部访问,至少语法上不能避免,比如一样可以
+直接通过:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>来访问属性.</p>
+<p>为了避免此类情况发生,我们可以对属性进行改名,比如添加一个下划线<code class="docutils literal notranslate"><span class="pre">_</span></code>来表明这个属性不希望被外部直接访问,但此种方式只是一个标记,或者叫
+约定俗成,如果我访问, 还是没有语法问题的.</p>
+<div class="section" id="property">
+<h3>2.1.1. 类属性值(property)<a class="headerlink" href="#property" title="永久链接至标题">¶</a></h3>
+<p>主要为了满足以下需求,我们设计了类的属性(property)这个功能:</p>
+<ul class="simple">
+<li>封装类的属性值(attribute), 不许外部访问此类内容</li>
+<li>对类的属性(attribute)赋值的时候, 可能我们有额外的需求,例如一些额外的操作</li>
+</ul>
+<p>此时我们可以用一个函数来代替属性值(attribute)</p>
+<p>对一个变量的操作,一般具有赋值,一般也就赋值,读取,删除三个操作,所以使用属性(properety)需要的大致步骤是:</p>
+<ol class="simple">
+<li>定义三个函数,即对这个属性(property)进行赋值,读取, 删除时候的操作功能</li>
+<li>把这三个函数绑定到一个变量名称上, 此后对这个变量名称的访问即调用对于的函数.</li>
+</ol>
+<p>具体案例参看下面, 案例中,如果访问<code class="docutils literal notranslate"><span class="pre">Person</span></code>的<code class="docutils literal notranslate"><span class="pre">name</span></code>和<code class="docutils literal notranslate"><span class="pre">age</span></code>属性, 我们希望带有额外的操作, 比如自动进行一些大小写转换
+等, 此时可以把<code class="docutils literal notranslate"><span class="pre">name</span></code>等设置成<code class="docutils literal notranslate"><span class="pre">property</span></code>来进行操作:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># peroperty案例</span>
+<span class="c1"># 定义一个Person类，具有name，age属性</span>
+<span class="c1"># 对于任意输入的姓名，我们希望都用大写方式保存</span>
+<span class="c1"># 年龄，我们希望内部统一用整数保存</span>
+<span class="c1"># x = property(fget, fset, fdel, doc)</span>
+<span class="k">class</span> <span class="nc">Person</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    这是一个人，一个高尚的人，一个脱离了低级趣味的人</span>
+<span class="sd">    还他妈的有属性</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="c1"># 函数的名称可以任意</span>
+    <span class="c1"># 对于此propery读取时候的操作,此时对任意名称的读取, 返回这个名称的两次重复值</span>
+    <span class="k">def</span> <span class="nf">fget</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">*</span> <span class="mi">2</span>
+    
+    <span class="c1"># 对于对name进行赋值时候的操作, 即默认把值转换成大写</span>
+    <span class="k">def</span> <span class="nf">fset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="c1"># 所有输入的姓名以大写形式保存</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+    <span class="c1"># 对于删除时候操作, 删除的时候并不是真正删除,而是把值变成了NoName字符串</span>
+    <span class="k">def</span> <span class="nf">fdel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;NoName&quot;</span>
+    
+    <span class="c1"># 调用property函数, 把变量 _name 和三个操作函数绑定到属性 name上,</span>
+    <span class="c1"># 以后对name操作即调用相应三个操作函数</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">fget</span><span class="p">,</span> <span class="n">fset</span><span class="p">,</span> <span class="n">fdel</span><span class="p">,</span> <span class="s2">&quot;对name进行下下操作啦&quot;</span><span class="p">)</span>
+    
+<span class="c1"># 作业：</span>
+<span class="c1"># 1. 在用户输入年龄的时候，可以输入整数，小数，浮点数</span>
+<span class="c1"># 2. 但内部为了数据清洁，我们统一需要保存整数，直接舍去小数点</span>
+
+<span class="c1"># 调用类</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">()</span>
+<span class="n">p1</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;TuLing&quot;</span> <span class="c1"># 赋值, 调用fset</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="c1"># 读取,调用fget</span>
+</pre></div>
+</div>
+<p>运行结果如下所示:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">TULINGTULING</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>2.1.2. <code class="docutils literal notranslate"><span class="pre">&#64;property</span></code><a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h3>
+<p>对上述属性系统还给提供了装饰器来完成相应的工作</p>
+<p>单独对某个函数进行修饰后, 则此函数名称就是一个具备只读功能的属性(property), 注意此属性
+只能读取,不能有别的功能, 例如下面案例,如果对属性<code class="docutils literal notranslate"><span class="pre">year</span></code>进行除了读取以外操作, 报错!</p>
+<p>代码如下, 代码中只用<code class="docutils literal notranslate"><span class="pre">property</span></code>修饰, 则属性只具有只读性质:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_age</span> <span class="o">=</span> <span class="mi">18</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+
+    <span class="nd">@name</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;北京图灵学院&quot;</span> <span class="o">+</span> <span class="n">name</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">year</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span>  <span class="mi">2022</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_age</span>
+
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span> <span class="p">)</span>
+
+<span class="c1"># 读取year属性</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+
+<span class="c1"># year为只读属性, 尝试其他操作报错</span>
+<span class="n">p</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="mi">1997</span>
+</pre></div>
+</div>
+<p>执行上述代码后, 报错如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">211.7142.13</span><span class="p">)</span>
+<span class="mi">2004</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;/Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/pydevd.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1483</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_exec</span>
+    <span class="n">pydev_imports</span><span class="o">.</span><span class="n">execfile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>  <span class="c1"># execute the script</span>
+  <span class="n">File</span> <span class="s2">&quot;/Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/_pydev_imps/_pydev_execfile.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">18</span><span class="p">,</span> <span class="ow">in</span> <span class="n">execfile</span>
+    <span class="n">exec</span><span class="p">(</span><span class="nb">compile</span><span class="p">(</span><span class="n">contents</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span><span class="p">),</span> <span class="n">glob</span><span class="p">,</span> <span class="n">loc</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;/Users/bbb/baoshu/book/python/new_python/code/tt.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">26</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="mi">1997</span>
+<span class="ne">AttributeError</span><span class="p">:</span> <span class="n">can</span><span class="s1">&#39;t set attribute</span>
+<span class="n">python</span><span class="o">-</span><span class="ne">BaseException</span>
+</pre></div>
+</div>
+<p>如果想让定义的属性<code class="docutils literal notranslate"><span class="pre">property</span></code>具有其他能力,比如赋值删除等, 则需要继续时候用装饰器来完成,参考
+下面代码,定义的属性<code class="docutils literal notranslate"><span class="pre">name</span></code>具有删除,赋值,读取功能:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;NoName&quot;</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span>
+
+    <span class="nd">@name</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">n</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+    <span class="nd">@name</span><span class="o">.</span><span class="n">deleter</span>
+    <span class="k">def</span> <span class="nf">name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;IsDeleted&quot;</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span> <span class="p">)</span>
+
+<span class="c1"># 读取name属性</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="c1"># 调用setter</span>
+<span class="n">p</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;dana liu&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="c1"># 调用deleter</span>
+<span class="k">del</span> <span class="n">p</span><span class="o">.</span><span class="n">name</span>
+<span class="c1"># 调用getter</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>代码运行如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">bbb</span><span class="o">/</span><span class="n">anaconda3</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python3</span> <span class="o">/</span><span class="n">Applications</span><span class="o">/</span><span class="n">PyCharm</span><span class="o">.</span><span class="n">app</span><span class="o">/</span><span class="n">Contents</span><span class="o">/</span><span class="n">plugins</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">helpers</span><span class="o">/</span><span class="n">pydev</span><span class="o">/</span><span class="n">pydevd</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">multiproc</span> <span class="o">--</span><span class="n">qt</span><span class="o">-</span><span class="n">support</span><span class="o">=</span><span class="n">auto</span> <span class="o">--</span><span class="n">client</span> <span class="mf">127.0.0.1</span> <span class="o">--</span><span class="n">port</span> <span class="mi">62518</span> <span class="o">--</span><span class="n">file</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">bbb</span><span class="o">/</span><span class="n">baoshu</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">new_python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">tt</span><span class="o">.</span><span class="n">py</span>
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">211.7142.13</span><span class="p">)</span>
+<span class="n">NoName</span>
+<span class="n">DANA</span> <span class="n">LIU</span>
+<span class="n">IsDeleted</span>
+</pre></div>
+</div>
+<p>从上面案例也可以基本推断出, 所谓装饰器就是对上一小节中属性函数的简单包装, 在使用中也是
+对赋值,读取,删除三个函数调用而已.</p>
+<blockquote>
+<div>属性(property)的命名务必跟类中使用的属性(attribute)不能相同,否则会造成递归调用,自己想想点解?</div></blockquote>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>2.2. 类的内置属性<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>类会内置了很多属性,通过这些属性方便我们对类的使用和控制, 一般此类内置都以双下划线开头结尾,
+我们介绍四个内置属性如下:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">__dict__</span></code>: 类或者实例的所有属性(是所有,包括attribute, 函数, property等)</li>
+<li><code class="docutils literal notranslate"><span class="pre">__doc__</span></code>: 类的文档</li>
+<li><code class="docutils literal notranslate"><span class="pre">__name__</span></code>: 类的名称</li>
+<li><code class="docutils literal notranslate"><span class="pre">__bases__</span></code>: 类的父类</li>
+</ul>
+<p>上面知识点以类<code class="docutils literal notranslate"><span class="pre">Person</span></code>为例, 类的实现代码如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">():</span>
+<span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">这是一个人，一个高尚的人，一个脱离了低级趣味的人</span>
+<span class="sd">还他妈的有属性</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+    <span class="c1"># 函数的名称可以任意</span>
+    <span class="c1"># 对于此propery读取时候的操作,此时对任意名称的读取, 返回这个名称的两次重复值</span>
+    <span class="k">def</span> <span class="nf">fget</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">*</span> <span class="mi">2</span>
+
+    <span class="c1"># 对于对name进行赋值时候的操作, 即默认把值转换成大写</span>
+    <span class="k">def</span> <span class="nf">fset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="c1"># 所有输入的姓名以大写形式保存</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+    <span class="c1"># 对于删除时候操作, 删除的时候并不是真正删除,而是把值变成了NoName字符串</span>
+    <span class="k">def</span> <span class="nf">fdel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;NoName&quot;</span>
+
+    <span class="c1"># 调用property函数, 把变量 _name 和三个操作函数绑定到属性 name上,</span>
+    <span class="c1"># 以后对name操作即调用相应三个操作函数</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">property</span><span class="p">(</span><span class="n">fget</span><span class="p">,</span> <span class="n">fset</span><span class="p">,</span> <span class="n">fdel</span><span class="p">,</span> <span class="s2">&quot;对name进行下下操作啦&quot;</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">p_name</span> <span class="o">=</span> <span class="s2">&quot;NoName&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">19</span>
+</pre></div>
+</div>
+<div class="section" id="dict">
+<h3>2.2.1. <code class="docutils literal notranslate"><span class="pre">__dict__</span></code><a class="headerlink" href="#dict" title="永久链接至标题">¶</a></h3>
+<p>如果查看类或者实例的内容, 则可以直接按下面代码打印:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Animal</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Person</span><span class="o">.</span><span class="vm">__dict__</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">p</span><span class="o">.</span><span class="vm">__dict__</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>打印结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">211.7142.13</span><span class="p">)</span>
+<span class="p">{</span><span class="s1">&#39;__module__&#39;</span><span class="p">:</span> <span class="s1">&#39;__main__&#39;</span><span class="p">,</span> <span class="s1">&#39;__dict__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="s1">&#39;__dict__&#39;</span> <span class="n">of</span> <span class="s1">&#39;Animal&#39;</span> <span class="n">objects</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__weakref__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">attribute</span> <span class="s1">&#39;__weakref__&#39;</span> <span class="n">of</span> <span class="s1">&#39;Animal&#39;</span> <span class="n">objects</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+<span class="o">==============================</span>
+<span class="p">{</span><span class="s1">&#39;__module__&#39;</span><span class="p">:</span> <span class="s1">&#39;__main__&#39;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">    这是一个人，一个高尚的人，一个脱离了低级趣味的人</span><span class="se">\n</span><span class="s1">    还他妈的有属性</span><span class="se">\n</span><span class="s1">    &#39;</span><span class="p">,</span> <span class="s1">&#39;fget&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">Person</span><span class="o">.</span><span class="n">fget</span> <span class="n">at</span> <span class="mh">0x7f8465dce510</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;fset&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">Person</span><span class="o">.</span><span class="n">fset</span> <span class="n">at</span> <span class="mh">0x7f8465dce730</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;fdel&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">Person</span><span class="o">.</span><span class="n">fdel</span> <span class="n">at</span> <span class="mh">0x7f8465dce7b8</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="nb">property</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f8465dcac78</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__init__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">Person</span><span class="o">.</span><span class="fm">__init__</span> <span class="n">at</span> <span class="mh">0x7f8465dce840</span><span class="o">&gt;</span><span class="p">}</span>
+<span class="o">==============================</span>
+<span class="p">{</span><span class="s1">&#39;p_name&#39;</span><span class="p">:</span> <span class="s1">&#39;NoName&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div>这里类的属性和实例的属性进行了严格的区分, 这两者内容也大不一样
+子类和父类也各自维持各自的<code class="docutils literal notranslate"><span class="pre">__dict__</span></code>内容
+内置类型list,tuple,dict等没有<code class="docutils literal notranslate"><span class="pre">__dict__</span></code>属性</div></blockquote>
+<p>可以简单理解成:</p>
+<ul class="simple">
+<li>实例的<code class="docutils literal notranslate"><span class="pre">__dict__</span></code>包含的是类定义的时候前面有<code class="docutils literal notranslate"><span class="pre">self.</span></code>的内容,例如<code class="docutils literal notranslate"><span class="pre">self.age</span></code></li>
+<li>类的<code class="docutils literal notranslate"><span class="pre">__dict__</span></code>包含的是出去实例<code class="docutils literal notranslate"><span class="pre">__dict__</span></code>之外的所有</li>
+</ul>
+</div>
+<div class="section" id="name">
+<h3>2.2.2. <code class="docutils literal notranslate"><span class="pre">__name__</span></code><a class="headerlink" href="#name" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">__name__</span></code>可以用来代表一段代码的名称,我们在写代码的时候经常写一个入口程序:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>作为一段段代码的第一行执行程序, 就是要检查这段代码的名称是否是一个值.</p>
+<p>在类中我们对类调用<code class="docutils literal notranslate"><span class="pre">__name__</span></code>属性的时候代表的是这个类的名字, 不如下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Animal</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Person</span><span class="o">.</span><span class="vm">__name__</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>代码执行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">211.7142.13</span><span class="p">)</span>
+<span class="n">Animal</span>
+<span class="o">==============================</span>
+<span class="n">Person</span>
+<span class="o">==============================</span>
+<span class="n">__main__</span>
+<span class="o">==============================</span>
+<span class="n">python</span><span class="o">-</span><span class="ne">BaseException</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;/Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/pydevd.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1483</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_exec</span>
+    <span class="n">pydev_imports</span><span class="o">.</span><span class="n">execfile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>  <span class="c1"># execute the script</span>
+  <span class="n">File</span> <span class="s2">&quot;/Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/_pydev_imps/_pydev_execfile.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">18</span><span class="p">,</span> <span class="ow">in</span> <span class="n">execfile</span>
+    <span class="n">exec</span><span class="p">(</span><span class="nb">compile</span><span class="p">(</span><span class="n">contents</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span><span class="p">),</span> <span class="n">glob</span><span class="p">,</span> <span class="n">loc</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;/Users/bbb/baoshu/book/python/new_python/code/tt.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">45</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;Person&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;__name__&#39;</span>
+</pre></div>
+</div>
+<p>代码最后一行执行保存, 因为实例变量<code class="docutils literal notranslate"><span class="pre">p</span></code>没有<code class="docutils literal notranslate"><span class="pre">__name__</span></code>属性</p>
+</div>
+<div class="section" id="bases-base">
+<h3>2.2.3. <code class="docutils literal notranslate"><span class="pre">__bases__</span></code> / <code class="docutils literal notranslate"><span class="pre">__base__</span></code><a class="headerlink" href="#bases-base" title="永久链接至标题">¶</a></h3>
+<p>用来表示一个类的父类和父类的列表.</p>
+<p>参见下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span> <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Person</span><span class="o">.</span><span class="n">__base__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Person</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>执行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Connected to pydev debugger (build 211.7142.13)
+&lt;class &#39;__main__.Animal&#39;&gt;
+(&lt;class &#39;__main__.Animal&#39;&gt;,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>2.3. 魔法函数<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>类的魔法函数是指一类特殊的函数:</p>
+<ol class="simple">
+<li>此类函数由类定义名称, 不可以随意命名</li>
+<li>一般在某个时机会被自动调用,不需要手动调用</li>
+<li>每个魔法函数都对于一个固定的调用时机, 通常也默认有固定的的功能和写法, 如果实现, 则时机到了会被自动调用</li>
+<li>名称由前后双下划线包裹</li>
+</ol>
+<p>我们以前介绍的构造函数就是一个魔法函数, 类实例化的时候被调用,具有特定的写法和命名等.</p>
+<p>本章我们介绍其他常用的魔法函数.</p>
+<div class="section" id="call">
+<h3>2.3.1. <code class="docutils literal notranslate"><span class="pre">__call__</span></code><a class="headerlink" href="#call" title="永久链接至标题">¶</a></h3>
+<p>实例可以直接被调用, 此时会执行<code class="docutils literal notranslate"><span class="pre">__call__</span></code>函数:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;哈哈，我被调用了&quot;</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我被调用了again&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>定义后用下面两行代码,第一行生成实例,第二行直接运行实例,此时调用魔法函数:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="n">a</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>哈哈，我被调用了
+我被调用了again
+</pre></div>
+</div>
+</div>
+<div class="section" id="str">
+<h3>2.3.2. <code class="docutils literal notranslate"><span class="pre">__str__</span></code><a class="headerlink" href="#str" title="永久链接至标题">¶</a></h3>
+<p>当实例被需要当做字符串处理的时候会调用此函数, 如果没有实现此函数会执行默认功能.</p>
+<p>此函数要求返回一个字符串.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;哈哈，我被调用了&quot;</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我被调用了again&quot;</span><span class="p">)</span>
+       
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;图灵学院的例子&quot;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>在执行<code class="docutils literal notranslate"><span class="pre">print(a)</span></code>的时候, 需要把实例转成一个字符串,此时会执行上面的魔法函数, 上面魔法函数返回的内容
+就是打印出来的内容.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>哈哈，我被调用了
+图灵学院的例子
+</pre></div>
+</div>
+</div>
+<div class="section" id="geattr">
+<h3>2.3.3. <code class="docutils literal notranslate"><span class="pre">__geattr__</span></code><a class="headerlink" href="#geattr" title="永久链接至标题">¶</a></h3>
+<p>调用某个属性的时候, 如果这个属性不存在, 会自动执行这个魔法函数.</p>
+<p>魔法函数的返回值作为不存在的这个属性的值.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;NoName&quot;</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
+   
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;没找到呀没找到&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>定义完后执行下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">addr</span><span class="p">)</span>  
+<span class="c1"># 作业：</span>
+<span class="c1"># 为什么会打印第四句话，而且第四句话是打印的 None</span>
+<span class="c1"># 答案在QQ群9990960</span>
+</pre></div>
+</div>
+<p>执行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NoName</span>
+<span class="n">没找到呀没找到</span>
+<span class="n">addr</span>
+<span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setattr">
+<h3>2.3.4. <code class="docutils literal notranslate"><span class="pre">__setattr__</span></code><a class="headerlink" href="#setattr" title="永久链接至标题">¶</a></h3>
+<p>当给类的属性进行赋值的时候, 自动调用此函数.</p>
+<blockquote>
+<div>需要注意此函数的写法,比较特殊
+魔法函数的很多写法都比较特殊,性质决定</div></blockquote>
+<p>参考案例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="fm">__setattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;设置属性： </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="c1"># 下面语句会导致问题，死循环</span>
+        <span class="c1">#self.name = value</span>
+        <span class="c1"># 此种情况，为了避免死循环，规定统一调用父类魔法函数</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__setattr__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>调用上面定义的类:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Person</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Connected to pydev debugger (build 211.7142.13)
+{}
+设置属性： age
+{&#39;age&#39;: 18}
+</pre></div>
+</div>
+</div>
+<div class="section" id="gt">
+<h3>2.3.5. <code class="docutils literal notranslate"><span class="pre">__gt__</span></code><a class="headerlink" href="#gt" title="永久链接至标题">¶</a></h3>
+<p>此类魔法函数在比较两个类实例的时候会被自动调用,除了大于,小于,还有大于等于,小于等于, 等于,不等于等.</p>
+<p>参看下面代码, 如果比较两个学生类的实例, 则以魔法函数返回的结果为比较的结果:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+    
+    <span class="c1"># 比较两个实例按名称比较</span>
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;哈哈， </span><span class="si">{0}</span><span class="s2"> 会比 </span><span class="si">{1}</span><span class="s2"> 大吗？&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">&gt;</span> <span class="n">obj</span><span class="o">.</span><span class="n">_name</span>
+</pre></div>
+</div>
+<p>调用代码如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 作业：</span>
+<span class="c1"># 字符串的比较是按什么规则</span>
+<span class="n">stu1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">)</span>
+<span class="n">stu2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;two&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">stu1</span> <span class="o">&gt;</span> <span class="n">stu2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>执行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># 作业：
+# 下面显示结果不太美观，能否改成形如  &quot;哈哈， one 会比 two 大吗？“
+```
+
+    哈哈， &lt;__main__.Student object at 0x7f4aac6b3b00&gt; 会比 &lt;__main__.Student object at 0x7f4aac6b3ac8&gt; 大吗？
+    False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>2.4. 抽象类<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>有些类不需要定义实例, 这些类存在的意义就是被继承, 这些类我们可以定义成抽象类,即只需要被继承不能够
+被实例化的类.</p>
+<ol class="simple">
+<li>定义抽象类需要借助<code class="docutils literal notranslate"><span class="pre">abc</span></code>模块, 即抽象类是<code class="docutils literal notranslate"><span class="pre">abc.ABCMeta</span></code>的子类.</li>
+<li>抽象类包含至少一个抽象函数, 此时需要用到装饰器<code class="docutils literal notranslate"><span class="pre">&#64;abc.abstractxxxxx</span></code>来定义一个抽象函数, 此类
+函数不需要有实现代码, 只能被继承, 然后在子类中实现具体功能</li>
+<li>一个包含抽象函数的类就是抽象类, 哪怕只包含一个抽象函数, 则这个类就是抽象的,不能被实例化</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;abc.abstractxxxx</span></code>装饰器只是说你这个函数是的性质,属于抽象的且是xxxx函数,包括<ul>
+<li><code class="docutils literal notranslate"><span class="pre">abstractmethode</span></code>: 普通抽象函数</li>
+<li><code class="docutils literal notranslate"><span class="pre">abstractclassmethode</span></code>:抽象类函数</li>
+<li><code class="docutils literal notranslate"><span class="pre">abstractstaticmethode</span></code>: 抽象静态函数</li>
+<li><code class="docutils literal notranslate"><span class="pre">abstractproperty</span></code>: 抽象属性</li>
+</ul>
+</li>
+</ol>
+<p>参看代码,从一个了一个人类, 因为人类具有抽象函数(还不止一个), 所以是一个抽象类</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 抽象类的实现</span>
+<span class="kn">import</span> <span class="nn">abc</span>
+
+<span class="c1">#声明一个类并且指定当前类的元类</span>
+<span class="k">class</span> <span class="nc">Human</span><span class="p">(</span><span class="n">metaclass</span><span class="o">=</span><span class="n">abc</span><span class="o">.</span><span class="n">ABCMeta</span><span class="p">):</span>
+
+    <span class="c1"># 定义一个抽象的方法</span>
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractmethod</span>
+    <span class="k">def</span> <span class="nf">smoking</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="c1"># 定义类抽象方法</span>
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractclassmethod</span>
+    <span class="k">def</span> <span class="nf">drink</span><span class="p">():</span>
+        <span class="k">pass</span>
+    
+    <span class="c1"># 定义静态抽象方法</span>
+    <span class="nd">@abc</span><span class="o">.</span><span class="n">abstractstaticmethod</span>
+    <span class="k">def</span> <span class="nf">play</span><span class="p">():</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span> <span class="nf">sleep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sleeping.......&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>此时直接用<code class="docutils literal notranslate"><span class="pre">Human</span></code>实例化是会报错的:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">211.7142.13</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;/Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/pydevd.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1483</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_exec</span>
+    <span class="n">pydev_imports</span><span class="o">.</span><span class="n">execfile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>  <span class="c1"># execute the script</span>
+  <span class="n">File</span> <span class="s2">&quot;/Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/_pydev_imps/_pydev_execfile.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">18</span><span class="p">,</span> <span class="ow">in</span> <span class="n">execfile</span>
+    <span class="n">exec</span><span class="p">(</span><span class="nb">compile</span><span class="p">(</span><span class="n">contents</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span><span class="p">),</span> <span class="n">glob</span><span class="p">,</span> <span class="n">loc</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;/Users/bbb/baoshu/book/python/new_python/code/tt.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">22</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">Human</span><span class="p">()</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">Can</span><span class="s1">&#39;t instantiate abstract class Human with abstract methods drink, play, smoking</span>
+<span class="n">python</span><span class="o">-</span><span class="ne">BaseException</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>2.5. 元类<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h3>2.5.1. 手动组装类<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>函数可以当做换一个变量处理,此时函数可以当做值来传递,这是我们在函数中已经给大家讲过的内容, 在类中定义的函数,包括
+实例函数,类函数, 静态函数等,都可以看做一个变量来处理,即我们可以灵活的组装一个类.</p>
+<p>参看下面代码, 我们定义了一个类<code class="docutils literal notranslate"><span class="pre">A</span></code>, 但没有具体内容, 同时定义了函数<code class="docutils literal notranslate"><span class="pre">say</span></code>, 这就是一个普通函数,我们可以单独调用,
+也可以把这个函数作为值传递给<code class="docutils literal notranslate"><span class="pre">A</span></code>中的某一个变量, 此时可以把函数<code class="docutils literal notranslate"><span class="pre">say</span></code>作为类的函数调用,同时在<code class="docutils literal notranslate"><span class="pre">A</span></code>的实例调用的时候,
+第一个参数会自动把自己传入, 此时如果想把<code class="docutils literal notranslate"><span class="pre">say</span></code>当做实例函数,必须至少有一个参数,否则报错:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+  <span class="k">pass</span>
+
+  <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saying... ...&quot;</span><span class="p">)</span>
+
+  <span class="k">class</span> <span class="nc">B</span><span class="p">():</span>
+  <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saying......&quot;</span><span class="p">)</span>
+
+  <span class="c1"># 单独调用say&#39;必须有对参数,否则报错</span>
+  <span class="n">say</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+
+  <span class="c1"># 给类A添加一个实例函数say</span>
+  <span class="n">A</span><span class="o">.</span><span class="n">say</span> <span class="o">=</span> <span class="n">say</span>
+
+  <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+  <span class="n">a</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
+
+  <span class="c1"># 打印出A的内容</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上述代码运行结果如下:</p>
+<p>onnected to pydev debugger (build 211.7142.13)
+Saying… …
+Saying… …
+{‘<strong>module</strong>’: ‘<strong>main</strong>’, ‘<strong>dict</strong>’: &lt;attribute ‘<strong>dict</strong>’ of ‘A’ objects&gt;, ‘<strong>weakref</strong>’: &lt;attribute ‘<strong>weakref</strong>’ of ‘A’ objects&gt;, ‘<strong>doc</strong>’: None, ‘say’: &lt;function say at 0x7f83e28e6620&gt;}</p>
+<p>可以看出, 我们通过后期的赋值,可以随意赋予一个类以函数</p>
+<p>这类赋值不可以直接对类实例进行,例如下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+  <span class="k">pass</span>
+
+
+  <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saying... ...&quot;</span><span class="p">)</span>
+
+  <span class="n">a1</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+  <span class="n">a2</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+
+  <span class="n">a1</span><span class="o">.</span><span class="n">say</span> <span class="o">=</span> <span class="n">say</span>
+
+  <span class="c1"># 此时say作为a`是一个普通函数, 不是类中定义的</span>
+  <span class="c1"># 调用可以这样</span>
+  <span class="n">a1</span><span class="o">.</span><span class="n">say</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+
+  <span class="c1"># 但如果是按照实例方法调用则报错</span>
+  <span class="n">a1</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">211.7142.13</span><span class="p">)</span>
+<span class="n">Saying</span><span class="o">...</span> <span class="o">...</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;/Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/pydevd.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1483</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_exec</span>
+    <span class="n">pydev_imports</span><span class="o">.</span><span class="n">execfile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>  <span class="c1"># execute the script</span>
+  <span class="n">File</span> <span class="s2">&quot;/Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/_pydev_imps/_pydev_execfile.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">18</span><span class="p">,</span> <span class="ow">in</span> <span class="n">execfile</span>
+    <span class="n">exec</span><span class="p">(</span><span class="nb">compile</span><span class="p">(</span><span class="n">contents</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span><span class="p">),</span> <span class="n">glob</span><span class="p">,</span> <span class="n">loc</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;/Users/bbb/baoshu/book/python/new_python/code/tt.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">19</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">a1</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">say</span><span class="p">()</span> <span class="n">missing</span> <span class="mi">1</span> <span class="n">required</span> <span class="n">positional</span> <span class="n">argument</span><span class="p">:</span> <span class="s1">&#39;self&#39;</span>
+<span class="n">python</span><span class="o">-</span><span class="ne">BaseException</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="methodtype">
+<h3>2.5.2. <code class="docutils literal notranslate"><span class="pre">MethodType</span></code> 组装类<a class="headerlink" href="#methodtype" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">MethodType</span></code>方法可以给实例对象或类绑定方法, 功能同上面全手动类似.</p>
+<p>下面代码给实例利用<code class="docutils literal notranslate"><span class="pre">MethodType</span></code>增加函数功能, 但此时并没有真正修改类<code class="docutils literal notranslate"><span class="pre">A</span></code>的内容, 所以对实例<code class="docutils literal notranslate"><span class="pre">a2</span></code>修改后
+面的代码<code class="docutils literal notranslate"><span class="pre">a1,a3</span></code>再次调用<code class="docutils literal notranslate"><span class="pre">say</span></code>就会报错.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 自己组装一个类</span>
+  <span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">MethodType</span>
+
+
+  <span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+  <span class="k">pass</span>
+
+
+  <span class="k">class</span> <span class="nc">B</span><span class="p">():</span>
+  <span class="k">pass</span>
+
+
+  <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saying... ...&quot;</span><span class="p">)</span>
+
+
+  <span class="n">a1</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+
+  <span class="n">a2</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+  <span class="n">a2</span><span class="o">.</span><span class="n">say</span> <span class="o">=</span> <span class="n">MethodType</span><span class="p">(</span><span class="n">say</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+  <span class="n">a2</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
+
+
+  <span class="n">a3</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+
+  <span class="c1"># 以下使用都会报错, 报错信息为A没有say属性</span>
+  <span class="n">a3</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
+
+  <span class="n">a1</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>代码运行后结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">211.7142.13</span><span class="p">)</span>
+<span class="n">Saying</span><span class="o">...</span> <span class="o">...</span>
+<span class="n">python</span><span class="o">-</span><span class="ne">BaseException</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;/Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/pydevd.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1483</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_exec</span>
+    <span class="n">pydev_imports</span><span class="o">.</span><span class="n">execfile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>  <span class="c1"># execute the script</span>
+  <span class="n">File</span> <span class="s2">&quot;/Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/_pydev_imps/_pydev_execfile.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">18</span><span class="p">,</span> <span class="ow">in</span> <span class="n">execfile</span>
+    <span class="n">exec</span><span class="p">(</span><span class="nb">compile</span><span class="p">(</span><span class="n">contents</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span><span class="p">),</span> <span class="n">glob</span><span class="p">,</span> <span class="n">loc</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;/Users/bbb/baoshu/book/python/new_python/code/tt.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">24</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">a3</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
+<span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;A&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;say&#39;</span><span class="n">Vk</span>
+</pre></div>
+</div>
+<p>如果想直接修改类的定义内容,则需要直接给类赋值,代码如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 自己组装一个类</span>
+  <span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">MethodType</span>
+
+
+  <span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+  <span class="k">pass</span>
+
+
+  <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saying... ...&quot;</span><span class="p">)</span>
+
+
+  <span class="n">A</span><span class="o">.</span><span class="n">say</span> <span class="o">=</span> <span class="n">MethodType</span><span class="p">(</span><span class="n">say</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+
+  <span class="n">a1</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+  <span class="n">a2</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+  <span class="n">a3</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+
+
+  <span class="n">a1</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
+  <span class="n">a2</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
+  <span class="n">a3</span><span class="o">.</span><span class="n">say</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>上面代码修改了类的内容,以后由这个类产生的实例都会具备相应功能, 运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">211.7142.13</span><span class="p">)</span>
+  <span class="n">Saying</span><span class="o">...</span> <span class="o">...</span>
+  <span class="n">Saying</span><span class="o">...</span> <span class="o">...</span>
+  <span class="n">Saying</span><span class="o">...</span> <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="type">
+<h3>2.5.3. 利用<code class="docutils literal notranslate"><span class="pre">type</span></code>来创造类<a class="headerlink" href="#type" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">python</span></code>中只有<code class="docutils literal notranslate"><span class="pre">type</span></code>才是唯一真神, 他可以创建万物,包括类.</p>
+<p>我们可以利用这来完全定义类, 参看下代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 先定义类应该具有的成员函数</span>
+  <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Saying.....&quot;</span><span class="p">)</span>
+
+
+  <span class="k">def</span> <span class="nf">talk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Talking .....&quot;</span><span class="p">)</span>
+
+
+  <span class="c1"># 用type来创建一个类</span>
+  <span class="c1"># thype的参数含义, 1,类名称, 2.类的父类们, 3, 类的内容, 字典形式</span>
+  <span class="n">A</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="s2">&quot;AName&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nb">object</span><span class="p">,),</span> <span class="p">{</span><span class="s2">&quot;class_say&quot;</span><span class="p">:</span> <span class="n">say</span><span class="p">,</span> <span class="s2">&quot;class_talk&quot;</span><span class="p">:</span> <span class="n">talk</span><span class="p">})</span>
+
+  <span class="c1"># 然后可以像正常访问一样使用类</span>
+  <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+
+  <span class="n">a</span><span class="o">.</span><span class="n">class_say</span><span class="p">()</span>
+  <span class="n">a</span><span class="o">.</span><span class="n">class_talk</span><span class="p">()</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">class_say</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">class_talk</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上例中,我们用<code class="docutils literal notranslate"><span class="pre">type</span></code>无中生有了一个类, 同时用这个类创建实例并运行, 味道好极了, 运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">211.7142.13</span><span class="p">)</span>
+  <span class="n">Saying</span><span class="o">.....</span>
+  <span class="n">Talking</span> <span class="o">.....</span>
+  <span class="o">&lt;</span><span class="n">bound</span> <span class="n">method</span> <span class="n">say</span> <span class="n">of</span> <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">AName</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fe70cfe6be0</span><span class="o">&gt;&gt;</span>
+  <span class="o">&lt;</span><span class="n">bound</span> <span class="n">method</span> <span class="n">talk</span> <span class="n">of</span> <span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">AName</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fe70cfe6be0</span><span class="o">&gt;&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>2.5.4. 元类<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>元类是负责创建类的类, 叫做元类.</p>
+<p>我们上面使用各种方法, 理论上也可以<code class="docutils literal notranslate"><span class="pre">创建</span></code>一个类,但元类是专业负责创建类的一个有着特殊写法的类.</p>
+<p>元类写法固定:</p>
+<ol class="simple">
+<li>必须继承自<code class="docutils literal notranslate"><span class="pre">type</span></code></li>
+<li>一般以<code class="docutils literal notranslate"><span class="pre">MetaClass</span></code>结尾</li>
+<li>实现内容和步骤有规定,要实现<code class="docutils literal notranslate"><span class="pre">__new__</span></code>魔法函数</li>
+</ol>
+<blockquote>
+<div>其实元类就是一个批量创建类的模板</div></blockquote>
+<p>参看下面代码, 我们实现一个元类, 负责创建其余的类.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 元类演示</span>
+  <span class="c1"># 元类写法是固定的，必须继承自type</span>
+  <span class="c1"># 元类一般命名以MetaClass结尾</span>
+  <span class="k">class</span> <span class="nc">TulingMetaClass</span><span class="p">(</span><span class="nb">type</span><span class="p">):</span>
+  <span class="c1"># 注意以下写法</span>
+  <span class="k">def</span> <span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">attrs</span><span class="p">):</span>
+  <span class="c1"># 自己的业务处理</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;哈哈，我是元类呀&quot;</span><span class="p">)</span>
+  <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;000000&#39;</span>
+  <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;addr&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;北京海淀区公主坟西翠路12号&quot;</span>
+  <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;douyin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;liudana&quot;</span>
+  <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;wechat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;131 191 44 223&quot;</span>
+
+          <span class="c1"># 固定返回</span>
+          <span class="k">return</span> <span class="nb">type</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">bases</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
+
+
+  <span class="c1"># 元类定义完就可以使用，使用注意写法</span>
+  <span class="c1"># 必须表明metaclass属性, 即指明利用哪个元类创建这个类</span>
+  <span class="k">class</span> <span class="nc">Teacher</span><span class="p">(</span><span class="nb">object</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">TulingMetaClass</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+  <span class="n">t</span> <span class="o">=</span> <span class="n">Teacher</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">douyin</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">wechat</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面代码运行解雇如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  Connected to pydev debugger (build 211.7142.13)
+  哈哈，我是元类呀
+  000000
+  liudana
+  131 191 44 223
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mixin">
+<h2>2.6. 迷信(Mixin)<a class="headerlink" href="#mixin" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Mixin</span></code>这种设计模式表达的意思是掺入.</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span></code>类的血统比较乱,不拒绝多继承,这就导致一些继承方面的问题(菱形继承), 一个人爸爸太多了总有种说不出的感觉, 代码也是,
+让人混乱,为了解决此类问题, 我们不在推荐退继承, 但需要功能拓展怎么办? 我们用迷信(Mixin)处理.</p>
+<p>迷信的宗旨就是把父类和子类的耦合关系降到最低,甚至是零, 迷信本质上还是父类,但这个父类本质上只负责处理业务, 完全做到了跟子类除了
+业务外代码没任何耦合度(或者尽量减少耦合度).</p>
+<p><code class="docutils literal notranslate"><span class="pre">Mixin</span></code>的使用原则是:</p>
+<ul class="simple">
+<li>首先他必须表示某一单一功能，而不是某个物品</li>
+<li>职责必须单一，如果由多个功能，则写多个<code class="docutils literal notranslate"><span class="pre">Mixin</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Mixin</span></code>不能依赖于子类的实现</li>
+<li>子类即使没有继承这个<code class="docutils literal notranslate"><span class="pre">Mixin</span></code>类， 也能照样工作，只是缺少了某个功能</li>
+<li>Mixin类中不应该显式的出现__init__初始化方法</li>
+<li>Mixin类通常不能独立工作，因为它是准备混入别的类中的部分功能实现</li>
+<li>Mixin类的祖先类也应是Mixin类</li>
+<li>使用时，Mixin类通常在继承列表的第一个位置</li>
+<li>父类只做方法的定义</li>
+<li>抽象类，抽象方法</li>
+<li>其他语言抽象类不可实例化</li>
+<li>抽象类一般不实例化，作为基类用</li>
+</ul>
+<p>使用<code class="docutils literal notranslate"><span class="pre">Mixin</span></code>的有点:</p>
+<ul class="simple">
+<li>使用Mixin可以在不对类进行任何修改的情况下，扩充功能</li>
+<li>可以方便的组织和维护不同功能组件的划分</li>
+<li>可以根据需要任意调整功能类的组合</li>
+<li>可以避免创建很多新的类，导致类的继承混乱</li>
+</ul>
+<p>下面代码中所谓的迷信完全就是父类,只是跟子类或者其他内容的耦合度很低:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># MiuIn案例</span>
+
+  <span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+  <span class="k">class</span> <span class="nc">FWordMixin</span><span class="p">():</span>
+  <span class="k">def</span> <span class="nf">fxxk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;这特么地........&quot;</span><span class="p">)</span>
+
+  <span class="k">class</span> <span class="nc">HappyMixin</span><span class="p">():</span>
+  <span class="k">def</span> <span class="nf">happy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;娃哈哈哈哈哈哈........&quot;</span><span class="p">)</span>
+
+
+
+  <span class="k">class</span> <span class="nc">TeacherWithNothing</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  一个冰冷的莫得感情的老师</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+
+      <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;别的老师&quot;</span>
+
+      <span class="k">def</span> <span class="nf">work</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;上课啦.....&quot;</span><span class="p">)</span>
+
+  <span class="k">class</span> <span class="nc">TeacherWithHappy</span><span class="p">(</span><span class="n">Person</span><span class="p">,</span> <span class="n">HappyMixin</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  一个快乐的老师</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+
+      <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;别的老师&quot;</span>
+
+      <span class="k">def</span> <span class="nf">work</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;上课啦.....&quot;</span><span class="p">)</span>
+
+
+  <span class="k">class</span> <span class="nc">LiuDana</span><span class="p">(</span><span class="n">Person</span><span class="p">,</span> <span class="n">FWordMixin</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  大拿上课老骂人, 这不好,阿弥陀佛</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+
+      <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;别的老师&quot;</span>
+
+      <span class="k">def</span> <span class="nf">work</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;上课啦.....&quot;</span><span class="p">)</span>
+
+
+  <span class="n">nothing</span> <span class="o">=</span> <span class="n">TeacherWithNothing</span><span class="p">()</span>
+  <span class="n">nothing</span><span class="o">.</span><span class="n">work</span><span class="p">()</span>
+
+  <span class="n">happy</span> <span class="o">=</span> <span class="n">TeacherWithHappy</span><span class="p">()</span>
+  <span class="n">happy</span><span class="o">.</span><span class="n">work</span><span class="p">()</span>
+  <span class="n">happy</span><span class="o">.</span><span class="n">happy</span><span class="p">()</span>
+
+  <span class="n">dana</span> <span class="o">=</span> <span class="n">LiuDana</span><span class="p">()</span>
+  <span class="n">dana</span><span class="o">.</span><span class="n">fxxk</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">211.7142.13</span><span class="p">)</span>
+  <span class="n">上课啦</span><span class="o">.....</span>
+  <span class="n">上课啦</span><span class="o">.....</span>
+  <span class="n">娃哈哈哈哈哈哈</span><span class="o">........</span>
+  <span class="n">这特么地</span><span class="o">........</span>
+</pre></div>
+</div>
+<p>上面代码可以看出, 老师类的高兴和骂人功能,只是一个迷信,如果需要,只是简单的继承自这个迷信即可.</p>
+<blockquote>
+<div>迷信就是特殊的父类,且一般不把他看做父类,只看着功能的横向扩展</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h2>2.7. 类相关函数<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>在对类的使用中, 我们可能需要对类进行判断甚至控制,此时我们可以借助于下面的一些函数进行.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">issubclass</span></code>:检测一个类是否是另一个类的子类</li>
+<li><code class="docutils literal notranslate"><span class="pre">isinstance</span></code>:检测一个对象是否是一个类的实例</li>
+<li><code class="docutils literal notranslate"><span class="pre">hasattr</span></code>:检测一个对象是否由成员xxx</li>
+<li><code class="docutils literal notranslate"><span class="pre">getattr</span></code>: get attribute</li>
+<li><code class="docutils literal notranslate"><span class="pre">setattr</span></code>: set attribute</li>
+<li><code class="docutils literal notranslate"><span class="pre">delattr</span></code>: delete attribute</li>
+<li><code class="docutils literal notranslate"><span class="pre">dir</span></code>: 获取对象的成员列表</li>
+</ul>
+<p>代码简单,参看下面案例即可:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">class</span> <span class="nc">A</span><span class="p">():</span>
+     <span class="k">pass</span>
+
+  <span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+      <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;刘大拿&quot;</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">tel</span> <span class="o">=</span> <span class="s1">&#39;131 191 44223&#39;</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">qq_group</span> <span class="o">=</span> <span class="s2">&quot;9990960&quot;</span>
+
+      <span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello ......&quot;</span><span class="p">)</span>
+
+
+  <span class="c1"># 第一个参数是判断的类名, 第二个参数是可能的父类组成的tuple`</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B是A的子类: &quot;</span><span class="p">,</span> <span class="nb">issubclass</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="p">)))</span>
+
+  <span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b是B的实例:&#39;</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">B</span><span class="p">))</span>
+
+  <span class="c1"># 第二个参数字符串形式的属性名称</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B是否具有属性say:&quot;</span><span class="p">,</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s2">&quot;say&quot;</span><span class="p">))</span>
+
+  <span class="c1"># 利用字符串得到某个具体的函数或者功能</span>
+  <span class="c1"># 这个在系统级别的代码中常用</span>
+  <span class="n">say</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s2">&quot;say&quot;</span><span class="p">)</span>
+  <span class="c1"># 注意这个调动方式, say必须要求有一个参数,但此时这个函数代表的是b实例的函数say,此种方式调用照样默认传入b作为第一个参数</span>
+  <span class="n">say</span><span class="p">()</span>
+
+  <span class="c1"># 给实例或者类设置内容</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
+  <span class="c1"># 给实例b设置一个属性age</span>
+  <span class="nb">setattr</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">sayage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AGE.......&quot;</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+
+  <span class="c1"># 同样可以把函数设置给b,但此时这个函数不作为b的实例函数, 调用的时候也不默认把自身当做第一个参数传入</span>
+  <span class="nb">setattr</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s2">&quot;sayage&quot;</span><span class="p">,</span> <span class="n">sayage</span><span class="p">)</span>
+  <span class="n">b</span><span class="o">.</span><span class="n">sayage</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
+
+  <span class="c1">#  显示类,实例所有可用内容,属性</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">B</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="103_调试技术.html" class="btn btn-neutral float-right" title="3. 调试技术" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="101-函数高级.html" class="btn btn-neutral float-left" title="1. 函数高级" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 北京图灵学院.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

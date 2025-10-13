@@ -1,66 +1,589 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <title>大拿老师的课堂讲义</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse@1/dist/sidebar-collapse.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
-  <link rel="stylesheet" href="./assets/css/custom.css">
-  <link rel="icon" href="./assets/images/logo.png">
-</head>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>红宝书 baoshu.red </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="static/css/css-Roboto300400700.css">
+    <!-- Icon fonts-->
+    <link rel="stylesheet" href="static/css/pe-icon-7-stroke.css">
+    <!-- Lightbox CSS-->
+    <link rel="stylesheet" href="static/css/lightbox.min.css">
+    <!-- Leaflet CSS-->
+    <link rel="stylesheet" href="static/css/leaflet.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="static/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="static/css/custom.css">
+    <!-- Favicon-->
+    
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="static/js/html5shiv.min.js"></script>
+        <script src="static/js/respond.min.js"></script><![endif]-->
+  </head>
 <body>
-  <div id="app">加载中...</div>
+<div class="adcenter"></div>
+    <!-- navbar-->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg py-lg-0">
+        <div class="container"><a href="" class="navbar-brand text-uppercase font-weight-bold">BaoShu.RED</a>
 
-  <script>
-    window.$docsify = {
-      name: '大拿老师的课堂笔记',
-      repo: 'https://github.com/danalaoshi/danalaoshi.github.io',
-      loadSidebar: true,
-      subMaxLevel: 3,
-      auto2top: true,
-      coverpage: false,
-      logo: './assets/images/logo.png',
-      pagination: {
-        previousText: '上一节',
-        nextText: '下一节',
-      },
-      search: {
-        placeholder: '搜索讲义内容...',
-        noData: '找不到相关结果!',
-        depth: 3
-      },
-      plugins: [
-        function(hook, vm) {
-          hook.beforeEach(function(content) {
-            return content;
-          });
-        }
-      ]
-    }
-  </script>
+          <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right small"><span class="text-uppercase mr-2">Menu</span><i class="fas fa-bars"></i></button>
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto d-lg-flex align-items-lg-center">
 
-  <!-- Docsify 核心 - 使用稳定版本 -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+              <li class="nav-item"><a href="#" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4 active">红宝书</a>
+              </li>
 
-  <!-- 插件 -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse@1/dist/docsify-sidebar-collapse.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
 
-  <!-- 数学公式支持 -->
-  <script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+              <li class="nav-item"><a href="http://v.baoshu.red" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4">视频教程</a>
+              </li>
 
-  <!-- 代码高亮 -->
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-javascript.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
-</body>
+
+              <li class="nav-item"><a href="http://www.mycode.wang" class="nav-link font-weight-bold text-uppercase px-lg-3 py-lg-4">麦扣网</a>
+              </li>
+
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+<!--    <div id="loginModal" tabindex="-1" role="dialog" aria-lebelledby="loginModalLabel" aria-hidden="true" class="modal fade">-->
+<!--      <div role="document" class="modal-dialog modal-sm">-->
+<!--        <div class="modal-content rounded-0">-->
+<!--          <div class="modal-header">-->
+<!--            <h5 id="loginModalLabel" class="text-uppercase modal-title m-0">Customers login</h5>-->
+<!--            <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true" class="small text-muted">&times;</span></button>-->
+<!--          </div>-->
+<!--          <div class="modal-body">-->
+<!--            <form action="">-->
+<!--              <div class="form-group">-->
+<!--                <input type="email" placeholder="email" class="form-control">-->
+<!--              </div>-->
+<!--              <div class="form-group">-->
+<!--                <input type="password" placeholder="password" class="form-control">-->
+<!--              </div>-->
+<!--              <div class="form-group text-center">-->
+<!--                <button type="submit" class="btn btn-outline-primary nav-btn btn-sm"> <i class="fas fa-sign-out-alt mr-2"></i>Login </button>-->
+<!--              </div>-->
+<!--            </form>-->
+<!--            <div class="text-center">   -->
+<!--              <p class="text-muted small">Not registered yet?</p>-->
+<!--              <p class="small text-muted"> <a href="#" class="font-weight-bold">Register now!</a> It is easy and done in 1 minute and gives you access to special discounts and much more!</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    第一幅图-->
+    <section style="background: url(static/image/jumbotron1.jpg)" class="py-5 bg-cover bg-center">
+      <div class="hero-overlay"></div>
+      <div class="container py-5 text-white text-center">
+        <h1 class="text-shadow hero-heading">红宝书教程网</h1>
+        <p class="text-shadow lead my-4">
+          The people who are crazy enough to think
+          they can change the world<br>
+          ARE THE ONES WHO DO
+<!--        </p><a href="#" class="btn btn-outline-light btn-sm">Learn More</a>-->
+      </div>
+    </section>
+
+<!--    第一个简介-->
+    <section class="py-5">
+      <div class="container py-5">
+        <h2 class="mb-4">人，为什么要学习？</h2>
+
+        <p class="lead">
+
+            我们的世界，其实并不完美<br>
+
+            这个世界有着很多不美好的东西，并不如意的出身，别人的谎言与欺骗，贫富差距与阶层分化，现实的无奈甚至绝望... ...<br>
+
+          但这不应该是我们抱怨和裹足不前的原因，恰恰相反，这应该成为我们前进的动力<br><br>
+
+          我们渴望去改变，改变自己的生活，提升自己的层级，进而有能力去帮助别人<br>
+
+        然而现实却很无助，没有方向，找不到同行者，经济的压力，这些让向上的路显的途崎岖而又漫长 ... ...<br><br>
+
+          改变的路很多条，最直接也最根本的就是学习<br>
+          学习一门技术，读一本书，拿一个文凭，在自己的专业路上坚定的走下去<br>
+          坚持下去的结果，不一定会获得巨额财富，但至少会得到精神上的富足<br><br>
+
+          人，学而知之，见自己，见天地，见众生
+
+
+
+
+        </p>
+<!--        <p class="text-small">-->
+
+<!--          研究生的占比不到0.53%，也就是说，200个人中会出现一个研究生，这种比例还是非常小的。相反我们这样看！如果你考研了。你就打败了99.47% 的人，所以中-->
+<!--          文化人口占总人口比例为8.93%，本科生占比约2.7%-->
+
+<!--        </p>-->
+<!--        <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>-->
+<!--        <p class="text-small">Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.</p><a href="#" class="btn btn-outline-primary btn-sm">Read More</a>-->
+
+      </div>
+    </section>
+
+<!--    <div class="tlinks">Collect from <a href="javascript:;" title="网站模板">网站模板</a></div>-->
+<!--    <section class="bg-gray py-5">-->
+<!--      <div class="container py-5">-->
+<!--        <div class="row">-->
+<!--          <div class="col-lg-4 mb-4 mb-lg-0"><a href="#" class="d-block"><img src="static/picture/blog1.jpg" alt="" class="img-fluid mb-4"></a>-->
+<!--            <h3 class="h5 mb-4"><a href="#" class="text-dark">Rit eget tincidunt condimentum</a></h3>-->
+<!--            <p class="text-small">ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p><a href="#" class="btn btn-outline-primary btn-sm">Continue reading</a>-->
+<!--          </div>-->
+<!--          <div class="col-lg-4 mb-4 mb-lg-0"><a href="#" class="d-block"><img src="static/picture/blog2.jpg" alt="" class="img-fluid mb-4"></a>-->
+<!--            <h3 class="h5 mb-4"><a href="#" class="text-dark">Tempor sit amet</a></h3>-->
+<!--            <p class="text-small">Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi.</p><a href="#" class="btn btn-outline-primary btn-sm">Continue reading</a>-->
+<!--          </div>-->
+<!--          <div class="col-lg-4"><a href="#" class="d-block"><img src="static/picture/blog3.jpg" alt="" class="img-fluid mb-4"></a>-->
+<!--            <h3 class="h5 mb-4"><a href="#" class="text-dark">Vestibulum erat wisi</a></h3>-->
+<!--            <p class="text-small">ellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p><a href="#" class="btn btn-outline-primary btn-sm">Continue reading</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+
+
+<!--  课程列表，每一个课程一个样式-->
+<!--  Python基础 -->
+<section class="py-5 bg-cover bg-center" style="background-image: url(static/image/bk1.jpg);">
+  <div class="container py-5">
+    <h2 class="mb-5">Python基础</h2>
+    <div class="row mb-2">
+        <!--      一本单独的书就复制一下的div -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="icon mb-4"><i class="pe-7s-coffee"></i></div>
+            <h5 ><a  class="lined mb-4" style="color: black" href="
+            http://pythoncode.baoshu.red/
+">Python编码规范</a></h5>
+            <p class="text-muted text-small">学Python前都读一读呗</p>
+        </div>
+
+
+        <!--      一本单独的书就复制一下的div -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="icon mb-4"><i class="pe-7s-album"></i></div>
+            <h5 ><a  class="lined mb-4" style="color: black" href="http://new_python.baoshu.red/index.html">Python3从入门到入土</a></h5>
+            <p class="text-muted text-small">我希望，这是全网最好的一本Python全栈教程</p>
+        </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="icon mb-4"><i class="pe-7s-calculator"></i></div>
+        <h5 ><a  class="lined mb-4" style="color: black" href="
+http://python36.baoshu.red/index.html
+">Python3.6入门指南</a></h5>
+        <p class="text-muted text-small">Python3.6的官方手册，不一定适合自学，但贵在血统纯正原汁原味</p>
+      </div>
+<!--      一个类别的书到此为止-->
+    </div>
+  </div>
+</section>
+
+<section class="py-5" >
+  <div class="container py-5">
+    <h2 class="mb-5">Python后台工程师</h2>
+
+
+<!--      &lt;!&ndash;      一本单独的书就复制一下的div &ndash;&gt;-->
+<!--      <div class="col-lg-4 col-md-6 mb-4">-->
+<!--        <div class="icon mb-4"><i class="pe-7s-graph"></i></div>-->
+<!--        <h5 >-->
+<!--          <a  class="lined mb-4" style="color: black" href=" http://pythonweb.baoshu.red/index.html ">-->
+<!--            后台工程师网络基础-->
+<!--            </a>-->
+<!--        </h5>-->
+<!--        <p class="text-muted text-small">学习后台框架编程的基础知识</p>-->
+<!--      </div>-->
+
+
+
+<!--      &lt;!&ndash;      一本单独的书就复制一下的div &ndash;&gt;-->
+<!--      <div class="col-lg-4 col-md-6 mb-4">-->
+<!--        <div class="icon mb-4"><i class="pe-7s-magic-wand"></i></div>-->
+<!--        <h5 ><a  class="lined mb-4" style="color: black" href=" http://pythondjango.baoshu.red/">-->
+<!--          Django教程-->
+<!--        </a></h5>-->
+<!--        <p class="text-muted text-small">自己写的第一本教程，也是django的入门东西</p>-->
+<!--      </div>-->
+
+<!--    &lt;!&ndash;      一本单独的书就复制一下的div &ndash;&gt;-->
+<!--    <div class="col-lg-4 col-md-6 mb-4">-->
+<!--      <div class="icon mb-4"><i class="pe-7s-magic-info"></i></div>-->
+<!--      <h5 ><a  class="lined mb-4" style="color: black" href=" http://flask.baoshu.red/">-->
+<!--        Flask讲义教程-->
+<!--      </a></h5>-->
+<!--      <p class="text-muted text-small">自己写的第一本教程，也是django的入门东西</p>-->
+<!--    </div>-->
+
+    <div class="row mb-2">
+    <!--      一本单独的书就复制一下的div -->
+    <div class="col-lg-4 col-md-6 mb-4">
+              <div class="icon mb-4"><i class="pe-7s-graph"></i></div>
+              <h5 >
+                <a  class="lined mb-4" style="color: black" href=" http://pythonweb.baoshu.red/index.html ">
+                  后台工程师网络基础
+                  </a>
+              </h5>
+              <p class="text-muted text-small">学习后台框架编程的基础知识</p>
+    </div>
+
+    <!--      一本单独的书就复制一下的div -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="icon mb-4"><i class="pe-7s-headphones"></i></div>
+
+<!--      <h5 ><a  class="lined mb-4" style="color: black" href=" http://pythonnumpy.baoshu.red/index.html ">-->
+<!--        Numpy手册-->
+<!--      </a></h5>-->
+<!--      <p class="text-muted text-small">Numpy数据科学入门教程</p>-->
+
+              <h5 ><a  class="lined mb-4" style="color: black" href=" http://pythondjango.baoshu.red/">
+                Django教程
+              </a></h5>
+              <p class="text-muted text-small">自己写的第一本教程，也是django的入门东西</p>
+
+
+    </div>
+
+    <!--      一本单独的书就复制一下的div -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="icon mb-4"><i class="pe-7s-bandaid"></i></div>
+            <h5 ><a  class="lined mb-4" style="color: black" href=" http://flask.baoshu.red/">
+              Flask讲义教程
+            </a></h5>
+            <p class="text-muted text-small">自己写的第一本教程，也是django的入门东西</p>
+    </div>
+
+        <!--      一本单独的书就复制一下的div -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="icon mb-4"><i class="pe-7s-like"></i></div>
+            <h5 ><a  class="lined mb-4" style="color: black" href=" http://flask_official.baoshu.red/">
+                Flask官方文档
+            </a></h5>
+            <p class="text-muted text-small">官方的，贼详细，但建议先看我们的讲义教程</p>
+        </div>
+
+        <!--      一本单独的书就复制一下的div -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="icon mb-4"><i class="pe-7s-calculator"></i></div>
+            <h5 ><a  class="lined mb-4" style="color: black" href=" http://flask_sqlalchemy.baoshu.red/">
+                Flask-SQLAlchemy官方文档
+            </a></h5>
+            <p class="text-muted text-small">官方的，作为手册用</p>
+        </div>
+      <!--      一个类别的书到此为止-->
+    </div>
+  </div>
+</section>
+
+<!--  数据科学 人工智能 -->
+<section class="py-5 bg-cover bg-center" style="background-image: url(static/image/bk2.jpg);">
+  <div class="container py-5">
+    <h2 class="mb-5">数据科学&人工智能</h2>
+
+    <div class="row mb-2">
+
+      <!--      一本单独的书就复制一下的div -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="icon mb-4"><i class="pe-7s-star"></i></div>
+        <h5 ><a  class="lined mb-4" style="color: black" href="http://pythonpandas.baoshu.red/index.html">Pandas手册</a></h5>
+        <p class="text-muted text-small">Pandas数据科学入门教程</p>
+      </div>
+      <!--      一本单独的书就复制一下的div -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="icon mb-4"><i class="pe-7s-headphones"></i></div>
+        <h5 ><a  class="lined mb-4" style="color: black" href=" http://pythonnumpy.baoshu.red/index.html ">
+          Numpy手册
+        </a></h5>
+        <p class="text-muted text-small">Numpy数据科学入门教程</p>
+      </div>
+
+      <!--      一本单独的书就复制一下的div -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="icon mb-4"><i class="pe-7s-bandaid"></i></div>
+        <h5 ><a  class="lined mb-4" style="color: black" href="
+      http://pythonmatplotlib.baoshu.red/index.html
+">
+          Matplotlib手册
+        </a></h5>
+        <p class="text-muted text-small">Matplotlib数据科学入门教程</p>
+      </div>
+
+      <!--      一本单独的书就复制一下的div -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="icon mb-4"><i class="pe-7s-graph"></i></div>
+        <h5 ><a  class="lined mb-4" style="color: black" href="
+      http://aisklearn.baoshu.red/
+">
+          机器学习SKLearn简明教程
+        </a></h5>
+        <p class="text-muted text-small">Scikit-Learn希望看这一本就够了</p>
+      </div>
+
+
+
+
+      <!--      一本单独的书就复制一下的div -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="icon mb-4"><i class="pe-7s-film"></i></div>
+        <h5 ><a  class="lined mb-4" style="color: black" href="http://ai.baoshu.red/">人工智能大全</a></h5>
+        <p class="text-muted text-small">一本人工智能从零基础开始的入门教程</p>
+      </div>
+
+
+
+
+      <!--      一个类别的书到此为止-->
+    </div>
+  </div>
+</section>
+
+
+<!--&lt;!&ndash;  Python爬虫 &ndash;&gt;-->
+<!--<section class="py-5" style="background-color: slategray">-->
+<!--  <div class="container py-5">-->
+<!--    <h2 class="mb-5">Python基础</h2>-->
+<!--    <div class="row mb-2">-->
+
+<!--      &lt;!&ndash;      一个类别的书到此为止&ndash;&gt;-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+
+
+<!--  算法Java类 -->
+<section class="py-5" >
+  <div class="container py-5">
+    <h2 class="mb-5">Java算法类</h2>
+    <div class="row mb-2">
+
+      <!--      一本单独的书就复制一下的div -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="icon mb-4"><i class="pe-7s-info"></i></div>
+        <h5 ><a  class="lined mb-4" style="color: black" href="
+      http://javads.baoshu.red/index.html
+">
+          数据结构(Java版)
+        </a></h5>
+        <p class="text-muted text-small">Java版数据结构图文手册</p>
+      </div>
+
+      <!--      一本单独的书就复制一下的div -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="icon mb-4"><i class="pe-7s-ticket"></i></div>
+        <h5 ><a  class="lined mb-4" style="color: black" href="
+      http://javaalgo.baoshu.red/index.html
+">
+          常用算法(Java版)
+        </a></h5>
+        <p class="text-muted text-small">Java版本的常用算法</p>
+      </div>
+
+      <!--      一个类别的书到此为止-->
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- 其他杂项 -->
+<section class="py-5 bg-cover bg-center" style="background-image: url(static/image/bk2.jpg);">
+    <div class="container py-5">
+        <h2 class="mb-5">其他杂项内容</h2>
+
+        <div class="row mb-2">
+
+            <!--      一本单独的书就复制一下的div -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="icon mb-4"><i class="pe-7s-star"></i></div>
+                <h5 ><a  class="lined mb-4" style="color: black" href="http://other_interview.baoshu.red/index.html">面试题集锦</a></h5>
+                <p class="text-muted text-small">面试常遇问题集锦</p>
+            </div>
+            <!--      一本单独的书就复制一下的div -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="icon mb-4"><i class="pe-7s-headphones"></i></div>
+                <h5 ><a  class="lined mb-4" style="color: black" href=" http://docker.baoshu.red ">
+                    Docker简明教程手册
+                </a></h5>
+                <p class="text-muted text-small">Docker简明教程手册</p>
+            </div>
+
+            <!--      一本单独的书就复制一下的div -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="icon mb-4"><i class="pe-7s-star"></i></div>
+                <h5 ><a  class="lined mb-4" style="color: black" href="http://dockeradv.baoshu.red">Docker高级教程</a></h5>
+                <p class="text-muted text-small">Docker高级教程</p>
+            </div>
+<!--            &lt;!&ndash;      一本单独的书就复制一下的div &ndash;&gt;-->
+<!--            <div class="col-lg-4 col-md-6 mb-4">-->
+<!--                <div class="icon mb-4"><i class="pe-7s-bandaid"></i></div>-->
+<!--                <h5 ><a  class="lined mb-4" style="color: black" href="-->
+<!--      http://pythonmatplotlib.baoshu.red/index.html-->
+<!--">-->
+<!--                    Matplotlib手册-->
+<!--                </a></h5>-->
+<!--                <p class="text-muted text-small">Matplotlib数据科学入门教程</p>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash;      一本单独的书就复制一下的div &ndash;&gt;-->
+<!--            <div class="col-lg-4 col-md-6 mb-4">-->
+<!--                <div class="icon mb-4"><i class="pe-7s-graph"></i></div>-->
+<!--                <h5 ><a  class="lined mb-4" style="color: black" href="-->
+<!--      http://aisklearn.baoshu.red/-->
+<!--">-->
+<!--                    机器学习SKLearn简明教程-->
+<!--                </a></h5>-->
+<!--                <p class="text-muted text-small">Scikit-Learn希望看这一本就够了</p>-->
+<!--            </div>-->
+
+
+
+
+<!--            &lt;!&ndash;      一本单独的书就复制一下的div &ndash;&gt;-->
+<!--            <div class="col-lg-4 col-md-6 mb-4">-->
+<!--                <div class="icon mb-4"><i class="pe-7s-film"></i></div>-->
+<!--                <h5 ><a  class="lined mb-4" style="color: black" href="http://ai.baoshu.red/">人工智能大全</a></h5>-->
+<!--                <p class="text-muted text-small">一本人工智能从零基础开始的入门教程</p>-->
+<!--            </div>-->
+
+
+
+
+            <!--      一个类别的书到此为止-->
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<!--    <section class="py-5 bg-gray">-->
+<!--    <section class="py-5 bg-gray">-->
+<!--      <div class="container py-5">-->
+<!--        <h2 class="lined mb-4">Portfolio</h2>-->
+<!--        <p class="lead">You can make also a portfolio or image gallery.</p>-->
+<!--        <div class="row"><a href="files/portfolio-1.jpg" data-lightbox="gallery" data-title="Description of Project No.1" class="col-lg-4 col-sm-6 p-0"><img src="static/picture/portfolio-1.jpg" alt="" class="img-fluid"></a><a href="files/portfolio-2.jpg" data-lightbox="gallery" data-title="Description of Project No.2" class="col-lg-4 col-sm-6 p-0"><img src="static/picture/portfolio-2.jpg" alt="" class="img-fluid"></a><a href="files/portfolio-3.jpg" data-lightbox="gallery" data-title="Description of Project No.3" class="col-lg-4 col-sm-6 p-0"><img src="static/picture/portfolio-3.jpg" alt="" class="img-fluid"></a><a href="files/portfolio-4.jpg" data-lightbox="gallery" data-title="Description of Project No.4" class="col-lg-4 col-sm-6 p-0"><img src="static/picture/portfolio-4.jpg" alt="" class="img-fluid"></a><a href="files/portfolio-5.jpg" data-lightbox="gallery" data-title="Description of Project No.5" class="col-lg-4 col-sm-6 p-0"><img src="static/picture/portfolio-5.jpg" alt="" class="img-fluid"></a><a href="files/portfolio-6.jpg" data-lightbox="gallery" data-title="Description of Project No.6" class="col-lg-4 col-sm-6 p-0"><img src="static/picture/portfolio-6.jpg" alt="" class="img-fluid"></a><a href="files/portfolio-7.jpg" data-lightbox="gallery" data-title="Description of Project No.7" class="col-lg-4 col-sm-6 p-0"><img src="static/picture/portfolio-7.jpg" alt="" class="img-fluid"></a><a href="files/portfolio-8.jpg" data-lightbox="gallery" data-title="Description of Project No.8" class="col-lg-4 col-sm-6 p-0"><img src="static/picture/portfolio-8.jpg" alt="" class="img-fluid"></a><a href="files/portfolio-9.jpg" data-lightbox="gallery" data-title="Description of Project No.9" class="col-lg-4 col-sm-6 p-0"><img src="static/picture/portfolio-9.jpg" alt="" class="img-fluid"></a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+
+
+
+
+    <footer style="background-color: slategray" class="pt-5">
+      <div class="container py-5">
+        <div class="row">
+<!--          <div class="col-lg-8 col-md-6 mb-4">-->
+          <div class="col-lg-8 col-md-6">
+            <h5 class="lined-dark mb-12 f1">BaoShu.RED</h5>
+            <p class="text-muted text-small f2">
+              红宝书教程网站，全部内容免费公开，保留原作者信息可随意转发。
+              <br>
+              本网站旨在提供一个完整统一的学习网站，让学习变得有章可循。
+            </p>
+            <p class="text-muted text-small f2">
+            任何内容，如果涉及版权问题，请第一时间联系我们做删除处理。
+            </p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h5 class="lined-dark mb-3 f1">Our offices</h5>
+<!--            <h6>红宝书教程网</h6>-->
+            <p class="text-muted mb-0 text-small f2">北京石景山区</p>
+            <p class="text-muted mb-0 text-small f2">八大处路10号</p>
+            <p class="text-muted mb-4 text-small f2">电话：+ 131 191 44223(同微信) </p>
+
+
+            <p class="text-muted mb-0 text-small f2">
+            tuling@tulingxueyuan.com
+            </p>
+            <p class="text-muted mb-0 text-small f2">
+            电话：13119144223
+            </p>
+            <p class="text-muted mb-0 text-small f2">
+            QQ群：9990960
+            </p>
+            <p class="text-muted mb-0 text-small f2">
+            微信公众号: 北京图灵学院
+            </p>
+
+
+          </div>
+
+          <div class="col-lg-8 col-md-6 mb-4">
+            <h5 class="lined-dark mb-3 f1">友情链接</h5>
+            <ul class="list-unstyled">
+              <li><a href="http://www.mycode.wang" class="footer-link text-small f2">麦扣网</a></li>
+              <li><a href="http://www.tulingxueyuan.com" class="footer-link text-small f2">北京图灵学院</a></li>
+              <li><a href="http://daili.baoshu.red" class="footer-link text-small f2">视频教程</a></li>
+            </ul>
+          </div>
+<!--          <div class="col-lg-4 col-md-6 mb-4">-->
+<!--            <h5 class="lined lined-dark mb-3">Let's be friends</h5>-->
+<!--            <ul class="list-inline">-->
+<!--              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-weixin"></i></a></li>-->
+<!--              <li class="list-inline-item"><a href="#" class="social-link"><i class="fab fa-qq"></i></a></li>-->
+<!--              <li class="list-inline-item"><a href="#" class="social-link"><i class="fas fa-envelope"></i></a></li>-->
+<!--            </ul>-->
+<!--          </div>-->
+
+          <div class="col-lg-4 col-md-6">
+            <h5 class="lined-dark mb-3 f1">备案信息</h5>
+            <p class="text-muted mb-4 text-small">
+             <a  href="http://www.beian.miit.gov.cn"> 冀ICP备19037134号-1
+             </a>
+<!--              <form action="#">-->
+<!--                <div class="input-group mb-3">-->
+<!--                  <input type="text" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2" class="form-control">-->
+<!--                  <div class="input-group-append">-->
+<!--                    <button id="basic-addon2" type="submit" class="input-group-text"><i class="fas fa-paper-plane"></i></button>-->
+<!--                  </div>-->
+<!--                </div>-->
+              </form>
+            
+          </div>
+        </div>
+      </div>
+<!--      <div class="bg-dark py-4">    -->
+<!--        <div class="container">-->
+<!--          <div class="row">-->
+<!--            <div class="col-lg-6 text-center text-lg-left mb-1 mb-lg-0">-->
+<!--              <p class="small text-gray mb-0">©2019 Best company</p>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6 text-center text-lg-right">-->
+<!--              <p class="small text-gray mb-0">More Templates <a href="javascript:;" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="javascript:;" title="网页模板" target="_blank">网页模板</a></p>-->
+
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+    </footer>
+    <!-- JavaScript files-->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/lightbox.min.js"></script>
+    <script src="static/js/leaflet.js"></script>
+    <script src="static/js/front.js"></script>
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="static/css/all.css" >
+  </body>
 </html>

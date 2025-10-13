@@ -1,0 +1,752 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4. 单元测试 &mdash; Python新全栈教程 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="5. 模块和包" href="104_模块和包.html" />
+    <link rel="prev" title="3. 调试技术" href="103_调试技术.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python新全栈教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../base/001.html">1. 开学典礼-不讲知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001Python语言概述.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001注释.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/003str.html">5. 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/004运算符.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/005-if分支语句.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/006-for循环.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/007-while循环.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-函数讲义.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-内置函数.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/09-内置结构.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/009-类.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/010-内置模块.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/011-持久化和文件.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/013-tkinter.html">17. Tkinter</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="101-函数高级.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="102-类高级.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="103_调试技术.html">3. 调试技术</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. 单元测试</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#python">4.1. <code class="docutils literal notranslate"><span class="pre">python</span></code>常见单元测试模块/框架</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">4.2. 单元测试：</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.2.1. 被测代码准备</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#testcase">4.3. <code class="docutils literal notranslate"><span class="pre">TestCase</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#suite">4.4. <code class="docutils literal notranslate"><span class="pre">suite</span></code>的使用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testrunner">4.5. <code class="docutils literal notranslate"><span class="pre">TestRunner</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#final">4.6. Final</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="104_模块和包.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="105多线程.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="107_log.html">8. 日志(logging)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="108_携程.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="109_网络编程.html">10. 1. 网络通信概述</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python新全栈教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>4. 单元测试</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/adv/1021-单元测试.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>4. 单元测试<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>单元测试负责对最小的软件设计单元（模块）进行验证，
+它使用软件设计文档中对模块的描述作为指南，
+对重要的程序分支进行测试以发现模块中的错误。</p>
+<blockquote>
+<div>单元测试主要用来自动化完成对单元代码的测试并给出测试报告,属于自动化测试的基础内容.</div></blockquote>
+<p>我们使用的单元测试模块为<code class="docutils literal notranslate"><span class="pre">PyUnit</span></code></p>
+<p>推荐文档</p>
+<ul class="simple">
+<li><a class="reference external" href="https://wiki.python.org/moin/PythonTestingToolsTaxonomy">官方测试文档集合</a></li>
+<li><a class="reference external" href="https://wiki.python.org/moin/PyUnit">PyUnit</a></li>
+</ul>
+<div class="section" id="python">
+<h2>4.1. <code class="docutils literal notranslate"><span class="pre">python</span></code>常见单元测试模块/框架<a class="headerlink" href="#python" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code>常见测试框架一如其他方面框架, 很多, 也有点杂, 常见的如下:</p>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">unittest</span></code>: 内置库，模仿<code class="docutils literal notranslate"><span class="pre">PyUnit</span></code>写的，简洁易用，缺点是比较繁琐</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">nose</span></code>: 测试发现，发现并运行测试</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">pytest</span></code>: 笔者目前喜欢用这个，写起来很方便，并且很多知名开源项目在用，推荐</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">tox</span></code>: 最大的特色，是自动最测试环境的管理以及使用多个解析器配置进行测试。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  tox的详细文档：http://testrun.org/tox/latest/
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">mock</span></code>: <code class="docutils literal notranslate"><span class="pre">unittest.mock</span></code>是用来测试<code class="docutils literal notranslate"><span class="pre">python</span></code>的库。在<code class="docutils literal notranslate"><span class="pre">python3.3</span></code>版本以后，这个是一个标准库</p>
+<p><code class="docutils literal notranslate"><span class="pre">mock</span></code> 的精髓在于，你可以使用模拟的对象来替代你的系统的一部分，然后验证后续的执行是否正确。</p>
+<p>mock的详细文档：http://www.voidspace.org.uk/python/mock/</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">Doctest</span></code>: <code class="docutils literal notranslate"><span class="pre">doctest</span></code> 模块会搜索那些看起来像交互式会话的<code class="docutils literal notranslate"><span class="pre">Python</span></code>代码片段，然后尝试执行并验证结果</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>4.2. 单元测试：<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">unittest</span></code>python内置的用于测试代码的模块，无需安装， 使用简单方便</p>
+<p><img alt="../_images/101.png" src="../_images/101.png" /></p>
+<p><code class="docutils literal notranslate"><span class="pre">unittest</span></code>中最核心的部分是：<code class="docutils literal notranslate"><span class="pre">TestFixture</span></code>、<code class="docutils literal notranslate"><span class="pre">TestCase</span></code>、<code class="docutils literal notranslate"><span class="pre">TestSuite</span></code>、<code class="docutils literal notranslate"><span class="pre">TestRunner</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">unittest</span> <span class="pre">case</span></code>的运行流程：</p>
+<ol class="simple">
+<li>写好一个完整的<code class="docutils literal notranslate"><span class="pre">TestCase</span></code>, 可以单独运行</li>
+<li>如果需要, 多个<code class="docutils literal notranslate"><span class="pre">TestCase</span></code> 由<code class="docutils literal notranslate"><span class="pre">TestLoder</span></code>被加载到<code class="docutils literal notranslate"><span class="pre">TestSuite</span></code>里面, <code class="docutils literal notranslate"><span class="pre">TestSuite</span></code>也可以嵌套<code class="docutils literal notranslate"><span class="pre">TestSuite</span></code></li>
+<li>由<code class="docutils literal notranslate"><span class="pre">TextTestRunner</span></code>来执行<code class="docutils literal notranslate"><span class="pre">TestSuite</span></code>，测试的结果保存在<code class="docutils literal notranslate"><span class="pre">TextTestResult</span></code>中</li>
+<li><code class="docutils literal notranslate"><span class="pre">TestFixture</span></code>指的是环境准备和恢复</li>
+</ol>
+<div class="section" id="id3">
+<h3>4.2.1. 被测代码准备<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>我们尝试对一些代码进性测试, 被测试代码如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="k">class</span> <span class="nc">BeTested</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">var</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Name_0&quot;</span>
+
+    <span class="k">def</span> <span class="nf">my1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">var</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">var</span>
+
+    <span class="k">def</span> <span class="nf">my2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">var</span> <span class="o">+=</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">var</span>
+
+    <span class="k">def</span> <span class="nf">my3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">var</span> <span class="o">+=</span> <span class="mi">3</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">var</span>
+
+    <span class="k">def</span> <span class="nf">my4</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">var</span> <span class="o">+=</span> <span class="mi">4</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">var</span>
+</pre></div>
+</div>
+<p>上述代码简单,请自行理解并阅读, 我们尝试对代码进性测试.</p>
+</div>
+</div>
+<div class="section" id="testcase">
+<h2>4.3. <code class="docutils literal notranslate"><span class="pre">TestCase</span></code><a class="headerlink" href="#testcase" title="永久链接至标题">¶</a></h2>
+<p>我们对被测代码进性测试, 代码如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyUT</span><span class="p">(</span><span class="n">ut</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#global bt</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TESTING started............&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">BeTested</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">tearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TEST IS DONE !!!!!!!!!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">testMy1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my1</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RUN testMy1.....&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">testMy2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my2</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">testMy3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my3</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">testMy4</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my4</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>我们尝试编写测试单元.</p>
+<ul class="simple">
+<li>每个用来测试的类必须是 <code class="docutils literal notranslate"><span class="pre">TestCase</span></code>子类, 参见代码定义.</li>
+<li>具体的测试案例是以<code class="docutils literal notranslate"><span class="pre">test</span></code>开头的函数, 属于正常的实例函数, 每个函数模拟一种情况进性测试.</li>
+<li>需要注意函数<code class="docutils literal notranslate"><span class="pre">setUp</span></code>和<code class="docutils literal notranslate"><span class="pre">tearDown</span></code>, 在每次运行测试案例(注意是每次),及以<code class="docutils literal notranslate"><span class="pre">test</span></code>开头的函数的时候,都要先执行
+<code class="docutils literal notranslate"><span class="pre">setUp</span></code>函数用来构建测试环境.</li>
+<li>同样每个测试函数执行完毕后需要解逐<code class="docutils literal notranslate"><span class="pre">tearDown</span></code> 清除环境, 以免改动环境对下面的测试有影响.</li>
+</ul>
+<p>每个以<code class="docutils literal notranslate"><span class="pre">test</span></code>开头的函数会被自动执行,当然也可以被手动调用, 运行方式如下:</p>
+<ul>
+<li><p class="first">如果是单独执行某个测试函数,则可以参考下面代码:</p>
+<p>if <strong>name</strong> == “<strong>main</strong>”:
+# 单个使用
+# 需要手动调用setUP
+u = MyUT()
+u.setUp()
+u.testMy1()
+u.tearDown()</p>
+</li>
+</ul>
+<p>上面代码表示单独执行测试案例<code class="docutils literal notranslate"><span class="pre">testMy1</span></code>, 执行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C:\Users\Augs\Anaconda3\python.exe &quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot; --multiproc --qt-support=auto --client 127.0.0.1 --port 53253 --file F:/book/python/new_python/code/02-调试技术/06.py
+pydev debugger: process 13452 is connecting
+
+Connected to pydev debugger (build 202.7660.27)
+TESTING started............
+RUN testMy1.....
+TEST IS DONE !!!!!!!!!
+
+Process finished with exit code 0
+</pre></div>
+</div>
+<p>上面测试没有问题则没有结果, 如果测试没有通过则报异常, 如果把被测代码修改成:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">testMy1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my1</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RUN testMy1.....&quot;</span><span class="p">)</span>
+    <span class="c1"># 修改代码如下</span>
+    <span class="c1">#self.assertEqual(v+1, self.o.var)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>测试不通过, 则报异常:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Augs</span>\<span class="n">Anaconda3</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="s2">&quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot;</span> <span class="o">--</span><span class="n">multiproc</span> <span class="o">--</span><span class="n">qt</span><span class="o">-</span><span class="n">support</span><span class="o">=</span><span class="n">auto</span> <span class="o">--</span><span class="n">client</span> <span class="mf">127.0.0.1</span> <span class="o">--</span><span class="n">port</span> <span class="mi">53552</span> <span class="o">--</span><span class="n">file</span> <span class="n">F</span><span class="p">:</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">new_python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="mi">02</span><span class="o">-</span><span class="n">调试技术</span><span class="o">/</span><span class="mf">06.</span><span class="n">py</span>
+<span class="n">pydev</span> <span class="n">debugger</span><span class="p">:</span> <span class="n">process</span> <span class="mi">14012</span> <span class="ow">is</span> <span class="n">connecting</span>
+
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">202.7660.27</span><span class="p">)</span>
+<span class="n">TESTING</span> <span class="n">started</span><span class="o">............</span>
+<span class="n">RUN</span> <span class="n">testMy1</span><span class="o">.....</span>
+<span class="n">python</span><span class="o">-</span><span class="ne">BaseException</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1448</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_exec</span>
+    <span class="n">pydev_imports</span><span class="o">.</span><span class="n">execfile</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>  <span class="c1"># execute the script</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\_pydev_imps\_pydev_execfile.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">18</span><span class="p">,</span> <span class="ow">in</span> <span class="n">execfile</span>
+    <span class="n">exec</span><span class="p">(</span><span class="nb">compile</span><span class="p">(</span><span class="n">contents</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span><span class="p">),</span> <span class="n">glob</span><span class="p">,</span> <span class="n">loc</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;F:/book/python/new_python/code/02-调试技术/06.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">46</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">u</span><span class="o">.</span><span class="n">testMy1</span><span class="p">()</span>
+  <span class="n">File</span> <span class="s2">&quot;F:/book/python/new_python/code/02-调试技术/06.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">23</span><span class="p">,</span> <span class="ow">in</span> <span class="n">testMy1</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Users\Augs\Anaconda3\lib\unittest\case.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">829</span><span class="p">,</span> <span class="ow">in</span> <span class="n">assertEqual</span>
+    <span class="n">assertion_func</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="n">msg</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Users\Augs\Anaconda3\lib\unittest\case.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">822</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_baseAssertEqual</span>
+    <span class="k">raise</span> <span class="bp">self</span><span class="o">.</span><span class="n">failureException</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="ne">AssertionError</span><span class="p">:</span> <span class="mi">100</span> <span class="o">!=</span> <span class="mi">101</span>
+
+<span class="n">Process</span> <span class="n">finished</span> <span class="k">with</span> <span class="n">exit</span> <span class="n">code</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<blockquote>
+<div>注意:
+pycharm默认不是用python运行测试代码,而是pytest, 此时不会执行代码 <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__==&quot;__main__&quot;:</span></code>, 所以会
+默认执行所有测试案例,如果需要执行主程序, 则需要用<code class="docutils literal notranslate"><span class="pre">python</span></code>方式执行代码, 参考下面示例, 在弹出对话框中选择:
+<img alt="../_images/104.png" src="../_images/104.png" /></div></blockquote>
+<ul>
+<li><p class="first">如果想执行完整的测试案例,及所有测试案例,则可以参考下面代码:</p>
+<p>if <strong>name</strong> == “<strong>main</strong>”:
+# 完全运行
+u = MyUT()
+ut.main()</p>
+</li>
+</ul>
+<p>执行结果会把所有测试案例都跑一边, 结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C:\Users\Augs\Anaconda3\python.exe &quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot; --multiproc --qt-support=auto --client 127.0.0.1 --port 54202 --file F:/book/python/new_python/code/02-调试技术/06.py
+pydev debugger: process 13448 is connecting
+
+Connected to pydev debugger (build 202.7660.27)
+TESTING started............
+RUN testMy1.....
+TEST IS DONE !!!!!!!!!
+TESTING started............
+TEST IS DONE !!!!!!!!!
+TESTING started............
+TEST IS DONE !!!!!!!!!
+TESTING started............
+TEST IS DONE !!!!!!!!!
+F...
+======================================================================
+FAIL: testMy1 (__main__.MyUT)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;F:/book/python/new_python/code/02-调试技术/06.py&quot;, line 23, in testMy1
+    self.assertEqual(v, self.o.var)
+AssertionError: 100 != 101
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+FAILED (failures=1)
+
+Process finished with exit code 1
+</pre></div>
+</div>
+<p>因为第一个测试案例我们修改了代码,所以测试没有通过.</p>
+<p>需要注意的是倒数第三行和倒数第二行, 清除的说明了测试了四个案例总用时0.002秒, 一个案例失败, 异常
+给出了失败案例的详细内容.</p>
+</div>
+<div class="section" id="suite">
+<h2>4.4. <code class="docutils literal notranslate"><span class="pre">suite</span></code>的使用<a class="headerlink" href="#suite" title="永久链接至标题">¶</a></h2>
+<p>有时候我们想把我们的测试案例组织起来, 不同的单个测试案例组合成测试组合, 这样至少从逻辑上会把会把能描述一系列
+问题的测试案例当做一个逻辑模块, 这样的需求就涉及到了<code class="docutils literal notranslate"><span class="pre">TestSuitee</span></code>的使用.</p>
+<p>下面案例是一个<code class="docutils literal notranslate"><span class="pre">TestSuite</span></code>的简单使用:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span> <span class="k">as</span> <span class="nn">ut</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+
+<span class="n">bt</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;05&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">MyUT</span><span class="p">(</span><span class="n">ut</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#global bt</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TESTING started............&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">BeTested</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">tearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TEST IS DONE !!!!!!!!!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">testMy1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing 1 ..............&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my1</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">testMy2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing 2 ..............&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my2</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">testMy3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing 3 ..............&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my3</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">testMy4</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing 4 ..............&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my4</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+
+<span class="c1"># suit是全局函数</span>
+<span class="k">def</span> <span class="nf">suite</span><span class="p">():</span>
+    <span class="n">suite</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">()</span>
+    <span class="n">suite</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy1&quot;</span><span class="p">))</span>
+    <span class="n">suite</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy2&quot;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">suite</span>
+
+
+<span class="c1"># 测试</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ut</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">defaultTest</span><span class="o">=</span><span class="s1">&#39;suite&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面案例中,我们把单个测试案例<code class="docutils literal notranslate"><span class="pre">testMy1</span></code>和<code class="docutils literal notranslate"><span class="pre">testMy2</span></code>组合成了一个<code class="docutils literal notranslate"><span class="pre">TestSuite</span></code>, 然后
+我们运行这个测试组合就好, 在这组合里,只有两个测试案例被测试, 结果如下所示:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/Users/bbb/anaconda3/bin/python3 /Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/pydevd.py --multiproc --qt-support=auto --client 127.0.0.1 --port 57237 --file /Users/bbb/baoshu/book/python/new_python/code/02-调试技术/07.py
+Connected to pydev debugger (build 211.7142.13)
+TESTING started............
+Testing 1 ..............
+TEST IS DONE !!!!!!!!!
+TESTING started............
+Testing 2 ..............
+TEST IS DONE !!!!!!!!!
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+OK
+</pre></div>
+</div>
+<blockquote>
+<div>运行的时候请选择普通<code class="docutils literal notranslate"><span class="pre">python</span></code>执行代码</div></blockquote>
+<p>同样, <code class="docutils literal notranslate"><span class="pre">TestSuite</span></code>也可以进行嵌套, 即<code class="docutils literal notranslate"><span class="pre">TestSuite</span></code>里面还有<code class="docutils literal notranslate"><span class="pre">TestSuite</span></code>作为测试案例
+的嵌套组合, 请看下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span> <span class="k">as</span> <span class="nn">ut</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+
+<span class="n">bt</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;05&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">MyUT</span><span class="p">(</span><span class="n">ut</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#global bt</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TESTING started............&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">BeTested</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">tearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TEST IS DONE !!!!!!!!!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">testMy1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing 1 ..............&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my1</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">testMy2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing 2 ..............&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my2</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">testMy3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing 3 ..............&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my3</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">testMy4</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing 4 ..............&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my4</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+
+<span class="c1"># suit是全局函数</span>
+<span class="k">def</span> <span class="nf">suite</span><span class="p">():</span>
+    <span class="n">s1</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">()</span>
+    <span class="n">s1</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy1&quot;</span><span class="p">))</span>
+    <span class="n">s1</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy2&quot;</span><span class="p">))</span>
+
+    <span class="n">s2</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">()</span>
+    <span class="n">s2</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy3&quot;</span><span class="p">))</span>
+    <span class="n">s2</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy4&quot;</span><span class="p">))</span>
+
+    <span class="n">s3</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">()</span>
+    <span class="n">s3</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy1&quot;</span><span class="p">))</span>
+    <span class="n">s3</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy3&quot;</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">ut</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">([</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">,</span><span class="n">s3</span><span class="p">])</span>
+
+
+<span class="c1"># 测试</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ut</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">defaultTest</span><span class="o">=</span><span class="s1">&#39;suite&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面案例中我们的总的<code class="docutils literal notranslate"><span class="pre">TestSuite</span></code>中又包含了三个子<code class="docutils literal notranslate"><span class="pre">suite</span></code>, 在我们运行的时候, 会一起执行一共
+6个测试案例, 并最终生成测试结果:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/Users/bbb/anaconda3/bin/python3 /Applications/PyCharm.app/Contents/plugins/python/helpers/pydev/pydevd.py --multiproc --qt-support=auto --client 127.0.0.1 --port 57953 --file /Users/bbb/baoshu/book/python/new_python/code/02-调试技术/08.py
+Connected to pydev debugger (build 211.7142.13)
+TESTING started............
+Testing 1 ..............
+TEST IS DONE !!!!!!!!!
+TESTING started............
+Testing 2 ..............
+TEST IS DONE !!!!!!!!!
+TESTING started............
+Testing 3 ..............
+TEST IS DONE !!!!!!!!!
+TESTING started............
+Testing 4 ..............
+TEST IS DONE !!!!!!!!!
+TESTING started............
+Testing 1 ..............
+TEST IS DONE !!!!!!!!!
+TESTING started............
+Testing 3 ..............
+TEST IS DONE !!!!!!!!!
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+OK
+</pre></div>
+</div>
+</div>
+<div class="section" id="testrunner">
+<h2>4.5. <code class="docutils literal notranslate"><span class="pre">TestRunner</span></code><a class="headerlink" href="#testrunner" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">TestRunner</span></code>用来生成测试报告哦, 这个是一个系统内置的测试报告, 可读性是在差点, 如果觉得不够优秀, 可以考虑
+<code class="docutils literal notranslate"><span class="pre">HTMLTestRunnerNew</span></code>, 第三方模块,加载后生成的报告是<code class="docutils literal notranslate"><span class="pre">html</span></code>格式, 可读性会好</p>
+<p>下面代码是个简单的使用案例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span> <span class="k">as</span> <span class="nn">ut</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+
+<span class="n">bt</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="s2">&quot;05&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">MyUT</span><span class="p">(</span><span class="n">ut</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#global bt</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TESTING started............&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span> <span class="o">=</span> <span class="n">bt</span><span class="o">.</span><span class="n">BeTested</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">tearDown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TEST IS DONE !!!!!!!!!&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">testMy1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing 1 ..............&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my1</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">testMy2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing 2 ..............&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my2</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">testMy3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing 3 ..............&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my3</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">3</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">testMy4</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing 4 ..............&quot;</span><span class="p">)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">my4</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">v</span><span class="o">+</span><span class="mi">4</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">o</span><span class="o">.</span><span class="n">var</span><span class="p">)</span>
+
+<span class="c1"># suit是全局函数</span>
+<span class="k">def</span> <span class="nf">suite</span><span class="p">():</span>
+    <span class="n">s1</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">()</span>
+    <span class="n">s1</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy1&quot;</span><span class="p">))</span>
+    <span class="n">s1</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy2&quot;</span><span class="p">))</span>
+
+    <span class="n">s2</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">()</span>
+    <span class="n">s2</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy3&quot;</span><span class="p">))</span>
+    <span class="n">s2</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy4&quot;</span><span class="p">))</span>
+
+    <span class="n">s3</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">()</span>
+    <span class="n">s3</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy1&quot;</span><span class="p">))</span>
+    <span class="n">s3</span><span class="o">.</span><span class="n">addTest</span><span class="p">(</span><span class="n">MyUT</span><span class="p">(</span><span class="s2">&quot;testMy3&quot;</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">ut</span><span class="o">.</span><span class="n">TestSuite</span><span class="p">([</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">,</span><span class="n">s3</span><span class="p">])</span>
+
+
+<span class="c1"># 测试</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;rst.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">runner</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">runner</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>正常运行后, 会生成一个<code class="docutils literal notranslate"><span class="pre">rst.text</span></code>的文件, 用来保存本次运行的结果, 大概的内容如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">......</span>
+<span class="o">----------------------------------------------------------------------</span>
+<span class="n">Ran</span> <span class="mi">6</span> <span class="n">tests</span> <span class="ow">in</span> <span class="mf">0.001</span><span class="n">s</span>
+
+<span class="n">OK</span>
+</pre></div>
+</div>
+<p>没错,这个就是运行报告, 同时输出终端会哟比较详细的执行内容, 例如:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Connected to pydev debugger (build 211.7142.13)
+TESTING started............
+Testing 1 ..............
+TEST IS DONE !!!!!!!!!
+TESTING started............
+Testing 2 ..............
+TEST IS DONE !!!!!!!!!
+TESTING started............
+Testing 3 ..............
+TEST IS DONE !!!!!!!!!
+TESTING started............
+Testing 4 ..............
+TEST IS DONE !!!!!!!!!
+TESTING started............
+Testing 1 ..............
+TEST IS DONE !!!!!!!!!
+TESTING started............
+Testing 3 ..............
+TEST IS DONE !!!!!!!!!
+</pre></div>
+</div>
+</div>
+<div class="section" id="final">
+<h2>4.6. Final<a class="headerlink" href="#final" title="永久链接至标题">¶</a></h2>
+<p>单元测试内容比较简单,如果需要, 上面属于基本内容,如果需要,可以参考<code class="docutils literal notranslate"><span class="pre">GitHub</span></code>上相关
+开源软件,一般开源软件会配有单独的测试案例用来保障软件质量.</p>
+<p>有问题请联系QQ群: 9990960</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="104_模块和包.html" class="btn btn-neutral float-right" title="5. 模块和包" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="103_调试技术.html" class="btn btn-neutral float-left" title="3. 调试技术" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 北京图灵学院.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

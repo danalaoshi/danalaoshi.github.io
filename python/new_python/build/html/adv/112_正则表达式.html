@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>正则表达式(RegularExpression， re) &mdash; Python新全栈教程 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python新全栈教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../base/001.html">1. 开学典礼-不讲知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001Python语言概述.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001注释.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/003str.html">5. 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/004运算符.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/005-if分支语句.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/006-for循环.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/007-while循环.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-函数讲义.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-内置函数.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/09-内置结构.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/009-类.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/010-内置模块.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/011-持久化和文件.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/013-tkinter.html">17. Tkinter</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="101-函数高级.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="102-类高级.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="103_调试技术.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1021-单元测试.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="104_模块和包.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="105多线程.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="107_log.html">8. 日志(logging)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="108_携程.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="109_网络编程.html">10. 1. 网络通信概述</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python新全栈教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>正则表达式(RegularExpression， re)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/adv/112_正则表达式.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="regularexpression-re">
+<h1>正则表达式(RegularExpression， re)<a class="headerlink" href="#regularexpression-re" title="永久链接至标题">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- 是一个计算机科学的概念
+- 用于使用单个字符串来描述，匹配一系列匹配某个句法规则的字符串
+- 常用来检索，替换某些模式的文本
+# 正则表达是的写法
+- .(点号): 匹配任意一个字符，出了 \n
+- []:匹配中括号中列举的字符，例如[LY]
+- \d: 表示任意一个数字， 0-9
+- \D: 表示非数字，即不是数字就可以
+- \s:匹配空白，即空格，tab键
+- \S:除了空白意外的字符
+- \w:单词字符，即a-z, A-Z, 0-9, _
+- \W:非单词字符
+- *: 表示前面内容重复零次或者多次
+- +：前面内容重复至少一次
+- ？：前面出现的内容零次或者一次
+- {m,n}:允许前面内容出现最少m次，最多n次
+- ^:匹配字符串的开始
+- $:匹配字符串的结尾
+- \b:匹配单词的边界
+- ():对正则表达式内容进行分组， 从第一个括号开始，编号逐渐增大
+    
+        验证一个数字： ^\d$
+        必须有一个数字，最少一位：^\d+$
+        只能出现数字，且位数为5-10位： ^\d{5,10}$
+        注册者输入年龄，要求16岁以上，99岁以下： ^[16-99]$
+        只能输入英文字符和数字： ^[A-Za-z0-9]$
+        验证qq号码： [0-9]{5,12}
+- \A: 只匹配字符串开头， \Aabcd, 则abcd
+- \Z: 仅匹配字符串末尾， abcd\Z, abcd
+- |: 左右任意一个
+- (?P&lt;name&gt;...): 分组，除了原来的编号再制定一个别名， (?P&lt;id&gt;12345){2}， 1234512345
+- (?P=name): 引用分组， 
+        
+# re 模块
+- re.match(re_exp):从开始查看是否能跟定义的正则相匹配
+- result.group:如果匹配数据成功，可以使用group来提取数据
+- 案例01
+
+# re中原生字符串问题
+- 字符串中会包含转义字符
+- 在re中，转义字符会带来一些麻烦，能不能尽量减少转义字符的出现
+- 在字符串前使用r字符，表示后面字符串是原始字符串，不需要转移，例如 r&#39;c:\wk\readme.txt&#39;
+- 案例01-fun_4
+# 正则的分组表示
+- |：匹配左右任意一个表达式
+- (ab):将括号中字符作为一个分组
+- \num:引用分组num匹配到的字符串
+- (?P&lt;name&gt;):分组起一个别名， 其中P是大写
+- (?P=num):引用别名为name分组匹配到的字符串
+- 案例01中 fun_5函数
+
+# re 模块的一般使用步骤如下：
+1. 使用 compile() 函数将正则表达式的字符串形式编译为一个 Pattern 对象 
+2. 通过 Pattern 对象提供的一系列方法对文本进行匹配查找，获得匹配结果，一个 Match 对象。
+3. 最后使用 Match 对象提供的属性和方法获得信息，根据需要进行其他的操作 
+
+# re常用函数
+- group([group1, …]) 方法用于获得一个或多个分组匹配的字符串，当要获得整个匹配的子串时，可 直接使用 group() 或 group(0)； 
+- start([group]) 方法用于获取分组匹配的子串在整个字符串中的起始位置（子串第一个字符的索 引），参数默认值为 0； 
+- end([group]) 方法用于获取分组匹配的子串在整个字符串中的结束位置（子串最后一个字符的索引 +1），参数默认值为 0； 
+- span([group]) 方法返回 (start(group), end(group))。
+
+# 正则的其他用法
+- 案例01， fun_6
+- search：查找其中一个内容
+- findall：查找所有内容
+- sub:查找替换, 返回替换之后的内容，原来倍替换的内容不变
+
+# 匹配代码
+
+        import re
+
+        p = re.compile(r&#39;\d+&#39;) 
+
+        m = p.match(&quot;one12twothree34four&quot;)
+
+        print(m)
+
+        import re
+         
+
+        m = p.match(&quot;one12twothree34four&quot;, 3, 10)
+
+        print(m)
+
+        print(m[0])
+
+        m.start(0) # 参数是组号
+        m.end(0)
+
+        #第二个例子
+        import re
+
+        p = re.compile(r&#39;([a-z]+) ([a-z]+)&#39;,re.I) # re.I表示忽略大小写, 两个中间有空格
+
+        m = p.match(&#39;I really love wangxiaojing &#39;)
+
+        print(m)
+
+        print(m.group(0))
+
+        m.start(0)
+
+        m.span(0)
+
+        m.group(1)
+
+        m.group(2)
+
+        m.group(0) # 整个匹配子串
+
+        m.groups() # 全部的打印出来
+
+
+# 查找代码
+- search(str[, pos[, endpos]])
+- findall
+- finditer
+        
+       import re
+       p = re.compile(r&#39;\d+&#39;)
+
+       m = p.search(&#39;one12twothree34four&#39;)
+
+       m.group()
+
+       p = re.compile(&#39;\d+&#39;)
+
+       m = p.search(&#39;hello 123456 7890&#39;)
+
+       print(m.group())
+       
+       
+       #findall
+       rst = p.findall(&quot;hello 12345 67890&quot;)
+       print(rst)
+
+
+# sub替换
+- sub(rep1, str[,count])
+
+    
+        import re
+         
+        p = re.compile(r&#39;(\w+) (\w+)&#39;) #\w是字符
+        s = &quot;hello 123 and hello 456&quot;
+
+        rst = p.sub(r&#39;hello world&#39;, s)
+        print(rst)
+
+        rst = p.sub(r&#39;\2 \1&#39;, s)
+        print(rst)
+
+        def func(m):
+            return &#39;gaga&#39; + m.group(2)
+
+        rst = p.sub(func, s)
+        print(rst)
+
+        rst = p.sub(func, s,1)
+        print(rst)
+        
+# 匹配中文
+- 中文主要表示范围是 [u4e00-u9fa5], 不包括拳脚标点
+
+        import re
+
+        title = u&#39;你好 世界， hello moto&#39;
+
+        p = re.compile(ur&quot;[\u4e00-\u9fa5]+&quot;) # ur有可能冲突
+
+        rst = p.findall(title)
+
+        print(rst)
+        
+# 贪婪和非贪婪
+- 尽可能多的匹配，(*)
+- 非贪婪, (?)
+- 默认贪婪
+
+        import re
+
+        title = u&#39;&lt;div&gt;name&lt;/div&gt;&lt;div&gt;age&lt;/div&gt;&#39;
+
+
+        p1 = re.compile(r&quot;&lt;div&gt;.*&lt;/div&gt;&quot;)  
+        p2 = re.compile(r&quot;&lt;div&gt;.*?&lt;/div&gt;&quot;)  
+
+        m1 = p1.search(title)
+        print(m1.group())
+
+        m2 = p2.search(title)
+        print(m2.group())
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 北京图灵学院.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+#  模块和包
+
+## 模块(Module)
+- 一个模块就是一个包含pytho代码的文件， 后缀名成是.py就可以，模块就是个python文件
+### 为什么我们用模块
+- 程序太大，编写维护非常不方便，需要拆分
+- 模块可以增加代码重复利用的方式
+- 当做命名空间使用，避免命名冲突
+  
+### 如何定义模块
+- 模块就是一个普通文件，所以任何代码可以直接书写，
+- 不过根据模块的规范，最好在模块中编写以下内容
+    - 函数（单一功能）
+    - 类（相似功能的组合，或者类似业务模块） 
+    - 测试代码
+        
+### 如何使用模块
+- 模块直接导入
+    - 假如模块名称直接以数字开头，需要借助importlib帮助
+- 语法
+  ```python
+      import module_name
+      import module_name.function_name
+      import module_name.class_name
+
+  ```
+      
+### 模块是数字的案例
+
+下面案例说明一个导入一个数字命名的模块,因为模块如果用数字命名不违反操作系统文件命名规则,但跟我们python中变量定义违背,需要转换以下.
+
+此处需要注意模块`01.py`中代码在导入的时候的都需要被执行,包括那一行`print`语句
+
+
+```python
+# 文件名称 ./01.py
+
+# 包含一个学生类，
+# 一个sayhello函数，
+# 一个打印语句
+
+class Student():
+  def __init__(self, name="NoName", age=18):
+    self.name = name
+    self.age = age
+
+
+  def say(self):
+    print("My name is {0}".format(self.name))
+
+
+def sayHello():
+  print("Hi, 欢迎来到图灵学院！")
+
+print("我是模块p01呀，你特么的叫我干毛")
+
+```
+
+我们在第二个文件中尝试导入上面模块, 需要注意两点:
+1. 需要借助`importlib`来导入模块
+2. 模块中有些语句在导入的时候被执行了, 可以查看运行结果对比
+
+```python
+
+# 借助于importlib包可以实现导入以数字开头的模块名称
+import importlib
+
+# 相当于导入了一个叫01的模块并把导入模块赋值给了tuling
+tuling = importlib.import_module("01")
+
+print("=" * 20)
+
+stu = tuling.Student()
+stu.say()
+```
+
+### 导入正常模块
+
+一个正常模块是不应该用数字命名的, 还有一般情况下一个模块不应该有直接执行的功能代码, 因为这种代码在导入的时候被执行一般是
+不被期待的, 所以我们用`if __name__ == "__main__" `语句来判断:
+
+```python
+# 文件名 ./p01.py
+# 包含一个学生类，
+# 一个sayhello函数，
+# 一个打印语句
+
+class Student():
+  def __init__(self, name="NoName", age=18):
+    self.name = name
+    self.age = age
+
+
+  def say(self):
+    print("My name is {0}".format(self.name))
+
+
+def sayHello():
+  print("Hi, 欢迎来到图灵学院！")
+
+
+
+# 此判断语句建议一直作为程序的入口
+if __name__ == '__main__':
+
+  print("我是模块p01呀，你特么的叫我干毛")
+```
+
+上面模块我们导入后结果清净了许多哦, 模块中功能只要我执行的时候才会被运行:
+
+```python
+
+import p01
+
+stu = p01.Student("xiaojign", 19)
+
+stu.say()
+
+p01.sayHello()
+```
+
+### 模块的其他导入方式
+
+根据不同导入需求模块可以在导入的时候:
+- 起一个别名
+- 有选择导入
+  
+
+  不同导入方式使用方式可能也略有不同
+
+
+- 导入的时候可以给模块起一个别名,为了防止重名等:
+```python
+
+import p01 as p
+
+stu = p.Student("yueyue", 18)
+stu.say()
+```
+
+
+- 以下代码导入两个指定的函数和类, 别的未导入的就不能使用:
+```python
+
+from p01 import Student, sayHello
+
+
+stu = Student()
+
+stu.say()
+
+
+sayHello()
+```
+
+- 也可以用星号直接导入全部(所以他为什么要这么做呢???? 哎, 男人呀.......)
+
+```python
+
+from p01 import *
+
+sayHello()
+
+stu = Student("yaona", 28)
+stu.say()
+```
+
+### 模块的搜索路径和存储 
+
+- 模块的搜索路径： 加载模块的时候，系统会在那些地方寻找此模块
+- 系统默认的模块搜索路径: 系统有一套自己的规则用来限制搜多顺序,我们可以通过`sys`模块来获取这个既定的路径
+
+下面代码用来打印出模块搜索的默认路径:
+
+```python
+import sys
+
+print( type(sys.path ))
+print( sys.path )
+
+for p in sys.path:
+  print(p)
+``` 
+- 添加搜索路径: 如果想添加一个特别的路径, 一般是为了让你自定义的模块被找到:
+           
+```python
+sys.path.append(dir)
+``` 
+
+- 模块的加载顺序: 一个程序肯能用到很多模块,模块的加载顺序是:
+    1. 上搜索内存中已经加载好的模块
+    2. 搜索python的内置模块
+    3. 搜索sys.path路径 
+        
+       
+## 包(Package)
+
+- 包是一种组织管理代码的方式，包里面存放的是模块
+- 用于将模块包含在一起的文件夹就是包
+- 自定义包的结构
+
+        |---包
+        |---|--- __init__.py  包的标志文件
+        |---|--- 模块1
+        |---|--- 模块2
+        |---|--- 子包(子文件夹)
+        |---|---|--- __init__.py  包的标志文件
+        |---|---|--- 子包模块1
+        |---|---|--- 子包模块2
+   
+###  包的导入操作
+
+#### import package_name
+
+- 直接导入一个包，这种方式原则上只能使用__init__.py中的内容
+- 使用方式是：
+```python
+package_name.func_name
+package_name.class_name.func_name()
+
+```    
+
+下面定义一个包`pkg01`, 包的结构如下:
+
+      |---pkg01
+      |---|--- __init__.py  包的标志文件
+      |---|--- p01.py
+
+其中`./__init__.py`的内容是:
+
+```python
+def inInit():
+  print("I am in init of package")
+```
+
+而`p01.py`的内容是:
+
+```python
+# 包含一个学生类，
+# 一个sayhello函数，
+# 一个打印语句
+
+class Student():
+  def __init__(self, name="NoName", age=18):
+    self.name = name
+    self.age = age
+
+
+  def say(self):
+    print("My name is {0}".format(self.name))
+
+
+def sayHello():
+  print("Hi, 欢迎来到图灵学院！")
+
+
+print("我是模块p01呀，你特么的叫我干毛")
+```
+
+有了上面的包后,我们尝试使用上面包来编写代码, 此时如果只是导入包,我们只能使用包中`__init__.py`定义的内容:
+
+```python
+
+import pkg01
+
+pkg01.inInit()
+```
+
+如果我们把上面导入使用别名, 效果还一致:
+
+```python
+
+import pkg01 as p
+
+p.inInit()
+```
+
+#### import package.module_name
+
+如果我需要使用模块中定义等等内容, 则需要利用点号导入子模块.
+
+下面代码就可以使用子模块`p01`中定义的内容了:
+
+```python
+
+import pkg01.p01
+
+stu = pkg01.p01.Student()
+stu.say()
+```
+
+#### from...import
+
+- `from package import module1, module2, module3, ..... `
+- 此种导入方法不执行`__init__`的内容
+
+```python
+
+from pkg01 import p01
+
+stu = p01.Student()
+stu.say()
+```
+#### from package import *
+这种方式的一种变通就是`from package import *`, 但此时等于导入`__init__.py`中
+定义的所有的内容, 但仅限于这个文件中定义的内容
+
+```python
+
+from pkg01 import *
+
+inInit()
+
+# 这样是不行的
+#stu = p01.Student()
+```
+
+### `__all__`的用法
+        
+- 在使用`from package import * `的时候， 定义 `* `可以导入的内容  
+- `__init__.py`中如果文件为空， 或者没有 `__all__`， 那么只可以把`__init__`中的内容导入
+- `__init__` 如果设置了`__all__`的值，那么则按照`__all__` 指定的子包或者模块进行加载
+如此则不会载入`__init__`中的内容
+- `__all__=['module1', 'module2', 'package1'.........]`
+ 
+
+我们把包`pkg01`改成包`pkg02`, 同时更改`__init__.py`内容为:
+
+```python
+
+__all__=['p01']
+
+def inInit():
+  print("I am in inti of pacakge")
+```
+此时在用`form pkg01 import *`导入, 则默认值导入模块`p01`.
+
+参考下面代码:
+
+```python
+
+from pkg02 import *
+
+stu = p01.Student()
+stu.say()
+
+# 如果调用下面函数则报错
+# inInit()
+```
+        

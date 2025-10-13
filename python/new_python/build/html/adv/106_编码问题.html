@@ -1,0 +1,447 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>7. 计算机编码问题 &mdash; Python新全栈教程 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="8. 日志(logging)" href="107_log.html" />
+    <link rel="prev" title="6. 多线程" href="105多线程.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python新全栈教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../base/001.html">1. 开学典礼-不讲知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001Python语言概述.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001注释.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/003str.html">5. 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/004运算符.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/005-if分支语句.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/006-for循环.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/007-while循环.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-函数讲义.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-内置函数.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/09-内置结构.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/009-类.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/010-内置模块.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/011-持久化和文件.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/013-tkinter.html">17. Tkinter</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="101-函数高级.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="102-类高级.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="103_调试技术.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1021-单元测试.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="104_模块和包.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="105多线程.html">6. 多线程</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="107_log.html">8. 日志(logging)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="108_携程.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="109_网络编程.html">10. 1. 网络通信概述</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python新全栈教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>7. 计算机编码问题</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/adv/106_编码问题.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>7. 计算机编码问题<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>本节主要讲计算机的编码存储格式和相应的变换。
+
+##  机器数和真值
+
+先来说两个概念：
+
+- 机器数：在计算机中的二进制表示形式，是可以表示符号的，比如正负数
+- 真值： 是计算机内真正的那个值，因为一般有一个`bit`表示符号位，所以看到的和实际表示并不一致
+https://blog.csdn.net/qq_48486897/article/details/106653164
+
+    # 计算机所有存储都是补码，得到结果也是补码
+    a = 3
+    b = 5
+    print(&quot;3&amp;b = {0}&quot;.format(a&amp;b))
+
+    print(&quot;-1 &amp; -2 = {0}&quot;.format(-1&amp;-2))
+
+    print(&quot;-2 &amp; 6 = {0}&quot;.format(-2 &amp; 6))
+
+    # 位运算在乘除法中的应用
+    print(&quot; 1x2={0}&quot;.format(1&lt;&lt;1))
+    print(&quot; 1x16={0}&quot;.format(1&lt;&lt;4))
+    print(&quot; -10x4={0}&quot;.format(-10&lt;&lt;2))
+
+    print(&quot; -40/4={0}&quot;.format(-40&gt;&gt;2))
+
+    # 二进制表示法
+
+    print(&quot;10={0}&quot;.format(bin(10)))
+    print(&quot;-10={0}&quot;.format(bin(-10)))
+
+
+
+# 2. 原码
+- 符号位加上真值的绝对值
+    ```angularjs
+    (+1)原码 = 0000 0001
+    (-1)原码 = 1000 0001 
+    八位取值范围是[1111 1111 - 0111 1111] = [-127 - 127]
+    ```
+    
+# 3. 反码
+- 正数的反码是其本身
+- 负数的反码是在原码的基础上，符号位不变，其余各位取反
+    ```angularjs
+    [+1] = [0000 0001]原码 = [0000 0001]反码
+    [-1] = [1000 0001]原码 = [1111 1110]反码
+    ```
+# 4. 补码
+- 正数的补码是本身
+- 负数的补码是原码基础上，符号位不变，各位取反，然后加1，即反码+1
+
+# 5. 移码
+- 补码的符号位取反
+
+#  5. 为什么使用
+- 1-1的问题
+    ```angularjs
+     (1 - 1)原码表示 = 1 + (-1) = [00000001]原 + [10000001]原 = [10000010]原 = -2 
+     (1 - 1)反码表示 = 1 + (-1) = [0000 0001]原 + [1000 0001]原= [0000 0001]反 + [1111 1110]反 = [1111 1111]反 = [1000 0000]原 = -0
+     (1 - 1)补码表示 = 1 + (-1) = [0000 0001]原 + [1000 0001]原 = [0000 0001]补 + [1111 1111]补 = [0000 0000]补=[0000 0000]原
+     (-1) + (-127) = [1000 0001]原 + [1111 1111]原 = [1111 1111]补 + [1000 0001]补 = [1000 0000]补
+    ```
+- -128只是一个表示方法，是-0表示的-128，不是计算出来的，计算出来的是错误的， 
+    ```angularjs
+    [1000 0000]补码 = [0000 0000]原码 = 错误
+    ```
+- 补码，修复了0的两个表示方法带来的问题，还可以表示一个最低位，所以八位二进制表示范围是[-128,127]
+
+# 编码问题
+- 为什么需要编码
+    - 计算机本质上只能表示二进制
+    - 如何用一长串二进制表示复杂的信息
+- 编码简史
+    - 二进制：
+        - 数字-&gt;字符-&gt;数字
+        - &#39;a&#39; -&gt; 97 编码和解码
+    - 第一阶段： ASCII
+    - 第二阶段：百花齐放，GB2312,GBK, BIG5 Latin1, ISO-8859-1, JIS, ANSI...
+        - Latin1(ISO-8859-1)
+        - 中国GBxxx
+        - 韩国台湾Big5
+        - 日本JIS
+        - ANSI-MBCS(Muilti-Bytes Charecter Set，多字节字符集)
+    - Unicode+ISO
+# 编码表示法
+- ASCII-American Standard Code for Information Interchange
+        - 所有的控制字符(比如CR回车、DEL删除等)编码在0-31范围以及127中。
+        - 把所有的标点符号，英文大小写全部放在32-126范围中。
+        - 防止以后出现需要补充的情况，把128-255位这么多位置留出来，
+        - 0xxxx xxxx， 高位为0
+- Latin1
+    - 0-127的所有位置不动，那么可以兼容ASCII，二进制位0xxx xxxx
+    - 128-255位置全部用完，二进制位1xxx xxxx
+        - 128-159之间为控制字符，
+        - 160-255位文字符号，
+        - 其中包括了西欧语言、希腊语、泰语、阿拉伯语、希伯来语
+    - 欧元符号
+    
+- GBXXXXXXXXX
+    - GB2312
+        - 如果一个字节中第一位为0，那么这就是一个ASCII字符。
+        -如果一个字节中第一位为1，那么这个是汉字，认定需要2个字节才表示一个编码的文字。
+        - 这个码表中包含汉字6763个和非汉字图形字符682个。
+        - 还有很多的空间没有用到，索性全部预留了吧。
+        - 0xxxxxxx：表示为ASCII字符
+        -1xxxxxxx 1xxxxxxx：表示为汉字
+    - GBK
+        - 在GB2312基础上添加汉字
+        - 兼任GB2312和ASCII
+        - 0xxxxxxx：表示为ASCII字符
+        - 1xxxxxxx xxxxxxxx：表示为汉字
+    - GB18030
+        - 2/4位混编
+        
+- Unicode
+    - 只是一个码表，具体实现没有规定
+    - 0-0x10FFFF来映射这些字符，最多可以容纳1114112个字符
+    - 中文的编码范围为4E00-9FCF，其中9FC4-9FCF之间的区间没有使用
+    - 上述区间全部是汉字，不包含全角字符，不包含特殊文字
+    - UTF=UnicodeTransformationFormat
+    - UTF-8 
+     
+            0x0000~0x007F  (0 ~ 127) 	1字节 	0xxxxxxx
+            0x0080~0x07FF(128 ~ 2047)  	110xxxxx 10xxxxxx
+            0x0800~FFFF(2048 ~ 65535) 	3字节 	1110xxxx 10xxxxxx 10xxxxxx
+            0x10000~1FFFFFF(65536 ~ 2097152) 	4字节 	11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+            0x2000000~0x3FFFFFF 	5字节 	111110xx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx
+            0x4000000~0x7FFFFFFF 	6字节 	1111110x 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx
+    - UTF-16, 32
+        - UTF-16是早期Unicode遗留产物
+        - UTF-32浪费空间
+- UCS-2
+    - UCS=UniversalCharacterSet,通用字符集
+    - UCS-2与Unicode相同
+    - 采用2个字节，定长的表示每一个字符，所以总计可以表示2^16个字符
+- UCS-4
+    - 第一个字节：表示组（group），最高位为0，则有128个。
+    - 第二个字节：表示平面（plane），256个。
+    - 第三个字节：表示行（row），256个。
+    - 第四个字节：表示码位（cell），256个
+    - 如果UCS-4前两个字节为0， 则就是CUS-2
+
+# 概念解释
+- 大尾(BigEndian) 小尾(LittleEndian)
+    - &quot;汉&quot; -&gt; 6C49
+    - 6C49 -&gt; BigEndian
+    - 496C -&gt; LittleEndian
+- BOM
+    - UTF-8 无字节顺序问题
+    - UTF-16会出现问题：
+        - &quot;奎&quot; -&gt; 594E
+        - &quot;乙&quot; -&gt; 4E59
+    - BOM-ByteOrderMark
+        - &quot;ZERO WIDTH NO-BREAK SPACE&quot; -&gt; FEFF, 在UCS中不存在
+        - FEFF-&gt;BigEndian
+        - FFFE-&gt;LittleEndian
+        - UTF-8 用来表示编码， FEFF的UTF-8编码是EF BB BF, 用来表示此后编码是UTF-8编码
+# Python的编码问题
+- str
+- bytes
+- bytearray
+    
+    
+            &gt;&gt;&gt; b = bytes.fromhex(&#39;E4 B8 AD&#39;)
+            &gt;&gt;&gt; b
+            b&#39;\xe4\xb8\xad&#39;
+            &gt;&gt;&gt; b.decode(&#39;utf-8&#39;)
+            &#39;中&#39;
+            &gt;&gt;&gt; str(b)
+            &quot;b&#39;\\xe4\\xb8\\xad&#39;&quot;
+
+        
+        &gt;&gt;&gt; ord(&#39;A&#39;)
+        65
+        &gt;&gt;&gt; ord(&#39;中&#39;)
+        20013
+        &gt;&gt;&gt; chr(65)
+        &#39;A&#39;
+        &gt;&gt;&gt; chr(20013)
+        &#39;中&#39;
+- len的单位是字符，不是字节
+- python文件默认utf-8编码，如果特殊需要，需要声明
+    - 放在第一行，或者第二行
+    - ```# ‐*‐ coding: windows‐1252 ‐*‐```
+    - 读写文件默认utf-8, 可以指定
+    - code point方式比较字符串，可能会带来问题
+        -  重音符号的表示 
+        -  使用 unicodedata.normalize 函数
+- Python源码中出现了解码错误，那么会产生SyntaxError异常
+- 其他情况下，如果发现编码解码错误，那么会产生UnicodeEncodeError, UnicodeDecodeError异常
+
+# 参考资料
+- https://www.cnblogs.com/jessonluo/p/4800331.html
+- https://blog.csdn.net/xuejianhui/article/details/52576771
+- http://tools.jb51.net/table/gb2312
+- 
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="107_log.html" class="btn btn-neutral float-right" title="8. 日志(logging)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="105多线程.html" class="btn btn-neutral float-left" title="6. 多线程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 北京图灵学院.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

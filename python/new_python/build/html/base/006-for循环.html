@@ -1,0 +1,542 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>8. 循环语句 &mdash; Python新全栈教程 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="9. while循环" href="007-while循环.html" />
+    <link rel="prev" title="7. 分支语句" href="005-if分支语句.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python新全栈教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="001.html">1. 开学典礼-不讲知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001Python语言概述.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001注释.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="003str.html">5. 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="004运算符.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="005-if分支语句.html">7. 分支语句</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. 循环语句</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#for">8.1. for循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">8.2. 举个栗子吧</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">8.3. 一个正经的栗子</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#range">8.4. range介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#for-else">8.5. for-else语句</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#break-contineu-pass">8.6. 循环之break,contineu,pass</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="007-while循环.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-函数讲义.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-内置函数.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-内置结构.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="009-类.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010-内置模块.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011-持久化和文件.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="013-tkinter.html">17. Tkinter</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adv/101-函数高级.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/102-类高级.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/103_调试技术.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/1021-单元测试.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/104_模块和包.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/105多线程.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/107_log.html">8. 日志(logging)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/108_携程.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/109_网络编程.html">10. 1. 网络通信概述</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python新全栈教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>8. 循环语句</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/base/006-for循环.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>8. 循环语句<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>在程序中经常会出现需要重复执行某一些代码的情况，比如我们计算1-100之间的数字的和，其实相当于把1开始的100个数字重复加到和上面去，
+这个过程就是典型的重复执行过程，这种重复，我们叫做循环。</p>
+<p>循环也需要语句支持，Python中循环分为两种（其实机会所有语言都这样）：</p>
+<ul class="simple">
+<li>for循环</li>
+<li>while循环</li>
+</ul>
+<blockquote>
+<div>这里面重复下，很多小白喜欢瞎想究竟学习哪种语言，或者想哪种语言好一些，我非常不推荐这样，毕竟我们不是学语言比较学的，
+所有计算机语言严格上讲都是指令集，而这个真不是拍脑袋随便创造的，背后有完整的知识体系，比如编译原理，所以可以说，
+所有计算机语言逻辑都是一致的，这也造成其实每种语言的大致组成部分都大差不差</div></blockquote>
+<div class="section" id="for">
+<h2>8.1. for循环<a class="headerlink" href="#for" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>循环适合那种有固定重复次数的循环，比如我们上面的例子，计算 <code class="docutils literal notranslate"><span class="pre">1-100</span></code> 之间所有数字的和，这里其实有明确的循环次数，只有100个数字，
+我们需要精准执行100次计算才行。</p>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>循环的语句格式如下所示：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    for 变量 in 序列：
+        语句1
+        语句2
+        ...
+</pre></div>
+</div>
+<p>以上<code class="docutils literal notranslate"><span class="pre">for</span></code>循环的指令格式表示的意思是：</p>
+<ol class="simple">
+<li>对于后面指定的序列里面的每一个值</li>
+<li>我们把这个值暂时存放大气变量中</li>
+<li>然后执行下面的语句1, 语句2 … …</li>
+<li>重复这样的步骤直到每一个值都遍历一次</li>
+</ol>
+<blockquote>
+<div>列表就是一列数字或者其他值，一般用中括号表示
+例如  [‘zhangsan’, ‘lisi’, ‘wangwu’, 999]</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>8.2. 举个栗子吧<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>请看下面的案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 列表就是一列数字或者其他值，一般用中括号表示</span>
+<span class="c1"># 例如  [&#39;zhangsan&#39;, &#39;lisi&#39;, &#39;wangwu&#39;,&#39;jingjing&#39;]</span>
+
+<span class="c1"># 打印学生列表姓名</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span>  <span class="p">[</span><span class="s1">&#39;zhangsan&#39;</span><span class="p">,</span> <span class="s1">&#39;lisi&#39;</span><span class="p">,</span> <span class="s1">&#39;wangwu&#39;</span><span class="p">,</span><span class="s1">&#39;jingjing&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面的代码机器简单，就是一个简单的遍历循环，需要注意的是中括号表示一共列表，我们后面会重点讲述列表的内容，这里暂时理解成
+一队有顺序的数据， 运行结果如下所示：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zhangsan</span>
+<span class="n">lisi</span>
+<span class="n">wangwu</span>
+<span class="n">jingjing</span>
+</pre></div>
+</div>
+<p>我们啰嗦下上面案例的执行过程：</p>
+<ol class="simple">
+<li>对于一列字符串组成的列表，需要依次执行</li>
+<li>首先把列表中某个(其实是按顺序运行的)值赋值给变量<code class="docutils literal notranslate"><span class="pre">name</span></code></li>
+<li>执行<code class="docutils literal notranslate"><span class="pre">for</span></code>的语句循环体，即打印出这个变量的值</li>
+<li>依次执行，直到把列表中所有的值都遍历一遍</li>
+</ol>
+<blockquote>
+<div>循环体是否执行，如何执行跟变量 <code class="docutils literal notranslate"><span class="pre">name</span></code>其实没任何关系，循环体中也完全可以不出现<code class="docutils literal notranslate"><span class="pre">name</span></code>相关任何操作</div></blockquote>
+<p>一个说明性的案例如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 本案例中变量跟循环体没任何关系，循环体也没出现变量</span>
+<span class="c1"># 打印三遍北京图灵学院的校训</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我爱王晓静&quot;</span><span class="p">)</span>
+
+<span class="c1"># 结果会打印出三遍 &#39;我爱王晓静&#39;</span>
+<span class="c1"># 但for循环后面出现的打印语句，跟变量没任何关系</span>
+<span class="c1"># 这里for的作用就只是负责让下面代码执行三遍而已</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>8.3. 一个正经的栗子<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>上面案例过于简单，下面的例子是，我们对列表里的人挨个进行检查，知道我们喜欢的静静出现为止：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 打印学生列表姓名</span>
+<span class="c1"># 如果是jingjign，那肯定是我的最爱呀，</span>
+<span class="c1"># 如果是别的学生，那要冷酷的拒绝他</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span>  <span class="p">[</span><span class="s1">&#39;zhangsan&#39;</span><span class="p">,</span> <span class="s1">&#39;lisi&#39;</span><span class="p">,</span> <span class="s1">&#39;wangwu&#39;</span><span class="p">,</span><span class="s1">&#39;jingjing&#39;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;jingjing&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我的最爱</span><span class="si">{0}</span><span class="s2">出现了&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;同学我们不约，不约，同学请自重&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>在循环体重，我们加入了一个判断语句，只有当我们喜欢的静静出现了才执行<code class="docutils literal notranslate"><span class="pre">else</span></code>语句，其余的人我们只好残忍的拒绝：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zhangsan
+同学我们不约，不约，同学请自重
+lisi
+同学我们不约，不约，同学请自重
+wangwu
+同学我们不约，不约，同学请自重
+jingjing
+我的最爱jingjing出现了
+</pre></div>
+</div>
+</div>
+<div class="section" id="range">
+<h2>8.4. range介绍<a class="headerlink" href="#range" title="永久链接至标题">¶</a></h2>
+<p>我们经常会需要一队数字，这队数字从0或者1开始，然后按顺序递增，Python为我们准备了这样一个功能，可以让我们方便的生成一队数字，这些数字
+按照一定的规律变化，这就是 <code class="docutils literal notranslate"><span class="pre">range</span></code> 函数。</p>
+<blockquote>
+<div>下面解释并不精准，为了理解方便，我先这么说，后面会具体讲到<code class="docutils literal notranslate"><span class="pre">range</span></code>使用的技术点。</div></blockquote>
+<p>在<code class="docutils literal notranslate"><span class="pre">range</span></code>函数中，首要功能是是生成一列数字，这列数字有始有终，在使用中，我们需要指定数字的开头和结尾，请看下面栗子：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># range练习</span>
+<span class="c1"># 打印从1-10的数字</span>
+<span class="c1"># 注意，一般在python中，如果由表示数字范围的两个数，一般是包含左边数字不包含右边数字</span>
+<span class="c1"># randint是特例，他左右都包含</span>
+<span class="c1"># range函数在python2 和 python3中有严重区别</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>案例中，我们用<code class="docutils literal notranslate"><span class="pre">range</span></code>生成了一列数字，这列数字是由括号内两个数字表示，第一个数字表示这列数字从<code class="docutils literal notranslate"><span class="pre">1</span></code>开始，第二个数字<code class="docutils literal notranslate"><span class="pre">11</span></code>表示到<code class="docutils literal notranslate"><span class="pre">11</span></code>截止，并不
+包括<code class="docutils literal notranslate"><span class="pre">11</span></code>， 每次增加<code class="docutils literal notranslate"><span class="pre">1</span></code>(即步长)， 这样就会为我们生成需要的数字，请看运行结果：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+<span class="mi">5</span>
+<span class="mi">6</span>
+<span class="mi">7</span>
+<span class="mi">8</span>
+<span class="mi">9</span>
+<span class="mi">10</span>
+</pre></div>
+</div>
+<p>如果需要，<code class="docutils literal notranslate"><span class="pre">range</span></code>还可以生成步长不为<code class="docutils literal notranslate"><span class="pre">1</span></code>的数列，比如我们需要1-100内的所有能被7整除的数字，可以这样行：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面的代码<code class="docutils literal notranslate"><span class="pre">range</span></code>函数中第一个和第二个数字的作用我们已经给大家介绍过了，第三个数字的作用是告诉系统，生成的数字队列每次增加<code class="docutils literal notranslate"><span class="pre">7</span></code>，即步长为<code class="docutils literal notranslate"><span class="pre">7</span></code>。</p>
+</div>
+<div class="section" id="for-else">
+<h2>8.5. for-else语句<a class="headerlink" href="#for-else" title="永久链接至标题">¶</a></h2>
+<p>以上是<code class="docutils literal notranslate"><span class="pre">for</span></code>语句的简单介绍，除了正常的逻辑之外，我们经常会有一种需求，即我们按照一定次数进行循环，当循环结束后，我们还希望能进行另外一个
+单独的操作，你可以把它当成一个收尾工作，比如我让你跑操场10圈，跑完后去冲澡，此处冲澡就是一个收尾工作，且跟你跑多少圈没关系，只在最后执行一次。</p>
+<p>在Python中，我们用<code class="docutils literal notranslate"><span class="pre">for-else</span></code>语句来实现这种功能，这里必须说明的是，<code class="docutils literal notranslate"><span class="pre">else</span></code>语句其实是一种可选语句，你可以看做世界上本来没有<code class="docutils literal notranslate"><span class="pre">for</span></code>循环，所谓的
+<code class="docutils literal notranslate"><span class="pre">for</span></code>语句只是<code class="docutils literal notranslate"><span class="pre">for-else</span></code>语句的一个特例。</p>
+<p>请看下面的例子：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># for-else语句</span>
+    <span class="c1"># 打印列表中的同学，</span>
+    <span class="c1"># 如果没有在列表中，或者列表结束了，我们需要打印提示语句，表示不在爱了</span>
+
+    <span class="c1"># 打印学生列表姓名</span>
+    <span class="c1"># 如果是jingjign，那肯定是我的最爱呀，</span>
+    <span class="c1"># 如果是别的学生，那要冷酷的拒绝他</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span>  <span class="p">[</span><span class="s1">&#39;zhangsan&#39;</span><span class="p">,</span> <span class="s1">&#39;lisi&#39;</span><span class="p">,</span> <span class="s1">&#39;wangwu&#39;</span><span class="p">,</span><span class="s1">&#39;jingjing&#39;</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;jingjing&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我的最爱</span><span class="si">{0}</span><span class="s2">出现了&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;同学我们不约，不约，同学请自重&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;别的都不是我的学生，不会在爱了&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;别的都不是我的学生，不会在爱了&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;别的都不是我的学生，不会在爱了&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面代码，正常循环完毕后还以后一个<code class="docutils literal notranslate"><span class="pre">else</span></code>语句，这个语句一共由三句话，即三个打印语句。</p>
+<p>执行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>zhangsan
+同学我们不约，不约，同学请自重
+lisi
+同学我们不约，不约，同学请自重
+wangwu
+同学我们不约，不约，同学请自重
+jingjing
+我的最爱jingjing出现了
+别的都不是我的学生，不会在爱了
+别的都不是我的学生，不会在爱了
+别的都不是我的学生，不会在爱了
+</pre></div>
+</div>
+</div>
+<div class="section" id="break-contineu-pass">
+<h2>8.6. 循环之break,contineu,pass<a class="headerlink" href="#break-contineu-pass" title="永久链接至标题">¶</a></h2>
+<p>除了正经的循环语句，我们可能还需要有一些特殊的需求，比如循环到一半不想继续了，或者跳过本次循环直接进入下一轮等，我们使用下面三个关键字实现：</p>
+<ul class="simple">
+<li>break： 无条件结束整个循环，简称循环猝死</li>
+<li>continue：无条件结束本次循环，从新进入下一轮循环</li>
+<li>pass：表示略过，通常用于占位，也可以用在函数或者类里面，因为根据语法，某个地方必须有代码才可以，但我们暂时可能不确定具体内容，就用pass占位</li>
+</ul>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code>语句对所有循环都有效，包括后面学习的<code class="docutils literal notranslate"><span class="pre">while</span></code>循环。</div></blockquote>
+<p>炒个栗子吧：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在数字1-10中，寻找数字7，一旦找到，打印出来，其余则什么都不做</span>
+<span class="c1"># for 循环中的变量表示，一般用i，k，m，n，或者indx，idx，item之类</span>
+<span class="c1"># 在python中，如果循环变量名称不重要，可以用下划线（_)代替</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我找到了&quot;</span><span class="p">)</span>
+        <span class="c1"># 此出break表示结束整个for循环</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">continue</span>
+    
+    <span class="c1"># 注意，此处print永远不会被执行，思考为什么？</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>再炒个栗子：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># continue语句联系</span>
+<span class="c1"># 在数字1-10中，寻找所有偶数，找到偶数后打印偶数</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c1"># 不是偶数就啥也不干，这里的continue有点多余，可以用另外更简洁的形式</span>
+        <span class="c1"># 此处纯属练习</span>
+        <span class="k">continue</span>
+        <span class="c1"># 打印语句不会被执行</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> 是偶数&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>运行结果是：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="n">是偶数</span>
+<span class="mi">4</span> <span class="n">是偶数</span>
+<span class="mi">6</span> <span class="n">是偶数</span>
+<span class="mi">8</span> <span class="n">是偶数</span>
+<span class="mi">10</span> <span class="n">是偶数</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># continue语句 版本 2</span>
+<span class="c1"># 在数字1-10中，寻找所有偶数，找到偶数后打印偶数</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> 是偶数&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="n">是偶数</span>
+<span class="mi">4</span> <span class="n">是偶数</span>
+<span class="mi">6</span> <span class="n">是偶数</span>
+<span class="mi">8</span> <span class="n">是偶数</span>
+<span class="mi">10</span> <span class="n">是偶数</span>
+</pre></div>
+</div>
+<p>一个比上面简洁点的🌰 ：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># continue语句 版本 2</span>
+<span class="c1"># 在数字1-10中，寻找所有偶数，找到偶数后打印偶数</span>
+<span class="c1"># 本案例完整显示continue的用法和作用</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">continue</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> 是偶数&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>运行结果跟上面一致：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="n">是偶数</span>
+<span class="mi">4</span> <span class="n">是偶数</span>
+<span class="mi">6</span> <span class="n">是偶数</span>
+<span class="mi">8</span> <span class="n">是偶数</span>
+<span class="mi">10</span> <span class="n">是偶数</span>
+</pre></div>
+</div>
+<p>一个<code class="docutils literal notranslate"><span class="pre">pass</span></code>的🌰：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># pass例子，一般用于占位</span>
+<span class="c1"># pass没有跳过功能</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="k">pass</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;wo zai zheli&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果是下面这样的，结果清楚的表明<code class="docutils literal notranslate"><span class="pre">pass</span></code>语句没有跳过功能：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wo</span> <span class="n">zai</span> <span class="n">zheli</span>
+<span class="n">wo</span> <span class="n">zai</span> <span class="n">zheli</span>
+<span class="n">wo</span> <span class="n">zai</span> <span class="n">zheli</span>
+<span class="n">wo</span> <span class="n">zai</span> <span class="n">zheli</span>
+<span class="n">wo</span> <span class="n">zai</span> <span class="n">zheli</span>
+<span class="n">wo</span> <span class="n">zai</span> <span class="n">zheli</span>
+<span class="n">wo</span> <span class="n">zai</span> <span class="n">zheli</span>
+<span class="n">wo</span> <span class="n">zai</span> <span class="n">zheli</span>
+<span class="n">wo</span> <span class="n">zai</span> <span class="n">zheli</span>
+<span class="n">wo</span> <span class="n">zai</span> <span class="n">zheli</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="007-while循环.html" class="btn btn-neutral float-right" title="9. while循环" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="005-if分支语句.html" class="btn btn-neutral float-left" title="7. 分支语句" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 北京图灵学院.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

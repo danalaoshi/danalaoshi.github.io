@@ -1,0 +1,1557 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1. 函数高级 &mdash; Python新全栈教程 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="2. OOP高级编程" href="102-类高级.html" />
+    <link rel="prev" title="17. Tkinter" href="../base/013-tkinter.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python新全栈教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../base/001.html">1. 开学典礼-不讲知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001Python语言概述.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001注释.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/003str.html">5. 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/004运算符.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/005-if分支语句.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/006-for循环.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/007-while循环.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-函数讲义.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-内置函数.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/09-内置结构.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/009-类.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/010-内置模块.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/011-持久化和文件.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/013-tkinter.html">17. Tkinter</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. 函数高级</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.1. 变量作用域</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#legb">1.1.1. LEGB原则</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.1.2. 提升局部变量为全局变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nonlocal">1.1.3. nonlocal-提升局部变量为非局部变量</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">1.2. 函数的几个特殊用法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">1.2.1. 函数的嵌套</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">1.2.2. 函数名字作为变量赋值</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">1.2.3. 函数作为函数的参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">1.3. 递归函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">1.3.1. 斐波那契数列</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">1.4. 系统内置函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#eval">1.4.1. eval()函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exec">1.4.2. exec()函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repr">1.4.3. repr()函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compile">1.4.4. compile()函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#globals-locals">1.4.5. globals, locals函数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#functionalprogramming">1.5. 函数式编程(FunctionalProgramming)和高阶函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lambda">1.5.1. lambda表达式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">1.5.2. 高阶函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#map">1.5.3. map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reduce">1.5.4. reduce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filter">1.5.5. filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sorted">1.5.6. sorted</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">1.6. 装饰器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">1.6.1. 函数作为返回值</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#closure">1.6.2. 闭包（closure)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">1.6.3. 闭包常见坑</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">1.6.4. 当变量使用的函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decrator">1.6.5. 装饰器(Decrator)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">1.7. 偏函数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id17">1.7.1. 偏函数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id18">1.8. 高级函数补充</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#zip">1.8.1. zip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enumerate">1.8.2. enumerate</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#collections">1.9. collections模块</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#namedtuple">1.9.1. namedtuple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dequeue">1.9.2. dequeue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#defaultdict">1.9.3. defaultdict</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#counter">1.9.4. Counter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ordereddict">1.9.5. OrderedDict</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="102-类高级.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="103_调试技术.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1021-单元测试.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="104_模块和包.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="105多线程.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="107_log.html">8. 日志(logging)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="108_携程.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="109_网络编程.html">10. 1. 网络通信概述</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python新全栈教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>1. 函数高级</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/adv/101-函数高级.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>1. 函数高级<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>此部分作为对函数知识的补充，逻辑性比较差，行业比较乱。</p>
+<div class="section" id="id2">
+<h2>1.1. 变量作用域<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>变量的作用域指的是变量的作何用范围。 每个变量有相应的作用范围限制，超出
+作用范围的变量是不允许的。</p>
+<p>变量按照作用域可以分类为：</p>
+<ul class="simple">
+<li>全局(global): 定义在函数外部，整个程序内都可以使用</li>
+<li>局部（local)：在函数代码内部定义，超出某一段代码范围后就不能使用</li>
+</ul>
+<p>变量的作用范围可以粗略的分为以下几种：</p>
+<ul class="simple">
+<li>全局变量：在整个全局范围都有效</li>
+<li>全局变量在局部可以使用（即函数内部可以方位函数外部定义的变量）</li>
+<li>局部变量在局部范围可以使用</li>
+<li>局部变量在全局范围无法使用</li>
+</ul>
+<div class="section" id="legb">
+<h3>1.1.1. LEGB原则<a class="headerlink" href="#legb" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code>中可以把变量的作用域概括成<code class="docutils literal notranslate"><span class="pre">LEGB</span></code>:</p>
+<ul class="simple">
+<li>L（Local: 局部作用域</li>
+<li>E（Enclosing function locale):外部嵌套函数作用域</li>
+<li>G（Global module):函数定义所在模块作用域</li>
+<li>B（Buildin): <code class="docutils literal notranslate"><span class="pre">Python</span></code>内置模块的作用域</li>
+</ul>
+<p>参见以下案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># 认为a1是全局的</span>
+  <span class="n">a1</span> <span class="o">=</span> <span class="mi">100</span>
+
+  <span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am in fun&quot;</span><span class="p">)</span>
+      <span class="c1"># a2的作用范围是fun</span>
+      <span class="n">a2</span> <span class="o">=</span> <span class="mi">99</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
+      
+      
+  <span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+  <span class="n">fun</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>我们在函数外部定义了变量<code class="docutils literal notranslate"><span class="pre">a1</span></code>， 函数内部对这个变量进行了打印操作，这样是可以的，函数内部可以直接使用
+函数外部的变量， 同时函数内定义了变量<code class="docutils literal notranslate"><span class="pre">a2</span></code>， 定义后再函数内使用这个变量没有问题，但我们在外部使用这个变量
+就会报错，参加一下运行结果。</p>
+<blockquote>
+<div>函数内部使用函数外部定义的变量，在上面的情况只限于对变量进行读操作，不能有赋值等修改操作</div></blockquote>
+<p>代码运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">100</span>
+  <span class="mi">100</span>
+  <span class="n">I</span> <span class="n">am</span> <span class="ow">in</span> <span class="n">fun</span>
+  <span class="mi">99</span>
+
+  <span class="o">---------------------------------------------------------------------------</span>
+  <span class="ne">NameError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+  <span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="mf">36e1</span><span class="n">efbb7d66</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+       <span class="mi">12</span> <span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+       <span class="mi">13</span> <span class="n">fun</span><span class="p">()</span>
+  <span class="o">---&gt;</span> <span class="mi">14</span> <span class="nb">print</span><span class="p">(</span><span class="n">a2</span><span class="p">)</span>
+
+  <span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;a2&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>1.1.2. 提升局部变量为全局变量<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>如果我们试图在函数内修改函数外部定义的变量，此时需要使用关键字<code class="docutils literal notranslate"><span class="pre">global</span></code>还用来告诉程序
+要对函数外部定义的变量进行修改，即进行全局声明, 此时也可以把<code class="docutils literal notranslate"><span class="pre">global</span></code>关键字理解成
+是在函数内定义了一个作用域为全局的外部变量。</p>
+<p>使用格式如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">函数名</span><span class="p">()</span>
+      <span class="c1">#提升局部变量为全局变量</span>
+      <span class="k">global</span> <span class="n">局部变量</span>
+      <span class="n">其他操作</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>参见以下案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
+      <span class="k">global</span> <span class="n">b1</span>
+      <span class="n">b1</span> <span class="o">=</span> <span class="mi">100</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I am in fun&quot;</span><span class="p">)</span>
+      <span class="c1"># a2的作用范围是fun</span>
+      <span class="n">b2</span> <span class="o">=</span> <span class="mi">99</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span>
+
+  <span class="c1">#print(b2) #变量b2的作用域是局部，此处引用报错</span>
+  <span class="n">fun</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>代码运行结果如下, 需要注意的是变量<code class="docutils literal notranslate"><span class="pre">b1</span></code>是在函数内部定义的， 只有当函数运行之后，即在函数
+被调用后系统才会还有这个变量，在函数调用前使用这个变量会报错：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">100</span>
+  <span class="n">I</span> <span class="n">am</span> <span class="ow">in</span> <span class="n">fun</span>
+  <span class="mi">99</span>
+  <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nonlocal">
+<h3>1.1.3. nonlocal-提升局部变量为非局部变量<a class="headerlink" href="#nonlocal" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">nonlocal</span></code>的作用是声明当前变量不是当前函数内部的变量，他有可能是当前函数的外部变量（不是全局变量）。</p>
+<p>语法格式为：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  def 外部函数()
+      局部变量
+      def 内部函数（）:
+          nonlocal 变量名 #声明当前变量不是内部函数中的变量
+          其他代码...
+      return 代码
+</pre></div>
+</div>
+<blockquote>
+<div>如果在内部函数中只是仅仅读外部变量，可以不在此变量前加<code class="docutils literal notranslate"><span class="pre">nonlocal</span></code>
+如果在内部函数中尝试进行修改外部变量，且外部变量为不可变类型，则需要在变量前加<code class="docutils literal notranslate"><span class="pre">nonlocal</span></code>，如果变量为可变类型，则不需要添加</div></blockquote>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>1.2. 函数的几个特殊用法<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id5">
+<h3>1.2.1. 函数的嵌套<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>函数嵌套是指一个函数里用<code class="docutils literal notranslate"><span class="pre">def</span></code>关键字来创建其它函数的情况。</p>
+<p>常见的格式如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fun1</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fun1被调用)</span>
+    <span class="k">def</span> <span class="nf">fun2</span><span class="p">():</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fun2被调用&quot;</span><span class="p">)</span>
+    <span class="n">fun2</span><span class="p">()</span> <span class="c1">#调用上面定义的函数</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fun1调用结束&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>1.2.2. 函数名字作为变量赋值<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>函数名可以看做普通变量，他在创建时绑定一个函数，此时可以对另外变量用函数名称赋值，此时被赋值的变量
+可以看做是这个函数的第二个名字。</p>
+<p>参加案例如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fn</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">)</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="n">fn</span>
+<span class="n">f1</span><span class="p">()</span>  <span class="c1"># 等同于fn()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>1.2.3. 函数作为函数的参数<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>函数可以当做变量赋值，也可以当做参数传入另外函数内部使用。</p>
+<p>参考下面代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="k">def</span> <span class="nf">myadd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+      <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+  <span class="k">def</span> <span class="nf">mymul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+      <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+
+  <span class="k">def</span> <span class="nf">getfun</span><span class="p">(</span><span class="n">fx</span><span class="p">):</span>
+      <span class="k">if</span> <span class="s2">&quot;add&quot;</span> <span class="o">==</span> <span class="n">fx</span><span class="p">:</span>
+          <span class="k">return</span> <span class="n">myadd</span>
+      <span class="k">elif</span> <span class="s2">&quot;mul&quot;</span> <span class="o">==</span> <span class="n">fx</span><span class="p">:</span>
+          <span class="k">return</span> <span class="n">mymul</span>
+      <span class="k">return</span> <span class="kc">None</span>
+
+  <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入第一个数&quot;</span><span class="p">))</span>
+  <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入第二个数&quot;</span><span class="p">))</span>
+  <span class="n">op</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入操作方法:(mul/add):&quot;</span><span class="p">))</span>
+  <span class="n">f</span> <span class="o">=</span> <span class="n">getfun</span><span class="p">(</span><span class="n">op</span><span class="p">)</span> 
+  <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span> <span class="c1">#注意函数的调用方式</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>1.3. 递归函数<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>函数写完以后被调用才会运行。</p>
+<p>函数代码里可以继续调用其他函数，但如果函数调用自己，则此类函数叫做递归函数，即函数直接或间接调用
+自己。</p>
+<p>递归函数的优点为简洁和理解容易， 还有同学会觉得很难理解，但你是不理解递归的定义导致的，在有些特定的场合
+如果不用递归的话，直接写出来的程序是很复杂的。</p>
+<p>递归函数的缺点是系统对递归深度有限制，而且递归函数消耗资源大。</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">Python</span></code>对递归深度有限制，即函数调用自己的次数有限制， 超过限制报错</div></blockquote>
+<p>在编写递归函数时，一定要注意递归函数的结束条件，递归函数不能无限制递归调用下去，否则会好近计算机所有资源。</p>
+<p>下面案例是一个失败的递归调用案例，因为没有对结束条件进行规定导致递归函数一直运行：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 递归调用深度限制代码</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">fun</span><span class="p">():</span>
+  <span class="k">global</span> <span class="n">x</span>
+  <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="c1"># 函数自己调用自己</span>
+  <span class="n">fun</span><span class="p">()</span>
+
+<span class="c1"># 调用函数</span>
+<span class="n">fun</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>函数运行结果如下, 注意最后的报错，是递归错误：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mi">2</span>
+<span class="mi">3</span>
+<span class="mi">4</span>
+<span class="mi">5</span>
+<span class="mi">6</span>
+<span class="mi">7</span>
+<span class="mi">8</span>
+<span class="mi">140</span>
+<span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">RecursionError</span>                            <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">342</span><span class="n">ffb5916b5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+     <span class="mi">11</span> 
+     <span class="mi">12</span> <span class="c1"># 调用函数</span>
+<span class="o">---&gt;</span> <span class="mi">13</span> <span class="n">fun</span><span class="p">()</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">342</span><span class="n">ffb5916b5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">fun</span><span class="p">()</span>
+      <span class="mi">8</span>     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+      <span class="mi">9</span>     <span class="c1"># 函数自己调用自己</span>
+<span class="o">---&gt;</span> <span class="mi">10</span>     <span class="n">fun</span><span class="p">()</span>
+     <span class="mi">11</span> 
+     <span class="mi">12</span> <span class="c1"># 调用函数</span>
+<span class="o">...</span> <span class="n">last</span> <span class="mi">1</span> <span class="n">frames</span> <span class="n">repeated</span><span class="p">,</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">frame</span> <span class="n">below</span> <span class="o">...</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">342</span><span class="n">ffb5916b5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="n">fun</span><span class="p">()</span>
+      <span class="mi">8</span>     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+      <span class="mi">9</span>     <span class="c1"># 函数自己调用自己</span>
+<span class="o">---&gt;</span> <span class="mi">10</span>     <span class="n">fun</span><span class="p">()</span>
+     <span class="mi">11</span> 
+     <span class="mi">12</span> <span class="c1"># 调用函数</span>
+
+<span class="ne">RecursionError</span><span class="p">:</span> <span class="n">maximum</span> <span class="n">recursion</span> <span class="n">depth</span> <span class="n">exceeded</span> <span class="ow">in</span> <span class="n">comparison</span>
+</pre></div>
+</div>
+<div class="section" id="id9">
+<h3>1.3.1. 斐波那契数列<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>递归函数一个经典的案例是斐波那契数列，参考一下代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 斐波那契额数列</span>
+<span class="c1"># 一列数字，第一个值是1， 第二个也是1， 从第三个开始，每一个数字的值等于前两个数字出现的值的和</span>
+<span class="c1"># 数学公式为： f(1) = 1, f(2) = 1, f(n) = f(n-1) + f(n-2)</span>
+<span class="c1"># 例如： 1,1，2，3,5,8,13.。。。。。。。。</span>
+
+<span class="c1"># 下面求斐波那契数列函数有一定问题，比如n一开始就是负数，如何修正</span>
+<span class="c1"># n表示求第n个数子的斐波那契数列的值</span>
+<span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="k">return</span> <span class="mi">1</span>
+  
+  <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+      <span class="k">return</span> <span class="mi">1</span>
+  
+  <span class="c1"># 思考：为什么后面return能够正确执行，而不用else语句</span>
+  <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>代码运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>
+<span class="mi">55</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>1.4. 系统内置函数<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Python</span></code>有一些内置的函数，都封装在了<code class="docutils literal notranslate"><span class="pre">__builtins__</span></code>模块中，可以通过 <code class="docutils literal notranslate"><span class="pre">print((dir(__builtins__)))</span></code>
+来打印出所有内置函数和功能。</p>
+<p>下面列举几个常用的内置函数：</p>
+<div class="section" id="eval">
+<h3>1.4.1. eval()函数<a class="headerlink" href="#eval" title="永久链接至标题">¶</a></h3>
+<p>在<code class="docutils literal notranslate"><span class="pre">Python</span></code>中，<code class="docutils literal notranslate"><span class="pre">eval</span></code>函数可以把一个字符串当成一个表达式来执行， 返回表达式执行后的结果作为函数执行
+的结果。</p>
+<p>函数的定义接口为<code class="docutils literal notranslate"><span class="pre">eval(string_code,</span> <span class="pre">globals=None,</span> <span class="pre">locals=None)</span></code>, 其中：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">string_code</span></code>: 被当做命令执行的字符串</li>
+<li><code class="docutils literal notranslate"><span class="pre">globals</span></code>: 执行代码时候的全局变量，作为执行环境参数</li>
+<li><code class="docutils literal notranslate"><span class="pre">locals</span></code>: 执行代码时候的局部变量，作为执行环境参数</li>
+</ul>
+<p>代码案例参考如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="mi">200</span>
+  <span class="c1"># 执行x+y</span>
+  <span class="c1"># z = x + y</span>
+  <span class="n">z1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+  <span class="n">z2</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s2">&quot;x+y&quot;</span><span class="p">)</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">z2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果为：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="mi">300</span>
+  <span class="mi">300</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exec">
+<h3>1.4.2. exec()函数<a class="headerlink" href="#exec" title="永久链接至标题">¶</a></h3>
+<p>跟<code class="docutils literal notranslate"><span class="pre">eval</span></code>功能类似， 但是不返回结果.</p>
+<p>函数的定义接口为<code class="docutils literal notranslate"><span class="pre">exec(string_code,</span> <span class="pre">globals=None,</span> <span class="pre">locals=None)</span></code></p>
+<p>代码案例参考如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># exec示例</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="mi">100</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="mi">200</span>
+  <span class="c1"># 执行x+y</span>
+  <span class="c1"># z = x + y</span>
+  <span class="n">z1</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+  <span class="c1"># 1, 注意字符串中引号的写法</span>
+  <span class="c1"># 2. 比对exec执行结果和代码执行结果</span>
+  <span class="n">z2</span> <span class="o">=</span> <span class="n">exec</span><span class="p">(</span><span class="s2">&quot;print(&#39;x+y:&#39;, x+y)&quot;</span><span class="p">)</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">z2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果为：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">:</span> <span class="mi">300</span>
+  <span class="mi">300</span>
+  <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="repr">
+<h3>1.4.3. repr()函数<a class="headerlink" href="#repr" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>repr函数用来取得对象的规范字符串表示。</li>
+<li>反引号（也称转换符）可以完成相同的功能。</li>
+<li>注意，在大多数时候有eval（repr（object））==object。</li>
+<li>可以通过定义类__repr__方法来控制你的对象在被repr函数调用的时候返回内容</li>
+</ul>
+</div>
+<div class="section" id="compile">
+<h3>1.4.4. compile()函数<a class="headerlink" href="#compile" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">compile</span></code>语句是从type类型中将str里面的语句创建成代码对象，以供以后执行。</p>
+<ul class="simple">
+<li>type:<ul>
+<li>eval: 配合eval使用</li>
+<li>single: 配合单一语句的exec使用</li>
+<li>exec: 配合多语句的exec使用</li>
+</ul>
+</li>
+<li>file 是代码存放的地方，通常为空字符串</li>
+</ul>
+<p>参看以下代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="n">eval_code</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span> <span class="s1">&#39;1+2&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;eval&#39;</span><span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">eval_code</span>
+    <span class="o">&lt;</span><span class="n">code</span> <span class="nb">object</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span> <span class="n">at</span> <span class="mi">0142</span><span class="n">ABF0</span><span class="p">,</span> <span class="n">file</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="o">&gt;</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="n">eval_code</span><span class="p">)</span>
+    <span class="mi">3</span>
+     
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">single_code</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span> <span class="s1">&#39;print &quot;www.baoshu.red&quot;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;single&#39;</span> <span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">single_code</span>
+    <span class="o">&lt;</span><span class="n">code</span> <span class="nb">object</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span> <span class="n">at</span> <span class="mi">01</span><span class="n">C68848</span><span class="p">,</span> <span class="n">file</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="o">&gt;</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">exec</span><span class="p">(</span><span class="n">single_code</span><span class="p">)</span>
+    <span class="n">www</span><span class="o">.</span><span class="n">baoshu</span><span class="o">.</span><span class="n">red</span>
+     
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">exec_code</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span> <span class="s2">&quot;&quot;&quot;for i in range(5):</span>
+<span class="s2">    ...   print &quot;iter time: </span><span class="si">%d</span><span class="s2">&quot; </span><span class="si">% i</span><span class="s2">&quot;&quot;&quot;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span> <span class="p">)</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">exec_code</span>
+    <span class="o">&lt;</span><span class="n">code</span> <span class="nb">object</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span> <span class="n">at</span> <span class="mi">01</span><span class="n">C68968</span><span class="p">,</span> <span class="n">file</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="o">&gt;</span>
+    <span class="o">&gt;&gt;&gt;</span> <span class="n">exec</span><span class="p">(</span><span class="n">exec_code</span><span class="p">)</span>
+    <span class="nb">iter</span> <span class="n">time</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="nb">iter</span> <span class="n">time</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="nb">iter</span> <span class="n">time</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="nb">iter</span> <span class="n">time</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="nb">iter</span> <span class="n">time</span><span class="p">:</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="globals-locals">
+<h3>1.4.5. globals, locals函数<a class="headerlink" href="#globals-locals" title="永久链接至标题">¶</a></h3>
+<p>在代码中我们可以通过<code class="docutils literal notranslate"><span class="pre">globals，locals</span></code>两个函数显示出我们所有的局部变量和全局变量。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># globals 和 locals</span>
+<span class="c1"># globals 和 locals 叫做内建函数</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+    <span class="n">e</span> <span class="o">=</span> <span class="mi">111</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Locals=</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">locals</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Globals=</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">globals</span><span class="p">()))</span>
+    
+<span class="n">fun</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>代码运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Locals</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">111</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+<span class="n">Globals</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;__name__&#39;</span><span class="p">:</span> <span class="s1">&#39;__main__&#39;</span><span class="p">,</span> <span class="s1">&#39;__doc__&#39;</span><span class="p">:</span> <span class="s1">&#39;Automatically created module for IPython interactive environment&#39;</span><span class="p">,</span> <span class="s1">&#39;__package__&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;__loader__&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;__spec__&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;__builtin__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">module</span> <span class="s1">&#39;builtins&#39;</span> <span class="p">(</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;__builtins__&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">module</span> <span class="s1">&#39;builtins&#39;</span> <span class="p">(</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span><span class="p">)</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;_ih&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;# 认为a1是全局的</span><span class="se">\n</span><span class="s1">a1 = 100</span><span class="se">\n\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    print(a1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    a2 = 99</span><span class="se">\n</span><span class="s1">    print(a2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(a1)</span><span class="se">\n</span><span class="s1">#print(a2)&#39;</span><span class="p">,</span> <span class="s1">&#39;# 认为a1是全局的</span><span class="se">\n</span><span class="s1">a1 = 100</span><span class="se">\n\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    print(a1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    a2 = 99</span><span class="se">\n</span><span class="s1">    print(a2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(a1)</span><span class="se">\n</span><span class="s1">fun()</span><span class="se">\n</span><span class="s1">#print(a2)&#39;</span><span class="p">,</span> <span class="s1">&#39;# 认为a1是全局的</span><span class="se">\n</span><span class="s1">a1 = 100</span><span class="se">\n\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    print(a1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    a2 = 99</span><span class="se">\n</span><span class="s1">    print(a2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(a1)</span><span class="se">\n</span><span class="s1">fun()</span><span class="se">\n</span><span class="s1">print(a2)&#39;</span><span class="p">,</span> <span class="s1">&#39;# 认为a1是全局的</span><span class="se">\n</span><span class="s1">a1 = 100</span><span class="se">\n\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    print(a1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    a2 = 99</span><span class="se">\n</span><span class="s1">    print(a2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(a1)</span><span class="se">\n</span><span class="s1">fun()</span><span class="se">\n</span><span class="s1">print(a2)&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    global b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    global b1</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    global b1</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    global b1</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;# globals 和 locals</span><span class="se">\n</span><span class="s1">a = 1</span><span class="se">\n</span><span class="s1">b = 2</span><span class="se">\n\n</span><span class="s1">def fun(c,d):</span><span class="se">\n</span><span class="s1">    e = 111</span><span class="se">\n</span><span class="s1">    print(&quot;Locals=</span><span class="si">{0}</span><span class="s1">&quot;.format(locals()))</span><span class="se">\n</span><span class="s1">    print(&quot;Globals=</span><span class="si">{0}</span><span class="s1">&quot;.format(globals()))</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">fun(100, 200)&#39;</span><span class="p">],</span> <span class="s1">&#39;_oh&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;_dh&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;/home/tlxy/cookbook_and_code&#39;</span><span class="p">],</span> <span class="s1">&#39;In&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;# 认为a1是全局的</span><span class="se">\n</span><span class="s1">a1 = 100</span><span class="se">\n\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    print(a1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    a2 = 99</span><span class="se">\n</span><span class="s1">    print(a2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(a1)</span><span class="se">\n</span><span class="s1">#print(a2)&#39;</span><span class="p">,</span> <span class="s1">&#39;# 认为a1是全局的</span><span class="se">\n</span><span class="s1">a1 = 100</span><span class="se">\n\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    print(a1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    a2 = 99</span><span class="se">\n</span><span class="s1">    print(a2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(a1)</span><span class="se">\n</span><span class="s1">fun()</span><span class="se">\n</span><span class="s1">#print(a2)&#39;</span><span class="p">,</span> <span class="s1">&#39;# 认为a1是全局的</span><span class="se">\n</span><span class="s1">a1 = 100</span><span class="se">\n\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    print(a1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    a2 = 99</span><span class="se">\n</span><span class="s1">    print(a2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(a1)</span><span class="se">\n</span><span class="s1">fun()</span><span class="se">\n</span><span class="s1">print(a2)&#39;</span><span class="p">,</span> <span class="s1">&#39;# 认为a1是全局的</span><span class="se">\n</span><span class="s1">a1 = 100</span><span class="se">\n\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    print(a1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    a2 = 99</span><span class="se">\n</span><span class="s1">    print(a2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(a1)</span><span class="se">\n</span><span class="s1">fun()</span><span class="se">\n</span><span class="s1">print(a2)&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    global b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    global b1</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    global b1</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    global b1</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;# globals 和 locals</span><span class="se">\n</span><span class="s1">a = 1</span><span class="se">\n</span><span class="s1">b = 2</span><span class="se">\n\n</span><span class="s1">def fun(c,d):</span><span class="se">\n</span><span class="s1">    e = 111</span><span class="se">\n</span><span class="s1">    print(&quot;Locals=</span><span class="si">{0}</span><span class="s1">&quot;.format(locals()))</span><span class="se">\n</span><span class="s1">    print(&quot;Globals=</span><span class="si">{0}</span><span class="s1">&quot;.format(globals()))</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">fun(100, 200)&#39;</span><span class="p">],</span> <span class="s1">&#39;Out&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;get_ipython&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">bound</span> <span class="n">method</span> <span class="n">InteractiveShell</span><span class="o">.</span><span class="n">get_ipython</span> <span class="n">of</span> <span class="o">&lt;</span><span class="n">ipykernel</span><span class="o">.</span><span class="n">zmqshell</span><span class="o">.</span><span class="n">ZMQInteractiveShell</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f891e18d198</span><span class="o">&gt;&gt;</span><span class="p">,</span> <span class="s1">&#39;exit&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">IPython</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">autocall</span><span class="o">.</span><span class="n">ZMQExitAutocall</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f8914136fd0</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">IPython</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">autocall</span><span class="o">.</span><span class="n">ZMQExitAutocall</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f8914136fd0</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;__&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;___&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;_i&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    global b1</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;_ii&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    global b1</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;_iii&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    global b1</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;_i1&#39;</span><span class="p">:</span> <span class="s1">&#39;# 认为a1是全局的</span><span class="se">\n</span><span class="s1">a1 = 100</span><span class="se">\n\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    print(a1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    a2 = 99</span><span class="se">\n</span><span class="s1">    print(a2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(a1)</span><span class="se">\n</span><span class="s1">#print(a2)&#39;</span><span class="p">,</span> <span class="s1">&#39;a1&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">function</span> <span class="n">fun</span> <span class="n">at</span> <span class="mh">0x7f88fbfb5268</span><span class="o">&gt;</span><span class="p">,</span> <span class="s1">&#39;_i2&#39;</span><span class="p">:</span> <span class="s1">&#39;# 认为a1是全局的</span><span class="se">\n</span><span class="s1">a1 = 100</span><span class="se">\n\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    print(a1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    a2 = 99</span><span class="se">\n</span><span class="s1">    print(a2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(a1)</span><span class="se">\n</span><span class="s1">fun()</span><span class="se">\n</span><span class="s1">#print(a2)&#39;</span><span class="p">,</span> <span class="s1">&#39;_i3&#39;</span><span class="p">:</span> <span class="s1">&#39;# 认为a1是全局的</span><span class="se">\n</span><span class="s1">a1 = 100</span><span class="se">\n\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    print(a1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    a2 = 99</span><span class="se">\n</span><span class="s1">    print(a2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(a1)</span><span class="se">\n</span><span class="s1">fun()</span><span class="se">\n</span><span class="s1">print(a2)&#39;</span><span class="p">,</span> <span class="s1">&#39;_i4&#39;</span><span class="p">:</span> <span class="s1">&#39;# 认为a1是全局的</span><span class="se">\n</span><span class="s1">a1 = 100</span><span class="se">\n\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    print(a1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    a2 = 99</span><span class="se">\n</span><span class="s1">    print(a2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(a1)</span><span class="se">\n</span><span class="s1">fun()</span><span class="se">\n</span><span class="s1">print(a2)&#39;</span><span class="p">,</span> <span class="s1">&#39;_i5&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;_i6&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    global b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;_i7&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    global b1</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;_i8&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    global b1</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;_i9&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">def fun():</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    global b1</span><span class="se">\n</span><span class="s1">    b1 = 100</span><span class="se">\n</span><span class="s1">    print(b1)</span><span class="se">\n</span><span class="s1">    print(&quot;I am in fun&quot;)</span><span class="se">\n</span><span class="s1">    # a2的作用范围是fun</span><span class="se">\n</span><span class="s1">    b2 = 99</span><span class="se">\n</span><span class="s1">    print(b2)</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">print(b1)</span><span class="se">\n</span><span class="s1">#print(b2)</span><span class="se">\n</span><span class="s1">fun()&#39;</span><span class="p">,</span> <span class="s1">&#39;_i10&#39;</span><span class="p">:</span> <span class="s1">&#39;# globals 和 locals</span><span class="se">\n</span><span class="s1">a = 1</span><span class="se">\n</span><span class="s1">b = 2</span><span class="se">\n\n</span><span class="s1">def fun(c,d):</span><span class="se">\n</span><span class="s1">    e = 111</span><span class="se">\n</span><span class="s1">    print(&quot;Locals=</span><span class="si">{0}</span><span class="s1">&quot;.format(locals()))</span><span class="se">\n</span><span class="s1">    print(&quot;Globals=</span><span class="si">{0}</span><span class="s1">&quot;.format(globals()))</span><span class="se">\n</span><span class="s1">    </span><span class="se">\n</span><span class="s1">fun(100, 200)&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="functionalprogramming">
+<h2>1.5. 函数式编程(FunctionalProgramming)和高阶函数<a class="headerlink" href="#functionalprogramming" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">函数式编程</span></code>是基于lambda演算的一种编程方式， 在函<code class="docutils literal notranslate"><span class="pre">函数式编程</span></code>中程序只有函数，其中函数可以作为参数，同样可以作为返回值。</p>
+<p>纯函数式编程语言有<code class="docutils literal notranslate"><span class="pre">LISP</span></code>，<code class="docutils literal notranslate"><span class="pre">Haskell</span></code>等， 但<code class="docutils literal notranslate"><span class="pre">Python</span></code>中要讲的函数式编程只是借鉴函数式编程的一些特点，可以理解成一半函数式一半<code class="docutils literal notranslate"><span class="pre">Python</span></code>。</p>
+<div class="section" id="lambda">
+<h3>1.5.1. lambda表达式<a class="headerlink" href="#lambda" title="永久链接至标题">¶</a></h3>
+<p>函数的作用是最大程度复用代码，但是也存在一些问题，比如如果函数的代码很少或很短：</p>
+<ul class="simple">
+<li>会造成程序很细碎，反而显得比较啰嗦。</li>
+<li>如果函数被调用次数少，则会造成资源浪费，比较每次调用函数需要一定的系统资源开销</li>
+<li>对于阅读者来说，频繁的跳转会造成阅读流程的被迫中断</li>
+</ul>
+<p>对于一些比较短小的代码，我们可以尝试使用匿名函数来替代一个比较常规的函数的定义流程，匿名函数也叫<code class="docutils literal notranslate"><span class="pre">lambda</span></code>表达式：</p>
+<ul class="simple">
+<li>是一个表达式，代替函数体相对简单的函数来定义和执行</li>
+<li>不是一个代码块，仅仅是一个表达式</li>
+<li>可以有参数，甚至客户已有多个参数，但需要用逗号隔开不同的参数</li>
+</ul>
+<p>下面的案例是一段很小的代码，也是一个很简短的函数：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># “小”函数举例</span>
+<span class="k">def</span> <span class="nf">printA</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AAAAAAAA&quot;</span><span class="p">)</span>
+
+<span class="n">printA</span><span class="p">()</span> <span class="c1">#调用了函数</span>
+</pre></div>
+</div>
+<p>下面我们聊下<code class="docutils literal notranslate"><span class="pre">lambda</span></code> 表达是的具体用法：</p>
+<ol class="simple">
+<li>以lambda开头</li>
+<li>紧跟一定的参数（如果有的话）</li>
+<li>参数后用冒号和表达式主题隔开</li>
+<li>只是一个表达式，所以，没有<code class="docutils literal notranslate"><span class="pre">return</span></code></li>
+</ol>
+<p>具体请参照下面的案例来理解：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 计算一个数字的100倍数</span>
+<span class="c1"># 因为就是一个表达式，所以没有return</span>
+<span class="n">stm</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">x</span>
+<span class="c1"># 使用上跟函数调用一模一样</span>
+<span class="n">stm</span><span class="p">(</span><span class="mi">89</span><span class="p">)</span> 
+</pre></div>
+</div>
+<p>或者下面也是也是一个多参数的案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stm2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="n">z</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">stm2</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="c1">#执行表达式</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>1.5.2. 高阶函数<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<p>函数的参数一般是一个值，但函数的名称同样可以作为一个值传递，把函数作为参数使用的函数，叫<code class="docutils literal notranslate"><span class="pre">高阶函数</span></code>。</p>
+<p>下面的案例中<code class="docutils literal notranslate"><span class="pre">funA</span></code>是被定义的一个函数，然后把这个函数名字作为值赋值给<code class="docutils literal notranslate"><span class="pre">funB</span></code>，此时<code class="docutils literal notranslate"><span class="pre">funB，funA</span></code>都指向了一个共同的函数体，在
+调用的时候可以用任何一个名字，结果相同。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 变量可以赋值</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+
+<span class="c1"># 函数名称就是一个变量</span>
+<span class="k">def</span> <span class="nf">funA</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In funA&quot;</span><span class="p">)</span>
+
+<span class="n">funB</span> <span class="o">=</span> <span class="n">funA</span>
+<span class="n">funB</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>以上代码得出的结论：</p>
+<ul class="simple">
+<li>函数名称可以作为值，也可以是变量</li>
+<li><code class="docutils literal notranslate"><span class="pre">funB</span></code> 和 <code class="docutils literal notranslate"><span class="pre">funA</span></code>只是名称不一样而已</li>
+</ul>
+<p>既然函数名称是变量，则应该可以被当做参数传入另一个函数， 这就是所谓高阶函数的基础。</p>
+<p>下面案例展示函数的普通调用方式，即在函数内部调用别的函数:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 高阶函数举例</span>
+<span class="c1"># funA是普通函数，返回一个传入数字的100倍数字</span>
+<span class="k">def</span> <span class="nf">funA</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># 再写一个函数，把传入参数乘以300倍，</span>
+<span class="k">def</span> <span class="nf">funB</span><span class="p">(</span><span class="n">n</span> <span class="p">):</span>
+  <span class="c1"># 最终是想返回300n</span>
+  <span class="k">return</span> <span class="n">funA</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">funB</span><span class="p">(</span><span class="mi">9</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>上面代码是可以的，但如果想办法降低这两个函数的耦合度，就可以用高阶函数，即把函数<code class="docutils literal notranslate"><span class="pre">funA</span></code>作为参数传入函数<code class="docutils literal notranslate"><span class="pre">funB</span></code>：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 写一个高阶函数</span>
+<span class="k">def</span> <span class="nf">funC</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+  <span class="c1"># 假定函数是把n扩大100被</span>
+  <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">funC</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">funA</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>比较<code class="docutils literal notranslate"><span class="pre">funC</span></code>和<code class="docutils literal notranslate"><span class="pre">funB</span></code>, 显然<code class="docutils literal notranslate"><span class="pre">funC</span></code>的写法要优于<code class="docutils literal notranslate"><span class="pre">funB</span></code>, <code class="docutils literal notranslate"><span class="pre">funC</span></code>的功能如果后期面临维护或者修改，要比<code class="docutils literal notranslate"><span class="pre">funB</span></code>灵活许多,
+例如我们需要替换<code class="docutils literal notranslate"><span class="pre">funA</span></code>的功能部分，根本不需要修改代码<code class="docutils literal notranslate"><span class="pre">funB</span></code>，只需要传入不同的函数<code class="docutils literal notranslate"><span class="pre">funD</span></code>即可：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="k">def</span> <span class="nf">funD</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="mi">10</span>
+
+  <span class="c1"># 需求变更，需要把n放大三十倍，此时funB则无法实现</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">funC</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">funD</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="map">
+<h3>1.5.3. map<a class="headerlink" href="#map" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">map</span></code>原意就是映射，即把集合或者列表的元素，每一个元素都按照一定规则进行操作，结构生成一个新的列表或者集合。</p>
+<p>在<code class="docutils literal notranslate"><span class="pre">Python</span></code>中<code class="docutils literal notranslate"><span class="pre">map</span></code>函数是系统提供的具有映射功能的函数，返回值是一个迭代对象。</p>
+<p>通过查询<code class="docutils literal notranslate"><span class="pre">help(map)</span></code>的帮助文档可以清晰的显示他的用法：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Help</span> <span class="n">on</span> <span class="k">class</span> <span class="nc">map</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">builtins</span><span class="p">:</span>
+
+<span class="k">class</span> <span class="nc">map</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+ <span class="o">|</span>  <span class="nb">map</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">iterables</span><span class="p">)</span> <span class="o">--&gt;</span> <span class="nb">map</span> <span class="nb">object</span>
+ <span class="o">|</span>  
+ <span class="o">|</span>  <span class="n">Make</span> <span class="n">an</span> <span class="n">iterator</span> <span class="n">that</span> <span class="n">computes</span> <span class="n">the</span> <span class="n">function</span> <span class="n">using</span> <span class="n">arguments</span> <span class="kn">from</span>
+ <span class="o">|</span>  <span class="n">each</span> <span class="n">of</span> <span class="n">the</span> <span class="n">iterables</span><span class="o">.</span>  <span class="n">Stops</span> <span class="n">when</span> <span class="n">the</span> <span class="n">shortest</span> <span class="n">iterable</span> <span class="ow">is</span> <span class="n">exhausted</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">map</span></code>的具体使用请参阅下面案例：</p>
+<p>如果有一个列表，想对列表里的每一个元素乘以10并得到换一个新的列表，我们可以通过以前的知识遍历列表来完成这个功能，
+例如下面代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l1</span><span class="p">:</span>
+<span class="n">l2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>但是如果我们用<code class="docutils literal notranslate"><span class="pre">map</span></code>函数实现就简单的多了，先编写一个函数，这个函数是<code class="docutils literal notranslate"><span class="pre">map</span></code>用来映射后进行操作的函数：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 利用map实现</span>
+<span class="k">def</span> <span class="nf">mulTen</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="mi">10</span>
+</pre></div>
+</div>
+<p>然我们调用<code class="docutils literal notranslate"><span class="pre">map</span></code>, 可以理解成用l1的每个元素逐个调用mulTen函数，然后放入结果中生成一个新的列表，虽然这种理解并不准确，
+准确的说法是生成了换一个迭代器，对数据的映射操作也不是一次性完成全部，二是逐次完成：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l3</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">mulTen</span><span class="p">,</span> <span class="n">l1</span> <span class="p">)</span>
+<span class="c1"># map类型是一个可迭代的结构，所以可以使用for遍历</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l3</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reduce">
+<h3>1.5.4. reduce<a class="headerlink" href="#reduce" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">reduce</span></code>原意是归并或者缩减，在这里代表把一个可迭代的对象归并成一个结果。</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">reduce</span></code>在<code class="docutils literal notranslate"><span class="pre">functools</span></code>模块里</div></blockquote>
+<p><code class="docutils literal notranslate"><span class="pre">reduce</span></code>的帮助文档如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">reduce</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">reduce</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">sequence</span><span class="p">[,</span> <span class="n">initial</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">value</span>
+    
+    <span class="n">Apply</span> <span class="n">a</span> <span class="n">function</span> <span class="n">of</span> <span class="n">two</span> <span class="n">arguments</span> <span class="n">cumulatively</span> <span class="n">to</span> <span class="n">the</span> <span class="n">items</span> <span class="n">of</span> <span class="n">a</span> <span class="n">sequence</span><span class="p">,</span>
+    <span class="kn">from</span> <span class="nn">left</span> <span class="n">to</span> <span class="n">right</span><span class="p">,</span> <span class="n">so</span> <span class="k">as</span> <span class="n">to</span> <span class="n">reduce</span> <span class="n">the</span> <span class="n">sequence</span> <span class="n">to</span> <span class="n">a</span> <span class="n">single</span> <span class="n">value</span><span class="o">.</span>
+    <span class="n">For</span> <span class="n">example</span><span class="p">,</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="n">calculates</span>
+    <span class="p">((((</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">4</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span>  <span class="n">If</span> <span class="n">initial</span> <span class="ow">is</span> <span class="n">present</span><span class="p">,</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">placed</span> <span class="n">before</span> <span class="n">the</span> <span class="n">items</span>
+    <span class="n">of</span> <span class="n">the</span> <span class="n">sequence</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">calculation</span><span class="p">,</span> <span class="ow">and</span> <span class="n">serves</span> <span class="k">as</span> <span class="n">a</span> <span class="n">default</span> <span class="n">when</span> <span class="n">the</span>
+    <span class="n">sequence</span> <span class="ow">is</span> <span class="n">empty</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">reduce</span></code>会把一个迭代对象中的内容，先把前两个元素作为才是调用某个函数，然后把函数结果作为一个参数，迭代对象
+的第三个元素作为第二个参数再次调用函数，这样逐次调用迭代对象的全部参数，知道最后。</p>
+<p>对于作为参数的函数有两个要求：</p>
+<ol class="simple">
+<li>必须有两个参数</li>
+<li>必须有返回结果</li>
+</ol>
+<p>参加下面案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+
+<span class="c1"># 定义一个操作函数</span>
+<span class="c1"># 操作函数要有两个参数和一个</span>
+<span class="k">def</span> <span class="nf">myAdd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+
+<span class="c1"># 对于列表[1,2,3,4,5,6]执行myAdd的reduce操作</span>
+<span class="n">rst</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span> <span class="n">myAdd</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filter">
+<h3>1.5.5. filter<a class="headerlink" href="#filter" title="永久链接至标题">¶</a></h3>
+<p>过滤函数,对一组数据进行过滤，符合条件的数据会生成一个新的列表并返回。</p>
+<p><code class="docutils literal notranslate"><span class="pre">filter</span></code>跟<code class="docutils literal notranslate"><span class="pre">map</span></code>相比较：</p>
+<ul class="simple">
+<li>相同点：都对列表的每一个元素逐一进行操作</li>
+<li>不同：<ul>
+<li><code class="docutils literal notranslate"><span class="pre">map</span></code>会生成一个跟原来数据相对应的新队列</li>
+<li><code class="docutils literal notranslate"><span class="pre">filter</span></code>不一定，只要符合条件的才会进入新的数据集合</li>
+</ul>
+</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">filter</span></code>函数怎么写：</p>
+<ul class="simple">
+<li>利用给定参数进行判断</li>
+<li>返回值一定是个布尔值</li>
+</ul>
+<p>调用格式：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">filter(f,</span> <span class="pre">data)</span></code>, <code class="docutils literal notranslate"><span class="pre">f</span></code>是过滤函数， <code class="docutils literal notranslate"><span class="pre">data</span></code>是数据</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">filter</span></code>函数的一个案例是：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 对于一个列表，对其进行过滤，偶数组成一个新列表</span>
+
+<span class="c1"># 需要定义过滤函数, 过滤函数要求有输入，返回布尔值</span>
+<span class="k">def</span> <span class="nf">isEven</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+   <span class="k">return</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4556</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">23455</span><span class="p">,</span><span class="mi">43</span><span class="p">]</span>
+
+<span class="n">rst</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="n">isEven</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+<span class="c1"># 返回的filter内容是一个可迭代对象</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">rst</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rst</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sorted">
+<h3>1.5.6. sorted<a class="headerlink" href="#sorted" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">sorted</span></code>把一个序列按照给定算法进行排序， 函数的帮助文档如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="o">/</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">Return</span> <span class="n">a</span> <span class="n">new</span> <span class="nb">list</span> <span class="n">containing</span> <span class="nb">all</span> <span class="n">items</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">iterable</span> <span class="ow">in</span> <span class="n">ascending</span> <span class="n">order</span><span class="o">.</span>
+    
+    <span class="n">A</span> <span class="n">custom</span> <span class="n">key</span> <span class="n">function</span> <span class="n">can</span> <span class="n">be</span> <span class="n">supplied</span> <span class="n">to</span> <span class="n">customize</span> <span class="n">the</span> <span class="n">sort</span> <span class="n">order</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span>
+    <span class="n">reverse</span> <span class="n">flag</span> <span class="n">can</span> <span class="n">be</span> <span class="nb">set</span> <span class="n">to</span> <span class="n">request</span> <span class="n">the</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">descending</span> <span class="n">order</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>在<code class="docutils literal notranslate"><span class="pre">sorted</span></code>的参数中, <code class="docutils literal notranslate"><span class="pre">key</span></code>参数代表的函数在排序前对每一个元素进行key函数运算，可以理解成按照key函数定义的逻辑进行排序</p>
+<blockquote>
+<div><code class="docutils literal notranslate"><span class="pre">sorted</span></code>函数在<code class="docutils literal notranslate"><span class="pre">python2</span></code> 和 <code class="docutils literal notranslate"><span class="pre">python3</span></code> 相差巨大， 此处以<code class="docutils literal notranslate"><span class="pre">python3</span></code>为准</div></blockquote>
+<p>关于排序参考下面案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">234</span><span class="p">,</span><span class="mi">22312</span><span class="p">,</span><span class="mi">123</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">66723</span><span class="p">,</span><span class="mi">34</span><span class="p">]</span>
+<span class="n">al</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">al</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面案例并没有时候用参数<code class="docutils literal notranslate"><span class="pre">key</span></code>， 下面案例将调用排序函数：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">43</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="o">-</span><span class="mi">23</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">4345</span><span class="p">]</span>
+<span class="c1"># 按照绝对值进行排序</span>
+<span class="c1"># abs是求绝对值的意思</span>
+<span class="c1"># 即按照绝对值的倒叙排列</span>
+<span class="n">al</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">abs</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>下面案例通过调用字符串的小写转换函数，先将所有需要排序的字符串转换，然后排序：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">astr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dana&#39;</span><span class="p">,</span> <span class="s1">&#39;Danaa&#39;</span><span class="p">,</span> <span class="s1">&#39;wangxiaojing&#39;</span><span class="p">,</span> <span class="s1">&#39;jingjing&#39;</span><span class="p">,</span> <span class="s1">&#39;haha&#39;</span><span class="p">]</span>
+
+<span class="n">str1</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">astr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
+
+<span class="n">str2</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">astr</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>1.6. 装饰器<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id13">
+<h3>1.6.1. 函数作为返回值<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<p>函数调用可以返回具体的值，当然也可以返回一个函数作为结果。</p>
+<p>函数作为返回值返回的时候，被返回的函数需要在函数体内定义，如下所示：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myF2</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">myF3</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;In myF3&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">3</span>
+    <span class="k">return</span> <span class="n">myF3</span>
+
+<span class="c1"># 使用上面定义, 调用myF2，返回一个函数myF3，赋值给f3</span>
+<span class="n">f3</span> <span class="o">=</span> <span class="n">myF2</span><span class="p">()</span> <span class="c1">#得到的是函数myF3,此时f3和myF3是同一个函数</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f3</span><span class="p">))</span>
+<span class="n">f3</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>下面的案例返回一个函数，但返回函数中，使用了外层函数的某些值，这些值可能是外层函数的参数，也可能是外层函数中
+定义的一些变量：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># args:参数列表</span>
+<span class="c1"># 1 myF4定义函数，返回内部定义的函数myF5</span>
+<span class="c1"># 2. myF5使用了外部变量，这个变量是myF4的参数</span>
+<span class="k">def</span> <span class="nf">myF4</span><span class="p">(</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">myF5</span><span class="p">():</span>
+        <span class="n">rst</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span> <span class="c1">#内部函数使用了外部函数的值</span>
+        <span class="n">rst</span> <span class="o">+=</span> <span class="n">n</span>
+        <span class="k">return</span> <span class="n">rst</span>
+    <span class="k">return</span> <span class="n">myF5</span>
+</pre></div>
+</div>
+<p>上面函数的使用：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f5</span> <span class="o">=</span> <span class="n">myF4</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># f5的调用方式</span>
+<span class="n">f5</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="closure">
+<h3>1.6.2. 闭包（closure)<a class="headerlink" href="#closure" title="永久链接至标题">¶</a></h3>
+<p>当一个函数在内部又定义了一个函数，并且内部的函数使用了外部函数的参数或者局部变量，当内部函数被当做返回值的时候，
+相关参数和变量保存在返回的函数中，这种结果，叫<code class="docutils literal notranslate"><span class="pre">闭包</span></code></p>
+<p>上面定义的<code class="docutils literal notranslate"><span class="pre">myF4</span></code>是一个标准闭包结构。</p>
+</div>
+<div class="section" id="id14">
+<h3>1.6.3. 闭包常见坑<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<p>闭包函数使用起来可能会遇到坑,要小心:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count</span><span class="p">():</span>
+    <span class="c1"># 定义列表，列表里存放的是定义的函数</span>
+    <span class="n">fs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+        <span class="c1"># 定义了一个函数f</span>
+        <span class="c1"># f是一个闭包结构</span>
+        <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span>
+        <span class="n">fs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fs</span>
+
+
+<span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">,</span> <span class="n">f3</span> <span class="o">=</span> <span class="n">count</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f1</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f2</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f3</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>运行结果为:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Augs</span>\<span class="n">Anaconda3</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="s2">&quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot;</span> <span class="o">--</span><span class="n">multiproc</span> <span class="o">--</span><span class="n">qt</span><span class="o">-</span><span class="n">support</span><span class="o">=</span><span class="n">auto</span> <span class="o">--</span><span class="n">client</span> <span class="mf">127.0.0.1</span> <span class="o">--</span><span class="n">port</span> <span class="mi">52813</span> <span class="o">--</span><span class="n">file</span> <span class="n">F</span><span class="p">:</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">new_python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">te</span><span class="o">.</span><span class="n">py</span>
+<span class="n">pydev</span> <span class="n">debugger</span><span class="p">:</span> <span class="n">process</span> <span class="mi">7664</span> <span class="ow">is</span> <span class="n">connecting</span>
+
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">202.7660.27</span><span class="p">)</span>
+<span class="mi">9</span>
+<span class="mi">9</span>
+<span class="mi">9</span>
+
+<span class="n">Process</span> <span class="n">finished</span> <span class="k">with</span> <span class="n">exit</span> <span class="n">code</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>出现的问题分析：</p>
+<ul class="simple">
+<li>造成上述状况的原因是,返回函数引用了变量i， i并非立即执行，而是等到三个函数都返回的时候才统一使用，此时i已经变成了3，最终调用的时候，都返回的是 3*3</li>
+<li>此问题描述成：返回闭包时，返回函数不能引用任何循环变量</li>
+<li>解决方案： 再创建一个函数，用该函数的参数绑定循环变量的当前值，无论该循环变量以后如何改变，已经绑定的函数参数值不再改变</li>
+</ul>
+<p>修改上述函数:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count2</span><span class="p">():</span>
+    <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">j</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">g</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">j</span><span class="o">*</span><span class="n">j</span>
+        <span class="k">return</span> <span class="n">g</span>
+
+    <span class="n">fs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">fs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">fs</span>
+
+<span class="n">f1</span><span class="p">,</span><span class="n">f2</span><span class="p">,</span><span class="n">f3</span> <span class="o">=</span> <span class="n">count2</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f1</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f2</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f3</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>修改后的函数运行和能达到预期.</p>
+</div>
+<div class="section" id="id15">
+<h3>1.6.4. 当变量使用的函数<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<p>请看下面平淡无奇的案例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+
+<span class="n">hello</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>函数名称可以作为变量进行赋值:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">hello</span>
+<span class="n">f</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>f和hello是一个函数, 这两个函数名称不同,但<code class="docutils literal notranslate"><span class="pre">id</span></code>相同,通过下面代码可以验证:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">hello</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>现在我们有了新的需求：</p>
+<ol class="simple">
+<li>对hello功能进行扩展，每次打印hello之前打印当前系统时间</li>
+<li>而实现这个功能又不能改动现有代码</li>
+</ol>
+<p>此时可以解逐装饰器来实现.</p>
+</div>
+<div class="section" id="decrator">
+<h3>1.6.5. 装饰器(Decrator)<a class="headerlink" href="#decrator" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>在不改动函数代码的基础上无限制扩展函数功能的一种机制，本质上讲，装饰器是一个能够返回函数的高阶函数</li>
+<li>装饰器的使用： 使用&#64;语法， 即在每次要扩展到函数定义前使用&#64;+函数名</li>
+</ul>
+<p>任务：</p>
+<ul class="simple">
+<li>对hello函数进行功能扩展，每次执行hello万打印当前时间</li>
+</ul>
+<p>利用下面的代码, 及定义一个装饰器, 装饰要<code class="docutils literal notranslate"><span class="pre">hello</span></code>函数:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># 高阶函数，以函数作为参数</span>
+<span class="k">def</span> <span class="nf">printTime</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time: &quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="c1"># 上面定义了装饰器，使用的时候需要用到@， 此符号是python的语法糖</span>
+<span class="nd">@printTime</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+
+<span class="c1">#利用语法糖调用</span>
+<span class="n">hello</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>函数的运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Augs</span>\<span class="n">Anaconda3</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="s2">&quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot;</span> <span class="o">--</span><span class="n">multiproc</span> <span class="o">--</span><span class="n">qt</span><span class="o">-</span><span class="n">support</span><span class="o">=</span><span class="n">auto</span> <span class="o">--</span><span class="n">client</span> <span class="mf">127.0.0.1</span> <span class="o">--</span><span class="n">port</span> <span class="mi">55245</span> <span class="o">--</span><span class="n">file</span> <span class="n">F</span><span class="p">:</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">new_python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">te</span><span class="o">.</span><span class="n">py</span>
+<span class="n">pydev</span> <span class="n">debugger</span><span class="p">:</span> <span class="n">process</span> <span class="mi">12548</span> <span class="ow">is</span> <span class="n">connecting</span>
+
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">202.7660.27</span><span class="p">)</span>
+<span class="n">Time</span><span class="p">:</span>  <span class="n">Mon</span> <span class="n">Dec</span> <span class="mi">27</span> <span class="mi">18</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="mi">36</span> <span class="mi">2021</span>
+<span class="n">Hello</span> <span class="n">world</span>
+
+<span class="n">Process</span> <span class="n">finished</span> <span class="k">with</span> <span class="n">exit</span> <span class="n">code</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>装饰器的好处是:一点定义，则可以装饰任意函数
+而函数一旦被其装饰，则把装饰器的功能直接添加到定义函数的功能上, 但对函数原本的代码功能没有任何副作用.</p>
+<p>参看下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@printTime</span>
+<span class="k">def</span> <span class="nf">hello2</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;今天很高兴，被老板揪着讲课了&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;还可以由很多的选择&quot;</span><span class="p">)</span>
+
+<span class="n">hello2</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>上面对函数的装饰使用了系统定义的语法糖, 下面我们尝试手动执行下装饰器</p>
+<p>我们的代码首次按使用定义好的的装饰器, 但我们手动调用这个装饰器,把相应函数传入, 调用有两种情况,一种是
+调用装饰器后返回的结果放入原来被装饰的函数名:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hello3</span> <span class="o">=</span> <span class="n">printTime</span><span class="p">(</span><span class="n">hello3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>另一种是返回结果单独起了一个名字:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">printTime</span><span class="p">(</span><span class="n">hello3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>两种不同调用也引发了不同结果,思考下,为什么会这样?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="c1"># 高阶函数，以函数作为参数</span>
+<span class="k">def</span> <span class="nf">printTime</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time: &quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ctime</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="k">def</span> <span class="nf">hello3</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我是手动执行的&quot;</span><span class="p">)</span>
+
+<span class="n">hello3</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">hello3</span> <span class="o">=</span> <span class="n">printTime</span><span class="p">(</span><span class="n">hello3</span><span class="p">)</span>
+<span class="n">hello3</span><span class="p">()</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">printTime</span><span class="p">(</span><span class="n">hello3</span><span class="p">)</span>
+<span class="n">f</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Augs</span>\<span class="n">Anaconda3</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="s2">&quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot;</span> <span class="o">--</span><span class="n">multiproc</span> <span class="o">--</span><span class="n">qt</span><span class="o">-</span><span class="n">support</span><span class="o">=</span><span class="n">auto</span> <span class="o">--</span><span class="n">client</span> <span class="mf">127.0.0.1</span> <span class="o">--</span><span class="n">port</span> <span class="mi">55607</span> <span class="o">--</span><span class="n">file</span> <span class="n">F</span><span class="p">:</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">new_python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">te</span><span class="o">.</span><span class="n">py</span>
+<span class="n">pydev</span> <span class="n">debugger</span><span class="p">:</span> <span class="n">process</span> <span class="mi">12188</span> <span class="ow">is</span> <span class="n">connecting</span>
+
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">202.7660.27</span><span class="p">)</span>
+<span class="n">我是手动执行的</span>
+<span class="o">****************************************</span>
+<span class="n">Time</span><span class="p">:</span>  <span class="n">Mon</span> <span class="n">Dec</span> <span class="mi">27</span> <span class="mi">18</span><span class="p">:</span><span class="mi">40</span><span class="p">:</span><span class="mi">00</span> <span class="mi">2021</span>
+<span class="n">我是手动执行的</span>
+<span class="o">****************************************</span>
+<span class="n">Time</span><span class="p">:</span>  <span class="n">Mon</span> <span class="n">Dec</span> <span class="mi">27</span> <span class="mi">18</span><span class="p">:</span><span class="mi">40</span><span class="p">:</span><span class="mi">00</span> <span class="mi">2021</span>
+<span class="n">Time</span><span class="p">:</span>  <span class="n">Mon</span> <span class="n">Dec</span> <span class="mi">27</span> <span class="mi">18</span><span class="p">:</span><span class="mi">40</span><span class="p">:</span><span class="mi">00</span> <span class="mi">2021</span>
+<span class="n">我是手动执行的</span>
+
+<span class="n">Process</span> <span class="n">finished</span> <span class="k">with</span> <span class="n">exit</span> <span class="n">code</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<blockquote>
+<div>思考题答案: 装饰器返回结果的代码<code class="docutils literal notranslate"><span class="pre">ruturn</span> <span class="pre">f(...)</span></code>是一个执行语句, 如果返回语句名称一样, 则覆盖一个, 否则会执行一个<code class="docutils literal notranslate"><span class="pre">f</span></code>函数一个<code class="docutils literal notranslate"><span class="pre">hello3</span></code>函数
+再不明白可以进<code class="docutils literal notranslate"><span class="pre">QQ群:</span> <span class="pre">999</span> <span class="pre">0960</span></code>, 或者微信 <code class="docutils literal notranslate"><span class="pre">13119144223</span></code></div></blockquote>
+</div>
+</div>
+<div class="section" id="id16">
+<h2>1.7. 偏函数<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h2>
+<p>我们先看一个例子, 把字符串转化成十进制数字:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面例子很简单,我们还可以通过这个函数求八进制的字符串12345，表示成十进制的数字是多少:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>我们新建一个函数，此函数是默认输入的字符串是16进制数字, 把此字符串返回十进制的数字的用法是:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">int16</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">16</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">base</span><span class="p">)</span>
+
+<span class="n">int16</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>代码很好理解,不做过多解释了.</p>
+<div class="section" id="id17">
+<h3>1.7.1. 偏函数<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+<p>偏函数是参数固定的函数，相当于一个由特定参数的一个函数, 实现偏函数需要用到<code class="docutils literal notranslate"><span class="pre">functools.partial</span></code>:</p>
+<ul class="simple">
+<li>functools.partial的作用是，把一个函数某些函数固定，返回一个新函数</li>
+</ul>
+<p>参看下面案例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">functools</span>
+<span class="c1">#实现上面int16的功能</span>
+<span class="n">int16</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="n">int16</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id18">
+<h2>1.8. 高级函数补充<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h2>
+<div class="section" id="zip">
+<h3>1.8.1. zip<a class="headerlink" href="#zip" title="永久链接至标题">¶</a></h3>
+<p>把两个可迭代内容生成一个可迭代的tuple元素类型组成的内容</p>
+<p><code class="docutils literal notranslate"><span class="pre">zip</span></code> 案例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">55</span><span class="p">]</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C:\Users\Augs\Anaconda3\python.exe &quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot; --multiproc --qt-support=auto --client 127.0.0.1 --port 56228 --file F:/book/python/new_python/code/te.py
+pydev debugger: process 11868 is connecting
+
+Connected to pydev debugger (build 202.7660.27)
+&lt;class &#39;zip&#39;&gt;
+&lt;zip object at 0x00000213421CED88&gt;
+
+Process finished with exit code 0
+</pre></div>
+</div>
+<p>另一个例子:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;wangwang&quot;</span><span class="p">,</span> <span class="s2">&quot;mingyue&quot;</span><span class="p">,</span> <span class="s2">&quot;yyt&quot;</span><span class="p">]</span>
+<span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">89</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">78</span><span class="p">]</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">l2</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">z</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C:\Users\Augs\Anaconda3\python.exe &quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot; --multiproc --qt-support=auto --client 127.0.0.1 --port 56172 --file F:/book/python/new_python/code/te.py
+pydev debugger: process 12704 is connecting
+
+Connected to pydev debugger (build 202.7660.27)
+(&#39;wangwang&#39;, 89)
+(&#39;mingyue&#39;, 23)
+(&#39;yyt&#39;, 78)
+&lt;class &#39;zip&#39;&gt;
+
+Process finished with exit code 0
+</pre></div>
+</div>
+<p>考虑下面结果，为什么会为空</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l3</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">z</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l3</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div>上面是zip的结果是一个迭代器, 迭代器运行到最后就是返回空,参看迭代器知识点</div></blockquote>
+</div>
+<div class="section" id="enumerate">
+<h3>1.8.2. enumerate<a class="headerlink" href="#enumerate" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>跟zip功能比较像</li>
+<li>对可迭代对象里的每一元素，配上一个索引，然后索引和内容构成tuple类型</li>
+</ul>
+<p>enumerate案例1:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">55</span><span class="p">]</span>
+
+<span class="n">em</span> <span class="o">=</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+
+<span class="n">l2</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">em</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Augs</span>\<span class="n">Anaconda3</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="s2">&quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot;</span> <span class="o">--</span><span class="n">multiproc</span> <span class="o">--</span><span class="n">qt</span><span class="o">-</span><span class="n">support</span><span class="o">=</span><span class="n">auto</span> <span class="o">--</span><span class="n">client</span> <span class="mf">127.0.0.1</span> <span class="o">--</span><span class="n">port</span> <span class="mi">56285</span> <span class="o">--</span><span class="n">file</span> <span class="n">F</span><span class="p">:</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">new_python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">te</span><span class="o">.</span><span class="n">py</span>
+<span class="n">pydev</span> <span class="n">debugger</span><span class="p">:</span> <span class="n">process</span> <span class="mi">800</span> <span class="ow">is</span> <span class="n">connecting</span>
+
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">202.7660.27</span><span class="p">)</span>
+<span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">22</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">33</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">44</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">55</span><span class="p">)]</span>
+
+<span class="n">Process</span> <span class="n">finished</span> <span class="k">with</span> <span class="n">exit</span> <span class="n">code</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>另一个比较飘逸的例子是:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">55</span><span class="p">]</span>
+<span class="n">em</span> <span class="o">=</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">l2</span> <span class="o">=</span> <span class="p">[</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">em</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>结果为:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Augs</span>\<span class="n">Anaconda3</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="s2">&quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot;</span> <span class="o">--</span><span class="n">multiproc</span> <span class="o">--</span><span class="n">qt</span><span class="o">-</span><span class="n">support</span><span class="o">=</span><span class="n">auto</span> <span class="o">--</span><span class="n">client</span> <span class="mf">127.0.0.1</span> <span class="o">--</span><span class="n">port</span> <span class="mi">56381</span> <span class="o">--</span><span class="n">file</span> <span class="n">F</span><span class="p">:</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">new_python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">te</span><span class="o">.</span><span class="n">py</span>
+<span class="n">pydev</span> <span class="n">debugger</span><span class="p">:</span> <span class="n">process</span> <span class="mi">13092</span> <span class="ow">is</span> <span class="n">connecting</span>
+
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">202.7660.27</span><span class="p">)</span>
+<span class="p">[(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="p">(</span><span class="mi">101</span><span class="p">,</span> <span class="mi">22</span><span class="p">),</span> <span class="p">(</span><span class="mi">102</span><span class="p">,</span> <span class="mi">33</span><span class="p">),</span> <span class="p">(</span><span class="mi">103</span><span class="p">,</span> <span class="mi">44</span><span class="p">),</span> <span class="p">(</span><span class="mi">104</span><span class="p">,</span> <span class="mi">55</span><span class="p">)]</span>
+
+<span class="n">Process</span> <span class="n">finished</span> <span class="k">with</span> <span class="n">exit</span> <span class="n">code</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="collections">
+<h2>1.9. collections模块<a class="headerlink" href="#collections" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">collections</span></code> 包含了一些特殊的容器，针对<code class="docutils literal notranslate"><span class="pre">Python</span></code>内置的容器，例如<code class="docutils literal notranslate"><span class="pre">list</span></code>、<code class="docutils literal notranslate"><span class="pre">dict</span></code>、<code class="docutils literal notranslate"><span class="pre">set</span></code>和<code class="docutils literal notranslate"><span class="pre">tuple</span></code>，提供了另一种选择；</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">namedtuple</span></code>，可以创建包含名称的tuple；</li>
+<li><code class="docutils literal notranslate"><span class="pre">deque</span></code>: 类似于list的容器，可以快速的在队列头部和尾部添加、删除元素；</li>
+<li><code class="docutils literal notranslate"><span class="pre">Counter</span></code>: dict的子类，计算可hash的对象；</li>
+<li><code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>: dict的子类，可以记住元素的添加顺序；</li>
+<li><code class="docutils literal notranslate"><span class="pre">defaultdict</span></code>: dict的子类，可以调用提供默认值的函数；</li>
+</ul>
+<div class="section" id="namedtuple">
+<h3>1.9.1. namedtuple<a class="headerlink" href="#namedtuple" title="永久链接至标题">¶</a></h3>
+<p>命名的元组，意味给元组中的每个位置赋予含义，意味着代码可读性更强，
+<code class="docutils literal notranslate"><span class="pre">namedtuple</span></code>可以在任何常规元素使用的地方使用，而且它可以通过名称来获取字段信息而不仅仅是通过位置索引。</p>
+<ul class="simple">
+<li>是一个<code class="docutils literal notranslate"><span class="pre">tuple</span></code>类型</li>
+<li>是一个可命名的<code class="docutils literal notranslate"><span class="pre">tuple</span></code></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">namedtuple</span></code>在给<code class="docutils literal notranslate"><span class="pre">csv</span></code>或者<code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>返回的元组附上名称特别有用</p>
+<p>请看下面例子:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">collections</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Point&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span><span class="o">.</span><span class="vm">__doc__</span>                   <span class="c1"># docstring for the new class</span>
+<span class="go">&#39;Point(x, y)&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>             <span class="c1"># instantiate with positional args or keywords</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>                     <span class="c1"># indexable like a plain tuple</span>
+<span class="go">33</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span>                        <span class="c1"># unpack like a regular tuple</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<span class="go">(11, 22)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span>                       <span class="c1"># fields also accessible by name</span>
+<span class="go">33</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">_asdict</span><span class="p">()</span>                 <span class="c1"># convert to a dictionary</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="go">11</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Point</span><span class="p">(</span><span class="o">**</span><span class="n">d</span><span class="p">)</span>                      <span class="c1"># convert from a dictionary</span>
+<span class="go">Point(x=11, y=22)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">_replace</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>               <span class="c1"># _replace() is like str.replace() but targets named fields</span>
+<span class="go">Point(x=100, y=22)</span>
+</pre></div>
+</div>
+<p>从某种意义上说, 相当于直接创建了一个类, 这个类名称是<code class="docutils literal notranslate"><span class="pre">Point</span></code>, 有两个属性, <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y</span></code></p>
+<p>下面这段代码如果不看<code class="docutils literal notranslate"><span class="pre">Circle</span></code>的定义, 级别就是一个定义的类而已:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Circle</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;Circle&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">])</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C:\Users\Augs\Anaconda3\python.exe &quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot; --multiproc --qt-support=auto --client 127.0.0.1 --port 51985 --file F:/book/python/new_python/code/te.py
+pydev debugger: process 16160 is connecting
+
+Connected to pydev debugger (build 202.7660.27)
+Circle(x=100, y=150, r=50)
+&lt;class &#39;__main__.Circle&#39;&gt;
+
+Process finished with exit code 0
+</pre></div>
+</div>
+<p>想检测以下<code class="docutils literal notranslate"><span class="pre">namedtuple</span></code>到底属于谁的子类</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果是:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dequeue">
+<h3>1.9.2. dequeue<a class="headerlink" href="#dequeue" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">deque</span></code>是栈和队列的一种广义实现，是”double-end queue”的简称；</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">deque</span></code>支持线程安全、有效内存地以近似<code class="docutils literal notranslate"><span class="pre">o(1)</span></code>的性能在<code class="docutils literal notranslate"><span class="pre">deque</span></code>的两端插入和删除元素</li>
+<li>尽管<code class="docutils literal notranslate"><span class="pre">list</span></code>也支持相似的操作，但是它主要在固定长度操作上的优化，从而在<code class="docutils literal notranslate"><span class="pre">pop(0)</span></code>和<code class="docutils literal notranslate"><span class="pre">insert(0,v)</span></code>（会改变数据的位置和大小）上有<code class="docutils literal notranslate"><span class="pre">o(n)</span></code>的时间复杂度。</li>
+<li>比较方便的解决了频繁删除插入带来的效率问题</li>
+</ul>
+<p>把<code class="docutils literal notranslate"><span class="pre">deque</span></code>理解成列表即可, 只不过列表的追加操作比较简单,但从列表头插入数据效率比较低,<code class="docutils literal notranslate"><span class="pre">deque</span></code>有效解决了这个问题.</p>
+<p>参看下面案例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+<span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+
+<span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;d&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+
+<span class="n">q</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Augs</span>\<span class="n">Anaconda3</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="s2">&quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot;</span> <span class="o">--</span><span class="n">multiproc</span> <span class="o">--</span><span class="n">qt</span><span class="o">-</span><span class="n">support</span><span class="o">=</span><span class="n">auto</span> <span class="o">--</span><span class="n">client</span> <span class="mf">127.0.0.1</span> <span class="o">--</span><span class="n">port</span> <span class="mi">52828</span> <span class="o">--</span><span class="n">file</span> <span class="n">F</span><span class="p">:</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">new_python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">te</span><span class="o">.</span><span class="n">py</span>
+<span class="n">pydev</span> <span class="n">debugger</span><span class="p">:</span> <span class="n">process</span> <span class="mi">14860</span> <span class="ow">is</span> <span class="n">connecting</span>
+
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">202.7660.27</span><span class="p">)</span>
+<span class="n">deque</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">])</span>
+<span class="n">deque</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">])</span>
+<span class="n">deque</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">])</span>
+
+<span class="n">Process</span> <span class="n">finished</span> <span class="k">with</span> <span class="n">exit</span> <span class="n">code</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="defaultdict">
+<h3>1.9.3. defaultdict<a class="headerlink" href="#defaultdict" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">defaultdict</span></code>是内置数据类型<code class="docutils literal notranslate"><span class="pre">dict</span></code>的一个子类，基本功能与<code class="docutils literal notranslate"><span class="pre">dict</span></code>一样，只是重写了一个方法<code class="docutils literal notranslate"><span class="pre">__missing__(key)</span></code>和
+增加了一个可写的对象变量<code class="docutils literal notranslate"><span class="pre">default_factory</span></code>。</p>
+<p>当直接读取dict不存在的属性时，直接返回默认值</p>
+<p>看一个例子:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;two&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d1</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d1</span><span class="p">[</span><span class="s1">&#39;four&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>上面代码会出一个语法错误, 点解?</p>
+<p>而如果用<code class="docutils literal notranslate"><span class="pre">defaultdict</span></code>则不会报错,参看下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="c1"># lambda表达式，直接返回字符串</span>
+<span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="s2">&quot;刘大拿&quot;</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+
+<span class="n">d2</span><span class="p">[</span><span class="s2">&quot;one&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">d2</span><span class="p">[</span><span class="s2">&quot;two&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">d2</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d2</span><span class="p">[</span><span class="s1">&#39;four&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Augs</span>\<span class="n">Anaconda3</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="s2">&quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot;</span> <span class="o">--</span><span class="n">multiproc</span> <span class="o">--</span><span class="n">qt</span><span class="o">-</span><span class="n">support</span><span class="o">=</span><span class="n">auto</span> <span class="o">--</span><span class="n">client</span> <span class="mf">127.0.0.1</span> <span class="o">--</span><span class="n">port</span> <span class="mi">53018</span> <span class="o">--</span><span class="n">file</span> <span class="n">F</span><span class="p">:</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">new_python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">te</span><span class="o">.</span><span class="n">py</span>
+<span class="n">pydev</span> <span class="n">debugger</span><span class="p">:</span> <span class="n">process</span> <span class="mi">15108</span> <span class="ow">is</span> <span class="n">connecting</span>
+
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">202.7660.27</span><span class="p">)</span>
+<span class="mi">1</span>
+<span class="n">刘大拿</span>
+
+<span class="n">Process</span> <span class="n">finished</span> <span class="k">with</span> <span class="n">exit</span> <span class="n">code</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>再打印<code class="docutils literal notranslate"><span class="pre">d2[&quot;four&quot;]的时候,</span> <span class="pre">因为没有这个值,最终调用</span></code>func<code class="docutils literal notranslate"><span class="pre">函数,返回字符串</span></code>刘大拿`.</p>
+</div>
+<div class="section" id="counter">
+<h3>1.9.4. Counter<a class="headerlink" href="#counter" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Counter</span></code>统计字符串个可以支持方便、快速的计数数</p>
+<p>例子:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="c1"># 为什么下面结果不把abcdefgabced.....作为键值，而是以其中每一个字母作为键值</span>
+<span class="c1"># 需要括号里内容为可迭代</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="s2">&quot;abcdefgabcdeabcdabcaba&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+
+<span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;liudana&quot;</span><span class="p">,</span> <span class="s2">&quot;love&quot;</span><span class="p">,</span> <span class="s2">&quot;love&quot;</span><span class="p">,</span> <span class="s2">&quot;love&quot;</span><span class="p">,</span> <span class="s2">&quot;love&quot;</span><span class="p">,</span> <span class="s2">&quot;wangxiaona&quot;</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Augs</span>\<span class="n">Anaconda3</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="s2">&quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot;</span> <span class="o">--</span><span class="n">multiproc</span> <span class="o">--</span><span class="n">qt</span><span class="o">-</span><span class="n">support</span><span class="o">=</span><span class="n">auto</span> <span class="o">--</span><span class="n">client</span> <span class="mf">127.0.0.1</span> <span class="o">--</span><span class="n">port</span> <span class="mi">53101</span> <span class="o">--</span><span class="n">file</span> <span class="n">F</span><span class="p">:</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">new_python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">te</span><span class="o">.</span><span class="n">py</span>
+<span class="n">pydev</span> <span class="n">debugger</span><span class="p">:</span> <span class="n">process</span> <span class="mi">3560</span> <span class="ow">is</span> <span class="n">connecting</span>
+
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">202.7660.27</span><span class="p">)</span>
+<span class="n">Counter</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+<span class="n">Counter</span><span class="p">({</span><span class="s1">&#39;love&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;liudana&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;wangxiaona&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
+
+<span class="n">Process</span> <span class="n">finished</span> <span class="k">with</span> <span class="n">exit</span> <span class="n">code</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ordereddict">
+<h3>1.9.5. OrderedDict<a class="headerlink" href="#ordereddict" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>类似于正常的词典，当在有序的词典上迭代时，返回的元素就是它们第一次添加的顺序, 及有序字典中的顺序指的是插入顺序</li>
+<li><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">collections.OrderedDict</span></code>，返回已给<code class="docutils literal notranslate"><span class="pre">dict</span></code>的子类，支持常规的<code class="docutils literal notranslate"><span class="pre">dict</span></code>的方法</li>
+<li><code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>是一个记住元素首次插入顺序的词典，如果一个元素重写已经存在的元素，那么原始的插入位置保持不变，如果删除一个元素再重新插入，那么它就在末尾</li>
+<li><code class="docutils literal notranslate"><span class="pre">OrderedDict.popitem(last=True)</span></code>中, <code class="docutils literal notranslate"><span class="pre">popitem</span></code>方法返回和删除一个<code class="docutils literal notranslate"><span class="pre">(key,value)</span></code>对，如果<code class="docutils literal notranslate"><span class="pre">last=True</span></code>，就以<code class="docutils literal notranslate"><span class="pre">LIFO</span></code>方式执行，否则以<code class="docutils literal notranslate"><span class="pre">FIFO</span></code>方式执行。</li>
+<li><code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>也支持反向迭代，例如<code class="docutils literal notranslate"><span class="pre">reversed()</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>对象之间的相等测试，例如<code class="docutils literal notranslate"><span class="pre">list(od1.items())</span> <span class="pre">==</span> <span class="pre">list(od2.items())</span></code>，是对顺序敏感的</li>
+<li><code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>和其他的映射对象（例如常规的词典）之间的相等测试是顺序不敏感的，这就允许<code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>对象可以在使用常规词典的地方替换掉常规词典。</li>
+<li><code class="docutils literal notranslate"><span class="pre">OrderedDict</span></code>构造器和<code class="docutils literal notranslate"><span class="pre">update()</span></code>方法可以接受关键字变量，但是它们丢失了顺序，因为<code class="docutils literal notranslate"><span class="pre">Python</span></code>的函数调用机制是将一个无序的词典传入关键字变量</li>
+<li>一个有序的词典记住它的成员插入的顺序，可以使用排序函数，将其变为排序的词典</li>
+</ul>
+<p>参看案例如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;banana&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">&quot;apple&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;pear&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;orange&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c1"># dict sorted by key, 每个 (k,v)中按 k排序</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+<span class="c1"># dict sorted by value</span>
+<span class="c1"># 每个 (k,v)中按 v排序</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span><span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="c1"># 按k的长度排序</span>
+<span class="n">d</span> <span class="o">=</span>  <span class="n">OrderedDict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+<span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">Augs</span>\<span class="n">Anaconda3</span>\<span class="n">python</span><span class="o">.</span><span class="n">exe</span> <span class="s2">&quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.2.3\plugins\python-ce\helpers\pydev\pydevd.py&quot;</span> <span class="o">--</span><span class="n">multiproc</span> <span class="o">--</span><span class="n">qt</span><span class="o">-</span><span class="n">support</span><span class="o">=</span><span class="n">auto</span> <span class="o">--</span><span class="n">client</span> <span class="mf">127.0.0.1</span> <span class="o">--</span><span class="n">port</span> <span class="mi">55485</span> <span class="o">--</span><span class="n">file</span> <span class="n">F</span><span class="p">:</span><span class="o">/</span><span class="n">book</span><span class="o">/</span><span class="n">python</span><span class="o">/</span><span class="n">new_python</span><span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">te</span><span class="o">.</span><span class="n">py</span>
+<span class="n">pydev</span> <span class="n">debugger</span><span class="p">:</span> <span class="n">process</span> <span class="mi">16244</span> <span class="ow">is</span> <span class="n">connecting</span>
+
+<span class="n">Connected</span> <span class="n">to</span> <span class="n">pydev</span> <span class="n">debugger</span> <span class="p">(</span><span class="n">build</span> <span class="mf">202.7660.27</span><span class="p">)</span>
+<span class="p">{</span><span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">OrderedDict</span><span class="p">([(</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;pear&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)])</span>
+<span class="n">OrderedDict</span><span class="p">([(</span><span class="s1">&#39;pear&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)])</span>
+<span class="n">OrderedDict</span><span class="p">([(</span><span class="s1">&#39;pear&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)])</span>
+<span class="n">OrderedDict</span><span class="p">([(</span><span class="s1">&#39;pear&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)])</span>
+
+<span class="n">Process</span> <span class="n">finished</span> <span class="k">with</span> <span class="n">exit</span> <span class="n">code</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="102-类高级.html" class="btn btn-neutral float-right" title="2. OOP高级编程" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../base/013-tkinter.html" class="btn btn-neutral float-left" title="17. Tkinter" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 北京图灵学院.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

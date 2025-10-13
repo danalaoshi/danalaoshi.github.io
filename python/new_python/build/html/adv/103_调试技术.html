@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3. 调试技术 &mdash; Python新全栈教程 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="4. 单元测试" href="1021-单元测试.html" />
+    <link rel="prev" title="2. OOP高级编程" href="102-类高级.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python新全栈教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../base/001.html">1. 开学典礼-不讲知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001Python语言概述.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001注释.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/003str.html">5. 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/004运算符.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/005-if分支语句.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/006-for循环.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/007-while循环.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-函数讲义.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-内置函数.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/09-内置结构.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/009-类.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/010-内置模块.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/011-持久化和文件.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/013-tkinter.html">17. Tkinter</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="101-函数高级.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="102-类高级.html">2. OOP高级编程</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. 调试技术</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">3.1. 几个概念</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pdb">3.2. pdb调试</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">3.2.1. 命令行启动<code class="docutils literal notranslate"><span class="pre">pdb</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.2.2. 代码启动<code class="docutils literal notranslate"><span class="pre">pdb</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3.2.3. <code class="docutils literal notranslate"><span class="pre">pdb</span></code>调试案例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#pycharm">3.3. pycharm调试</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6">3.3.1. 案例</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="1021-单元测试.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="104_模块和包.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="105多线程.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="107_log.html">8. 日志(logging)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="108_携程.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="109_网络编程.html">10. 1. 网络通信概述</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python新全栈教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>3. 调试技术</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/adv/103_调试技术.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>3. 调试技术<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<ul class="simple">
+<li>程序调试是将编制的程序投入实际运行前，用手工或编译程序等方法进行测试，修正语法错误和逻辑错误的过程。</li>
+<li>这是保证计算机信息系统正确性的必不可少的步骤。</li>
+<li>编完计算机程序，必须送入计算机中测试。根据测试时所发现的错误，进一步诊断，找出原因和具体的位置进行修正</li>
+<li>调试分类：<ul>
+<li>静态调试：以看为主，看源代码，输出寄存器内容，输出变量值</li>
+<li>动态调试：程序运行中人为控制运行节奏和步骤</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="id2">
+<h2>3.1. 几个概念<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>断点(breakpoint): 程序中某一个位置,再调试模式(debug)下运行,程序执行到这个点就会停住,等待你下一步命令</li>
+<li>调试模式(debug): 程序运行,遇到断点会挺住,方便交互式运行代码</li>
+<li>运行模式(run): 程序正常执行命令,自动忽略断点</li>
+</ul>
+</div>
+<div class="section" id="pdb">
+<h2>3.2. pdb调试<a class="headerlink" href="#pdb" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pdb</span></code>调试是应对的命令行样式的开发, 现在用处比较少, 再个别远程调试中或许还有用到,但很少遇到了.</p>
+<p>了解<code class="docutils literal notranslate"><span class="pre">pdb</span></code>调试主要是了解调试的一些基础概念.</p>
+<p>推荐文章</p>
+<ul class="simple">
+<li><a class="reference external" href="https://docs.python.org/2/library/pdb.html">官方网页（英文)</a></li>
+<li><a class="reference external" href="http://blog.csdn.net/carolzhang8406/article/details/6923997">pdb模块介绍</a></li>
+<li><a class="reference external" href="https://www.ibm.com/developerworks/cn/linux/l-cn-pythondebugger/">pdb调试技巧</a></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">pdb</span></code>调试启动方式分两种：</p>
+<ul class="simple">
+<li>命令行启动</li>
+<li>代码中加入调试包, 直接命令启动</li>
+</ul>
+<div class="section" id="id3">
+<h3>3.2.1. 命令行启动<code class="docutils literal notranslate"><span class="pre">pdb</span></code><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>下面代码是被测代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 01.py, 这个名字起的很魔幻,请自动忽略</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;i love chian&quot;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;and you&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>代码很简单,但我们需要一行一行运行代码,此时需要启动<code class="docutils literal notranslate"><span class="pre">pdb</span></code>调试, 则直接运行:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pdb</span> <span class="mf">01.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>启动后会直接进入命令行,通过输入不同命令会执行不同的操作, 如果不清楚,可以通过帮助文档查看命令, 调试命令很少,参看下面:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="n">F</span><span class="p">:</span>\<span class="n">book</span>\<span class="n">python</span>\<span class="n">new_python</span>\<span class="n">code</span>\<span class="mi">02</span><span class="o">-</span><span class="n">调试技术</span><span class="o">&gt;</span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pdb</span> <span class="mf">01.</span><span class="n">py</span>
+<span class="o">&gt;</span> <span class="n">f</span><span class="p">:</span>\<span class="n">book</span>\<span class="n">python</span>\<span class="n">new_python</span>\<span class="n">code</span>\<span class="mi">02</span><span class="o">-</span><span class="n">调试技术</span>\<span class="mf">01.</span><span class="n">py</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="o">-&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;i love chian&quot;</span>
+</pre></div>
+</div>
+<p>其中, 打开程序后会显示一个箭头指向的内容,表明程序现在正准备执行这一行, 及下面的代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;i love chian&quot;</span>
+</pre></div>
+</div>
+<p>再输入帮助命令后,显示此调试支持的命令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">Pdb</span><span class="p">)</span> <span class="n">help</span>
+
+<span class="n">Documented</span> <span class="n">commands</span> <span class="p">(</span><span class="nb">type</span> <span class="n">help</span> <span class="o">&lt;</span><span class="n">topic</span><span class="o">&gt;</span><span class="p">):</span>
+<span class="o">========================================</span>
+<span class="n">EOF</span>    <span class="n">c</span>          <span class="n">d</span>        <span class="n">h</span>         <span class="nb">list</span>      <span class="n">q</span>        <span class="n">rv</span>       <span class="n">undisplay</span>
+<span class="n">a</span>      <span class="n">cl</span>         <span class="n">debug</span>    <span class="n">help</span>      <span class="n">ll</span>        <span class="n">quit</span>     <span class="n">s</span>        <span class="n">unt</span>
+<span class="n">alias</span>  <span class="n">clear</span>      <span class="n">disable</span>  <span class="n">ignore</span>    <span class="n">longlist</span>  <span class="n">r</span>        <span class="n">source</span>   <span class="n">until</span>
+<span class="n">args</span>   <span class="n">commands</span>   <span class="n">display</span>  <span class="n">interact</span>  <span class="n">n</span>         <span class="n">restart</span>  <span class="n">step</span>     <span class="n">up</span>
+<span class="n">b</span>      <span class="n">condition</span>  <span class="n">down</span>     <span class="n">j</span>         <span class="nb">next</span>      <span class="k">return</span>   <span class="n">tbreak</span>   <span class="n">w</span>
+<span class="k">break</span>  <span class="n">cont</span>       <span class="n">enable</span>   <span class="n">jump</span>      <span class="n">p</span>         <span class="n">retval</span>   <span class="n">u</span>        <span class="n">whatis</span>
+<span class="n">bt</span>     <span class="k">continue</span>   <span class="n">exit</span>     <span class="n">l</span>         <span class="n">pp</span>        <span class="n">run</span>      <span class="n">unalias</span>  <span class="n">where</span>
+
+<span class="n">Miscellaneous</span> <span class="n">help</span> <span class="n">topics</span><span class="p">:</span>
+<span class="o">==========================</span>
+<span class="n">exec</span>  <span class="n">pdb</span>
+
+<span class="p">(</span><span class="n">Pdb</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>下面根据不同的意图就可以进入不同的操作, 但上面的操作命令可能并不清晰,比如我想知道<code class="docutils literal notranslate"><span class="pre">c</span></code>代表什么意思, 可以继续借助帮助:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">Pdb</span><span class="p">)</span> <span class="n">help</span> <span class="n">c</span>
+<span class="n">c</span><span class="p">(</span><span class="n">ont</span><span class="p">(</span><span class="n">inue</span><span class="p">))</span>
+        <span class="n">Continue</span> <span class="n">execution</span><span class="p">,</span> <span class="n">only</span> <span class="n">stop</span> <span class="n">when</span> <span class="n">a</span> <span class="nb">breakpoint</span> <span class="ow">is</span> <span class="n">encountered</span><span class="o">.</span>
+<span class="p">(</span><span class="n">Pdb</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面解释了<code class="docutils literal notranslate"><span class="pre">c</span></code>命令就是<code class="docutils literal notranslate"><span class="pre">continue</span></code>的缩写,所以我们如果想让程序继续执行,知道遇到断点,直接敲入<code class="docutils literal notranslate"><span class="pre">c</span></code>命令即可:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">Pdb</span><span class="p">)</span> <span class="n">c</span>
+<span class="n">i</span> <span class="n">love</span> <span class="n">chianand</span> <span class="n">you</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Users\Augs\Anaconda3\lib\pdb.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1667</span><span class="p">,</span> <span class="ow">in</span> <span class="n">main</span>
+    <span class="n">pdb</span><span class="o">.</span><span class="n">_runscript</span><span class="p">(</span><span class="n">mainpyfile</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Users\Augs\Anaconda3\lib\pdb.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1548</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_runscript</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">statement</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;C:\Users\Augs\Anaconda3\lib</span><span class="se">\b</span><span class="s2">db.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">434</span><span class="p">,</span> <span class="ow">in</span> <span class="n">run</span>
+    <span class="n">exec</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+  <span class="n">File</span> <span class="s2">&quot;f:</span><span class="se">\b</span><span class="s2">ook\python</span><span class="se">\n</span><span class="s2">ew_python\code</span><span class="se">\02</span><span class="s2">-调试技术</span><span class="se">\01</span><span class="s2">.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;i love chian&quot;</span>
+<span class="ne">TypeError</span><span class="p">:</span> <span class="n">must</span> <span class="n">be</span> <span class="nb">str</span><span class="p">,</span> <span class="ow">not</span> <span class="nb">int</span>
+<span class="n">Uncaught</span> <span class="n">exception</span><span class="o">.</span> <span class="n">Entering</span> <span class="n">post</span> <span class="n">mortem</span> <span class="n">debugging</span>
+<span class="n">Running</span> <span class="s1">&#39;cont&#39;</span> <span class="ow">or</span> <span class="s1">&#39;step&#39;</span> <span class="n">will</span> <span class="n">restart</span> <span class="n">the</span> <span class="n">program</span>
+<span class="o">&gt;</span> <span class="n">f</span><span class="p">:</span>\<span class="n">book</span>\<span class="n">python</span>\<span class="n">new_python</span>\<span class="n">code</span>\<span class="mi">02</span><span class="o">-</span><span class="n">调试技术</span>\<span class="mf">01.</span><span class="n">py</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span><span class="p">()</span>
+<span class="o">-&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;i love chian&quot;</span>
+<span class="p">(</span><span class="n">Pdb</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>敲入继续命令后, 则继续执行知道程序末尾(因为没设置端点), 最后会打印出相应错误信息,并告诉你可以通过<code class="docutils literal notranslate"><span class="pre">cont</span></code>或者<code class="docutils literal notranslate"><span class="pre">step</span></code>命令重启调试.</p>
+</div>
+<div class="section" id="id4">
+<h3>3.2.2. 代码启动<code class="docutils literal notranslate"><span class="pre">pdb</span></code><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>如果想经常调试,可以再代码中直接写入调试命令,下面代码则是直接把调试模块导入后执行:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 文件名  02.py</span>
+<span class="c1"># 导入调试后设置</span>
+<span class="kn">import</span> <span class="nn">pdb</span>
+<span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+<span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;i love chian&quot;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;and you&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>对于这类文件, 调试的时候直接运行即可, 使用下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="mf">02.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>剩下的跟上面打开方式的调试一致.</p>
+</div>
+<div class="section" id="id5">
+<h3>3.2.3. <code class="docutils literal notranslate"><span class="pre">pdb</span></code>调试案例<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>参看下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pdb</span>
+<span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;LOOP </span><span class="si">{0}</span><span class="s2"> &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Func is done!!!&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Start my software..........&quot;</span><span class="p">)</span>
+    <span class="n">func</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Software is done !!!!!!!!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面代码很简单,我们用<code class="docutils literal notranslate"><span class="pre">pdb</span></code>主要展示常用几个命令即可,其中<code class="docutils literal notranslate"><span class="pre">#</span></code>后内容我大拿加的注释, 原来并没有:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) F:\book\python\new_python\code\02-调试技术&gt;python 03.py
+&gt; f:\book\python\new_python\code\02-调试技术\03.py(3)&lt;module&gt;() #启动
+-&gt; def func(n):
+(Pdb) l #浏览代码
+  1     import pdb
+  2     pdb.set_trace()
+  3  -&gt; def func(n): #表示当前运行的行
+  4         for i in range(1,n):
+  5             print(&quot;LOOP {0} &quot;.format(i))
+  6
+  7         print(&quot;Func is done!!!&quot;)
+  8
+  9     if __name__ == &quot;__main__&quot;:
+ 10         print(&quot;Start my software..........&quot;)
+ 11         func(10)
+(Pdb) b 5 #在第五行上设置断点
+Breakpoint 1 at f:\book\python\new_python\code\02-调试技术\03.py:5
+(Pdb) c #运行到断点处
+Start my software..........
+&gt; f:\book\python\new_python\code\02-调试技术\03.py(5)func()
+-&gt; print(&quot;LOOP {0} &quot;.format(i))
+(Pdb) c #运行到下一个断点处
+LOOP 1 #显示这事第一次循环
+&gt; f:\book\python\new_python\code\02-调试技术\03.py(5)func()
+-&gt; print(&quot;LOOP {0} &quot;.format(i))
+(Pdb) c
+LOOP 2
+&gt; f:\book\python\new_python\code\02-调试技术\03.py(5)func()
+-&gt; print(&quot;LOOP {0} &quot;.format(i))
+(Pdb) clear #清除所有断点
+Clear all breaks? y
+Deleted breakpoint 1 at f:\book\python\new_python\code\02-调试技术\03.py:5
+(Pdb) l
+  1     import pdb
+  2     pdb.set_trace()
+  3     def func(n):
+  4         for i in range(1,n):
+  5  -&gt;         print(&quot;LOOP {0} &quot;.format(i))
+  6
+  7         print(&quot;Func is done!!!&quot;)
+  8
+  9     if __name__ == &quot;__main__&quot;:
+ 10         print(&quot;Start my software..........&quot;)
+ 11         func(10)
+(Pdb) n 1
+LOOP 3
+&gt; f:\book\python\new_python\code\02-调试技术\03.py(4)func()
+-&gt; for i in range(1,n):
+(Pdb) c
+LOOP 4
+LOOP 5
+LOOP 6
+LOOP 7
+LOOP 8
+LOOP 9
+Func is done!!!
+Software is done !!!!!!!!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pycharm">
+<h2>3.3. pycharm调试<a class="headerlink" href="#pycharm" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Pycharm</span></code>只是一个工具, 调试的目的跟<code class="docutils literal notranslate"><span class="pre">pdb</span></code>一致,所以, 用法上除了这是一个图形用户界面的产品, 跟命令行调试本质上一致.</p>
+<ul class="simple">
+<li>运行分为 <code class="docutils literal notranslate"><span class="pre">run/debug</span></code>模式, 菜单<code class="docutils literal notranslate"><span class="pre">run</span></code>下面有相关按钮, 并配有相应快捷键</li>
+</ul>
+<div class="section" id="id6">
+<h3>3.3.1. 案例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>调试以下代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">SayHello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I want to say hello with your, </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Done...............&quot;</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;***&#39;</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please input your name: &quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">SayHello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;@@@&#39;</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行和调试的区别我们已经了解了, 再<code class="docutils literal notranslate"><span class="pre">pycharm</span></code>中分别可以执行:</p>
+<p>可以使用菜单运行调试:
+<img alt="../_images/1001.png" src="../_images/1001.png" /></p>
+<p>也可以右键后直接启动:</p>
+<p><img alt="../_images/1002.png" src="../_images/1002.png" /></p>
+<p>鼠标点红色点那个竖条会自动设置断点:
+<img alt="../_images/1003.png" src="../_images/1003.png" /></p>
+<p>右侧是快捷按钮:
+<img alt="../_images/1004.png" src="../_images/1004.png" />
+<img alt="../_images/1005.png" src="../_images/1005.png" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="1021-单元测试.html" class="btn btn-neutral float-right" title="4. 单元测试" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="102-类高级.html" class="btn btn-neutral float-left" title="2. OOP高级编程" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 北京图灵学院.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

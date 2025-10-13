@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>15. 文件和序列化 &mdash; Python新全栈教程 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="16. Python异常的使用" href="012-异常处理.html" />
+    <link rel="prev" title="14. 常用内置模块" href="010-内置模块.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python新全栈教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="001.html">1. 开学典礼-不讲知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001Python语言概述.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001注释.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="003str.html">5. 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="004运算符.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="005-if分支语句.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="006-for循环.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="007-while循环.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-函数讲义.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-内置函数.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-内置结构.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="009-类.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010-内置模块.html">14. 常用内置模块</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">15. 文件和序列化</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">15.1. 文件的打开</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#open">15.1.1. open函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#with">15.1.2. with语句</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">15.2. 文件的读取</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#readline">15.2.1. readline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#list">15.2.2. list</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#read">15.2.3. read</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#seek">15.2.4. seek</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tell">15.2.5. tell</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">15.3. 文件的写操作</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#writelines">15.3.1. writelines</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#rb-r">15.4. <code class="docutils literal notranslate"><span class="pre">rb</span></code>和 <code class="docutils literal notranslate"><span class="pre">r</span></code>模式的区别</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pickle">15.5. 持久化-pickle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shelve">15.6. 持久化-shelve</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">15.6.1. shelve特性</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="013-tkinter.html">17. Tkinter</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adv/101-函数高级.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/102-类高级.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/103_调试技术.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/1021-单元测试.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/104_模块和包.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/105多线程.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/107_log.html">8. 日志(logging)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/108_携程.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/109_网络编程.html">10. 1. 网络通信概述</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python新全栈教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>15. 文件和序列化</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/base/011-持久化和文件.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>15. 文件和序列化<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>文件是长久保存信息的一种数据信息集合。</p>
+<p>文件常用操作有：</p>
+<ul class="simple">
+<li>打开/关闭: 文件一旦打开，需要关闭操作</li>
+<li>读写内容: 对文件写入内容或者读取内容</li>
+<li>查找: 查找文件内某一内容</li>
+</ul>
+<div class="section" id="id2">
+<h2>15.1. 文件的打开<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>文件打开方式通常两种，分别是：</p>
+<ul class="simple">
+<li>open函数</li>
+<li>with语句</li>
+</ul>
+<div class="section" id="open">
+<h3>15.1.1. open函数<a class="headerlink" href="#open" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>open函数负责打开文件，带有很多参数</li>
+<li>第一个参数： 必须有，文件的路径和名称</li>
+<li>mode：第二个参数， 表明文件用什么方式打开<ul>
+<li>r:以只读方式打开</li>
+<li>w：写方式打开，会覆盖以前的内容</li>
+<li>x：创建方式打开，如文件已经存在，报错</li>
+<li>a：append方式，以追加的方式对文件内容进行写入</li>
+<li>b： binary方式，二进制方式写入</li>
+<li>t： 文本方式打开</li>
+<li>+： 可读写</li>
+</ul>
+</li>
+</ul>
+<p>文件的打开参考一下案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 打开文件，用写的方式</span>
+<span class="c1"># r表示后面字符串内容不需要转义</span>
+<span class="c1"># f称之为文件句柄, 以后代表这个文件，用它来进行读写</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;test01.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="c1"># 文件打开后必须关闭</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="c1"># 此案例说明，以写方式打开文件，默认是如果没有文件，则创建</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="with">
+<h3>15.1.2. with语句<a class="headerlink" href="#with" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">with</span></code>语句使用的技术是一种成为上下文管理协议的技术(ContextManagementProtocal),
+它可以自动判断文件的作用域，自动关闭不再使用的打开的文件句柄, 这样妈妈再也不用担心你忘了
+关闭打开后的文件了。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># with语句案例</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;test01.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">pass</span>
+    <span class="c1"># 下面语句块开始对文件f进行操作</span>
+    <span class="c1"># 在本模块中不需要在使用close关闭文件f</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>15.2. 文件的读取<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>文件读取分别为：</p>
+<ul class="simple">
+<li>readline: 按行读取</li>
+<li>list: 读取成列表</li>
+<li>read： 按字符读取</li>
+</ul>
+<div class="section" id="readline">
+<h3>15.2.1. readline<a class="headerlink" href="#readline" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">readline</span></code>读取一行，知道文件末尾则返回空。</p>
+<p>下面案例是一个实际使用的代码段:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># with案例</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;test01.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># 按行读取内容</span>
+    <span class="n">strline</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="c1"># 此结构保证能够完整读取文件知道结束</span>
+    <span class="k">while</span> <span class="n">strline</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">strline</span><span class="p">)</span>
+        <span class="n">strline</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>输出结果是：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">假若他日相逢</span>
+
+<span class="n">我将何以贺你</span>
+
+<span class="n">以沉默</span>
+
+<span class="n">以眼泪</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="list">
+<h3>15.2.2. list<a class="headerlink" href="#list" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">list</span></code>负责把文件内的所有内容按行填充一个列表，然后返回。</p>
+<p>对文件的打开，可以使用列表<code class="docutils literal notranslate"><span class="pre">list</span></code>直接打开，这样自动把文件的每一行当做列表的元素进行填充，得到一个
+列表：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># list能用打开的文件作为参数，把文件内每一行内容作为一个元素</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;test01.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># 以打开的文件f作为参数，创建列表</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">假若他日相逢</span>
+
+<span class="n">我将何以贺你</span>
+
+<span class="n">以沉默</span>
+
+<span class="n">以眼泪</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="read">
+<h3>15.2.3. read<a class="headerlink" href="#read" title="永久链接至标题">¶</a></h3>
+<p>按字符读取文件内容，参数可以是数字，表示一次读取几个字符，也可以没有，表示读到结尾。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># read是按字符读取文件内容</span>
+<span class="c1"># 允许输入参数决定读取几个字符，如果没有制定，从当前位置读取到结尾</span>
+<span class="c1"># 否则，从当前位置读取指定个数字符</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;test01.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">strChar</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">strChar</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">strChar</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="n">假</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="seek">
+<h3>15.2.4. seek<a class="headerlink" href="#seek" title="永久链接至标题">¶</a></h3>
+<p>读取指针指的是当前文件读到的地方，如果不指定读取指针，默认是文件的开始的地方。</p>
+<p>每次读取，文件都回向后移动相应的长度。 我们也可以通过函数来手动移动文件的读取指针。</p>
+<p><code class="docutils literal notranslate"><span class="pre">seek</span></code>函数的功能是移动文件的读取位置，也叫读取指针。</p>
+<p><code class="docutils literal notranslate"><span class="pre">seek(offset,</span> <span class="pre">whence)</span></code>是函数的签名，此处：</p>
+<ul class="simple">
+<li>from的取值范围：<ul>
+<li>0：从文件头开始偏移</li>
+<li>1：从文件当前位置开始偏移</li>
+<li>2：从文件末尾开始偏移</li>
+</ul>
+</li>
+<li>移动的单位是字节(byte)</li>
+<li>注意一个汉字由若干个字节构成</li>
+<li>返回文件指针移动后的新的绝地地址(从文件开始出的偏移量)</li>
+</ul>
+<p>下面代码是文件指针偏移的案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># seek案例</span>
+<span class="c1"># 打开文件后，从第5个字节出开始读取</span>
+<span class="c1"># 打开读写指针在0处， 即文件的开头</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;test01.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># seek移动单位是字节</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">strChar</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">strChar</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>文件运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">他日相逢</span>
+<span class="n">我将何以贺你</span>
+<span class="n">以沉默</span>
+<span class="n">以眼泪</span>
+</pre></div>
+</div>
+<p>关于文件读取的一个小案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 关于读取文件的练习</span>
+<span class="c1"># 打开文件，三个字符一组读出内容，然后显示在屏幕上</span>
+<span class="c1"># 每读一次，休息一秒钟</span>
+
+<span class="c1"># 让程序暂停，可以使用time下的sleep函数</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;test01.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># read参数的单位是字符，可以理解成一个汉字就是一个字符</span>
+    <span class="n">strChar</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">strChar</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">strChar</span><span class="p">)</span>
+        <span class="c1"># sleep参数单位是秒</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">strChar</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果如下，请仔细理解结果为什么会这样？ 解释以下运行结果，为什么不是每行三个字符</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">假若他</span>
+<span class="n">日相逢</span>
+
+<span class="n">我将</span>
+<span class="n">何以贺</span>
+<span class="n">你</span>
+<span class="n">以</span>
+<span class="n">沉默</span>
+
+<span class="n">以眼泪</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tell">
+<h3>15.2.5. tell<a class="headerlink" href="#tell" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">seek</span></code>用来移动读写指针， <code class="docutils literal notranslate"><span class="pre">tell</span></code>用来显示读写指针的当前位置。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># tell函数： 用来显示文件读写指针的当前位置</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;test01.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">strChar</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+    
+    <span class="k">while</span> <span class="n">strChar</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">strChar</span><span class="p">)</span>
+        
+        <span class="n">strChar</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>以下结果说明<code class="docutils literal notranslate"><span class="pre">tell</span></code>的返回数字的单位是<code class="docutils literal notranslate"><span class="pre">byte</span></code>, <code class="docutils literal notranslate"><span class="pre">read</span></code>是以字符为单位的。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">9</span>
+<span class="n">假若他</span>
+<span class="mi">18</span>
+<span class="n">日相逢</span>
+<span class="mi">25</span>
+
+<span class="n">我将</span>
+<span class="mi">34</span>
+<span class="n">何以贺</span>
+<span class="mi">41</span>
+<span class="n">你</span>
+<span class="n">以</span>
+<span class="mi">48</span>
+<span class="n">沉默</span>
+
+<span class="mi">57</span>
+<span class="n">以眼泪</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>15.3. 文件的写操作<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>文件的写操作主要把内容以某种形式写入文件。</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">write(str)</span></code>: 把字符串写入文件</li>
+<li><code class="docutils literal notranslate"><span class="pre">writeline(str)</span></code>: 把字符串按行写入文件</li>
+<li>两者区别是：<ul>
+<li><code class="docutils literal notranslate"><span class="pre">write</span></code>函数参数只能是字符串</li>
+<li><code class="docutils literal notranslate"><span class="pre">writerline</span></code>参数可以是字符串，也可以是字符序列</li>
+</ul>
+</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">write</span></code>具体案例参看下面代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># write 案例</span>
+<span class="c1"># 1. 向文件追加一句诗</span>
+<span class="c1"># a代表追加方式打开</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;test01.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># 注意字符串内含有换行符</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;生活不仅有眼前的苟且， </span><span class="se">\n</span><span class="s2"> 还有远方的枸杞&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="writelines">
+<h3>15.3.1. writelines<a class="headerlink" href="#writelines" title="永久链接至标题">¶</a></h3>
+<p>负责向文件写入多行。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 可以直接写入行， 用writelines</span>
+<span class="c1"># writelines表示写入很多行，参数可以是list格式</span>
+<span class="c1"># a代表追加方式打开</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;test01.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># 注意字符串内含有换行符</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">&quot;生活不仅有眼前的苟且&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">&quot;还有远方的枸杞&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">writelines</span></code>写入列表的案例如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;I&quot;</span><span class="p">,</span> <span class="s2">&quot;love&quot;</span><span class="p">,</span> <span class="s2">&quot;wangxiaojing&quot;</span><span class="p">]</span>
+<span class="c1"># a代表追加方式打开</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;test01.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># 注意字符串内含有换行符</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="rb-r">
+<h2>15.4. <code class="docutils literal notranslate"><span class="pre">rb</span></code>和 <code class="docutils literal notranslate"><span class="pre">r</span></code>模式的区别<a class="headerlink" href="#rb-r" title="永久链接至标题">¶</a></h2>
+<p>我们使用处理二进制文件时，需要用如下方法</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">binfile</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span>  <span class="c1"># 读二进制文件</span>
+<span class="n">binfile</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span>  <span class="c1"># 写二进制文件</span>
+</pre></div>
+</div>
+<p>那么和binfile=open(filepath,’r’)的结果到底有何不同呢？</p>
+<p>不同之处有两个地方：</p>
+<ol class="simple">
+<li>使用<code class="docutils literal notranslate"><span class="pre">r</span></code>的时候如果碰到<code class="docutils literal notranslate"><span class="pre">0x1A</span></code>，就会视为文件结束，这就是<code class="docutils literal notranslate"><span class="pre">EOF</span></code>。使用<code class="docutils literal notranslate"><span class="pre">rb</span></code>则不存在这个问题。
+即如果你用二进制写入再用文本读出的话，如果其中存在<code class="docutils literal notranslate"><span class="pre">0X1A</span></code>，就只会读出文件的一部分。使用<code class="docutils literal notranslate"><span class="pre">rb</span></code>的时候会一直读到文件末尾。</li>
+<li>对于字符串<code class="docutils literal notranslate"><span class="pre">x='abc\ndef'</span></code>，我们可用<code class="docutils literal notranslate"><span class="pre">len(x</span></code>)得到它的长度为7，<code class="docutils literal notranslate"><span class="pre">\n</span></code>
+我们称之为换行符，实际上是<code class="docutils literal notranslate"><span class="pre">0X0A</span></code>。当我们用<code class="docutils literal notranslate"><span class="pre">w</span></code>即文本方式写的时候，在<code class="docutils literal notranslate"><span class="pre">windows</span></code>
+平台上会自动将<code class="docutils literal notranslate"><span class="pre">0X0A</span></code>变成两个字符<code class="docutils literal notranslate"><span class="pre">0X0D</span></code>，<code class="docutils literal notranslate"><span class="pre">0X0A</span></code>，即文件长度实际上变成8.。
+当用<code class="docutils literal notranslate"><span class="pre">r</span></code>文本方式读取时，又自动的转换成原来的换行符。
+如果换成<code class="docutils literal notranslate"><span class="pre">wb</span></code>二进制方式来写的话，则会保持一个字符不变，读取时也是原样读取。
+所以如果用文本方式写入，用二进制方式读取的话，就要考虑这多出的一个字节了。<code class="docutils literal notranslate"><span class="pre">0X0D</span></code>又称回车符。
+linux下不会变。因为linux只使用<code class="docutils literal notranslate"><span class="pre">0X0A</span></code>来表示换行。</li>
+</ol>
+</div>
+<div class="section" id="pickle">
+<h2>15.5. 持久化-pickle<a class="headerlink" href="#pickle" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>序列化(持久化，落地)：把程序运行中的信息保存在磁盘上的过程叫序列化，也可以俗称落地</li>
+<li>反序列化：序列号的逆过程</li>
+<li>pickle： python提供的序列化模块</li>
+<li>pickle.dump: <code class="docutils literal notranslate"><span class="pre">pickle</span></code> 模块中执行序列化功能的函数</li>
+<li>pickle.load: <code class="docutils literal notranslate"><span class="pre">pickle</span></code> 模块中执行反序列化功能的模块</li>
+</ul>
+<p>序列化的案例参看以下代码, 需要注意的是，序列化打开文件的方式必须时候用二进制方式写文件打开：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 序列化案例</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">19</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;test01.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># 把变量age序列化写入到文件f</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>反序列化使用<code class="docutils literal notranslate"><span class="pre">load</span></code>，把序列化保存的内容读入程序， 反序列化文件的打开方式需要是二进制的读方式打开：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 反序列化案例</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;test01.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="c1"># 从文件f中读入变量age</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>下面是<code class="docutils literal notranslate"><span class="pre">pickle</span></code>读写复杂变量类型的案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 序列化案例</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="s1">&#39;liudana&#39;</span><span class="p">,</span> <span class="s2">&quot;i love wangxiaojing&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">185</span><span class="p">,</span> <span class="mi">76</span><span class="p">]]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;test01.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>相应的读案例如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;test01.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">a</span>  <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>操作结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">19</span><span class="p">,</span> <span class="s1">&#39;liudana&#39;</span><span class="p">,</span> <span class="s1">&#39;i love wangxiaojing&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">185</span><span class="p">,</span> <span class="mi">76</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="shelve">
+<h2>15.6. 持久化-shelve<a class="headerlink" href="#shelve" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">shelve</span></code>也是持久化对象的一个<code class="docutils literal notranslate"><span class="pre">python</span></code>工具。</p>
+<p>它的使用方法类似字典，用键值对的方式保存数据，存取方式跟字典也很类似。</p>
+<p>使用方式一般是打开关闭文件，然后对打开的文件就可以用类似字典的方式存取。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 使用shelve创建文件并使用</span>
+<span class="kn">import</span> <span class="nn">shelve</span>
+<span class="c1"># 打开文件</span>
+<span class="c1"># shv相当于一个字典</span>
+<span class="n">shv</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;shv.db&#39;</span><span class="p">)</span>
+
+<span class="n">shv</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">shv</span><span class="p">[</span><span class="s1">&#39;two&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">shv</span><span class="p">[</span><span class="s1">&#39;three&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">shv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>通过以上案例发现，<code class="docutils literal notranslate"><span class="pre">shelve</span></code>自动创建的不仅仅是一个<code class="docutils literal notranslate"><span class="pre">shv.db</span></code>文件，还包括其他格式文件:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```python
+# shelve读取案例
+shv = shelve.open(r&#39;shv.db&#39;)
+try:
+    print(shv[&#39;one&#39;])
+    print(shv[&#39;threee&#39;])
+except Exception as e:
+    print(&quot;烦死了&quot;)
+finally:
+    shv.close()
+</pre></div>
+</div>
+<div class="section" id="id5">
+<h3>15.6.1. shelve特性<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<ul>
+<li><p class="first">不支持多个应用并行写入: 为了解决这个问题，<code class="docutils literal notranslate"><span class="pre">open</span></code>的时候可以使用<code class="docutils literal notranslate"><span class="pre">flag=r</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">shelve</span></code>正常情况下不会等待持久化对象进行任何修改: 解决方法是强制写回,<code class="docutils literal notranslate"><span class="pre">writeback=True</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># shelve 之只读打开</span>
+<span class="kn">import</span> <span class="nn">shelve</span>
+<span class="n">shv</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;shv.db&#39;</span><span class="p">,</span> <span class="n">flag</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="n">shv</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k1</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">shv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>另一个案例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">shelve</span>
+<span class="n">shv</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;shv.db&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">shv</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;eins&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;zwei&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;drei&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">shv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+
+<span class="n">shv</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;shv.db&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">one</span> <span class="o">=</span> <span class="n">shv</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">one</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">shv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">shelve</span></code>有时会忘记写回，需要使用强制写回</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">shv</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;shv.db&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="n">shv</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k1</span><span class="p">)</span>
+    <span class="c1"># 此时，一旦shelve关闭，则内容还是存在于内存中，没有写回数据库</span>
+    <span class="n">k1</span><span class="p">[</span><span class="s2">&quot;eins&quot;</span><span class="p">]</span> <span class="o">=</span><span class="mi">100</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">shv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>上面代码相应的读取代码如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">shv</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;shv.db&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="n">shv</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k1</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">shv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>上面代码读取结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;eins&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;zwei&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;drei&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="p">{</span><span class="s1">&#39;eins&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;zwei&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;drei&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>如果改为强制写回，则不会造成丢失的问题：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># shelve忘记写回，需要使用强制写回</span>
+<span class="n">shv</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;shv.db&#39;</span><span class="p">,</span> <span class="n">writeback</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="n">shv</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k1</span><span class="p">)</span>
+    <span class="c1"># 此时，一旦shelve关闭，则内容还是存在于内存中，没有写回数据库</span>
+    <span class="n">k1</span><span class="p">[</span><span class="s2">&quot;eins&quot;</span><span class="p">]</span> <span class="o">=</span><span class="mi">100</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">shv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>相应的读取代码如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">shv</span> <span class="o">=</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;shv.db&#39;</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="n">shv</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k1</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">shv</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;eins&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;zwei&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;drei&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="p">{</span><span class="s1">&#39;eins&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;zwei&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;drei&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">shelve</span></code> 也可以使用<code class="docutils literal notranslate"><span class="pre">with</span></code>管理上下文环境：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;shv.db&#39;</span><span class="p">,</span> <span class="n">writeback</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">shv</span><span class="p">:</span>
+    <span class="n">k1</span> <span class="o">=</span> <span class="n">shv</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">k1</span><span class="p">)</span>
+    <span class="c1"># 此时，一旦shelve关闭，则内容还是存在于内存中，没有写回数据库</span>
+    <span class="n">k1</span><span class="p">[</span><span class="s2">&quot;eins&quot;</span><span class="p">]</span> <span class="o">=</span><span class="mi">1000</span>
+
+
+
+<span class="k">with</span> <span class="n">shelve</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;shv.db&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">shv</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">shv</span><span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;eins&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;zwei&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;drei&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="p">{</span><span class="s1">&#39;eins&#39;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;zwei&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;drei&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="012-异常处理.html" class="btn btn-neutral float-right" title="16. Python异常的使用" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="010-内置模块.html" class="btn btn-neutral float-left" title="14. 常用内置模块" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 北京图灵学院.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

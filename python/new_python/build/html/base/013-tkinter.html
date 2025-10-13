@@ -1,0 +1,1643 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>17. Tkinter &mdash; Python新全栈教程 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="1. 函数高级" href="../adv/101-函数高级.html" />
+    <link rel="prev" title="16. Python异常的使用" href="012-异常处理.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python新全栈教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="001.html">1. 开学典礼-不讲知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001Python语言概述.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001注释.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="003str.html">5. 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="004运算符.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="005-if分支语句.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="006-for循环.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="007-while循环.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-函数讲义.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-内置函数.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-内置结构.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="009-类.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010-内置模块.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011-持久化和文件.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">17. Tkinter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">17.1. Tkinter简介</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gui">17.1.1. GUI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pythongui">17.1.2. 常见基于Python的GUI框架介绍</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">17.1.2.1. Tkinter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wxpython">17.1.2.2. wxPython</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pyqt">17.1.2.3. PyQT</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#helloworld">17.1.3. HelloWorld</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">17.2. <code class="docutils literal notranslate"><span class="pre">TKinter</span></code>基础使用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#label">17.2.1. 标签(Label)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#button">17.2.2. 按钮(Ｂutton）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">17.2.3. 事件绑定的方式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#entry">17.2.4. 输入框(Entry)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#menu">17.2.5. 菜单(Menu)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">17.2.5.1. 普通菜单</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">17.2.5.2. 级联菜单</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">17.2.5.3. 弹出菜单</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#chekcbutton-and-radiobutton">17.2.5.4. <code class="docutils literal notranslate"><span class="pre">ChekcButton</span></code> and <code class="docutils literal notranslate"><span class="pre">RadioButton</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">17.3. 人机交互</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">17.3.1. 消息框</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">17.3.2. 对话框</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#messagebox">17.3.2.1. <code class="docutils literal notranslate"><span class="pre">messagebox</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filedialog">17.3.2.2. <code class="docutils literal notranslate"><span class="pre">filedialog</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#colorchooser">17.3.2.3. <code class="docutils literal notranslate"><span class="pre">colorchooser</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">17.4. 其他控件</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#checkbutton">17.4.1. <code class="docutils literal notranslate"><span class="pre">CheckButton</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radiobutton">17.4.2. <code class="docutils literal notranslate"><span class="pre">Radiobutton</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#text">17.4.3. <code class="docutils literal notranslate"><span class="pre">Text</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#canvas">17.4.4. <code class="docutils literal notranslate"><span class="pre">canvas</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">17.5. 实例: 屏保-TKinter版本</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">17.6. 实例: 贪吃蛇-TKinter版本</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adv/101-函数高级.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/102-类高级.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/103_调试技术.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/1021-单元测试.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/104_模块和包.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/105多线程.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/107_log.html">8. 日志(logging)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/108_携程.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/109_网络编程.html">10. 1. 网络通信概述</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python新全栈教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>17. Tkinter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/base/013-tkinter.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tkinter">
+<h1>17. Tkinter<a class="headerlink" href="#tkinter" title="永久链接至标题">¶</a></h1>
+<p>一般来讲这种图形化编程属于CS软件结构的产物，现在很少用了，即便是使用也有一些很优秀的解决方案，比如
+Electron，QT等，我们之所以介绍Tkinter是希望大家能了解GUI的编程原理，同时对前面知识是一个综合巩固。</p>
+<div class="section" id="id1">
+<h2>17.1. Tkinter简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>对Tkinter进行简单的介绍下。</p>
+<div class="section" id="gui">
+<h3>17.1.1. GUI<a class="headerlink" href="#gui" title="永久链接至标题">¶</a></h3>
+<p>图形用户界面（Graphical User Interface，简称GUI，又称图形用户接口）是指采用图形方式显示的计算机操作用户界面。</p>
+<p>作为一个图形化显示，几乎每种语言都用基于本语言的解决显示解决方案，对于Python来讲，常见的GUI框架有
+Tkinter, wxPython,PyQT,PyGame, Turtle等，每个框架都有自己的特点，但使用原理都差不太多，我们
+这里以Tkinter为例进行介绍。</p>
+<p>至于为什么要用Tkinter作为案例，因为… …我只会这个呀！</p>
+</div>
+<div class="section" id="pythongui">
+<h3>17.1.2. 常见基于Python的GUI框架介绍<a class="headerlink" href="#pythongui" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id2">
+<h4>17.1.2.1. Tkinter<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Tkinter</span></code>是绑定了<code class="docutils literal notranslate"><span class="pre">Python</span></code>的<code class="docutils literal notranslate"><span class="pre">TK</span> <span class="pre">GUI</span></code>工具集，是<code class="docutils literal notranslate"><span class="pre">Python</span></code>包装的<code class="docutils literal notranslate"><span class="pre">Tcl</span></code>(ToolCommandLanguage)代码，通过内嵌的<code class="docutils literal notranslate"><span class="pre">Python</span></code>解释器调用<code class="docutils literal notranslate"><span class="pre">Tcl</span></code>
+解释器实现，<code class="docutils literal notranslate"><span class="pre">Tkinter</span></code>的调用转换成<code class="docutils literal notranslate"><span class="pre">Tcl</span></code>命令，然后交给<code class="docutils literal notranslate"><span class="pre">Tcl</span></code>解释器进行解释，实现<code class="docutils literal notranslate"><span class="pre">Python</span></code>的<code class="docutils literal notranslate"><span class="pre">GUI</span></code>界面.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Tkinter</span></code>的优点:</p>
+<ul class="simple">
+<li>历史最悠久</li>
+<li>是<code class="docutils literal notranslate"><span class="pre">Python</span></code>事实上的标准<code class="docutils literal notranslate"><span class="pre">GUI</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">Python</span></code>使用<code class="docutils literal notranslate"><span class="pre">TK</span> <span class="pre">GUI</span></code> 工具集的标准借口，已经包括在标准Python Window中,跨平台性能好</li>
+<li>使用简单，学习曲线低</li>
+<li>轻量级</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">Tkinter</span></code>的缺点：</p>
+<ul class="simple">
+<li>做出来的产品比较吃藕</li>
+<li>功能简单</li>
+<li>对于<code class="docutils literal notranslate"><span class="pre">Ｃ＋＋</span></code>效率不高</li>
+</ul>
+<p>####　PyGTK</p>
+<p><code class="docutils literal notranslate"><span class="pre">PyGTK</span></code>是比较流行的<code class="docutils literal notranslate"><span class="pre">Tkinter</span></code>的代替品，各平台下表现都比较好。</p>
+<p><code class="docutils literal notranslate"><span class="pre">PyGTK</span></code>的优点：</p>
+<ul class="simple">
+<li>是<code class="docutils literal notranslate"><span class="pre">Tkinter</span></code>的一个比较流行提单品，<code class="docutils literal notranslate"><span class="pre">GNOME</span></code>下一些应用的<code class="docutils literal notranslate"><span class="pre">GUI</span></code>是<code class="docutils literal notranslate"><span class="pre">PyGTK</span></code>实现，比如<code class="docutils literal notranslate"><span class="pre">Bittorent</span></code>,<code class="docutils literal notranslate"><span class="pre">GIMP</span></code></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">PyGTK</span></code>的缺点：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">Windows</span></code>下表现一般，导致跨平台有些问题</li>
+</ul>
+</div>
+<div class="section" id="wxpython">
+<h4>17.1.2.2. wxPython<a class="headerlink" href="#wxpython" title="永久链接至标题">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">wxPython</span></code>是跨平台GUI工具集<code class="docutils literal notranslate"><span class="pre">wxWidgets</span></code>(C++)的<code class="docutils literal notranslate"><span class="pre">Python</span></code>包装，作为<code class="docutils literal notranslate"><span class="pre">Python</span></code>的一个扩展模块存在, 其中比较大的
+有点是比较流行，跨平台比较好。</p>
+</div>
+<div class="section" id="pyqt">
+<h4>17.1.2.3. PyQT<a class="headerlink" href="#pyqt" title="永久链接至标题">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">PyQT</span></code>是跨平台<code class="docutils literal notranslate"><span class="pre">GUI</span></code>工具集<code class="docutils literal notranslate"><span class="pre">Qt</span></code>的<code class="docutils literal notranslate"><span class="pre">Python</span></code>实现，作为<code class="docutils literal notranslate"><span class="pre">Python</span></code>的插件实现</p>
+<p><code class="docutils literal notranslate"><span class="pre">PyQT</span></code>优点：</p>
+<ul class="simple">
+<li>比较流行</li>
+<li>功能强大</li>
+<li>界面漂亮</li>
+<li>跨平台支持好</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">PyQT</span></code>的缺点是可能存在商业授权存问题.</p>
+</div>
+</div>
+<div class="section" id="helloworld">
+<h3>17.1.3. HelloWorld<a class="headerlink" href="#helloworld" title="永久链接至标题">¶</a></h3>
+<p>我们来看一下<code class="docutils literal notranslate"><span class="pre">Tkinter</span></code>的第一个案例，这个案例调用<code class="docutils literal notranslate"><span class="pre">Tkinter</span></code>的测试函数，想我们显示一个对话框。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># V1.0 测试</span>
+<span class="kn">import</span> <span class="nn">tkinter</span> 
+<span class="n">tkinter</span><span class="o">.</span><span class="n">_test</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>运行后会得到一个对话框，可以通过点击<code class="docutils literal notranslate"><span class="pre">QUIT</span></code>来退出。</p>
+<p>上面案例只是一个测试，能证明你的环境没问题并能调用<code class="docutils literal notranslate"><span class="pre">tkinter</span></code>相关功能。</p>
+<p>我们下面看下典型的<code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">world</span></code>的<code class="docutils literal notranslate"><span class="pre">Tkinter</span></code>版本。</p>
+<p>在下面的案例中，我们会创建一个空面板, 空面板的标题为<code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">world</span></code>，在最后我们
+调用<code class="docutils literal notranslate"><span class="pre">mainloop</span></code>让程序进入事件循环(事件循环后面会讲).`</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">base</span><span class="o">.</span><span class="n">wm_title</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+<span class="n">base</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>17.2. <code class="docutils literal notranslate"><span class="pre">TKinter</span></code>基础使用<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="label">
+<h3>17.2.1. 标签(Label)<a class="headerlink" href="#label" title="永久链接至标题">¶</a></h3>
+<ol>
+<li><p class="first">便签<code class="docutils literal notranslate"><span class="pre">Label</span></code>就是起说明作用的一组文字信息</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">tkinter</span>
+
+ <span class="n">base</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+ <span class="n">base</span><span class="o">.</span><span class="n">wm_title</span><span class="p">(</span><span class="s2">&quot;Label Test&quot;</span><span class="p">)</span>
+
+ <span class="c1"># 支持属性很多background, font, underline等</span>
+ <span class="c1"># 第一个参数，制定所属</span>
+ <span class="n">lb</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Python AI&quot;</span><span class="p">)</span>
+ <span class="n">lb</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+ <span class="n">base</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Label 可以定义很多个，可以定义背景颜色等</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">tkinter</span>
+
+ <span class="n">base</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+ <span class="n">base</span><span class="o">.</span><span class="n">wm_title</span><span class="p">(</span><span class="s2">&quot;Label Test&quot;</span><span class="p">)</span>
+
+ <span class="c1"># 支持属性很多background, font, underline等</span>
+ <span class="c1"># 第一个参数，制定所属</span>
+ <span class="n">lb1</span><span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Python AI&quot;</span><span class="p">)</span>
+ <span class="n">lb1</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+ <span class="n">lb2</span><span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;绿色背景&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+ <span class="n">lb2</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+ <span class="n">lb3</span><span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;蓝色背景&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+ <span class="n">lb3</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+ <span class="n">base</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="button">
+<h3>17.2.2. 按钮(Ｂutton）<a class="headerlink" href="#button" title="永久链接至标题">¶</a></h3>
+<p>按钮<code class="docutils literal notranslate"><span class="pre">Button</span></code>一般当做命令使用, 点击按钮做什么事情, 使用方法和标签类似</p>
+<p>按钮当做命令使用,点击下会有相应的动作,这个动作可以理解成一个函数, 问题是这个函数怎么知道你让他去干活了?
+这个就需要绑定, 即告诉这个按钮被点击后去执行什么函数.</p>
+<p>按钮具备相应的修饰类的属性,比如长款,背景颜色等, 相关属性可以直接设置,比如下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">tkinter</span>
+
+    <span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+    <span class="n">btn1</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;测试按钮&quot;</span><span class="p">)</span>
+    <span class="n">btn1</span><span class="p">[</span><span class="s1">&#39;width&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">btn1</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">btn1</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="n">btn2</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;显示按钮&quot;</span><span class="p">)</span>
+    <span class="n">btn2</span><span class="p">[</span><span class="s1">&#39;width&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
+    <span class="n">btn2</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">btn2</span><span class="p">[</span><span class="s1">&#39;background&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span>
+    <span class="n">btn2</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>17.2.3. 事件绑定的方式<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>绑定处理函数有两种, 即<code class="docutils literal notranslate"><span class="pre">command</span></code>和<code class="docutils literal notranslate"><span class="pre">bind</span></code>.</p>
+<ol>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">command</span></code>属性</p>
+<p>按钮的构造函数有一个参数是<code class="docutils literal notranslate"><span class="pre">command</span></code>, 可以通过这个传递入在点击后需要被调用的函数.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="kn">import</span> <span class="nn">tkinter</span>
+
+  <span class="k">def</span> <span class="nf">showLabel</span><span class="p">():</span>
+  		<span class="k">global</span> <span class="n">baseFrame</span>
+  		<span class="n">lb</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;显示Label&quot;</span><span class="p">)</span>
+  		<span class="n">lb</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+
+	<span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+  <span class="n">btn</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Show Label&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">showLabel</span><span class="p">)</span>
+  <span class="n">btn</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+  <span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">bind</span></code>函数</p>
+<p><code class="docutils literal notranslate"><span class="pre">bind</span></code> 函数用来绑定主题和函数</p>
+<p><code class="docutils literal notranslate"><span class="pre">bind</span></code> 的第一个参数是事件类型,它采用的描述方式是这
+样的 <code class="docutils literal notranslate"><span class="pre">&lt;MODIFIER-MODIFIER-TYPE-DETAIL&gt;</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">MODIFIER</span></code> 即修饰符,定义组合键,比如按下控制键和切换键再按哪个键, 取值比如控制键<code class="docutils literal notranslate"><span class="pre">Control</span></code>, <code class="docutils literal notranslate"><span class="pre">Shift</span></code>等, 全部取值键参看后面本章备注</li>
+<li><code class="docutils literal notranslate"><span class="pre">TYPE</span></code> 表示按键的类型类型,取值例如:<code class="docutils literal notranslate"><span class="pre">Activate</span></code>等, 全部取值请看本章备注</li>
+<li><code class="docutils literal notranslate"><span class="pre">DETAIL</span></code> 表示按键的详细信息,具体是按的哪个键, 比如字母<code class="docutils literal notranslate"><span class="pre">M</span></code>等</li>
+<li>常见的鼠标左键单击为<Button-1></li>
+</ul>
+<p>下面代码颜色了单机鼠标左键的效果:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">tkinter</span>
+
+ <span class="k">def</span> <span class="nf">showLabel</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+     <span class="k">global</span> <span class="n">baseFrame</span>
+     <span class="n">lb</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;显示Label&quot;</span><span class="p">)</span>
+     <span class="n">lb</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+
+ <span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+ <span class="n">btn</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Show Label&quot;</span><span class="p">)</span>
+ <span class="n">btn</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="n">showLabel</span><span class="p">)</span>
+ <span class="n">btn</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+ <span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>另外一个案例,稍微复杂一点:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">tkinter</span>
+
+ <span class="k">def</span> <span class="nf">reg</span><span class="p">():</span>
+     <span class="n">name</span> <span class="o">=</span> <span class="n">e1</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+     <span class="n">pwd</span> <span class="o">=</span> <span class="n">e2</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+     <span class="n">t1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+     <span class="n">t2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pwd</span><span class="p">)</span>
+
+     <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;111&quot;</span> <span class="ow">and</span> <span class="n">pwd</span> <span class="o">==</span> <span class="s2">&quot;222&quot;</span><span class="p">:</span>
+             <span class="n">lb3</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;登录成功&quot;</span>
+     <span class="k">else</span><span class="p">:</span>
+             <span class="n">lb3</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;用户名或密码错误&quot;</span>
+             <span class="n">e1</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">t1</span><span class="p">)</span>
+             <span class="n">e2</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">t2</span><span class="p">)</span>
+
+ <span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+ <span class="n">lb1</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;用户名&quot;</span><span class="p">)</span>
+ <span class="n">lb1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stick</span><span class="o">=</span><span class="n">tkinter</span><span class="o">.</span><span class="n">W</span> <span class="p">)</span>
+
+ <span class="n">e1</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">)</span>
+ <span class="n">e1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stick</span><span class="o">=</span><span class="n">tkinter</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+
+ <span class="n">lb2</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;密码: &quot;</span><span class="p">)</span>
+ <span class="n">lb2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stick</span><span class="o">=</span><span class="n">tkinter</span><span class="o">.</span><span class="n">W</span> <span class="p">)</span>
+
+ <span class="n">e2</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">)</span>
+ <span class="n">e2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stick</span><span class="o">=</span><span class="n">tkinter</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+ <span class="n">e2</span><span class="p">[</span><span class="s1">&#39;show&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
+
+ <span class="n">btn</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;登录&quot;</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">reg</span><span class="p">)</span>
+ <span class="n">btn</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stick</span><span class="o">=</span><span class="n">tkinter</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+
+ <span class="n">lb3</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+ <span class="n">lb3</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+
+ <span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div>绑定参数<code class="docutils literal notranslate"><span class="pre">MODIFIEL</span></code>取值: Control, Mod2, M2, Shift, Mod3, M3, Lock, Mod4, M4, Button1, B1, Mod5, M5 Button2, B2, Meta, M, Button3,B3, Alt, Button4, B4, Double, Button5, B5 Triple , Mod1, M1 。</div></blockquote>
+<blockquote>
+<div>绑定参数<code class="docutils literal notranslate"><span class="pre">TYPE</span></code>取值: Activate, Enter, Map, ButtonPress, Button, Expose, Motion, ButtonRelease,FocusIn, MouseWheel, Circulate, FocusOut, Property, Colormap, Gravity Reparent, Configure, KeyPress, Key, Unmap, Deactivate, KeyRelease Visibility, Destroy,Leave</div></blockquote>
+<ol class="simple">
+<li>常见事件<ul>
+<li>鼠标单击事件<ul>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Button-1&gt;</span></code>: 单击鼠标左键</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Button-2&gt;</span></code>: 单击鼠标中间键（如果有）</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Button-3&gt;</span></code>: 单击鼠标右键</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Button-4&gt;</span></code>: 向上滚动滑轮</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Button-5&gt;</span></code>: 向下滚动滑轮【鼠标双击事件】</li>
+</ul>
+</li>
+<li>鼠标双击事件<ul>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Double-Button-1&gt;</span></code>: 鼠标左键双击</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Double-Button-2&gt;</span></code>: 鼠标中键双击</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Double-Button-3&gt;</span></code>: 鼠标右键双击</li>
+</ul>
+</li>
+<li>鼠标释放事件<ul>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;ButtonRelease-1&gt;</span></code>: 鼠标左键释放</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;ButtonRelease-2&gt;</span></code>: 鼠标中键释放</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;ButtonRelease-3&gt;</span></code>: 鼠标右键释放</li>
+</ul>
+</li>
+<li>鼠标按下并移动事件(即拖动)<ul>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;B1-Motion&gt;</span></code>: 左键拖动</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;B2-Motion&gt;</span></code>: 中键拖动</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;B3-Motion&gt;</span></code>: 右键拖动</li>
+</ul>
+</li>
+<li>鼠标其他操作<ul>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Enter&gt;</span></code>: 鼠标进入控件（放到控件上面）</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;FocusIn&gt;</span></code>: 控件获得焦点</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Leave&gt;</span></code>: 鼠标移出控件</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;FocusOut&gt;</span></code>: 控件失去焦点</li>
+</ul>
+</li>
+<li>键盘按下事件<ul>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Key&gt;</span></code>: 键盘按下，事件event中的keycode,char都可以获取按下的键值</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Return&gt;</span></code>: 键位绑定，回车键，</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;BackSpace&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Escape&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Left&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Up&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Right&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;Down&gt;</span></code></li>
+</ul>
+</li>
+<li>组合使用<ul>
+<li><code class="docutils literal notranslate"><span class="pre">Ctrl+Alt-KeyPress-A&gt;</span></code>：同时按下<code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+Alt+A</span></code>等4个键</li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;KeyPress-A&gt;</span></code>：按下键盘中的<code class="docutils literal notranslate"><span class="pre">A</span></code>键</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="entry">
+<h3>17.2.4. 输入框(Entry)<a class="headerlink" href="#entry" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>输入框，功能比较单一</li>
+<li>使用过程类似, 即先定义一个输入框实例, 定义的时候以主框架作为参数</li>
+<li>通过特定属性可以更改输入框行为,例如<code class="docutils literal notranslate"><span class="pre">entry['show']</span> <span class="pre">=</span> <span class="pre">&quot;*&quot;</span></code>， 设置遮挡字符</li>
+</ul>
+<p>输入框案例如下:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="kn">import</span> <span class="nn">tkinter</span>
+
+  <span class="k">def</span> <span class="nf">reg</span><span class="p">():</span>
+      <span class="n">name</span> <span class="o">=</span> <span class="n">e1</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+      <span class="n">pwd</span> <span class="o">=</span> <span class="n">e2</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+      <span class="n">t1</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+      <span class="n">t2</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pwd</span><span class="p">)</span>
+
+      <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;111&quot;</span> <span class="ow">and</span> <span class="n">pwd</span> <span class="o">==</span> <span class="s2">&quot;222&quot;</span><span class="p">:</span>
+          <span class="n">lb3</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;登录成功&quot;</span>
+      <span class="k">else</span><span class="p">:</span>
+          <span class="n">lb3</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;用户名或密码错误&quot;</span>
+          <span class="n">e1</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">t1</span><span class="p">)</span>
+          <span class="n">e2</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">t2</span><span class="p">)</span>
+
+  <span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+  <span class="n">lb1</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;用户名&quot;</span><span class="p">)</span>
+  <span class="n">lb1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stick</span><span class="o">=</span><span class="n">tkinter</span><span class="o">.</span><span class="n">W</span> <span class="p">)</span>
+
+  <span class="n">e1</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">)</span>
+  <span class="n">e1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stick</span><span class="o">=</span><span class="n">tkinter</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+
+  <span class="n">lb2</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;密码: &quot;</span><span class="p">)</span>
+  <span class="n">lb2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stick</span><span class="o">=</span><span class="n">tkinter</span><span class="o">.</span><span class="n">W</span> <span class="p">)</span>
+
+  <span class="n">e2</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">)</span>
+  <span class="n">e2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stick</span><span class="o">=</span><span class="n">tkinter</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+  <span class="n">e2</span><span class="p">[</span><span class="s1">&#39;show&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;*&#39;</span>
+
+  <span class="n">btn</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;登录&quot;</span><span class="p">,</span> <span class="n">command</span> <span class="o">=</span> <span class="n">reg</span><span class="p">)</span>
+  <span class="n">btn</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stick</span><span class="o">=</span><span class="n">tkinter</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+
+  <span class="n">lb3</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+  <span class="n">lb3</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+
+  <span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="menu">
+<h3>17.2.5. 菜单(Menu)<a class="headerlink" href="#menu" title="永久链接至标题">¶</a></h3>
+<p>本节讲述菜单的各种用法, 菜单常用分类为:</p>
+<ul class="simple">
+<li>普通菜单</li>
+<li>级联菜单</li>
+<li>弹出式菜单</li>
+</ul>
+<blockquote>
+<div>在mac上运行可能会出现一些显示问题, 目前包括普通菜单显示不出来, 级联菜单显示一部分等</div></blockquote>
+<p>我们分别讲述:</p>
+<div class="section" id="id5">
+<h4>17.2.5.1. 普通菜单<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h4>
+<p>普通菜单的定义大致用法如下:</p>
+<ol class="simple">
+<li>第一个<code class="docutils literal notranslate"><span class="pre">Menu</span></code>类定义的是<code class="docutils literal notranslate"><span class="pre">parent</span></code>, 即弹出的所有菜单都是这个菜单的子类</li>
+<li>利用<code class="docutils literal notranslate"><span class="pre">add_command</span></code>添加菜单项，如果该菜单是顶层菜单，则从左向右添加，否则是下拉菜单, 其中:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">label</span></code>: 用来指定菜单项名称，</li>
+<li><code class="docutils literal notranslate"><span class="pre">command</span></code>: 指定被点击后调用的方法</li>
+<li><code class="docutils literal notranslate"><span class="pre">acceletor</span></code>：指定的是快捷键</li>
+<li><code class="docutils literal notranslate"><span class="pre">underline</span></code>: 指定是否有下划线</li>
+<li><code class="docutils literal notranslate"><span class="pre">menu</span></code>:属性指定使用哪一个作为顶层菜单</li>
+</ul>
+</li>
+</ol>
+<p>我们先来定义常见的菜单,按照以上步骤,我们参看下面案例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span>
+
+<span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="c1"># 定义父级菜单,</span>
+<span class="n">menubar</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Menu</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">)</span>
+<span class="c1"># 添加弹出的菜单内容</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;File&#39;</span><span class="p">,</span> <span class="s1">&#39;Edit&#39;</span><span class="p">,</span> <span class="s1">&#39;View&#39;</span><span class="p">,</span> <span class="s1">&#39;About&#39;</span><span class="p">]:</span>
+    <span class="n">menubar</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">item</span><span class="p">)</span>
+
+<span class="n">baseFrame</span><span class="p">[</span><span class="s1">&#39;menu&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">menubar</span>
+
+<span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>17.2.5.2. 级联菜单<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h4>
+<p>级联菜单即菜单的分成, 可以通过菜单选择子菜单,然后还可能继续向下选择:</p>
+<p>级联菜单的编写大致过程为:</p>
+<ol class="simple">
+<li>建立<code class="docutils literal notranslate"><span class="pre">Menu</span></code>实例</li>
+<li><code class="docutils literal notranslate"><span class="pre">add_command</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">add_cascade</span></code></li>
+</ol>
+<p>其中:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">add_cascade</span></code>: 级联菜单,作用是引出后面的菜单</li>
+<li><code class="docutils literal notranslate"><span class="pre">add_cascade</span></code>的:<ul>
+<li><code class="docutils literal notranslate"><span class="pre">menu</span></code>属性: 指明把菜单级联到哪个菜单项上</li>
+<li><code class="docutils literal notranslate"><span class="pre">label</span></code>属性: 指明菜单项的名称</li>
+</ul>
+</li>
+</ul>
+<p>请参看下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span>
+
+<span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+<span class="n">menubar</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Menu</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">)</span>
+
+<span class="c1">#  注意参数</span>
+<span class="n">emenu</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Menu</span><span class="p">(</span><span class="n">menubar</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Copy&#39;</span><span class="p">,</span> <span class="s1">&#39;Past&#39;</span><span class="p">,</span> <span class="s1">&#39;Cut&#39;</span><span class="p">]:</span>
+    <span class="n">emenu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">item</span><span class="p">)</span>
+
+<span class="n">menubar</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;File&#39;</span><span class="p">)</span>
+<span class="n">menubar</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Edit&#39;</span><span class="p">,</span> <span class="n">menu</span><span class="o">=</span><span class="n">emenu</span><span class="p">)</span>
+<span class="n">menubar</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;About&#39;</span><span class="p">)</span>
+
+<span class="n">baseFrame</span><span class="p">[</span><span class="s1">&#39;menu&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">menubar</span>
+
+<span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h4>17.2.5.3. 弹出菜单<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li>弹出菜单叫上下文菜单，或者右键菜单</li>
+<li>实现大致思路：<ol>
+<li>建立菜单并向菜单项添加各种功能</li>
+<li>坚挺鼠标右键</li>
+<li>如果右键单击，则根据位置判定弹出惨淡</li>
+<li>弹出调用Menu的pop方法</li>
+</ol>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">add_separator</span></code>：增加分隔符</li>
+</ul>
+<p>实现请参看下面案例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span>
+
+<span class="k">def</span> <span class="nf">makeLabel</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">baseFrame</span>
+    <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;PHP是最好的编程语言，我用Python&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+<span class="n">menubar</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Menu</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;麻辣香菇&#39;</span><span class="p">,</span> <span class="s1">&#39;气锅鸡&#39;</span><span class="p">,</span> <span class="s1">&#39;东坡肘子&#39;</span><span class="p">]:</span>
+    <span class="n">menubar</span><span class="o">.</span><span class="n">add_separator</span><span class="p">()</span>
+    <span class="n">menubar</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">menubar</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;重庆火锅&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">makeLabel</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">pop</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="c1"># 注意使用 event.x 和 event.x_root的区别</span>
+    <span class="n">menubar</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">x_root</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y_root</span><span class="p">)</span>
+
+<span class="n">baseFrame</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-3&gt;&quot;</span><span class="p">,</span> <span class="n">pop</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chekcbutton-and-radiobutton">
+<h4>17.2.5.4. <code class="docutils literal notranslate"><span class="pre">ChekcButton</span></code> and <code class="docutils literal notranslate"><span class="pre">RadioButton</span></code><a class="headerlink" href="#chekcbutton-and-radiobutton" title="永久链接至标题">¶</a></h4>
+<p>惨淡中可能会用到选择框和单选框, 这两种组件的时候用过程类似,
+即定义完毕后使用函数添加:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">add_radiobutton</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">add_checkbutton</span></code></li>
+</ul>
+<p>具体请参看下面案例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span>
+
+<span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Menu</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">)</span>
+<span class="n">m2</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Menu</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;Perl&#39;</span><span class="p">,</span> <span class="s1">&#39;Php&#39;</span><span class="p">,</span> <span class="s1">&#39;Rubby&#39;</span><span class="p">]:</span>
+    <span class="n">m2</span><span class="o">.</span><span class="n">add_checkbutton</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">item</span><span class="p">)</span>
+
+<span class="n">m2</span><span class="o">.</span><span class="n">add_separator</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Java&#39;</span><span class="p">,</span> <span class="s1">&#39;C++&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]:</span>
+    <span class="n">m2</span><span class="o">.</span><span class="n">add_radiobutton</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="n">item</span><span class="p">)</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Lang&#39;</span><span class="p">,</span> <span class="n">menu</span><span class="o">=</span><span class="n">m2</span><span class="p">)</span>
+
+<span class="n">baseFrame</span><span class="p">[</span><span class="s1">&#39;menu&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">m</span>
+<span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>17.3. 人机交互<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>人机交互主要研究的是如何使用输入输出的内容, 这里把 <code class="docutils literal notranslate"><span class="pre">tkinter</span></code>中一些简单的部件都放入这一节课, 不算严格意义上的人机交互内容.</p>
+<div class="section" id="id9">
+<h3>17.3.1. 消息框<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>用来弹出一个消息,显示给用户,一般会给用户一些选择,比如取消,确定之类的的.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Message</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;I love python and you&quot;</span><span class="p">)</span>
+<span class="n">msg</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;times&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;italic&#39;</span><span class="p">))</span>
+<span class="n">msg</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tkinter</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+
+<span class="n">tkinter</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h3>17.3.2. 对话框<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>对话框, 一般采用弹出方式,用来让用户明确输入一些内容:</p>
+<p><code class="docutils literal notranslate"><span class="pre">TKinter</span></code>为我们提供三种标准的对话框:</p>
+<ol class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">messagebox</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">filedialog</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">colorchooser</span></code></li>
+</ol>
+<p>需要注明一下, 这个<code class="docutils literal notranslate"><span class="pre">python</span></code>两个版本有点区别:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">python2.x</span></code> 中三个 模块分别是<code class="docutils literal notranslate"><span class="pre">tkMessageBox</span></code>, <code class="docutils literal notranslate"><span class="pre">tkFileDialog</span></code>, <code class="docutils literal notranslate"><span class="pre">tkColorChooser</span></code>，分别独立，使用需要导入</li>
+<li><code class="docutils literal notranslate"><span class="pre">python3.x</span></code> 中全部归属<code class="docutils literal notranslate"><span class="pre">tkinter</span></code></li>
+</ul>
+<div class="section" id="messagebox">
+<h4>17.3.2.1. <code class="docutils literal notranslate"><span class="pre">messagebox</span></code><a class="headerlink" href="#messagebox" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li>用来跟用户进行简短交流，例如出错提示等</li>
+<li>消息框一般有以下几种：<ol>
+<li><code class="docutils literal notranslate"><span class="pre">askokcancel</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">askquesiton</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">askretrycancel</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">askyesno</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">showerror</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">shjowwinfo</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">showwarning</span></code></li>
+</ol>
+</li>
+<li>消息框需要带三个参数：<ul>
+<li><code class="docutils literal notranslate"><span class="pre">title</span></code>: 标题</li>
+<li><code class="docutils literal notranslate"><span class="pre">message</span></code>: 具体消息</li>
+<li><code class="docutils literal notranslate"><span class="pre">option</span></code>: 选项可以有以下含义：<ol>
+<li><code class="docutils literal notranslate"><span class="pre">default</span></code>: 指定默认格式</li>
+<li><code class="docutils literal notranslate"><span class="pre">icon</span></code>: 指定图标，取值包括<code class="docutils literal notranslate"><span class="pre">ERROR,</span> <span class="pre">INFO,QUESTION,WARNING</span></code>, 不能自己定义</li>
+<li><code class="docutils literal notranslate"><span class="pre">parent</span></code>: 如果不指定，对话框默认显示在根窗口</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>关于返回值：<ol>
+<li>返回布尔值的类型：<code class="docutils literal notranslate"><span class="pre">askokcancel,</span> <span class="pre">askretrycancel,</span> <span class="pre">askyesno</span></code></li>
+<li>返回<code class="docutils literal notranslate"><span class="pre">yes/ok</span></code>: <code class="docutils literal notranslate"><span class="pre">askquestion</span></code></li>
+<li>返回<code class="docutils literal notranslate"><span class="pre">ok</span></code>: <code class="docutils literal notranslate"><span class="pre">showerror,</span> <span class="pre">showinfo,</span> <span class="pre">showwarning</span></code></li>
+</ol>
+</li>
+</ul>
+<p>参看以下案例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span>
+<span class="kn">import</span> <span class="nn">tkinter.messagebox</span> <span class="k">as</span> <span class="nn">mb</span>
+<span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">showError</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="n">msgRst</span> <span class="o">=</span> <span class="n">mb</span><span class="o">.</span><span class="n">showerror</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;错误框&#39;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;粗错了&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">msgRst</span><span class="p">)</span>
+    <span class="n">msgRst</span>  <span class="o">=</span> <span class="n">mb</span><span class="o">.</span><span class="n">askquestion</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;QUESTION&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;May I ask u a question?&quot;</span><span class="p">,</span> <span class="n">icon</span><span class="o">=</span><span class="n">mb</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">msgRst</span><span class="p">)</span>
+
+<span class="n">baseFrame</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Button-1&gt;&#39;</span><span class="p">,</span> <span class="n">showError</span><span class="p">)</span>
+
+<span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filedialog">
+<h4>17.3.2.2. <code class="docutils literal notranslate"><span class="pre">filedialog</span></code><a class="headerlink" href="#filedialog" title="永久链接至标题">¶</a></h4>
+<ul>
+<li><p class="first">一般用来打开或者保存等与文件操作相关的交互</p>
+</li>
+<li><p class="first">返回值：</p>
+<ul class="simple">
+<li>如果选择打开某个文件，则返回文件的完整路径</li>
+<li>点击取消则返回空串</li>
+</ul>
+</li>
+<li><p class="first">可能用到的参数：</p>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">defaultextension</span></code>: 指定文件后缀</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">filetypes</span></code>:指定筛选文件类型的下拉菜单选项，值由二元组成（类型名，后缀），例如：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">filetypes</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;PNG&quot;</span><span class="p">,</span><span class="s2">&quot;.png&quot;</span><span class="p">),(</span><span class="s2">&quot;JPG&quot;</span><span class="p">,</span><span class="s2">&quot;.jpg&quot;</span><span class="p">)]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">initialdir</span></code>: 打开默认路径</p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">title</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">parent</span></code>: 依附的父亲窗口，默认为根窗口</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>使用请参看下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">tkinter</span>
+    <span class="kn">import</span> <span class="nn">tkinter.filedialog</span> <span class="k">as</span> <span class="nn">fd</span>
+
+    <span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">showFD</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    				<span class="n">fileName</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">askopenfilename</span><span class="p">()</span>
+    				<span class="nb">print</span><span class="p">(</span><span class="n">fileName</span><span class="p">)</span>
+
+            <span class="c1"># 需要注意次函数返回值是一个结构, 非普通字符串</span>
+            <span class="n">fileName</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">askopenfile</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">fileName</span><span class="p">)</span>
+
+            <span class="n">fileName</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">askdirectory</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">fileName</span><span class="p">)</span>
+
+            <span class="n">fileName</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">asksaveasfile</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">fileName</span><span class="p">)</span>
+
+    <span class="n">baseFrame</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Button-1&gt;&#39;</span><span class="p">,</span> <span class="n">showFD</span><span class="p">)</span>
+
+    <span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="colorchooser">
+<h4>17.3.2.3. <code class="docutils literal notranslate"><span class="pre">colorchooser</span></code><a class="headerlink" href="#colorchooser" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li>调色板，颜色选择器</li>
+<li>参数：<ol>
+<li><code class="docutils literal notranslate"><span class="pre">color</span></code>: 用于指定初始化颜色，默认是浅灰色</li>
+<li><code class="docutils literal notranslate"><span class="pre">option</span></code>: 可选<code class="docutils literal notranslate"><span class="pre">title,</span> <span class="pre">parent</span></code></li>
+</ol>
+</li>
+<li>返回值：<ul>
+<li>选择颜色后点击“确定”，返回两个值，第一个是RGB值，第二个是对应的十六进制颜色值</li>
+<li>点击“取消”返回（None,None)</li>
+</ul>
+</li>
+</ul>
+<p>参看下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">tkinter</span>
+    <span class="kn">import</span> <span class="nn">tkinter.colorchooser</span> <span class="k">as</span> <span class="nn">cc</span>
+
+    <span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">cb</span><span class="p">():</span>
+        <span class="n">color</span>  <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">askcolor</span><span class="p">(</span><span class="s2">&quot;RED&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;选个色子：&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+        <span class="n">color</span>  <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">askcolor</span><span class="p">(</span><span class="s2">&quot;RED&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Choose Again：&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+
+    <span class="n">btn</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;open&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">cb</span><span class="p">)</span>
+    <span class="n">btn</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>17.4. 其他控件<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<div class="section" id="checkbutton">
+<h3>17.4.1. <code class="docutils literal notranslate"><span class="pre">CheckButton</span></code><a class="headerlink" href="#checkbutton" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>实例化跟<code class="docutils literal notranslate"><span class="pre">Button</span></code>很像</li>
+<li>属于按钮类，所以有<code class="docutils literal notranslate"><span class="pre">command</span></code>属性</li>
+</ul>
+<p>使用请参见以下代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">tkinter</span>
+
+    <span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+    <span class="n">time1</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">time2</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">textPython</span><span class="p">():</span>
+        <span class="k">global</span> <span class="n">lb</span><span class="p">,</span> <span class="n">cbPython</span><span class="p">,</span> <span class="n">time1</span>
+
+        <span class="k">if</span> <span class="n">time1</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">time1</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">lb</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Python被选择&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">time1</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">lb</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Python被取消&quot;</span>
+
+    <span class="c1"># IntVar，StringVar此类数据的使用需要在 tkinter.Tk()之后，否则报错</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">IntVar</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">textJava</span><span class="p">():</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">lb</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Java被取消&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lb</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Java被选中&quot;</span>
+
+    <span class="n">cbPython</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Checkbutton</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">textPython</span><span class="p">)</span>
+    <span class="n">cbPython</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="n">cbJava</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Checkbutton</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">textJava</span><span class="p">)</span>
+    <span class="n">cbJava</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="n">lb</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span> <span class="s2">&quot;   &quot;</span><span class="p">)</span>
+    <span class="n">lb</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="radiobutton">
+<h3>17.4.2. <code class="docutils literal notranslate"><span class="pre">Radiobutton</span></code><a class="headerlink" href="#radiobutton" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>跟<code class="docutils literal notranslate"><span class="pre">Checkbutton</span></code>类似，不同的是需要设置一组，实现一组内只能选择一个</li>
+<li>参数<code class="docutils literal notranslate"><span class="pre">variable</span></code>: 定义一个可以用来传送值的变量，需要定义为IntVar</li>
+<li>参数<code class="docutils literal notranslate"><span class="pre">value</span></code>: variable所传送的值</li>
+</ul>
+<p>请参看以下代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">tkinter</span>
+
+    <span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">textSelect</span><span class="p">():</span>
+        <span class="k">global</span> <span class="n">lb</span>
+
+        <span class="n">value</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">lb</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Python被选择&quot;</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">lb</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Java被选择&quot;</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERRRRRRRRRRRROR........</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">value</span><span class="p">))</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1">#IntVar，StringVar此类数据的使用需要在 tkinter.Tk()之后，否则报错</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">IntVar</span><span class="p">()</span>
+
+    <span class="n">cbPython</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Radiobutton</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Python&quot;</span><span class="p">,</span>  <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">textSelect</span><span class="p">)</span>
+    <span class="n">cbPython</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="n">cbJava</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Radiobutton</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Java&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>  <span class="n">command</span><span class="o">=</span><span class="n">textSelect</span><span class="p">)</span>
+    <span class="n">cbJava</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="n">lb</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span> <span class="s2">&quot;   &quot;</span><span class="p">)</span>
+    <span class="n">lb</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+    <span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="text">
+<h3>17.4.3. <code class="docutils literal notranslate"><span class="pre">Text</span></code><a class="headerlink" href="#text" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>用来批量输入文字</li>
+<li><code class="docutils literal notranslate"><span class="pre">indexes</span></code>用法：<ul>
+<li>行列坐标: <code class="docutils literal notranslate"><span class="pre">row,</span> <span class="pre">col</span></code> 方式, 行从1开始，列从0开始，可以是引号，可以是浮点数写法</li>
+</ul>
+</li>
+</ul>
+<p>具体使用参看下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span>
+
+<span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">t</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mf">1.4</span><span class="p">,</span> <span class="s2">&quot;I love python&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">))</span>
+
+<span class="c1"># mark_set创建一个标签，可以用来表示位置</span>
+<span class="n">t</span><span class="o">.</span><span class="n">mark_set</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="mf">1.6</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s2">&quot;one&quot;</span><span class="p">,</span> <span class="s2">&quot;哈哈&quot;</span><span class="p">)</span>
+
+<span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="canvas">
+<h3>17.4.4. <code class="docutils literal notranslate"><span class="pre">canvas</span></code><a class="headerlink" href="#canvas" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>画布，可以自由的在上面绘制图形的一个小舞台</li>
+<li>在画布上绘制对象，通常用<code class="docutils literal notranslate"><span class="pre">create_xxx(xxx=对戏类型，例如line，</span> <span class="pre">rectangle，text)</span></code></li>
+</ul>
+<p>具体使用参看下面代码:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 一个简单的画布例子</span>
+<span class="kn">import</span> <span class="nn">tkinter</span>
+
+<span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+<span class="n">cvs</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">cvs</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">cvs</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="mi">23</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span> <span class="mi">190</span><span class="p">,</span><span class="mi">234</span><span class="p">)</span>
+<span class="n">cvs</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="mi">56</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;I LOVE PYTHON&quot;</span><span class="p">)</span>
+
+
+<span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>下面案例用来绘制五角星:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># V5 绘制一个五角星</span>
+<span class="kn">import</span> <span class="nn">tkinter</span>
+<span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+
+<span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span> <span class="p">)</span>
+<span class="n">w</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+
+<span class="n">center_x</span> <span class="o">=</span> <span class="mi">150</span>
+<span class="n">center_y</span> <span class="o">=</span> <span class="mi">150</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="mi">150</span>
+
+<span class="n">points</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1">#左上点</span>
+    <span class="n">center_x</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)),</span>
+    <span class="n">center_y</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)),</span>
+
+    <span class="c1">#右上点</span>
+    <span class="n">center_x</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)),</span>
+    <span class="n">center_y</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)),</span>
+
+    <span class="c1">#左下点</span>
+    <span class="n">center_x</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">m</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)),</span>
+    <span class="n">center_y</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">m</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)),</span>
+
+    <span class="c1">#顶点</span>
+    <span class="n">center_x</span><span class="p">,</span>
+    <span class="n">center_y</span> <span class="o">-</span> <span class="n">r</span><span class="p">,</span>
+
+    <span class="c1">#右下点</span>
+    <span class="n">center_x</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)),</span>
+    <span class="n">center_y</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)),</span>
+<span class="p">]</span>
+
+<span class="n">w</span><span class="o">.</span><span class="n">create_polygon</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;yellow&quot;</span><span class="p">)</span>
+<span class="n">w</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;五角星&quot;</span><span class="p">)</span>
+
+<span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">canvas</span></code>的作用是把一定组件“画”到画布上，显示出来，<code class="docutils literal notranslate"><span class="pre">canvas</span></code>所支持的组件包括：</p>
+<ol class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">arc</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">bitmap</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">image(BitmapImage,</span> <span class="pre">PhotoImage)</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">line</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">oval</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">polygon</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">rectangle</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">text</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">window(组件)</span></code></li>
+</ol>
+</li>
+<li><p class="first">每次调用<code class="docutils literal notranslate"><span class="pre">create_xxx</span></code>都会返回一个创建的组件的<code class="docutils literal notranslate"><span class="pre">ID</span></code>，同时候也可以用<code class="docutils literal notranslate"><span class="pre">tag</span></code>属性指定其标签名称</p>
+</li>
+<li><p class="first">以下代码，通过调用  <code class="docutils literal notranslate"><span class="pre">canvas.move</span></code> 实现一个一次性动作</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="kn">import</span> <span class="nn">tkinter</span>
+
+  <span class="n">baseFrame</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+  <span class="k">def</span> <span class="nf">btnClick</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+       <span class="k">global</span>  <span class="n">w</span>
+       <span class="n">w</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">id_ball</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+       <span class="n">w</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="s2">&quot;fall&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+
+  <span class="n">w</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">baseFrame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+  <span class="n">w</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+  <span class="n">w</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="n">btnClick</span><span class="p">)</span>
+
+  <span class="c1"># 创建组件后返回id</span>
+  <span class="n">id_ball</span>  <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+
+  <span class="c1"># 创建组件使用tag属性</span>
+  <span class="n">w</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="mi">123</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;ILovePython&quot;</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="s2">&quot;fall&quot;</span><span class="p">)</span>
+  <span class="c1"># 创建的时候如果没有指定tag可以利用addtag_withtag添加</span>
+  <span class="c1"># 同类函数还有 addtag_all, addtag_above, addtag_xxx等等</span>
+  <span class="n">id_rectangle</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="mi">56</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="mi">173</span><span class="p">,</span><span class="mi">110</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+  <span class="n">w</span><span class="o">.</span><span class="n">addtag_withtag</span><span class="p">(</span><span class="s2">&quot;fall&quot;</span><span class="p">,</span> <span class="n">id_rectangle</span><span class="p">)</span>
+
+  <span class="n">baseFrame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>17.5. 实例: 屏保-TKinter版本<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div>详细讲解在视频中,请大家参考视频讲解</div></blockquote>
+<p>在整个屏保的构成中,相对内容比较简单,主要构建就是<code class="docutils literal notranslate"><span class="pre">球</span></code>, 各种具有随机属性的球体.</p>
+<p>球的构成大概如下:</p>
+<ul class="simple">
+<li>颜色随机, 大小随机, 运动方向随机, 运动速度随机</li>
+<li>遇到边缘需要反弹</li>
+</ul>
+<p>有了球,需要构建一个游戏类,游戏类的生成大概思路是:</p>
+<ol class="simple">
+<li>创建很多<code class="docutils literal notranslate"><span class="pre">球</span></code></li>
+<li>让这些球 运动起来</li>
+<li>如果鼠标移动, 退出</li>
+</ol>
+<p>代码实现参考下面代码, 注释已经很详细了:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        <span class="kn">import</span> <span class="nn">random</span>
+        <span class="kn">import</span> <span class="nn">tkinter</span>
+
+        <span class="k">class</span> <span class="nc">RandomBall</span><span class="p">:</span>
+            <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">scrnwidth</span><span class="p">,</span> <span class="n">scrnheight</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">canvas</span>
+                
+								<span class="c1"># 球的初始位置, 要求是随机</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">xpos</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">scrnwidth</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ypos</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">scrnheight</span><span class="p">))</span>
+
+								<span class="c1"># 移动速度, 这里按每次移动距离计算</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">xvelocity</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">yvelocity</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">scrnwidth</span> <span class="o">=</span> <span class="n">scrnwidth</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">scrnheight</span> <span class="o">=</span> <span class="n">scrnheight</span>
+								
+								<span class="c1"># 圆的大小</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">120</span><span class="p">)</span>
+
+								<span class="c1"># 生成颜色, 随机的三个值 , 0-255 表示 </span>
+                <span class="n">c</span> <span class="o">=</span> <span class="k">lambda</span> <span class="p">:</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;#</span><span class="si">%02x%02x%02x</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">c</span><span class="p">(),</span><span class="n">c</span><span class="p">(),</span><span class="n">c</span><span class="p">())</span>
+
+            <span class="k">def</span> <span class="nf">create_ball</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+                <span class="n">x1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xpos</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+                <span class="n">y1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ypos</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+                <span class="n">x2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xpos</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+                <span class="n">y2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ypos</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span>
+                
+                <span class="c1"># 画圆的方式是确定对角的两个点后, 确定填充颜色和边缘颜色 </span>
+                <span class="c1"># 然后自动就画出圆形来了, 这里统一都是按椭圆来画的</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+
+            <span class="k">def</span> <span class="nf">move_ball</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">xpos</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">xvelocity</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">ypos</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">yvelocity</span>
+
+                <span class="c1"># 移动过程中一旦碰到幕布边缘就需要反向运动</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ypos</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scrnheight</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">:</span>
+                   <span class="bp">self</span><span class="o">.</span><span class="n">yvelocity</span> <span class="o">=</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">yvelocity</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">ypos</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">yvelocity</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">yvelocity</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">xpos</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">scrnwidth</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">xpos</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">xvelocity</span> <span class="o">=</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">xvelocity</span>
+                
+                <span class="c1"># 按每次移动距离移动球</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">item</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">xvelocity</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">yvelocity</span><span class="p">)</span>
+
+        <span class="k">class</span> <span class="nc">ScreenSaver</span><span class="p">:</span>
+        
+            <span class="n">balls</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">num_balls</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+                <span class="c1"># 取消边框</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">overrideredirect</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+                <span class="c1"># 检测任何鼠标移动后即退出</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Motion&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">myquit</span><span class="p">)</span>
+                
+                <span class="c1"># 得到屏幕的长宽数据</span>
+                <span class="n">w</span><span class="p">,</span><span class="n">h</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">winfo_screenwidth</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">winfo_screenheight</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">w</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">h</span> <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_balls</span> <span class="p">):</span>
+                    <span class="n">ball</span> <span class="o">=</span> <span class="n">RandomBall</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">,</span> <span class="n">scrnwidth</span><span class="o">=</span><span class="n">w</span><span class="p">,</span> <span class="n">scrnheight</span><span class="o">=</span><span class="n">h</span><span class="p">)</span>
+                    <span class="n">ball</span><span class="o">.</span><span class="n">create_ball</span><span class="p">()</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">balls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ball</span><span class="p">)</span>
+                
+                <span class="c1"># 启动屏保</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">run_screen_saver</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+
+            <span class="k">def</span> <span class="nf">run_screen_saver</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">ball</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">balls</span><span class="p">:</span>
+                    <span class="n">ball</span><span class="o">.</span><span class="n">move_ball</span><span class="p">()</span>
+                <span class="c1"># 每 200ms 让所有的球移动一次</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">run_screen_saver</span><span class="p">)</span>
+            
+            <span class="c1"># 退出</span>
+            <span class="k">def</span> <span class="nf">myquit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">event</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+        		<span class="n">ScreenSaver</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>17.6. 实例: 贪吃蛇-TKinter版本<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
+<p>这个游戏分为两个版本, 有一个是多线程,但其中因为年深日久发现很难理解, 所以大拿
+童鞋又改了个好理解的版本,大家可以对照着看, 在视频里有分步骤讲解:</p>
+<p>容易的版本:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">WORLD_WIDTH</span> <span class="o">=</span> <span class="mi">600</span>
+<span class="n">WORLD_HEIGHT</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">STEP</span> <span class="o">=</span> <span class="mi">20</span>
+
+
+<span class="k">class</span> <span class="nc">SnakeWorld</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+        <span class="c1"># 创建画布</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">WORLD_WIDTH</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">WORLD_WIDTH</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">WORLD_HEIGHT</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">),</span> <span class="p">(</span><span class="n">WORLD_WIDTH</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">WORLD_WIDTH</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">WORLD_HEIGHT</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">score_show</span> <span class="o">=</span> <span class="n">ScoreShow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">)</span>
+
+        <span class="c1"># 用来显示 分数, 显示位置固定</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">food</span> <span class="o">=</span> <span class="n">Food</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">food</span><span class="o">.</span><span class="n">generate_food</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">snake</span> <span class="o">=</span> <span class="n">Snake</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">world_running</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">world_running</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snake</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+        <span class="n">rst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_bang</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">rst</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">snake</span><span class="o">.</span><span class="n">grow</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">food</span><span class="o">.</span><span class="n">generate_food</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">score_show</span><span class="o">.</span><span class="n">new_score</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+
+        <span class="k">if</span> <span class="n">rst</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">game_over</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">world_running</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">game_over</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Game Over&#39;</span><span class="p">)</span>
+        <span class="n">quitbtn</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Quit&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
+        <span class="n">rebtn</span> <span class="o">=</span> <span class="n">tkinter</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Begin&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_window</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;nw&#39;</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="n">quitbtn</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">check_bang</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">snake_head</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">snake</span><span class="o">.</span><span class="n">get_head_pos</span><span class="p">()</span>
+        <span class="n">food_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">food</span><span class="o">.</span><span class="n">food_pos</span>
+
+        <span class="k">if</span> <span class="n">snake_head</span> <span class="o">==</span> <span class="n">food_pos</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">snake_head</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">snake_head</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">WORLD_WIDTH</span> <span class="ow">or</span> \
+            <span class="n">snake_head</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">snake_head</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">WORLD_HEIGHT</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="k">return</span> <span class="mi">0</span>
+
+<span class="k">class</span> <span class="nc">Food</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">canv</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canv</span> <span class="o">=</span> <span class="n">canv</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">food_draw</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">food_pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">generate_food</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">WORLD_WIDTH</span> <span class="o">-</span> <span class="mi">50</span><span class="p">)</span> <span class="o">//</span> <span class="n">STEP</span><span class="p">)</span> <span class="o">*</span> <span class="n">STEP</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">WORLD_HEIGHT</span> <span class="o">-</span> <span class="mi">50</span><span class="p">)</span> <span class="o">//</span> <span class="n">STEP</span><span class="p">)</span> <span class="o">*</span> <span class="n">STEP</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">food_draw</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canv</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">food_draw</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">food_draw</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">food_draw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canv</span><span class="o">.</span><span class="n">create_line</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">10</span><span class="p">),</span> <span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                                               <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;#00FF00&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">food_pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">class</span> <span class="nc">ScoreShow</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">canv</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canv</span> <span class="o">=</span> <span class="n">canv</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">score_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canv</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;SCORE: 0&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">new_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">score</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">score</span> <span class="o">+=</span> <span class="n">score</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canv</span><span class="o">.</span><span class="n">itemconfigure</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">score_text</span><span class="p">,</span>
+                                  <span class="n">text</span><span class="o">=</span><span class="s1">&#39;SCORE: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="p">))</span>
+
+
+
+
+<span class="k">class</span> <span class="nc">Snake</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tk</span><span class="p">,</span> <span class="n">canv</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">tk</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canv</span> <span class="o">=</span> <span class="n">canv</span>
+
+        <span class="c1"># 这个点位是在放个正常点位上加了半个格子宽度, 为的是取消</span>
+        <span class="c1"># 方根骑缝现象</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span> <span class="o">=</span> <span class="p">[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="s1">&#39;Down&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snake_line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canv</span><span class="o">.</span><span class="n">create_line</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                                                <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Key-Left&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_pressed</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Key-Right&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_pressed</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Key-Up&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_pressed</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Key-Down&gt;&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">key_pressed</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_head_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">10</span>
+
+    <span class="k">def</span> <span class="nf">grow</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">key_pressed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+        <span class="c1"># keysym 按键名称</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;Left&quot;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;Right&quot;</span><span class="p">)</span> \
+                <span class="ow">and</span> \
+                <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">keysym</span> <span class="o">==</span> <span class="s1">&#39;Left&#39;</span> <span class="ow">or</span> <span class="n">e</span><span class="o">.</span><span class="n">keysym</span> <span class="o">==</span> <span class="s1">&#39;Right&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;Up&quot;</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s2">&quot;Down&quot;</span><span class="p">)</span> \
+                <span class="ow">and</span> \
+                <span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">keysym</span> <span class="o">==</span> <span class="s1">&#39;Up&#39;</span> <span class="ow">or</span> <span class="n">e</span><span class="o">.</span><span class="n">keysym</span> <span class="o">==</span> <span class="s1">&#39;Down&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">keysym</span>
+
+        <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">get_next_pos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;Up&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">STEP</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;Down&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">STEP</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;Left&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">x</span><span class="o">-</span><span class="n">STEP</span><span class="p">,</span> <span class="n">y</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;Right&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">STEP</span><span class="p">,</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="n">pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_next_pos</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">canv</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">snake_line</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="p">)</span>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="n">sw</span> <span class="o">=</span> <span class="n">SnakeWorld</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>旧版本实现参考:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">queue</span>
+    <span class="kn">import</span> <span class="nn">time</span>
+    <span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+    <span class="kn">import</span> <span class="nn">threading</span>
+    <span class="kn">import</span> <span class="nn">random</span>
+
+
+    <span class="k">class</span> <span class="nc">GUI</span><span class="p">(</span><span class="n">Tk</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">queue</span><span class="p">):</span>
+            <span class="n">Tk</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">queue</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_game_over</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="c1"># 创建画布</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+            
+            <span class="c1"># 蛇就是一条线</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">snake</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;#FFCC4C&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+            <span class="c1"># 蛇的食物</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">food</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_rectangle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s1">&#39;#FFCC4C&#39;</span><span class="p">,</span> <span class="n">outline</span><span class="o">=</span><span class="s1">&#39;#FFCC4C&#39;</span><span class="p">)</span>
+            
+            <span class="c1"># 用来显示 分数, 显示位置固定</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">points_earned</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="mi">450</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;SCORE: 0&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">queue_handler</span><span class="p">()</span>
+
+
+        <span class="k">def</span> <span class="nf">queue_handler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+                    <span class="n">task</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">block</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="n">task</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;game_over&quot;</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">game_over</span><span class="p">()</span>
+
+                    <span class="k">if</span> <span class="n">task</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;move&#39;</span><span class="p">):</span>
+                        <span class="n">points</span> <span class="o">=</span> <span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">task</span><span class="p">[</span><span class="s1">&#39;move&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">point</span><span class="p">]</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">snake</span><span class="p">,</span> <span class="o">*</span><span class="n">points</span><span class="p">)</span>
+
+                    <span class="k">if</span> <span class="n">task</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;food&#39;</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">coords</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">food</span><span class="p">,</span> <span class="o">*</span><span class="n">task</span><span class="p">[</span><span class="s1">&#39;food&#39;</span><span class="p">])</span>
+                    <span class="k">elif</span> <span class="n">task</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;points_earned&#39;</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">itemconfigure</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">points_earned</span><span class="p">,</span>
+                                                  <span class="n">text</span><span class="o">=</span><span class="s1">&#39;SCORE: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">task</span><span class="p">[</span><span class="s1">&#39;points_earned&#39;</span><span class="p">]))</span>
+
+                        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">task_done</span><span class="p">()</span>
+
+            <span class="k">except</span> <span class="n">queue</span><span class="o">.</span><span class="n">Empty</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_game_over</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">after</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">queue_handler</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">game_over</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_game_over</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_text</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Game Over&#39;</span><span class="p">)</span>
+            <span class="n">quitbtn</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Quit&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
+            <span class="n">rebtn</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Begin&#39;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">create_window</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;nw&#39;</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="n">quitbtn</span><span class="p">)</span>
+
+
+    <span class="k">class</span> <span class="nc">Food</span><span class="p">():</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">queue</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">queue</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">generate_food</span><span class="p">()</span>
+
+
+        <span class="k">def</span> <span class="nf">generate_food</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">490</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">290</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">postion</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">exppos</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">5</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">5</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">({</span><span class="s1">&#39;food&#39;</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">exppos</span><span class="p">})</span>
+
+
+    <span class="k">class</span> <span class="nc">Snake</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">gui</span><span class="p">,</span> <span class="n">queue</span><span class="p">):</span>
+            <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">gui</span> <span class="o">=</span> <span class="n">gui</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">queue</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">points_earned</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">495</span><span class="p">,</span><span class="mi">55</span><span class="p">),(</span><span class="mi">485</span><span class="p">,</span><span class="mi">55</span><span class="p">),</span> <span class="p">(</span><span class="mi">465</span><span class="p">,</span><span class="mi">55</span><span class="p">),(</span><span class="mi">455</span><span class="p">,</span><span class="mi">55</span><span class="p">)]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">food</span> <span class="o">=</span> <span class="n">Food</span><span class="p">(</span><span class="n">queue</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="s1">&#39;Left&#39;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+
+        <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gui</span><span class="o">.</span><span class="n">is_game_over</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_delete</span><span class="p">()</span>
+
+            <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">gui</span><span class="o">.</span><span class="n">is_game_over</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">({</span><span class="s1">&#39;move&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="p">})</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+
+        <span class="k">def</span> <span class="nf">key_pressed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">e</span><span class="p">):</span>
+            <span class="c1"># keysym 按键名称</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">keysym</span>
+
+        <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">new_snake_point</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_new_coordinates</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">food</span><span class="o">.</span><span class="n">postion</span> <span class="o">==</span> <span class="n">new_snake_point</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">points_earned</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">({</span><span class="s1">&#39;points_earned&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">points_earned</span><span class="p">})</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">food</span><span class="o">.</span><span class="n">generate_food</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">check_game_over</span><span class="p">(</span><span class="n">new_snake_point</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_snake_point</span><span class="p">)</span>
+
+
+        <span class="k">def</span> <span class="nf">calculate_new_coordinates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">last_x</span><span class="p">,</span> <span class="n">last_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;Up&#39;</span><span class="p">:</span>
+                <span class="n">new_snake_point</span> <span class="o">=</span> <span class="n">last_x</span><span class="p">,</span> <span class="n">last_y</span> <span class="o">-</span> <span class="mi">10</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;Down&#39;</span><span class="p">:</span>
+                <span class="n">new_snake_point</span> <span class="o">=</span> <span class="n">last_x</span><span class="p">,</span> <span class="n">last_y</span> <span class="o">+</span> <span class="mi">10</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;Left&#39;</span><span class="p">:</span>
+                <span class="n">new_snake_point</span> <span class="o">=</span> <span class="n">last_x</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">last_y</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">direction</span> <span class="o">==</span> <span class="s1">&#39;Right&#39;</span><span class="p">:</span>
+                <span class="n">new_snake_point</span> <span class="o">=</span> <span class="n">last_x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">last_y</span>
+
+            <span class="k">return</span> <span class="n">new_snake_point</span>
+
+        <span class="k">def</span> <span class="nf">check_game_over</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">snake_point</span><span class="p">):</span>
+            <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">snake_point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">snake_point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="o">-</span><span class="mi">5</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">505</span> <span class="ow">or</span> <span class="ow">not</span> <span class="o">-</span><span class="mi">5</span> <span class="o">&lt;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">315</span> <span class="ow">or</span> <span class="n">snake_point</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">snake_points</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">({</span><span class="s1">&#39;game_over&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+
+
+    <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+        <span class="n">q</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">()</span>
+        <span class="n">gui</span> <span class="o">=</span> <span class="n">GUI</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+        <span class="n">gui</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;傻傻的贪吃蛇&quot;</span><span class="p">)</span>
+        <span class="c1">#global  q, gui</span>
+        <span class="n">snake</span> <span class="o">=</span> <span class="n">Snake</span><span class="p">(</span><span class="n">gui</span><span class="p">,</span><span class="n">q</span><span class="p">)</span>
+
+        <span class="n">gui</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Key-Left&gt;&#39;</span><span class="p">,</span> <span class="n">snake</span><span class="o">.</span><span class="n">key_pressed</span><span class="p">)</span>
+        <span class="n">gui</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Key-Right&gt;&#39;</span><span class="p">,</span> <span class="n">snake</span><span class="o">.</span><span class="n">key_pressed</span><span class="p">)</span>
+        <span class="n">gui</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Key-Up&gt;&#39;</span><span class="p">,</span> <span class="n">snake</span><span class="o">.</span><span class="n">key_pressed</span><span class="p">)</span>
+        <span class="n">gui</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s1">&#39;&lt;Key-Down&gt;&#39;</span><span class="p">,</span> <span class="n">snake</span><span class="o">.</span><span class="n">key_pressed</span><span class="p">)</span>
+        <span class="n">gui</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+        <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../adv/101-函数高级.html" class="btn btn-neutral float-right" title="1. 函数高级" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="012-异常处理.html" class="btn btn-neutral float-left" title="16. Python异常的使用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 北京图灵学院.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

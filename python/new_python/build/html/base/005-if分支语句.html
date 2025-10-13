@@ -1,0 +1,513 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>7. 分支语句 &mdash; Python新全栈教程 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="8. 循环语句" href="006-for循环.html" />
+    <link rel="prev" title="6. 表达式 和 运算符" href="004运算符.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python新全栈教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="001.html">1. 开学典礼-不讲知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001Python语言概述.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="001注释.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="003str.html">5. 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="004运算符.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. 分支语句</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">7.1. 三大结构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">7.2. 分支语句</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">7.2.1. 一个无足轻重的小栗子</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">7.2.2. 再举一个栗子</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">7.2.3. 最后一个啰嗦的案例</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#if-else">7.3. <code class="docutils literal notranslate"><span class="pre">if...else...</span></code> 语句</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">7.3.1. 一个双头栗子</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">7.4. 多路分支</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9">7.4.1. 相对简洁的成绩判断程序</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#if">7.5. if语句其他问题</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="006-for循环.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="007-while循环.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-函数讲义.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="008-内置函数.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-内置结构.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="009-类.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010-内置模块.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="011-持久化和文件.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="013-tkinter.html">17. Tkinter</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../adv/101-函数高级.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/102-类高级.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/103_调试技术.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/1021-单元测试.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/104_模块和包.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/105多线程.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/107_log.html">8. 日志(logging)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/108_携程.html">9. 协程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adv/109_网络编程.html">10. 1. 网络通信概述</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python新全栈教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>7. 分支语句</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/base/005-if分支语句.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>7. 分支语句<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>7.1. 三大结构<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>程序设计理论已经证明，程序只要三种结构即可以满足任何需求，这三种结构即：</p>
+<ul class="simple">
+<li>顺序</li>
+<li>分支</li>
+<li>循环</li>
+</ul>
+<p>这种提法主要为了证明我们不需要goto语句，因为goto语句会带来复杂的软件工程问题，所以
+现在程序设计语言一般摒弃了goto预计的使用。</p>
+<p>所谓顺序语句即我们程序的正常执行都是一行一行的执行，一般来讲我们认为同一个缩进的一行为一个语句，程序执行完后会依次执行同一个缩进的下一行。</p>
+<p>在这里，分支语句和后面介绍的循环语句一般情况下也可以笼统的称为一个语句，不论一个分支语句或循环语句占用多少行。</p>
+</div>
+<div class="section" id="id3">
+<h2>7.2. 分支语句<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>分支语句用来描述假设和选择的情况，通常可以理解成我们自然语言中的<code class="docutils literal notranslate"><span class="pre">如果...那么...,否则...</span></code>, 我们在说话的时候可以没有后面的转这部分，但前面的假设部分一定要齐全，不能直说一个<code class="docutils literal notranslate"><span class="pre">如果....</span></code>， 在代码中同理，分支语句必须齐全，即至少包含<code class="docutils literal notranslate"><span class="pre">如果</span></code>和<code class="docutils literal notranslate"><span class="pre">那么</span></code>两个部分。</p>
+<ul>
+<li><p class="first">分支的基本语法</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  if 条件表达式：
+      语句1
+      语句2
+      语句3
+      ......
+</pre></div>
+</div>
+</li>
+<li><p class="first">条件表达式就是计算结果必须为布尔值的表达式</p>
+</li>
+<li><p class="first">表达式后面的冒号不能少</p>
+</li>
+<li><p class="first">注意if后面的出现的语句，如果属于if语句块，则必须同一个缩进等级</p>
+</li>
+<li><p class="first">条件表达式结果为True执行if后面的缩进的语句块</p>
+</li>
+</ul>
+<div class="section" id="id4">
+<h3>7.2.1. 一个无足轻重的小栗子<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>在这个案例中，我们判断变量<code class="docutils literal notranslate"><span class="pre">age</span></code>的值，加入它里面存储的是年龄，如果年龄小于18岁，说明还是个孩子：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># if语句练习</span>
+    <span class="c1"># 如果age小于18岁，则打印信息“去叫家长”</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="mi">17</span>
+    <span class="k">if</span>  <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;去叫家长吧，孩纸&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我们不带你玩&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;滚球的&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>这个运行的结果是：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>去叫家长吧，孩纸
+我们不带你玩
+滚球的
+</pre></div>
+</div>
+<p>上面栗子的运行结果如上所示，这里我们想强调的是，if下面同一个缩进的打印语句，都具有同一个前提，即if的条件语句返回<code class="docutils literal notranslate"><span class="pre">True</span></code>，或者
+也可以说他们属于同一个语句块</p>
+<p>对语句块的理解需要注意，这里也可以说，他们属于同一个<code class="docutils literal notranslate"><span class="pre">if</span></code>语句，在计算语句条数的时候，不管<code class="docutils literal notranslate"><span class="pre">if</span></code>语句后面有多少行，也可以算一条语句代码。</p>
+</div>
+<div class="section" id="id5">
+<h3>7.2.2. 再举一个栗子<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>这个案例我想展示的是，如果<code class="docutils literal notranslate"><span class="pre">if</span></code>语句的条件判断语句返回的是 <code class="docutils literal notranslate"><span class="pre">False</span></code>，则<code class="docutils literal notranslate"><span class="pre">if</span></code>下面缩进的所有语句都不执行，直接执行<code class="docutils literal notranslate"><span class="pre">if</span></code>语句的下一句，注意的是，所谓的下一
+条语句，就是跟<code class="docutils literal notranslate"><span class="pre">if</span></code>关键字具有同一个缩进（对齐）的语句。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># if语句练习</span>
+    <span class="c1"># 如果age小于18岁，则打印信息“去叫家长”</span>
+    <span class="c1"># 需要注意，以下总共三个语句，最后的print总会被执行</span>
+    <span class="n">age</span> <span class="o">=</span> <span class="mi">19</span>
+    <span class="k">if</span>  <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;去叫家长吧，孩纸&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;我们不带你玩&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;滚球的&quot;</span><span class="p">)</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;开始上车喽，老司机们&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上面案例执行结果是：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>开始上车喽，老司机们
+</pre></div>
+</div>
+<p>下面的案例有点啰嗦，也放这里吧：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 又一个练习</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;今天学习if语句&quot;</span><span class="p">)</span>
+<span class="n">gender</span> <span class="o">=</span> <span class="s2">&quot;男&quot;</span>
+<span class="k">if</span> <span class="n">gender</span> <span class="o">==</span> <span class="s2">&quot;女&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你好，我叫刘大拿，我单身, :) &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;开始讲for循环了&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行结果是：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">今天学习if语句</span>
+<span class="n">开始讲for循环了</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>7.2.3. 最后一个啰嗦的案例<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>在我们的学习条件语句的时候。需要注意的是条件，具体满足什么条件，或者在什么条件下才真正执行后面的
+语句，如果条件逻辑判断错误，覆盖有重叠或者没有把各种情况都考虑到，很可能会造成有的条件满足了你的代码也
+没执行的后果，下面的案例很多初学者会漏掉一些判断条件。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># 案例：</span>
+    <span class="c1"># 考试成绩判断，考试成绩可以判定学生水平，对应如下</span>
+    <span class="c1"># 90以上： 输出优秀</span>
+    <span class="c1"># 80-90：良</span>
+    <span class="c1"># 70-80：中</span>
+    <span class="c1"># 60-70：平</span>
+    <span class="c1"># 60以下： 输出：我没你这撒学僧</span>
+    <span class="c1"># score  存放学生成绩</span>
+    
+    <span class="c1"># 注意input的返回值类型</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入学生成绩：&quot;</span><span class="p">)</span>
+    <span class="c1"># 需要把str转换成int</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">score</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">score</span><span class="o">&gt;=</span> <span class="mi">80</span>  <span class="ow">and</span> <span class="n">score</span><span class="o">&lt;</span><span class="mi">90</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span> <span class="ow">and</span> <span class="n">score</span><span class="o">&lt;</span><span class="mi">80</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span><span class="mi">60</span> <span class="ow">and</span> <span class="n">score</span><span class="o">&lt;</span><span class="mi">70</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mi">60</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;起开，我没你这撒学僧&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>案例运行结果如下，当我输入学生成绩是48的时候：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    请输入学生成绩：48
+    起开，我没你这撒学僧
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="if-else">
+<h2>7.3. <code class="docutils literal notranslate"><span class="pre">if...else...</span></code> 语句<a class="headerlink" href="#if-else" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">if</span></code>语句总给人说话说话一般的感觉，假设我们真的不能说话说半截，还需要带转折，即<code class="docutils literal notranslate"><span class="pre">如果....,那么....,</span> <span class="pre">否则.....</span></code>模式，
+这种我们称之为双向分支，即我们平常的所谓转折语句，我们用<code class="docutils literal notranslate"><span class="pre">else</span></code>来表示这种情况。</p>
+<p>这种转折语句的常见表达形式如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">条件表达式</span><span class="p">:</span>
+        <span class="n">语句1</span>
+        <span class="n">语句2</span>
+        <span class="o">...</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">语句1</span>
+        <span class="n">语句2</span>
+        <span class="o">.....</span>
+</pre></div>
+</div>
+<blockquote>
+<div>我们需要注意的是，双向分支有两个分支，当程序执行到<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else...</span></code>语句的时候，一定会执行<code class="docutils literal notranslate"><span class="pre">if</span></code>或<code class="docutils literal notranslate"><span class="pre">else</span></code>中的一个，也仅执行一个。</div></blockquote>
+<blockquote>
+<div>缩进问题，<code class="docutils literal notranslate"><span class="pre">if</span></code>和<code class="docutils literal notranslate"><span class="pre">else</span></code>需要对齐，他们下面的语句所今后需要对齐</div></blockquote>
+<div class="section" id="id7">
+<h3>7.3.1. 一个双头栗子<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>这个案例根据输入的内容进行判断，然后决定打印出啥内容。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="c1"># input的作用是</span>
+    <span class="c1"># 1. 在屏幕上输出括号内的字符串</span>
+    <span class="c1"># 2. 接受用户输入的内容并返回到程序</span>
+    <span class="c1"># 3. input返回的内容一定是字符串类型</span>
+    <span class="n">gender</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入性别：&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你输入的性别是：</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gender</span><span class="p">))</span>
+
+    <span class="k">if</span>  <span class="n">gender</span> <span class="o">==</span> <span class="s2">&quot;nan&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;来，我们纪念一下今天吧，代码敲十遍&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;发糖喽发糖喽&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;你是女生，特殊照顾喽&quot;</span><span class="p">)</span>
+            
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;开始上课喽&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>运行案例，我随便输入一个内容，然后输出的其实是不是<code class="docutils literal notranslate"><span class="pre">nan</span></code>的那个判断的内容，点解？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>        请输入性别：aklalk
+        你输入的性别是：aklalk
+        发糖喽发糖喽
+        你是女生，特殊照顾喽
+        开始上课喽
+</pre></div>
+</div>
+<blockquote>
+<div>上面案例其实有一个逻辑错误，即如果我输入的不是<code class="docutils literal notranslate"><span class="pre">nan</span></code>，统统归入女士的条件分支里</div></blockquote>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>7.4. 多路分支<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>如果出现多种情况进行选择，比如上面的判断学生成绩的案例，我们需要用到多个<code class="docutils literal notranslate"><span class="pre">if...else...</span></code>进行判断，这样会造成逻辑结构复杂，容易混淆等，为了简化多个
+<code class="docutils literal notranslate"><span class="pre">if...else...</span></code>的使用，我们可以使用多路分支进行代码编写。</p>
+<p>很多分支的情况，简称多路分支，关键字<code class="docutils literal notranslate"><span class="pre">elif</span></code>可以看做是<code class="docutils literal notranslate"><span class="pre">..else...if...</span></code>的简写，功能完全相同，所以捏，所谓多路分支真的
+就是多个<code class="docutils literal notranslate"><span class="pre">if...else</span> <span class="pre">if</span> <span class="pre">...</span> <span class="pre">else....</span></code>的缩写，别想太多了。</p>
+<p>多路分支的代码结构：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    if  条件表达式：
+        语句1
+        ....
+    elif 条件表达式：
+        语句1
+        ...
+    elif 条件表达式：
+        语句1
+        ...
+        
+    .....
+    else:
+        语句1
+        ....
+</pre></div>
+</div>
+<blockquote>
+<div><p>做一个小小的说明：</p>
+<ol class="simple">
+<li>elif 可以由很多个</li>
+<li>else可选，表示最后的一个可能</li>
+<li>多路分支虽然有多个，但最后只会选一个执行</li>
+</ol>
+</div></blockquote>
+<div class="section" id="id9">
+<h3>7.4.1. 相对简洁的成绩判断程序<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>成绩判断代码可以改成多路分支，相对来讲简洁多了，这里需要注意下条件判断，比纯<code class="docutils literal notranslate"><span class="pre">if</span></code>语句好像少了些判断条件，点解？</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># score  存放学生成绩</span>
+<span class="c1"># 注意input的返回值类型</span>
+<span class="n">score</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;请输入学生成绩：&quot;</span><span class="p">)</span>
+<span class="c1"># 需要把str转换成int</span>
+<span class="n">score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">score</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span><span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;B&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span><span class="mi">60</span> <span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;起开，我没你这撒学僧&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>如果输入45，则得到下面的运行结果：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>请输入学生成绩：45
+起开，我没你这撒学僧
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="if">
+<h2>7.5. if语句其他问题<a class="headerlink" href="#if" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>if语句可以嵌套使用，但不推荐</li>
+<li>python没有switch-case语句</li>
+<li>在实际使用当中，个人习惯我倾向于多个<code class="docutils literal notranslate"><span class="pre">if</span></code>语句代替<code class="docutils literal notranslate"><span class="pre">if...else...</span></code>语句，觉得比较简洁些，纯属个人蜜汁操作，其实仔细想来也毫无理由。</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="006-for循环.html" class="btn btn-neutral float-right" title="8. 循环语句" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="004运算符.html" class="btn btn-neutral float-left" title="6. 表达式 和 运算符" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 北京图灵学院.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,530 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>9. 协程 &mdash; Python新全栈教程 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="10. 1. 网络通信概述" href="109_网络编程.html" />
+    <link rel="prev" title="8. 日志(logging)" href="107_log.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Python新全栈教程
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../base/001.html">1. 开学典礼-不讲知识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001Python语言概述.html">2. Python语言概述</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/001注释.html">3. 注释和帮助</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/002变量和变量类型.html">4. 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/003str.html">5. 字符串</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/004运算符.html">6. 表达式 和 运算符</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/005-if分支语句.html">7. 分支语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/006-for循环.html">8. 循环语句</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/007-while循环.html">9. while循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-函数讲义.html">10. 函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/008-内置函数.html">11. 内置函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/09-内置结构.html">12. 内置数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/009-类.html">13. OOP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/010-内置模块.html">14. 常用内置模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/011-持久化和文件.html">15. 文件和序列化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/012-异常处理.html">16. Python异常的使用</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../base/013-tkinter.html">17. Tkinter</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="101-函数高级.html">1. 函数高级</a></li>
+<li class="toctree-l1"><a class="reference internal" href="102-类高级.html">2. OOP高级编程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="103_调试技术.html">3. 调试技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1021-单元测试.html">4. 单元测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="104_模块和包.html">5. 模块和包</a></li>
+<li class="toctree-l1"><a class="reference internal" href="105多线程.html">6. 多线程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="106_编码问题.html">7. 计算机编码问题</a></li>
+<li class="toctree-l1"><a class="reference internal" href="107_log.html">8. 日志(logging)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. 协程</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">9.1. 迭代器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">9.2. 生成器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">9.3. 协程</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="109_网络编程.html">10. 1. 网络通信概述</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python新全栈教程</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>9. 协程</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/adv/108_携程.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>9. 协程<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>本章主要讲解协程问题，从迭代器开始逐渐过渡到携程的概念和用法。</p>
+<div class="section" id="id2">
+<h2>9.1. 迭代器<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li>可迭代：可直接被for循环使用的对象叫可迭代的(Iterable), 注意这个是个形容词，用来形容一个对象是否可以迭代。</li>
+<li>迭代器：不但可以作用于for循环,还可以被next调用的,叫迭代器(Itrator), 这个是一个名词。</li>
+</ul>
+<p>通过定义我们知道，迭代器都是可迭代的，可迭代的未必是迭代器。</p>
+<p>我们常见的<code class="docutils literal notranslate"><span class="pre">range</span></code>函数就是可迭代的，我们也经常用，还有比如<code class="docutils literal notranslate"><span class="pre">list</span></code>对象等。</p>
+<ul>
+<li><p class="first">可以用<code class="docutils literal notranslate"><span class="pre">isinstance</span></code>判断是否可迭代和是否是迭代器，参看下面代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Iterable</span>
+  <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+  <span class="nb">isinstance</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">)</span>
+
+
+  <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Iterator</span>
+  <span class="nb">isinstance</span><span class="p">((</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)),</span> <span class="n">Iterator</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">iterable和Iterator的关系,可以通过iter函数运算，简而言之就是把一个对象转换成一个迭代器</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="nb">isinstance</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">),</span> <span class="n">Iterator</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first"><code class="docutils literal notranslate"><span class="pre">for</span></code>循环原理</p>
+<ul>
+<li><p class="first">先判断对象是否为可迭代对象</p>
+<ul class="simple">
+<li>不是的话直接报错，抛出TypeError异常</li>
+<li>是的话则调用<code class="docutils literal notranslate"><span class="pre">iter</span></code>方法，返回一个迭代器</li>
+</ul>
+</li>
+<li><p class="first">不断地调用迭代器的next方法，每次按序返回迭代器中的一个值</p>
+</li>
+<li><p class="first">迭代到最后，没有更多元素了就抛出异常<code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>，这个异常<code class="docutils literal notranslate"><span class="pre">python</span></code> 自己会处理，不会暴露给开发者</p>
+</li>
+<li><p class="first">看个小代码：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># for循环原理</span>
+  <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+  <span class="n">x_iterator</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="fm">__iter__</span><span class="p">()</span>
+  <span class="k">try</span><span class="p">:</span>
+      <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">x_iterator</span><span class="p">))</span> <span class="c1">#.__next__())</span>
+  <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;STOP&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>9.2. 生成器<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>生成器是特指一种一边循环一边计算的机制的实现(generator)，是一种特定的迭代器。</p>
+<p>它是一个算法/函数,这个函数可以返回多个返回值，想得到这个函数需要用<code class="docutils literal notranslate"><span class="pre">next</span></code>函数调用这个生成器，
+每次调用<code class="docutils literal notranslate"><span class="pre">next</span></code>函数的时候生成器会计算下一个值,利用<code class="docutils literal notranslate"><span class="pre">yield</span></code>返回一个值，这样如果有多个<code class="docutils literal notranslate"><span class="pre">yield</span></code>这个
+函数就能返回不同的值。</p>
+<p>最后一次被调动，没有值返回的时候则抛出StopIteration异常。</p>
+<p>生成器可以直接创建，如下面案例:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span> <span class="c1">#生成列表</span>
+<span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="c1">#得到一个生成器</span>
+</pre></div>
+</div>
+<p>第一个<code class="docutils literal notranslate"><span class="pre">L</span></code>是用列表生成式创建的列表，而第二个则是创建了一个生成器(generator),而不是一个元祖生成器，因为世上根本
+就没有元祖生成器，用的人多了，也没有！</p>
+<p>可以粗暴的理解成<code class="docutils literal notranslate"><span class="pre">函数中包含yield叫generator</span></code>，生成器可以被<code class="docutils literal notranslate"><span class="pre">next</span></code>调用，此时遇到函数中的<code class="docutils literal notranslate"><span class="pre">yield</span></code>则返回，
+下次被<code class="docutils literal notranslate"><span class="pre">next</span></code>调用的时候则继续上次返回的点执行，这样一个函数可以被多次调用，每次调用执行一段代码。</p>
+<p>生成器案例1：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">odd</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;step 1&#39;</span><span class="p">)</span>
+    <span class="k">yield</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;step 2&#39;</span><span class="p">)</span>
+    <span class="k">yield</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;step 3&#39;</span><span class="p">)</span>
+    <span class="k">yield</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">g1</span> <span class="o">=</span> <span class="n">odd</span><span class="p">()</span>
+        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">g1</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;odd DONE&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>需要注意生成器的使用方法，我先调用了下生成器，得到一个生成器变量<code class="docutils literal notranslate"><span class="pre">g1</span></code>后，此时生成器函数<code class="docutils literal notranslate"><span class="pre">odd（）</span></code>还没
+真正运行，我需要调用<code class="docutils literal notranslate"><span class="pre">next</span></code>，每调用一次生成器会运行一段代码，到<code class="docutils literal notranslate"><span class="pre">yield</span></code>后就停止，此时返回值就是<code class="docutils literal notranslate"><span class="pre">yield</span></code>后面
+的值，一直运行下去，直到最后发出<code class="docutils literal notranslate"><span class="pre">StopIteration</span></code>异常。</p>
+<p>案例1的生成器运行结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">step</span> <span class="mi">1</span>
+<span class="mi">1</span>
+<span class="n">step</span> <span class="mi">2</span>
+<span class="mi">3</span>
+<span class="n">step</span> <span class="mi">3</span>
+<span class="mi">5</span>
+<span class="n">odd</span> <span class="n">DONE</span>
+</pre></div>
+</div>
+<p>利用生成器解决斐波那契数列问题：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#coding=utf-8</span>
+<span class="c1"># 利用循环解决斐波那契问题</span>
+<span class="k">def</span> <span class="nf">fib_loop</span><span class="p">(</span><span class="nb">max</span><span class="p">):</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="nb">max</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="s1">&#39;done&#39;</span>
+
+<span class="c1"># 利用生成器</span>
+<span class="k">def</span> <span class="nf">fib_g</span><span class="p">(</span><span class="nb">max</span><span class="p">):</span>
+    <span class="n">n</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="nb">max</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">b</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;循环的斐波那契：&quot;</span><span class="p">)</span>
+    <span class="n">fib_loop</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;生成器的斐波那契:&quot;</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">fib_g</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;STOP&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>9.3. 协程<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>还没弄完</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- 历史
+    - 3.4引入协程概念，用yield实现
+    - 3.5 引入协程语法
+    - 实现包asyncio,tornado, gevent
+    
+- 定义：“协程 是为非抢占式多任务产生子程序的计算机程序组件，
+协程允许不同入口点在不同位置暂停或开始执行程序”。
+从技术的角度来说，“协程就是你可以暂停执行的函数”。
+如果你把它理解成“就像生成器一样”，那么你就想对了。
+- 使用:   
+    - yield关键字
+    - send关键字
+-  案例v1
+    
+- 协程的四个状态
+    - inspect.getgeneratorstate(…) 函数确定，该函数会返回下述字符串中的一个：
+    - GEN_CREATED：等待开始执行
+    - GEN_RUNNING：解释器正在执行
+    - GEN_SUSPENED：在yield表达式处暂停
+    - GEN_CLOSED：执行结束
+    - next预激（prime)
+    - 完整执行过程v2
+- 协程终止
+    - 协程中未处理的异常会向上冒泡，传给 next 函数或 send 方法的调用方（即触发协程的对象）。
+    - 终止协程的一种方式：发送某个哨符值，让协程退出。内置的 None 和Ellipsis 等常量经常用作哨符值==。
+    
+- 异常
+    - 客户段代码可以在生成器对象上调用两个方法
+    - generator.throw(Exctpiton):
+    
+            致使生成器在暂停的 yield 表达式处抛出指定的异常。如果生成器处理了抛出的异常，代码会向前执行到下一个 yield 表达式，而产出的值会成为调用 generator.throw方法得到的返回值。如果生成器没有处理抛出的异常，异常会向上冒泡，传到调用方的上下文中。
+    - generator.close()
+    
+             致使生成器在暂停的 yield 表达式处抛出 GeneratorExit 异常。
+             如果生成器没有处理这个异常，或者抛出了 StopIteration 异常（通常是指运行到结尾），
+             调用方不会报错。如果收到 GeneratorExit 异常，生成器一定不能产出值，否则解释器会抛出RuntimeError 异常。生成器抛出的其他异常会向上冒泡，传给调用方。
+    - v03               
+- yield from
+    - 为了得到返回值，协程必须正常终止；
+    - 然后生成器对象会抛出StopIteration 异常，异常对象的 value 属性保存着返回的值。from
+    - yield from 从内部捕获StopIteration异常
+    - 并且把StopIteration异常value属性子作为yield from表达式的返回值
+    - v04
+    - v05
+    - 委派生成器
+        - 包含 yield from 表达式的生成器函数
+        - 委派生成器在 yield from 表达式处暂停时，调用方可以直接把数据发给子生成器。
+        - 子生成器再把产出的值发给调用方。
+        - 子生成器返回之后，解释器会抛出 StopIteration 异常，并把返回值附加到异常对象上，
+        此时委派生成器会恢复。
+        - v06
+        
+
+# asyncio
+- python3.4开始引入的标准库,内置了对移步io的支持
+- asyncio本身是一个消息循环,
+- 步骤
+    - 创建消息循环
+    - 把协程导入
+    - 关闭
+ - 案例08
+ - 案例09-两个tasks
+ - 案例v10-得到多个网站
+ 
+# async and await
+- 为了更好的表示异步io
+- python3.5 开始引入
+- 让coroutine代码更简洁
+- 使用上,可以简单进行替换
+    - 可以把 @asyncio.coroutine 替换成async
+    - yield from 替换成await
+- 案例v11, 把案例09直接替换
+ 
+ 
+# aiohttp
+- 介绍
+    - asyncio实现单线程并发IO,在客户端用处不大
+    - 在服务器端可以asyncio+coroutine配合,因为http是io操作
+    - asyncio实现了TCP,UIDP,SSL等协议
+    - aiohttp是给予asyncio实现的HTTP框架
+    - pip install aiohttp
+    - 案例07
+    
+    
+# concurrent.futures
+- python3新增的库
+- 类似其他语言的线程池的概念
+- 此模块利用multiprocessiong实现真正的平行计算
+- 核心原理是：concurrent.futures会以子进程的形式，平行的运行多个python解释器，从而令python程序可以利用多核CPU来提升执行速度。
+由于子进程与主解释器相分离，所以他们的全局解释器锁也是相互独立的。每个子进程都能够完整的使用一个CPU内核。
+- concurrent.futures.Executor 
+    - ThreadPoolExecutor
+    - ProcessPoolExecutor
+- submit(fn, args, kwargs)
+    - fn:异步执行的函数
+    - args,kwargs:参数
+    
+             # 官方死锁案例
+            import time
+            def wait_on_b():
+                time.sleep(5)
+                print(b.result())  #b不会完成，他一直在等待a的return结果
+                return 5
+
+            def wait_on_a():
+                time.sleep(5)
+                print(a.result())  #同理a也不会完成，他也是在等待b的结果
+                return 6
+
+
+            executor = ThreadPoolExecutor(max_workers=2)
+            a = executor.submit(wait_on_b)
+            b = executor.submit(wait_on_a)
+            
+    - 案例v14
+      
+- map(fn, \*iterables, timeout=None)
+    - 跟map函数类似
+    - 函数需要异步执行
+    - timeout: 超时时间
+    - 案例 v12
+    - 案例v15
+    - 起执行结果是list,数据需要从list中取出来
+    
+            with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+                print(list(executor.map(sleeper, x)))
+           
+- submit和map根据需要选一个即可
+- 案例v13
+
+- Future
+    - 未来需要完成的任务
+    - future 实例由Excutor.submit创建
+    - 案例v17
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="109_网络编程.html" class="btn btn-neutral float-right" title="10. 1. 网络通信概述" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="107_log.html" class="btn btn-neutral float-left" title="8. 日志(logging)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 北京图灵学院.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
