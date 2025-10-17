@@ -125,7 +125,18 @@ def setup(app):
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-
+html_theme_options = {
+    'canonical_url': '',
+    'analytics_id': '',
+    'logo_only': False,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'vcs_pageview_mode': '',
+    'style_nav_header_background': 'white',
+    # 关键设置
+    'absolute_url': True
+}
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
