@@ -26,7 +26,7 @@ low_name = "NewPython"
 doc_name = "NewPython"
 project = 'Python新全栈教程'
 copyright = '2020, 北京图灵学院'
-author = '北京图灵学院'
+author = '北京图灵学院,刘大拿'
 
 # The short X.Y version
 version = ''
@@ -83,7 +83,9 @@ exclude_patterns = []
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
-html_baseurl = 'https://danalaoshi.github.io/'
+# 如果使用GitHub Pages，设置正确的base URL
+if os.environ.get('READTHEDOCS') or os.environ.get('GITHUB_PAGES'):
+    html_baseurl = 'https://danalaoshi.github.io/python/new_python/build/html/'
 
 # -- Options for HTML output -------------------------------------------------
 
