@@ -88,7 +88,37 @@ if os.environ.get('READTHEDOCS') or os.environ.get('GITHUB_PAGES'):
     html_baseurl = 'https://danalaoshi.github.io/python/new_python/build/html/'
 
 html_use_opensearch = True
+# 禁用静态文件的缓存破坏（移除?v=xxx参数）
+html_static_path = ['_static']
+html_css_files = [
+    'pygments.css',
+    'css/theme.css',
+]
+html_js_files = [
+    'jquery.js',
+    '_sphinx_javascript_frameworks_compat.js',
+    'documentation_options.js',
+    'doctools.js',
+    'sphinx_highlight.js',
+    'translations.js',
+    'js/theme.js'
+]
 
+# 关键配置：禁用添加版本参数
+suppress_warnings = ['app.add_stylesheet', 'app.add_javascript']
+
+# 或者使用新的API（Sphinx 4.0+）
+def setup(app):
+    # 禁用静态文件的版本参数
+    app.add_css_file('pygments.css', priority=200)
+    app.add_css_file('css/theme.css', priority=200)
+    app.add_js_file('jquery.js', priority=200)
+    app.add_js_file('_sphinx_javascript_frameworks_compat.js', priority=200)
+    app.add_js_file('documentation_options.js', priority=200)
+    app.add_js_file('doctools.js', priority=200)
+    app.add_js_file('sphinx_highlight.js', priority=200)
+    app.add_js_file('translations.js', priority=200)
+    app.add_js_file('js/theme.js', priority=200)
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
