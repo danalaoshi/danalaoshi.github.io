@@ -87,6 +87,8 @@ pygments_style = 'sphinx'
 if os.environ.get('READTHEDOCS') or os.environ.get('GITHUB_PAGES'):
     html_baseurl = 'https://danalaoshi.github.io/python/new_python/build/html/'
 
+html_use_opensearch = True
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
