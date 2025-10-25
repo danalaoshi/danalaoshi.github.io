@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<!-- 书籍内容布局 -->
+<div class="book-layout">
+  <nav class="book-toc">
+    <h3>目录</h3>
+    {% include book_nav.html %}
+  </nav>
+
+  <article class="book-content">
+    <header class="page-header">
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}
+        <p class="page-description">{{ page.description }}</p>
+      {% endif %}
+    </header>
+
+    <div class="content">
+      {{ content }}
+    </div>
+
+    <!-- 章节导航 -->
+    <nav class="chapter-navigation">
+      <div class="nav-links">
+        {% if page.previous %}
+          <a href="{{ page.previous.url | relative_url }}" class="nav-link prev">
+            <span class="nav-direction">上一章</span>
+            <span class="nav-title">{{ page.previous.title }}</span>
+          </a>
+        {% endif %}
+
+        {% if page.next %}
+          <a href="{{ page.next.url | relative_url }}" class="nav-link next">
+            <span class="nav-direction">下一章</span>
+            <span class="nav-title">{{ page.next.title }}</span>
+          </a>
+        {% endif %}
+      </div>
+    </nav>
+  </article>
+</div>

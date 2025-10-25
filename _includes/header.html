@@ -1,0 +1,44 @@
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <!-- 网站标题 -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="{{ '/' | relative_url }}" title="{{ site.title }}" class="md-header-nav__button md-logo">
+          <i class="material-icons">school</i>
+        </a>
+      </div>
+
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">
+            {{ site.title }}
+          </span>
+          <span class="md-header-nav__topic">
+            {% if page.title %}
+              {{ page.title }}
+            {% endif %}
+          </span>
+        </div>
+      </div>
+
+      <!-- GitHub 链接 -->
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          <a href="https://github.com/{{ site.github_username }}/{{ site.repository }}"
+             title="查看源代码" class="md-source" data-md-source="github">
+            <div class="md-source__icon">
+              <i class="material-icons">code</i>
+            </div>
+            <div class="md-source__repository">
+              GitHub
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

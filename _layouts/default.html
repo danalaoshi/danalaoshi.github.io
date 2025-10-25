@@ -1,31 +1,42 @@
----
-layout: compress
----
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+<head>
+  {% include head.html %}
+</head>
+<body class="md-container">
+  <!-- 顶部导航 -->
+  {% include header.html %}
 
-{% include base_path %}
+  <div class="md-main">
+    <div class="md-main__inner md-grid">
+      <!-- 侧边栏导航 -->
+      <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
+            {% include sidebar.html %}
+          </div>
+        </div>
+      </div>
 
-<!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
+      <!-- 主内容区域 -->
+      <main class="md-content">
+        <article class="md-content__inner md-typeset">
+          {{ content }}
 
-  <body>
-
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
-
-    {{ content }}
-
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
+          <!-- 页脚 -->
+          <footer class="page-footer">
+            <hr>
+            <p>最后更新: {{ site.time | date: "%Y-%m-%d" }}</p>
+            {% if page.edit_link %}
+              <p><a href="{{ page.edit_link }}">在 GitHub 上编辑此页面</a></p>
+            {% endif %}
+          </footer>
+        </article>
+      </main>
     </div>
+  </div>
 
-    {% include scripts.html %}
-
-  </body>
+  <!-- JavaScript -->
+  <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
+</body>
 </html>
