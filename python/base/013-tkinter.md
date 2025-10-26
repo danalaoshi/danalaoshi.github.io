@@ -1,11 +1,25 @@
-# Tkinter
+
+---
+layout: default
+title: Tkinter
+parent: Python编程
+nav_order: 16
+---
+
+> 为什么学习Tkinter？
+> 
+> 作为教学，我们需要一个工具，来做一些小项目，大概代码量在1k以上，此时需要一个容易学的GUI工具让我们来完成一些
+> 游戏类的小项目，Tkinter可以满足此类应用，仅此而已
+> 
+> 如果单纯做小游戏，可能pygame更合适，如果做商业化GUI软件，pyqt可能更合适，但作为教学，tkinter更合适
+
 
 一般来讲这种图形化编程属于CS软件结构的产物，现在很少用了，即便是使用也有一些很优秀的解决方案，比如
 Electron，QT等，我们之所以介绍Tkinter是希望大家能了解GUI的编程原理，同时对前面知识是一个综合巩固。
 
 ## Tkinter简介
 
-对Tkinter进行简单的介绍下。
+对Tkinter进行简单的介绍下: 一个古老的，可以让Python使用的GUI工具，好处就是，容易学且功能相对齐全，除了这个好处，没有任何其他好处了。
 
 ###  GUI
 图形用户界面（Graphical User Interface，简称GUI，又称图形用户接口）是指采用图形方式显示的计算机操作用户界面。
