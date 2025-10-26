@@ -10,6 +10,7 @@ nav_order: 1
 
 主要用于辅助学习等用途。
 
+
 ## 联系方式，敬请关注
 > 微信: tu_ling_xue_yuan
 > 
@@ -24,6 +25,16 @@ nav_order: 1
 从零开始学习 Python 编程，涵盖基础语法到高级特性。
 
 
+# 周三-周日，每晚 19:30-23：00直播/答疑
+
+### 网络乞讨不易，且打赏且珍惜
+
 ![打赏码](/assets/images/money.jpg){: width="400" }
-![wechat](/assets/images/weixin.jpg){: width="400" }
-![douyin](/assets/images/douyin.jpg){: width="400" }
+
+# 敬请关注，每日直播
+
+| ![wechat](/assets/images/weixin.jpg){: width="400" } |  ![douyin](/assets/images/douyin.jpg){: width="400" }     |
+|:----------------------------------------------------:|:-----:|
+|                        图片1描述                         | 图片2描述 |
+
+
