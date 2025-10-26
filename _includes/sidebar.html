@@ -1,22 +1,12 @@
-<nav class="md-nav md-nav--primary" data-md-level="0">
-  <!-- 站点标题 -->
-  <label class="md-nav__title" for="__drawer">
-    <a href="{{ '/' | relative_url }}" title="{{ site.title }}" class="md-nav__button md-logo">
-      <i class="material-icons">school</i>
-      {{ site.title }}
-    </a>
-  </label>
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <h3>课程导航</h3>
+  </div>
 
-  <!-- 主导航 -->
-  <ul class="md-nav__list" data-md-scrollfix>
+  <ul class="sidebar-nav">
     <!-- 主页 -->
-    <li class="md-nav__item">
-      <a href="{{ '/' | relative_url }}" class="md-nav__link {% if page.url == '/' %}md-nav__link--active{% endif %}">
-        <span class="md-nav__icon">
-          <i class="material-icons">home</i>
-        </span>
-        首页
-      </a>
+    <li class="nav-item {% if page.url == '/' %}active{% endif %}">
+      <a href="{{ '/' | relative_url }}">🏠 首页</a>
     </li>
 
     <!-- 书籍列表 -->
@@ -24,37 +14,25 @@
       {% assign book_dir = book.dir %}
       {% assign book_pages = site.pages | where_exp: "item", "item.path contains book_dir" | sort: "path" %}
 
-      <li class="md-nav__item md-nav__item--nested">
-        <input class="md-toggle md-nav__toggle" type="checkbox" id="nav-{{ forloop.index }}">
-        <label class="md-nav__link" for="nav-{{ forloop.index }}">
-          <span class="md-nav__icon">
-            <i class="material-icons">{{ book.icon }}</i>
-          </span>
-          {{ book.name }}
-        </label>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <span class="section-icon">📚</span>
+          <strong>{{ book.name }}</strong>
+        </div>
 
-        <nav class="md-nav">
-          <ul class="md-nav__list">
-            {% for chapter in book_pages %}
-              {% unless chapter.path contains '/README.md' %}
-                <li class="md-nav__item">
-                  <a href="{{ chapter.url | relative_url }}"
-                     class="md-nav__link {% if page.url == chapter.url %}md-nav__link--active{% endif %}">
-                    {{ chapter.title }}
-                  </a>
-                </li>
-              {% else %}
-                <!-- 书籍首页 -->
-                <li class="md-nav__item">
-                  <a href="{{ chapter.url | relative_url }}"
-                     class="md-nav__link {% if page.url == chapter.url %}md-nav__link--active{% endif %}">
-                    开始阅读
-                  </a>
-                </li>
-              {% endunless %}
-            {% endfor %}
-          </ul>
-        </nav>
+        <ul class="nav-submenu">
+          {% for chapter in book_pages %}
+            {% if chapter.path contains '/README.md' %}
+              <li class="nav-item {% if page.url == chapter.url %}active{% endif %}">
+                <a href="{{ chapter.url | relative_url }}">📖 开始阅读</a>
+              </li>
+            {% else %}
+              <li class="nav-item {% if page.url == chapter.url %}active{% endif %}">
+                <a href="{{ chapter.url | relative_url }}">{{ chapter.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
       </li>
     {% endfor %}
   </ul>

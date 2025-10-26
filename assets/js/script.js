@@ -1,12 +1,9 @@
-// 页面加载完成后执行
 document.addEventListener('DOMContentLoaded', function() {
   // 激活当前导航项
   const currentPath = window.location.pathname;
-  const navLinks = document.querySelectorAll('.md-nav__link');
-
-  navLinks.forEach(link => {
+  document.querySelectorAll('.nav-item a').forEach(link => {
     if (link.getAttribute('href') === currentPath) {
-      link.classList.add('md-nav__link--active');
+      link.classList.add('active');
     }
   });
 
@@ -16,9 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth'
-        });
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
