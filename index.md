@@ -23,6 +23,7 @@ nav_order: 1
 ### [Python 编程](/python编程/)
 从零开始学习 Python 编程，涵盖基础语法到高级特性。
 
-![打赏码](/_data/images/money.jpg){: width="400" }
-![wechat](/_data/images/weixin.jpg){: width="400" }
-![douyin](/_data/images/douyin.jpg){: width="400" }
+
+![打赏码](/assets/images/money.jpg){: width="400" }
+![wechat](/assets/images/weixin.jpg){: width="400" }
+![douyin](/assets/images/douyin.jpg){: width="400" }

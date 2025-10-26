@@ -2,11 +2,11 @@
 main:
   - title: "首页"
     url: /
-  - title: "Python 编程"
-    url: /python编程/
+  - title: "Python编程"
+    url: /python/
     children:
       - title: "开始阅读"
-        url: /python编程/
+        url: /python/
       - title: "Python基础语法"
         url: /python编程/01-Python基础语法/
       - title: "Python函数"
