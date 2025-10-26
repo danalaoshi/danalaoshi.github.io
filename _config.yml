@@ -3,66 +3,53 @@ title: "编程教程中心"
 description: "全面的编程学习资源库"
 baseurl: ""
 url: "https://danalaoshi.github.io"
-github_username: danalaoshi
 
-# 构建设置
-markdown: kramdown
-highlighter: rouge
-permalink: pretty
+# 远程主题
+remote_theme: pmarsceill/just-the-docs
 
 # 插件
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-remote-theme
-
-# 使用 Just the Docs 主题（兼容 GitHub Pages）
-remote_theme: pmarsceill/just-the-docs
 
 # 排除文件
 exclude:
   - Gemfile
   - Gemfile.lock
-  - node_modules
-  - vendor/
 
-# 包含文件
-include:
-  - _layouts
-  - _includes
-  - _sass
-  - assets
-
-# 默认布局
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-      nav_order: 999
-
-# Just the Docs 主题配置
+# Just the Docs 配置
 search_enabled: true
 search:
   heading_level: 2
   previews: 3
 
 aux_links:
-  "GitHub 仓库":
+  "在 GitHub 上查看":
     - "//github.com/danalaoshi/danalaoshi.github.io"
 
 # 颜色主题
 color_scheme: "light"
 
-# 书籍配置
-books:
-  - name: "Python 编程"
-    dir: "python编程"
-    order: 1
-  - name: "Java 编程"
-    dir: "java编程"
-    order: 2
-  - name: "人工智能"
-    dir: "人工智能"
-    order: 3
+# 导航配置
+heading_anchors: true
+
+# 集合配置
+collections:
+  books:
+    output: true
+    permalink: /:path/
+
+# 默认值
+defaults:
+  - scope:
+      path: ""
+      type: "books"
+    values:
+      layout: "default"
+      nav_exclude: false
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      nav_exclude: false

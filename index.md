@@ -1,7 +1,6 @@
 ---
 layout: default
-title: 编程教程中心
-description: 全面的编程学习资源库
+title: 首页
 nav_order: 1
 ---
 
@@ -9,28 +8,24 @@ nav_order: 1
 
 这里汇集了多门编程语言和技术的学习资源，从基础到高级，帮助您系统学习编程。
 
-## 📚 可用课程
+## 可用课程
 
-<div class="courses-grid">
-  {% for book in site.books %}
-    <div class="course-card">
-      <div class="course-icon">📚</div>
-      <h3>{{ book.name }}</h3>
-      <p>系统学习 {{ book.name }} 的完整知识体系</p>
-      <a href="{{ '/' | append: book.dir | append: '/' | relative_url }}" class="course-button">
-        开始学习
-      </a>
-    </div>
-  {% endfor %}
-</div>
+### [Python 编程](/python编程/)
+从零开始学习 Python 编程，涵盖基础语法到高级特性。
 
-## 🎯 学习特色
+### [Java 编程](/java编程/)  
+学习 Java 语言核心特性，掌握面向对象编程思想。
+
+### [人工智能](/人工智能/)
+了解机器学习、深度学习和自然语言处理等 AI 技术。
+
+## 学习特色
 
 - **系统化教程** - 每门课程都有完整的知识体系
 - **实践导向** - 丰富的代码示例和练习
 - **持续更新** - 内容会根据技术发展持续更新
 
-## 💡 使用建议
+## 使用建议
 
 1. 按顺序学习各章节内容
 2. 动手实践每个代码示例
