@@ -30,7 +30,8 @@ search:
 
 # 颜色主题
 color_scheme: "light"
-
+logo: "/_data/images/logo.png"
+favicon: "/_data/images/fav.ico"
 # 导航配置
 heading_anchors: true
 
