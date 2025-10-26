@@ -1,6 +1,6 @@
 # 站点基本信息
-title: "编程教程中心"
-description: "全面的编程学习资源库"
+title: "大拿的学习教程"
+description: "关于编程，特别是Python变成的内容，本人复制/编写而来"
 baseurl: ""
 url: "https://danalaoshi.github.io"
 
@@ -24,9 +24,9 @@ search:
   heading_level: 2
   previews: 3
 
-aux_links:
-  "在 GitHub 上查看":
-    - "//github.com/danalaoshi/danalaoshi.github.io"
+#aux_links:
+#  "在 GitHub 上查看":
+#    - "//github.com/danalaoshi/danalaoshi.github.io"
 
 # 颜色主题
 color_scheme: "light"
