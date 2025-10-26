@@ -15,25 +15,14 @@ main:
         url: /python编程/03-面向对象编程/
       - title: "高级特性"
         url: /python编程/04-高级特性/
-  - title: "Java 编程"
-    url: /java编程/
-    children:
-      - title: "开始阅读"
-        url: /java编程/
-      - title: "Java基础"
-        url: /java编程/01-Java基础/
-      - title: "面向对象"
-        url: /java编程/02-面向对象/
-      - title: "集合框架"
-        url: /java编程/03-集合框架/
-  - title: "人工智能"
-    url: /人工智能/
-    children:
-      - title: "开始阅读"
-        url: /人工智能/
-      - title: "机器学习基础"
-        url: /人工智能/01-机器学习基础/
-      - title: "深度学习"
-        url: /人工智能/02-深度学习/
-      - title: "自然语言处理"
-        url: /人工智能/03-自然语言处理/
+#  - title: "人工智能"
+#    url: /人工智能/
+#    children:
+#      - title: "开始阅读"
+#        url: /人工智能/
+#      - title: "机器学习基础"
+#        url: /人工智能/01-机器学习基础/
+#      - title: "深度学习"
+#        url: /人工智能/02-深度学习/
+#      - title: "自然语言处理"
+#        url: /人工智能/03-自然语言处理/
