@@ -1,0 +1,82 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Matplotlib绘图简介}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}图形样式}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}不同环境的使用}{3}{subsection.1.2}
+\contentsline {subsubsection}{脚本中使用}{3}{subsubsection*.2}
+\contentsline {subsubsection}{IPython shell}{3}{subsubsection*.3}
+\contentsline {subsubsection}{Jupyter Notebook}{3}{subsubsection*.4}
+\contentsline {subsection}{\numberline {1.3}图像的保存}{3}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}两种不同的画图接口}{3}{subsection.1.4}
+\contentsline {section}{\numberline {2}图形简单绘制}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}绘制简单图形}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}调整图形风格}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}调整坐标轴}{8}{subsection.2.3}
+\contentsline {subsubsection}{xlim和ylim}{8}{subsubsection*.5}
+\contentsline {subsubsection}{axis函数}{9}{subsubsection*.6}
+\contentsline {subsection}{\numberline {2.4}设置图形标签}{11}{subsection.2.4}
+\contentsline {subsubsection}{简单标签和title设置}{11}{subsubsection*.7}
+\contentsline {subsubsection}{简单图例设置}{12}{subsubsection*.8}
+\contentsline {subsubsection}{选择图例显示的元素}{15}{subsubsection*.9}
+\contentsline {subsubsection}{图例中显示不同尺寸}{17}{subsubsection*.10}
+\contentsline {subsection}{\numberline {2.5}配置颜色条}{18}{subsection.2.5}
+\contentsline {subsubsection}{简单颜色条配置}{18}{subsubsection*.11}
+\contentsline {subsubsection}{配置颜色条}{19}{subsubsection*.12}
+\contentsline {subsubsection}{离散型颜色条}{20}{subsubsection*.13}
+\contentsline {section}{\numberline {3}散点图}{21}{section.3}
+\contentsline {subsection}{\numberline {3.1}简单散点图}{22}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}其他散点图形状}{22}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}点线结合的图}{23}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}使用plt.scatter画散点图}{24}{subsection.3.4}
+\contentsline {section}{\numberline {4}误差线}{25}{section.4}
+\contentsline {subsection}{\numberline {4.1}基本误差线}{25}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}连续误差}{27}{subsection.4.2}
+\contentsline {section}{\numberline {5}密度图和等高线}{27}{section.5}
+\contentsline {subsection}{\numberline {5.1}contour}{28}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}plt.contourf}{30}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}plt.imshow}{30}{subsection.5.3}
+\contentsline {section}{\numberline {6}频次直方图，数据区间划分和分布密度}{32}{section.6}
+\contentsline {subsection}{\numberline {6.1}频次直方图}{32}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}二维频次直方图和数据区间划分}{35}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}plt.hist2d}{35}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}plt.hexbin}{36}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}核密度估计}{37}{subsection.6.5}
+\contentsline {section}{\numberline {7}多子图}{37}{section.7}
+\contentsline {subsection}{\numberline {7.1}手动创建多子图}{38}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}plt.subplot 建议网格子图}{39}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}7.3 plt.subplots}{41}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}plt.GridSpec}{42}{subsection.7.4}
+\contentsline {section}{\numberline {8}文字与注释}{44}{section.8}
+\contentsline {subsection}{\numberline {8.1}坐标变换和文字位置}{44}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}箭头和注释}{45}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}自定义坐标轴刻度}{46}{subsection.8.3}
+\contentsline {subsubsection}{主要刻度和次要刻度}{46}{subsubsection*.14}
+\contentsline {subsubsection}{隐藏刻度和标签}{47}{subsubsection*.15}
+\contentsline {subsubsection}{增减刻度数量}{48}{subsubsection*.16}
+\contentsline {subsubsection}{花哨的刻度格式}{49}{subsubsection*.17}
+\contentsline {subsubsection}{定位器和格式生成器常用值}{50}{subsubsection*.18}
+\contentsline {section}{\numberline {9}配置文件和样式表}{51}{section.9}
+\contentsline {subsection}{\numberline {9.1}手动配置图形}{51}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}修改默认配置}{53}{subsection.9.2}
+\contentsline {subsection}{\numberline {9.3}样式表}{54}{subsection.9.3}
+\contentsline {subsubsection}{默认风格}{55}{subsubsection*.19}
+\contentsline {subsubsection}{FiveThirtyEight风格}{55}{subsubsection*.20}
+\contentsline {subsubsection}{ggplot风格}{56}{subsubsection*.21}
+\contentsline {subsubsection}{bmh风格}{56}{subsubsection*.22}
+\contentsline {subsubsection}{黑色背景风格}{57}{subsubsection*.23}
+\contentsline {subsubsection}{灰度风格}{57}{subsubsection*.24}
+\contentsline {subsubsection}{Seaborn风格}{58}{subsubsection*.25}
+\contentsline {section}{\numberline {10}三维图}{58}{section.10}
+\contentsline {subsection}{\numberline {10.1}简单三维坐标的绘制}{58}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}三维数据的点和线}{59}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}三维等高线}{60}{subsection.10.3}
+\contentsline {subsection}{\numberline {10.4}线框图和曲面图}{61}{subsection.10.4}
+\contentsline {subsection}{\numberline {10.5}曲面三角剖分}{64}{subsection.10.5}
+\contentsline {section}{\numberline {11}Seaborn数据可视化}{65}{section.11}
+\contentsline {subsection}{\numberline {11.1}Seaborn和Matplotlib的对比}{65}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}Seaborn图形介绍}{67}{subsection.11.2}
+\contentsline {subsubsection}{频次直方图，KDE和密度图}{67}{subsubsection*.26}
+\contentsline {subsubsection}{矩阵图}{73}{subsubsection*.27}
+\contentsline {subsubsection}{分面频次直方图}{75}{subsubsection*.28}
+\contentsline {subsubsection}{因子图}{76}{subsubsection*.29}
+\contentsline {subsubsection}{联合分布图}{77}{subsubsection*.30}
+\contentsline {subsubsection}{条形图}{79}{subsubsection*.31}

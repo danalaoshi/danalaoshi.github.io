@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>6. 频次直方图，数据区间划分和分布密度 &mdash; Matplotlib简明手册 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="7. 多子图" href="多子图.html" />
+    <link rel="prev" title="5. 密度图和等高线" href="密度图和等高线.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Matplotlib简明手册
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="matplotlib简介.html">1. Matplotlib绘图简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="图形简单绘制.html">2. 图形简单绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="散点图.html">3. 散点图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="误差线.html">4. 误差线</a></li>
+<li class="toctree-l1"><a class="reference internal" href="密度图和等高线.html">5. 密度图和等高线</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. 频次直方图，数据区间划分和分布密度</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">6.1. 频次直方图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">6.2. 二维频次直方图和数据区间划分</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plt-hist2d">6.3. plt.hist2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plt-hexbin">6.4. plt.hexbin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">6.5. 核密度估计</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="多子图.html">7. 多子图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="文字与注释.html">8. 文字与注释</a></li>
+<li class="toctree-l1"><a class="reference internal" href="配置文件和样式表.html">9. 配置文件和样式表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="三维图.html">10. 三维图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Seaborn数据可视化.html">11. Seaborn数据可视化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matplotlib_samples/index.html">12. Matplotlib 50 例</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Matplotlib简明手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>6. 频次直方图，数据区间划分和分布密度</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/直方图.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>6. 频次直方图，数据区间划分和分布密度<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#准备环境</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># 设置风格</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-whitegrid&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h2>6.1. 频次直方图<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>使用plt.hist可以画直方图，重要的参数有：</p>
+<ul class="simple">
+<li>bins: 画几条方图</li>
+<li>color: 颜色</li>
+<li>alpha: 透明度</li>
+<li>histtype: 图类型</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">array</span><span class="p">([</span>  <span class="mf">9.</span><span class="p">,</span>  <span class="mf">44.</span><span class="p">,</span> <span class="mf">108.</span><span class="p">,</span> <span class="mf">178.</span><span class="p">,</span> <span class="mf">241.</span><span class="p">,</span> <span class="mf">194.</span><span class="p">,</span> <span class="mf">134.</span><span class="p">,</span>  <span class="mf">67.</span><span class="p">,</span>  <span class="mf">20.</span><span class="p">,</span>   <span class="mf">5.</span><span class="p">]),</span>
+ <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">2.83511303</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.23919796</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.64328288</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.04736781</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.45145274</span><span class="p">,</span>
+         <span class="mf">0.14446234</span><span class="p">,</span>  <span class="mf">0.74037741</span><span class="p">,</span>  <span class="mf">1.33629248</span><span class="p">,</span>  <span class="mf">1.93220755</span><span class="p">,</span>  <span class="mf">2.52812263</span><span class="p">,</span>
+         <span class="mf">3.1240377</span> <span class="p">]),</span>
+ <span class="o">&lt;</span><span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="mi">10</span> <span class="n">Patch</span> <span class="n">objects</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_70_1.png" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">array</span><span class="p">([</span> <span class="mf">2.</span><span class="p">,</span>  <span class="mf">4.</span><span class="p">,</span>  <span class="mf">3.</span><span class="p">,</span>  <span class="mf">9.</span><span class="p">,</span> <span class="mf">19.</span><span class="p">,</span> <span class="mf">16.</span><span class="p">,</span> <span class="mf">30.</span><span class="p">,</span> <span class="mf">32.</span><span class="p">,</span> <span class="mf">46.</span><span class="p">,</span> <span class="mf">52.</span><span class="p">,</span> <span class="mf">52.</span><span class="p">,</span> <span class="mf">74.</span><span class="p">,</span> <span class="mf">77.</span><span class="p">,</span>
+        <span class="mf">87.</span><span class="p">,</span> <span class="mf">77.</span><span class="p">,</span> <span class="mf">83.</span><span class="p">,</span> <span class="mf">66.</span><span class="p">,</span> <span class="mf">45.</span><span class="p">,</span> <span class="mf">56.</span><span class="p">,</span> <span class="mf">41.</span><span class="p">,</span> <span class="mf">37.</span><span class="p">,</span> <span class="mf">29.</span><span class="p">,</span> <span class="mf">18.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">,</span>  <span class="mf">8.</span><span class="p">,</span>  <span class="mf">7.</span><span class="p">,</span>
+         <span class="mf">5.</span><span class="p">,</span>  <span class="mf">3.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">]),</span>
+ <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">2.83511303</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.63647467</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.43783631</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.23919796</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0405596</span> <span class="p">,</span>
+        <span class="o">-</span><span class="mf">1.84192124</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.64328288</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.44464453</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.24600617</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.04736781</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.84872945</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6500911</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.45145274</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25281438</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05417602</span><span class="p">,</span>
+         <span class="mf">0.14446234</span><span class="p">,</span>  <span class="mf">0.34310069</span><span class="p">,</span>  <span class="mf">0.54173905</span><span class="p">,</span>  <span class="mf">0.74037741</span><span class="p">,</span>  <span class="mf">0.93901577</span><span class="p">,</span>
+         <span class="mf">1.13765412</span><span class="p">,</span>  <span class="mf">1.33629248</span><span class="p">,</span>  <span class="mf">1.53493084</span><span class="p">,</span>  <span class="mf">1.7335692</span> <span class="p">,</span>  <span class="mf">1.93220755</span><span class="p">,</span>
+         <span class="mf">2.13084591</span><span class="p">,</span>  <span class="mf">2.32948427</span><span class="p">,</span>  <span class="mf">2.52812263</span><span class="p">,</span>  <span class="mf">2.72676099</span><span class="p">,</span>  <span class="mf">2.92539934</span><span class="p">,</span>
+         <span class="mf">3.1240377</span> <span class="p">]),</span>
+ <span class="o">&lt;</span><span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="mi">1</span> <span class="n">Patch</span> <span class="n">objects</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_71_1.png" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#更复杂的案例</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">array</span><span class="p">([</span> <span class="mf">1.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span>  <span class="mf">6.</span><span class="p">,</span>  <span class="mf">5.</span><span class="p">,</span>  <span class="mf">8.</span><span class="p">,</span> <span class="mf">11.</span><span class="p">,</span> <span class="mf">17.</span><span class="p">,</span> <span class="mf">23.</span><span class="p">,</span> <span class="mf">26.</span><span class="p">,</span>
+        <span class="mf">32.</span><span class="p">,</span> <span class="mf">35.</span><span class="p">,</span> <span class="mf">53.</span><span class="p">,</span> <span class="mf">67.</span><span class="p">,</span> <span class="mf">49.</span><span class="p">,</span> <span class="mf">50.</span><span class="p">,</span> <span class="mf">53.</span><span class="p">,</span> <span class="mf">61.</span><span class="p">,</span> <span class="mf">58.</span><span class="p">,</span> <span class="mf">67.</span><span class="p">,</span> <span class="mf">67.</span><span class="p">,</span> <span class="mf">53.</span><span class="p">,</span> <span class="mf">45.</span><span class="p">,</span>
+        <span class="mf">53.</span><span class="p">,</span> <span class="mf">32.</span><span class="p">,</span> <span class="mf">34.</span><span class="p">,</span> <span class="mf">19.</span><span class="p">,</span> <span class="mf">25.</span><span class="p">,</span> <span class="mf">22.</span><span class="p">,</span>  <span class="mf">9.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">,</span>  <span class="mf">4.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>
+         <span class="mf">1.</span><span class="p">]),</span>
+ <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">3.90483644</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.575889</span>  <span class="p">,</span> <span class="o">-</span><span class="mf">3.24694156</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.91799412</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.58904668</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">2.26009924</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.9311518</span> <span class="p">,</span> <span class="o">-</span><span class="mf">1.60220436</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.27325692</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.94430948</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.61536204</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2864146</span> <span class="p">,</span>  <span class="mf">0.04253285</span><span class="p">,</span>  <span class="mf">0.37148029</span><span class="p">,</span>  <span class="mf">0.70042773</span><span class="p">,</span>
+         <span class="mf">1.02937517</span><span class="p">,</span>  <span class="mf">1.35832261</span><span class="p">,</span>  <span class="mf">1.68727005</span><span class="p">,</span>  <span class="mf">2.01621749</span><span class="p">,</span>  <span class="mf">2.34516493</span><span class="p">,</span>
+         <span class="mf">2.67411237</span><span class="p">,</span>  <span class="mf">3.00305981</span><span class="p">,</span>  <span class="mf">3.33200725</span><span class="p">,</span>  <span class="mf">3.66095469</span><span class="p">,</span>  <span class="mf">3.98990213</span><span class="p">,</span>
+         <span class="mf">4.31884957</span><span class="p">,</span>  <span class="mf">4.64779701</span><span class="p">,</span>  <span class="mf">4.97674445</span><span class="p">,</span>  <span class="mf">5.30569189</span><span class="p">,</span>  <span class="mf">5.63463934</span><span class="p">,</span>
+         <span class="mf">5.96358678</span><span class="p">,</span>  <span class="mf">6.29253422</span><span class="p">,</span>  <span class="mf">6.62148166</span><span class="p">,</span>  <span class="mf">6.9504291</span> <span class="p">,</span>  <span class="mf">7.27937654</span><span class="p">,</span>
+         <span class="mf">7.60832398</span><span class="p">,</span>  <span class="mf">7.93727142</span><span class="p">,</span>  <span class="mf">8.26621886</span><span class="p">,</span>  <span class="mf">8.5951663</span> <span class="p">,</span>  <span class="mf">8.92411374</span><span class="p">,</span>
+         <span class="mf">9.25306118</span><span class="p">]),</span>
+ <span class="o">&lt;</span><span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="mi">1</span> <span class="n">Patch</span> <span class="n">objects</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_72_1.png" /></p>
+</div>
+<div class="section" id="id3">
+<h2>6.2. 二维频次直方图和数据区间划分<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 准备数据</span>
+
+<span class="n">mean</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">cov</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
+
+<span class="c1"># 多元正太分布随机样本抽取</span>
+<span class="c1"># mean:多元正态分布的维度</span>
+<span class="c1"># cov:多元正态分布的协方差矩阵，且协方差矩阵必须是对称矩阵和半正定矩阵(形状为(N,N)的二维数组)。</span>
+<span class="c1"># size: 数组的形状（整数或者由整数构成的元组）。如果该值未给定，则返回单个N维的样本（N恰恰是上面mean的长度）。</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multivariate_normal</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">cov</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="plt-hist2d">
+<h2>6.3. plt.hist2d<a class="headerlink" href="#plt-hist2d" title="永久链接至标题">¶</a></h2>
+<p>使用plt.hist2d可以画二维直方图。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+<span class="n">cb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">cb</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">&quot;counts in bin&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_76_01.png" /></p>
+</div>
+<div class="section" id="plt-hexbin">
+<h2>6.4. plt.hexbin<a class="headerlink" href="#plt-hexbin" title="永久链接至标题">¶</a></h2>
+<p>hist2d是用的方块组成的图形，还可以使用六边形进行图形分割，需要使用plt.hexbin来完成，用来将图形化成六角形的蜂窝。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hexbin</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">gridsize</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">cb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;count in bin&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_78_01.png" /></p>
+</div>
+<div class="section" id="id4">
+<h2>6.5. 核密度估计<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>核密度估计(KernelDensityEstimation)是一种常用的评估多维度分布密度的方法，本节主要是对画图函数做一个展示，不详细讲述kde算法。</p>
+<p>kde方法通过不同的平滑带宽长度在拟合函数的准确性和平滑性之间做出一种权衡。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">gaussian_kde</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
+<span class="n">kde</span> <span class="o">=</span> <span class="n">gaussian_kde</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">kde</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">ravel</span><span class="p">()]))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">)</span>
+
+<span class="n">cb</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="n">cb</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s2">&quot;density&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_80_01.png" /></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="多子图.html" class="btn btn-neutral float-right" title="7. 多子图" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="密度图和等高线.html" class="btn btn-neutral float-left" title="5. 密度图和等高线" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 刘大拿.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

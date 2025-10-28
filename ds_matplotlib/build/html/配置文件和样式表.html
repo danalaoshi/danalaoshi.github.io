@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>9. 配置文件和样式表 &mdash; Matplotlib简明手册 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="10. 三维图" href="三维图.html" />
+    <link rel="prev" title="8. 文字与注释" href="文字与注释.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Matplotlib简明手册
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="matplotlib简介.html">1. Matplotlib绘图简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="图形简单绘制.html">2. 图形简单绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="散点图.html">3. 散点图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="误差线.html">4. 误差线</a></li>
+<li class="toctree-l1"><a class="reference internal" href="密度图和等高线.html">5. 密度图和等高线</a></li>
+<li class="toctree-l1"><a class="reference internal" href="直方图.html">6. 频次直方图，数据区间划分和分布密度</a></li>
+<li class="toctree-l1"><a class="reference internal" href="多子图.html">7. 多子图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="文字与注释.html">8. 文字与注释</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. 配置文件和样式表</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">9.1. 手动配置图形</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">9.2. 修改默认配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">9.3. 样式表</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">9.3.1. 默认风格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fivethirtyeight">9.3.2. FiveThirtyEight风格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ggplot">9.3.3. ggplot风格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bmh">9.3.4. bmh风格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">9.3.5. 黑色背景风格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">9.3.6. 灰度风格</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#seaborn">9.3.7. Seaborn风格</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="三维图.html">10. 三维图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Seaborn数据可视化.html">11. Seaborn数据可视化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matplotlib_samples/index.html">12. Matplotlib 50 例</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Matplotlib简明手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>9. 配置文件和样式表</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/配置文件和样式表.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>9. 配置文件和样式表<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>Matplotlib允许手动调整默认样式，如果默认拍照不能满足的情况下，可以手动调整样式。</p>
+<p>而对于样式表，每个程序都有一套完整的配色方案，我们可以对起进行修改或者替换，系统给我们提供了很多固定风格的
+搭配，如果需要，不建议过多修改配置内容，必要的时候直接替换样式表就好，必要的时候做一些微小改动即可满足需求。</p>
+<div class="section" id="id2">
+<h2>9.1. 手动配置图形<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>通过手动配置图形，可以改变图形的刻度，背景等内容，下面例子是对图形配置的一个简单示例。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#设置环境</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;classic&#39;</span><span class="p">)</span>
+
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#使用默认配置显示图形</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">array</span><span class="p">([</span>  <span class="mf">1.</span><span class="p">,</span>   <span class="mf">3.</span><span class="p">,</span>  <span class="mf">43.</span><span class="p">,</span> <span class="mf">119.</span><span class="p">,</span> <span class="mf">237.</span><span class="p">,</span> <span class="mf">285.</span><span class="p">,</span> <span class="mf">195.</span><span class="p">,</span>  <span class="mf">92.</span><span class="p">,</span>  <span class="mf">22.</span><span class="p">,</span>   <span class="mf">3.</span><span class="p">]),</span>
+ <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">3.90095153</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.1706347</span> <span class="p">,</span> <span class="o">-</span><span class="mf">2.44031787</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.71000103</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9796842</span> <span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.24936737</span><span class="p">,</span>  <span class="mf">0.48094946</span><span class="p">,</span>  <span class="mf">1.2112663</span> <span class="p">,</span>  <span class="mf">1.94158313</span><span class="p">,</span>  <span class="mf">2.67189996</span><span class="p">,</span>
+         <span class="mf">3.40221679</span><span class="p">]),</span>
+ <span class="o">&lt;</span><span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="mi">10</span> <span class="n">Patch</span> <span class="n">objects</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_115_1.png" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 对图形进行各种配置</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_axisbelow</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1">#被色网格线</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">)</span>
+
+<span class="c1">#隐藏坐标的线条</span>
+<span class="k">for</span> <span class="n">spine</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="n">spine</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="c1">#隐藏上边和右边的刻度</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">tick_bottom</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">tick_left</span><span class="p">()</span>
+
+<span class="c1">#弱化刻度和标签</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;out&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">tick</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">():</span>
+    <span class="n">tick</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">tick</span> <span class="ow">in</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_yticklabels</span><span class="p">():</span>
+    <span class="n">tick</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+
+<span class="c1">#设置频次直方图轮廓色和填充色</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s2">&quot;#1122FF&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#998877&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">array</span><span class="p">([</span>  <span class="mf">1.</span><span class="p">,</span>   <span class="mf">3.</span><span class="p">,</span>  <span class="mf">43.</span><span class="p">,</span> <span class="mf">119.</span><span class="p">,</span> <span class="mf">237.</span><span class="p">,</span> <span class="mf">285.</span><span class="p">,</span> <span class="mf">195.</span><span class="p">,</span>  <span class="mf">92.</span><span class="p">,</span>  <span class="mf">22.</span><span class="p">,</span>   <span class="mf">3.</span><span class="p">]),</span>
+ <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">3.90095153</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.1706347</span> <span class="p">,</span> <span class="o">-</span><span class="mf">2.44031787</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.71000103</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9796842</span> <span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.24936737</span><span class="p">,</span>  <span class="mf">0.48094946</span><span class="p">,</span>  <span class="mf">1.2112663</span> <span class="p">,</span>  <span class="mf">1.94158313</span><span class="p">,</span>  <span class="mf">2.67189996</span><span class="p">,</span>
+         <span class="mf">3.40221679</span><span class="p">]),</span>
+ <span class="o">&lt;</span><span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="mi">10</span> <span class="n">Patch</span> <span class="n">objects</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_116_1.png" /></p>
+</div>
+<div class="section" id="id3">
+<h2>9.2. 修改默认配置<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>默认配置在修改的时候需要先把系统默认配置保存，使用完毕后需要还原配置。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#保存默认的配置，修改后需要还原</span>
+<span class="n">rc_default</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cycler</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">cycler</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;#777777&#39;</span><span class="p">,</span> <span class="s1">&#39;#888888&#39;</span><span class="p">,</span> <span class="s1">&#39;#999999&#39;</span><span class="p">,</span> <span class="s1">&#39;#AAAAAA&#39;</span><span class="p">,</span> <span class="s1">&#39;#BBBBBB&#39;</span><span class="p">,</span> <span class="s1">&#39;#CCCCCC&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;axes&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#EEEEEE&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> \
+       <span class="n">axisbelow</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">prop_cycle</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;grid&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;xtick&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;ytick&#39;</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;out&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;patch&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">array</span><span class="p">([</span>  <span class="mf">1.</span><span class="p">,</span>   <span class="mf">3.</span><span class="p">,</span>  <span class="mf">43.</span><span class="p">,</span> <span class="mf">119.</span><span class="p">,</span> <span class="mf">237.</span><span class="p">,</span> <span class="mf">285.</span><span class="p">,</span> <span class="mf">195.</span><span class="p">,</span>  <span class="mf">92.</span><span class="p">,</span>  <span class="mf">22.</span><span class="p">,</span>   <span class="mf">3.</span><span class="p">]),</span>
+ <span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">3.90095153</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.1706347</span> <span class="p">,</span> <span class="o">-</span><span class="mf">2.44031787</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.71000103</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.9796842</span> <span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.24936737</span><span class="p">,</span>  <span class="mf">0.48094946</span><span class="p">,</span>  <span class="mf">1.2112663</span> <span class="p">,</span>  <span class="mf">1.94158313</span><span class="p">,</span>  <span class="mf">2.67189996</span><span class="p">,</span>
+         <span class="mf">3.40221679</span><span class="p">]),</span>
+ <span class="o">&lt;</span><span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="mi">10</span> <span class="n">Patch</span> <span class="n">objects</span><span class="o">&gt;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_118_1.png" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+    
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">rc_default</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_119_0.png" /></p>
+</div>
+<div class="section" id="id4">
+<h2>9.3. 样式表<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>样式表就是系统给提供的完整配置方案。</p>
+<p>在style模块里，包含大量样式表可以使用。</p>
+<p>使用<code class="docutils literal notranslate"><span class="pre">plt.style.available</span></code>可以得到所有可用的样式：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;seaborn-dark&#39;</span><span class="p">,</span> <span class="s1">&#39;tableau-colorblind10&#39;</span><span class="p">,</span> <span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-white&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-bright&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-deep&#39;</span><span class="p">,</span> <span class="s1">&#39;ggplot&#39;</span><span class="p">,</span> <span class="s1">&#39;Solarize_Light2&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-colorblind&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-darkgrid&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-pastel&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-talk&#39;</span><span class="p">,</span> <span class="s1">&#39;_classic_test&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-notebook&#39;</span><span class="p">,</span> <span class="s1">&#39;dark_background&#39;</span><span class="p">,</span> <span class="s1">&#39;fast&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-dark-palette&#39;</span><span class="p">,</span> <span class="s1">&#39;classic&#39;</span><span class="p">,</span> <span class="s1">&#39;grayscale&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-poster&#39;</span><span class="p">,</span> <span class="s1">&#39;bmh&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-ticks&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-whitegrid&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-paper&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-muted&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>对样式的使用，可以使用代码<code class="docutils literal notranslate"><span class="pre">plt.style.use('stylename')</span></code>来处理。但这个会改变以后所有的风格，如果需要，建议使用风格上下文管理器来临时更换：</p>
+<p><code class="docutils literal notranslate"><span class="pre">plt.style.context('stylename')</span></code></p>
+<p>通过风格上下文管理器，我们可以临时更换配置方案而不必操心还原等操作，一旦离开上下文管理器的作用范围，则临时上下文管理器就失效。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 准备数据</span>
+<span class="k">def</span> <span class="nf">hist_and_lines</span><span class="p">():</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower left&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="id5">
+<h3>9.3.1. 默认风格<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#还原默认风格</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">rc_default</span><span class="p">)</span>
+
+<span class="n">hist_and_lines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_123_0.png" /></p>
+</div>
+<div class="section" id="fivethirtyeight">
+<h3>9.3.2. FiveThirtyEight风格<a class="headerlink" href="#fivethirtyeight" title="永久链接至标题">¶</a></h3>
+<p>这个风格是模仿网站FiveThirtyEight。</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://fivethirtyeight.com</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">):</span>
+    <span class="n">hist_and_lines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_125_0.png" /></p>
+</div>
+<div class="section" id="ggplot">
+<h3>9.3.3. ggplot风格<a class="headerlink" href="#ggplot" title="永久链接至标题">¶</a></h3>
+<p>ggplot是R语言非常流行的可视化工具，ggplot风格就是模仿ggplot工具包。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">):</span>
+    <span class="n">hist_and_lines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_127_0.png" /></p>
+</div>
+<div class="section" id="bmh">
+<h3>9.3.4. bmh风格<a class="headerlink" href="#bmh" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s1">&#39;bmh&#39;</span><span class="p">):</span>
+    <span class="n">hist_and_lines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_129_0.png" /></p>
+</div>
+<div class="section" id="id6">
+<h3>9.3.5. 黑色背景风格<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;dark_background&quot;</span><span class="p">):</span>
+    <span class="n">hist_and_lines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_131_0.png" /></p>
+</div>
+<div class="section" id="id7">
+<h3>9.3.6. 灰度风格<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">context</span><span class="p">(</span><span class="s2">&quot;grayscale&quot;</span><span class="p">):</span>
+    <span class="n">hist_and_lines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_133_0.png" /></p>
+</div>
+<div class="section" id="seaborn">
+<h3>9.3.7. Seaborn风格<a class="headerlink" href="#seaborn" title="永久链接至标题">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 导入seaborn库的时候自动导入seaborn风格</span>
+<span class="kn">import</span> <span class="nn">seaborn</span>
+<span class="n">hist_and_lines</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_135_0.png" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="三维图.html" class="btn btn-neutral float-right" title="10. 三维图" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="文字与注释.html" class="btn btn-neutral float-left" title="8. 文字与注释" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 刘大拿.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

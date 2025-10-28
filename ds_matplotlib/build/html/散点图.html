@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3. 散点图 &mdash; Matplotlib简明手册 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="4. 误差线" href="误差线.html" />
+    <link rel="prev" title="2. 图形简单绘制" href="图形简单绘制.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Matplotlib简明手册
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="matplotlib简介.html">1. Matplotlib绘图简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="图形简单绘制.html">2. 图形简单绘制</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. 散点图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">3.1. 简单散点图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">3.2. 其他散点图形状</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">3.3. 点线结合的图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plt-scatter">3.4. 使用plt.scatter画散点图</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="误差线.html">4. 误差线</a></li>
+<li class="toctree-l1"><a class="reference internal" href="密度图和等高线.html">5. 密度图和等高线</a></li>
+<li class="toctree-l1"><a class="reference internal" href="直方图.html">6. 频次直方图，数据区间划分和分布密度</a></li>
+<li class="toctree-l1"><a class="reference internal" href="多子图.html">7. 多子图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="文字与注释.html">8. 文字与注释</a></li>
+<li class="toctree-l1"><a class="reference internal" href="配置文件和样式表.html">9. 配置文件和样式表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="三维图.html">10. 三维图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Seaborn数据可视化.html">11. Seaborn数据可视化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matplotlib_samples/index.html">12. Matplotlib 50 例</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Matplotlib简明手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>3. 散点图</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/散点图.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>3. 散点图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>散点图（Scatter Plot）主要是以点为主，数据是不连续的数据，通过设置线的型号为圆点来完成。
+其余的线的形状为：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">'.'</span></code>          point marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">','</span></code>          pixel marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'o'</span></code>          circle marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'v'</span></code>          triangle_down marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'^'</span></code>          triangle_up marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'&lt;'</span></code>          triangle_left marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'&gt;'</span></code>          triangle_right marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'1'</span></code>          tri_down marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'2'</span></code>          tri_up marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'3'</span></code>          tri_left marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'4'</span></code>          tri_right marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'s'</span></code>          square marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'p'</span></code>          pentagon marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'*'</span></code>          star marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'h'</span></code>          hexagon1 marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'H'</span></code>          hexagon2 marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'+'</span></code>          plus marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'x'</span></code>          x marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'D'</span></code>          diamond marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'d'</span></code>          thin_diamond marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'|'</span></code>          vline marker</li>
+<li><code class="docutils literal notranslate"><span class="pre">'_'</span></code>          hline marker</li>
+</ul>
+<div class="section" id="id2">
+<h2>3.1. 简单散点图<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#准备环境</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="c1"># 设置风格</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn-whitegrid&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># 通过设置线型为点来完成三点图的显示</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7fe668f962b0</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_43_1.png" /></p>
+</div>
+<div class="section" id="id3">
+<h2>3.2. 其他散点图形状<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 散点图的形状展示</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">marker</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">rng</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">marker</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;marker={}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">marker</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">numpoints</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_45_01.png" /></p>
+</div>
+<div class="section" id="id4">
+<h2>3.3. 点线结合的图<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>在plot的使用中，对线的类型使用直线(-)，圆圈(o)可以画出带有点线结合的图形。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># 通过设置线型为点来完成三点图的显示</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7fe6692aa748</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_47_1.png" /></p>
+</div>
+<div class="section" id="plt-scatter">
+<h2>3.4. 使用plt.scatter画散点图<a class="headerlink" href="#plt-scatter" title="永久链接至标题">¶</a></h2>
+<p>另一个画散点图的函数是scatter，用法和plot函数类似。</p>
+<p>但scatter更加灵活，甚至可以单独控制每个散点不同的属性，例如大小，颜色，边控等。</p>
+<p>相对来讲，对于大量数据的渲染，plot效率要高于scatter。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># scatter案例</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">sizes</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">rng</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">sizes</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+
+<span class="c1">#显示颜色条</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">colorbar</span><span class="o">.</span><span class="n">Colorbar</span> <span class="n">at</span> <span class="mh">0x7fe668405438</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><img alt="png" src="_images/output_49_1.png" /></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="误差线.html" class="btn btn-neutral float-right" title="4. 误差线" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="图形简单绘制.html" class="btn btn-neutral float-left" title="2. 图形简单绘制" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 刘大拿.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

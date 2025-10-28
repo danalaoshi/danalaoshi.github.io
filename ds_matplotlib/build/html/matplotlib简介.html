@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1. Matplotlib绘图简介 &mdash; Matplotlib简明手册 1.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'1.0',
+              LANGUAGE:'zh_CN',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="2. 图形简单绘制" href="图形简单绘制.html" />
+    <link rel="prev" title="Matplotlib简明手册" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Matplotlib简明手册
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Matplotlib绘图简介</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1.1. 图形样式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.2. 不同环境的使用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.2.1. 脚本中使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ipython-shell">1.2.2. IPython shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jupyter-notebook">1.2.3. Jupyter Notebook</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">1.3. 图像的保存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">1.4. 两种不同的画图接口</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="图形简单绘制.html">2. 图形简单绘制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="散点图.html">3. 散点图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="误差线.html">4. 误差线</a></li>
+<li class="toctree-l1"><a class="reference internal" href="密度图和等高线.html">5. 密度图和等高线</a></li>
+<li class="toctree-l1"><a class="reference internal" href="直方图.html">6. 频次直方图，数据区间划分和分布密度</a></li>
+<li class="toctree-l1"><a class="reference internal" href="多子图.html">7. 多子图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="文字与注释.html">8. 文字与注释</a></li>
+<li class="toctree-l1"><a class="reference internal" href="配置文件和样式表.html">9. 配置文件和样式表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="三维图.html">10. 三维图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Seaborn数据可视化.html">11. Seaborn数据可视化</a></li>
+<li class="toctree-l1"><a class="reference internal" href="matplotlib_samples/index.html">12. Matplotlib 50 例</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Matplotlib简明手册</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>1. Matplotlib绘图简介</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/matplotlib简介.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="matplotlib">
+<h1>1. Matplotlib绘图简介<a class="headerlink" href="#matplotlib" title="永久链接至标题">¶</a></h1>
+<ul class="simple">
+<li>建立在Numpy数组基础上的多平台数据可视化库</li>
+<li>最初设计用来完善SciPy生态</li>
+<li>良好的操作系统兼容性和图形显示底层接口兼容性</li>
+<li>功能强大，设置灵活</li>
+</ul>
+<div class="section" id="id1">
+<h2>1.1. 图形样式<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>利用Matplotlib绘图的图形风格可以设定，所有图形，可以通过<code class="docutils literal notranslate"><span class="pre">plt.style.use('classic')</span></code>
+设置图形样式，在1.5版本以前只能使用经典风格，新版本会有不同的风格设置。</p>
+</div>
+<div class="section" id="id2">
+<h2>1.2. 不同环境的使用<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>不同环境中使用Matplotlib可能稍有不同，需要注意:</p>
+<div class="section" id="id3">
+<h3>1.2.1. 脚本中使用<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>在脚本中使用，并不能自动显示图形，需要使用<code class="docutils literal notranslate"><span class="pre">plt.show()</span></code>明确让Matplotlib把图形显示出来，否则不会看到图形。</p>
+</div>
+<div class="section" id="ipython-shell">
+<h3>1.2.2. IPython shell<a class="headerlink" href="#ipython-shell" title="永久链接至标题">¶</a></h3>
+<p>在IPython shell中使用画图，需要使用魔法命令<code class="docutils literal notranslate"><span class="pre">%matplotlib</span></code>, 在以后的画图命令中，会自动显示出需要画的图形。</p>
+</div>
+<div class="section" id="jupyter-notebook">
+<h3>1.2.3. Jupyter Notebook<a class="headerlink" href="#jupyter-notebook" title="永久链接至标题">¶</a></h3>
+<p>在Jupyter Notebook中一般也需要使用魔法函数，但是相应魔法函数有两个：</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code>: 在Notebook中启动静态图形</li>
+<li><code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code>：在Notebook中启动交互式图形</li>
+</ul>
+<p>使用以上两个魔法函数，理论上不需要在使用show函数强制显示图形，但在实践过程中，可能出现不显示的情况，此时建议使用
+show显示图像。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>1.3. 图像的保存<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>经常需要保存产生的图像以备使用，
+如果使用的是交互式显示图形，可以直接点击保存按钮来保存图形，在所有代码中，都可以使用savefig函数来保存函数。</p>
+</div>
+<div class="section" id="id5">
+<h2>1.4. 两种不同的画图接口<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>Matplotlib支持两类画图接口：</p>
+<ul class="simple">
+<li>MATLAB风格接口：此类接口的特点是有状态的(Stateful），使用方便，对MATLAB用户友好，此类接口在pyplot中</li>
+<li>面向对象接口：面向对象方式，处理复杂图形比较方便，能力相对比较强</li>
+</ul>
+<p>此两种风格接口比较相似，容易混淆，我们在使用中，经常会混用。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="图形简单绘制.html" class="btn btn-neutral float-right" title="2. 图形简单绘制" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Matplotlib简明手册" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; 版权所有 2020, 刘大拿.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
