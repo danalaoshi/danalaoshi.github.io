@@ -4,7 +4,566 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be439dfe-5486-499f-980a-b8ce62d4e3dc" name="Changes" comment="" />
+    <list default="true" id="be439dfe-5486-499f-980a-b8ce62d4e3dc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/._inspectionProfiles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/._misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/._vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/._workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/danalaoshi.github.io.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/._profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/Seaborn数据可视化.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/Seaborn数据可视化.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/index.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/matplotlib简介.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/matplotlib简介.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/三维图.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/三维图.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/图形简单绘制.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/图形简单绘制.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/多子图.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/多子图.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/密度图和等高线.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/密度图和等高线.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/散点图.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/散点图.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/文字与注释.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/文字与注释.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/直方图.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/直方图.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/误差线.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/误差线.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/配置文件和样式表.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/doctrees/配置文件和样式表.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/.buildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/.buildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/.nojekyll" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/.nojekyll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/Seaborn数据可视化.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/Seaborn数据可视化.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_101_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_101_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_103_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_103_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_105_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_105_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_107_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_107_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_109_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_109_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_110_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_110_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_115_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_115_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_116_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_116_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_118_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_118_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_119_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_119_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_11_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_11_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_123_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_123_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_125_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_125_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_127_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_127_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_129_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_129_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_131_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_131_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_133_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_133_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_135_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_135_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_138_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_138_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_13_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_13_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_140_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_140_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_142_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_142_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_143_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_143_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_145_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_145_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_146_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_146_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_147_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_147_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_149_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_149_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_150_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_150_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_154_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_154_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_155_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_155_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_157_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_157_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_158_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_158_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_159_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_159_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_15_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_15_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_160_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_160_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_161_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_161_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_162_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_162_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_165_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_165_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_168_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_168_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_170_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_170_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_172_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_172_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_173_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_173_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_176_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_176_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_177_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_177_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_17_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_17_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_18_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_18_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_19_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_19_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_21_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_21_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_23_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_23_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_24_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_24_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_25_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_25_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_27_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_27_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_28_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_28_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_30_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_30_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_34_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_34_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_37_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_37_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_39_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_39_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_43_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_43_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_45_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_45_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_47_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_47_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_49_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_49_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_53_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_53_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_54_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_54_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_56_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_56_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_60_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_60_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_61_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_61_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_63_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_63_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_65_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_65_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_66_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_66_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_70_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_70_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_71_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_71_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_72_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_72_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_76_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_76_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_78_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_78_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_7_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_7_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_80_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_80_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_84_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_84_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_85_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_85_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_87_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_87_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_88_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_88_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_90_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_90_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_91_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_91_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_93_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_93_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_94_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_94_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_97_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_97_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_99_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_99_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_9_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_images/output_9_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/Seaborn数据可视化.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/Seaborn数据可视化.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/matplotlib简介.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/matplotlib简介.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/三维图.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/三维图.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/图形简单绘制.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/图形简单绘制.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/多子图.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/多子图.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/密度图和等高线.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/密度图和等高线.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/散点图.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/散点图.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/文字与注释.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/文字与注释.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/直方图.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/直方图.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/误差线.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/误差线.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/配置文件和样式表.md.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_sources/配置文件和样式表.md.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/ajax-loader.gif" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/ajax-loader.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/basic.css" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/basic.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/comment-bright.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/comment-bright.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/comment-close.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/comment-close.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/comment.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/comment.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/css/badge_only.css" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/css/badge_only.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/doctools.js" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/doctools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/documentation_options.js" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/documentation_options.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/down-pressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/down-pressed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/down.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/down.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/file.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/file.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Inconsolata-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Inconsolata-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Inconsolata-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Inconsolata-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Inconsolata.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Inconsolata.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bold.eot" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bold.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bold.woff" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bold.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bold.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bold.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bolditalic.eot" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bolditalic.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bolditalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bolditalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bolditalic.woff" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bolditalic.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bolditalic.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-bolditalic.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-italic.eot" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-italic.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-italic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-italic.woff" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-italic.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-italic.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-italic.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/Lato/lato-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-bold.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/RobotoSlab/roboto-slab-v7-regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/jquery-3.2.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/jquery-3.2.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/js/modernizr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/js/modernizr.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/js/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/js/theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/minus.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/minus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/plus.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/plus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/pygments.css" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/pygments.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/searchtools.js" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/searchtools.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/translations.js" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/translations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/underscore-1.3.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/underscore-1.3.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/underscore.js" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/underscore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/up-pressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/up-pressed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/up.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/up.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/websupport.js" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/_static/websupport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/matplotlib简介.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/matplotlib简介.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/三维图.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/三维图.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/图形简单绘制.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/图形简单绘制.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/多子图.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/多子图.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/密度图和等高线.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/密度图和等高线.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/散点图.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/散点图.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/文字与注释.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/文字与注释.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/直方图.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/直方图.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/误差线.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/误差线.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/html/配置文件和样式表.html" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/html/配置文件和样式表.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/footnotehyper-sphinx.sty" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/footnotehyper-sphinx.sty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/latexmkjarc" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/latexmkjarc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/latexmkrc" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/latexmkrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.aux" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.aux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.fdb_latexmk" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.fdb_latexmk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.fls" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.fls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.idx" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.idx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.ilg" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.ilg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.ind" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.ind" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.log" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.out" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.tex" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.toc" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/matplotlib.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_101_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_101_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_103_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_103_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_105_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_105_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_107_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_107_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_109_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_109_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_110_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_110_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_115_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_115_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_116_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_116_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_118_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_118_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_119_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_119_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_11_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_11_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_123_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_123_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_125_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_125_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_127_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_127_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_129_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_129_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_131_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_131_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_133_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_133_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_135_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_135_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_138_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_138_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_13_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_13_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_140_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_140_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_142_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_142_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_143_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_143_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_145_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_145_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_146_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_146_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_147_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_147_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_149_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_149_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_150_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_150_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_154_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_154_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_155_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_155_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_157_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_157_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_158_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_158_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_159_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_159_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_15_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_15_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_160_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_160_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_161_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_161_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_162_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_162_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_165_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_165_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_168_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_168_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_170_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_170_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_172_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_172_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_173_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_173_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_176_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_176_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_177_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_177_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_17_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_17_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_18_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_18_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_19_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_19_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_21_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_21_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_23_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_23_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_24_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_24_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_25_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_25_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_27_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_27_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_28_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_28_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_30_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_30_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_34_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_34_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_37_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_37_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_39_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_39_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_43_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_43_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_45_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_45_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_47_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_47_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_49_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_49_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_53_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_53_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_54_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_54_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_56_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_56_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_60_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_60_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_61_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_61_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_63_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_63_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_65_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_65_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_66_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_66_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_70_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_70_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_71_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_71_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_72_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_72_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_76_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_76_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_78_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_78_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_7_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_7_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_80_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_80_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_84_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_84_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_85_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_85_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_87_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_87_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_88_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_88_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_90_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_90_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_91_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_91_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_93_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_93_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_94_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_94_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_97_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_97_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_99_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_99_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_9_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/output_9_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/python.ist" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/python.ist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/sphinx.sty" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/sphinx.sty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/sphinxhighlight.sty" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/sphinxhighlight.sty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/sphinxhowto.cls" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/sphinxhowto.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/sphinxmanual.cls" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/sphinxmanual.cls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/build/latex/sphinxmulticell.sty" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/build/latex/sphinxmulticell.sty" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/matplotlib.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/matplotlib.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_101_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_101_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_103_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_103_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_105_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_105_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_107_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_107_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_109_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_109_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_110_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_110_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_115_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_115_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_116_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_116_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_118_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_118_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_119_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_119_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_11_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_11_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_123_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_123_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_125_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_125_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_127_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_127_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_129_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_129_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_131_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_131_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_133_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_133_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_135_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_135_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_138_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_138_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_13_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_13_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_140_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_140_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_142_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_142_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_143_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_143_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_145_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_145_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_146_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_146_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_147_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_147_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_149_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_149_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_150_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_150_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_154_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_154_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_155_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_155_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_157_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_157_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_158_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_158_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_159_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_159_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_15_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_15_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_160_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_160_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_161_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_161_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_162_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_162_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_165_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_165_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_168_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_168_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_170_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_170_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_172_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_172_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_173_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_173_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_176_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_176_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_177_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_177_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_17_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_17_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_18_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_18_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_19_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_19_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_21_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_21_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_23_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_23_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_24_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_24_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_25_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_25_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_27_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_27_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_28_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_28_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_30_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_30_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_34_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_34_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_37_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_37_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_39_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_39_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_43_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_43_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_45_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_45_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_47_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_47_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_49_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_49_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_53_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_53_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_54_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_54_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_56_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_56_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_60_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_60_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_61_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_61_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_63_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_63_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_65_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_65_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_66_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_66_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_70_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_70_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_71_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_71_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_72_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_72_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_76_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_76_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_78_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_78_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_7_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_7_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_80_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_80_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_84_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_84_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_85_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_85_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_87_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_87_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_88_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_88_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_90_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_90_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_91_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_91_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_93_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_93_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_94_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_94_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_97_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_97_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_99_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_99_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/org/output_9_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/org/output_9_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/Seaborn数据可视化.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/Seaborn数据可视化.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/matplotlib简介.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/matplotlib简介.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_101_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_101_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_103_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_103_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_105_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_105_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_107_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_107_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_109_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_109_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_110_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_110_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_115_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_115_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_116_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_116_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_118_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_118_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_119_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_119_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_11_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_11_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_123_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_123_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_125_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_125_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_127_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_127_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_129_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_129_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_131_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_131_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_133_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_133_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_135_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_135_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_138_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_138_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_13_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_13_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_140_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_140_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_142_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_142_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_143_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_143_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_145_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_145_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_146_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_146_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_147_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_147_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_149_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_149_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_150_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_150_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_154_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_154_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_155_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_155_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_157_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_157_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_158_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_158_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_159_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_159_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_15_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_15_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_160_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_160_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_161_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_161_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_162_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_162_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_165_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_165_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_168_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_168_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_170_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_170_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_172_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_172_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_173_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_173_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_176_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_176_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_177_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_177_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_17_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_17_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_18_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_18_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_19_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_19_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_21_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_21_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_23_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_23_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_24_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_24_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_25_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_25_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_27_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_27_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_28_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_28_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_30_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_30_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_34_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_34_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_37_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_37_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_39_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_39_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_43_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_43_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_45_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_45_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_47_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_47_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_49_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_49_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_53_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_53_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_54_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_54_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_56_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_56_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_60_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_60_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_61_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_61_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_63_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_63_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_65_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_65_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_66_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_66_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_70_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_70_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_71_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_71_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_72_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_72_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_76_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_76_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_78_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_78_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_7_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_7_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_80_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_80_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_84_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_84_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_85_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_85_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_87_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_87_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_88_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_88_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_90_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_90_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_91_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_91_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_93_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_93_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_94_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_94_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_97_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_97_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_99_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_99_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/output_9_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/output_9_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/三维图.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/三维图.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/图形简单绘制.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/图形简单绘制.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/多子图.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/多子图.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/密度图和等高线.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/密度图和等高线.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/散点图.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/散点图.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/文字与注释.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/文字与注释.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/直方图.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/直方图.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/误差线.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/误差线.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_matplotlib/source/配置文件和样式表.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_matplotlib/source/配置文件和样式表.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_numpy/numpy数据类型.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_numpy/numpy数据类型.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_numpy/numpy数组基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_numpy/numpy数组基础.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_numpy/numpy概述.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_numpy/numpy概述.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_numpy/numpy通用函数.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_numpy/numpy通用函数.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_numpy/广播.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_numpy/广播.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_numpy/数组的排序.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_numpy/数组的排序.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_numpy/结构化数据.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_numpy/结构化数据.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_numpy/聚合.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_numpy/聚合.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_numpy/花哨的索引.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_numpy/花哨的索引.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_pandas/Pandas概述.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_pandas/Pandas概述.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_pandas/Pandas简单使用.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_pandas/Pandas简单使用.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_pandas/pandas运算方法.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_pandas/pandas运算方法.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_pandas/合并数据.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_pandas/合并数据.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_pandas/处理时间序列.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_pandas/处理时间序列.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_pandas/字符串的向量化操作.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_pandas/字符串的向量化操作.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_pandas/层级索引.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_pandas/层级索引.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_pandas/数据透视表.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_pandas/数据透视表.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_pandas/累计和分组.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_pandas/累计和分组.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ds_pandas/缺失值的处理.md" beforeDir="false" afterPath="$PROJECT_DIR$/ds_pandas/缺失值的处理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/101-函数高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/101-函数高级.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/102-类高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/102-类高级.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/1021-单元测试.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/1021-单元测试.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/103_调试技术.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/103_调试技术.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/104_模块和包.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/104_模块和包.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/105多线程.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/105多线程.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/106_编码问题.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/106_编码问题.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/107_log.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/107_log.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/108_携程.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/108_携程.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/110_xml.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/110_xml.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/111_json.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/111_json.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/112_正则表达式.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/112_正则表达式.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/pic/1001.png" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/pic/1001.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/pic/1002.png" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/pic/1002.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/pic/1003.png" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/pic/1003.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/pic/1004.png" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/pic/1004.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/pic/1005.png" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/pic/1005.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/pic/101.png" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/pic/101.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/pic/102.png" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/pic/102.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/pic/104.png" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/pic/104.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/001Python语言概述.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/001Python语言概述.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/001注释.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/001注释.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/002变量和变量类型.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/002变量和变量类型.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/003str.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/003str.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/004运算符.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/004运算符.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/005-if分支语句.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/005-if分支语句.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/006-for循环.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/006-for循环.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/007-while循环.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/007-while循环.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/008-内置函数.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/008-内置函数.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/008-函数讲义.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/008-函数讲义.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/009-类.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/009-类.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/010-内置模块.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/010-内置模块.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/011-持久化和文件.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/011-持久化和文件.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/012-异常处理.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/012-异常处理.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/013-tkinter.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/013-tkinter.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/base/09-内置结构.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/base/09-内置结构.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/pic/000.png" beforeDir="false" afterPath="$PROJECT_DIR$/python/pic/000.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/pic/d01.png" beforeDir="false" afterPath="$PROJECT_DIR$/python/pic/d01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/pic/python_stru.png" beforeDir="false" afterPath="$PROJECT_DIR$/python/pic/python_stru.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/talkmap.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/talkmap_out.ipynb" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,26 +580,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/augs/codespace/danalaoshi.github.io&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "E:/Winspace/danalaoshi.github.io",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ds_matplotlib" />
+      <recent name="$PROJECT_DIR$/ds_pandas" />
+      <recent name="$PROJECT_DIR$/ds_numpy" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/_data" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ds_pandas" />
+      <recent name="$PROJECT_DIR$/ds_numpy" />
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/_data/images" />
       <recent name="$PROJECT_DIR$/_data/bk" />
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-41e8cd69c857-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26927.90" />
+        <option value="bundled-python-sdk-0978a7220b69-9867c7d4c0a4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.28294.336" />
       </set>
     </attachedChunks>
   </component>
@@ -53,5 +628,13 @@
       <updated>1759890646853</updated>
     </task>
     <servers />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>
