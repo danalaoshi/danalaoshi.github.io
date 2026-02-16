@@ -3,7 +3,7 @@ layout: default
 title: 网络编程-socket编程
 parent: Python编程
 nav_order: 32
---
+---
 # Socket 编程
 
 socket 编程相关的模块是 socket，所以在使用 socket 编程的时候，需要导入 socket 模块：

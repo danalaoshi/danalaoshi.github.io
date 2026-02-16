@@ -3,7 +3,7 @@ layout: default
 title: 网络编程-HTTP协议
 parent: Python编程
 nav_order: 31
---
+---
 # HTTP 协议
 
 协议一般指数据访问的过程、顺序、文件格式、内容等的一系列规定或者规范。

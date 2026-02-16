@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be439dfe-5486-499f-980a-b8ce62d4e3dc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/1021-单元测试.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/1021-单元测试.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程-email发送.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-email发送.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程-ftp编程.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-ftp编程.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程-http协议.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-http协议.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程-http项目实战.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-http项目实战.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程-socket编程.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-socket编程.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程-网络基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-网络基础.md" afterDir="false" />
-    </list>
+    <list default="true" id="be439dfe-5486-499f-980a-b8ce62d4e3dc" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +68,7 @@
       <workItem from="1771158726514" duration="2547000" />
       <workItem from="1771164229285" duration="1536000" />
       <workItem from="1771217261708" duration="4272000" />
-      <workItem from="1771233172303" duration="12412000" />
+      <workItem from="1771233172303" duration="12862000" />
     </task>
     <servers />
   </component>
