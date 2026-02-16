@@ -1,3 +1,9 @@
+---
+layout: default
+title: 单元测试
+parent: Python编程
+nav_order: 34
+--
 # 利用 Python 发送 Email
 
 本章主要讲述邮件的收发原理和如何利用 Python 代码收发邮件。

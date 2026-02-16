@@ -5,26 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be439dfe-5486-499f-980a-b8ce62d4e3dc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/python/adv/109_网络编程-email发送.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/adv/109_网络编程-ftp编程.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/adv/109_网络编程-http协议.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/adv/109_网络编程-http项目实战.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/adv/109_网络编程-socket编程.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/pic/xml01.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/101-函数高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/101-函数高级.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/102-类高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/102-类高级.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/adv/1021-单元测试.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/1021-单元测试.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/103_调试技术.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/103_调试技术.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/104_模块和包.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/104_模块和包.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/105多线程.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/105多线程.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/106_编码问题.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/106_编码问题.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/107_log.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/107_log.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/108_携程.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/108_携程.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-网络基础.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/110_xml.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/110_xml.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/111_json.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/111_json.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/adv/112_正则表达式.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/112_正则表达式.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程-email发送.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-email发送.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程-ftp编程.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-ftp编程.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程-http协议.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-http协议.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程-http项目实战.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-http项目实战.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程-socket编程.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-socket编程.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程-网络基础.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-网络基础.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +35,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "ai.playground.ignore.import.keys.banner.in.settings": "true",
@@ -88,7 +77,7 @@
       <workItem from="1771158726514" duration="2547000" />
       <workItem from="1771164229285" duration="1536000" />
       <workItem from="1771217261708" duration="4272000" />
-      <workItem from="1771233172303" duration="11770000" />
+      <workItem from="1771233172303" duration="12412000" />
     </task>
     <servers />
   </component>
