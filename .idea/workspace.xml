@@ -5,7 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be439dfe-5486-499f-980a-b8ce62d4e3dc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/python/adv/109_网络编程-email发送.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/adv/109_网络编程-ftp编程.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/adv/109_网络编程-http协议.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/adv/109_网络编程-http项目实战.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/adv/109_网络编程-socket编程.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/pic/xml01.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/101-函数高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/101-函数高级.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/102-类高级.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/102-类高级.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/1021-单元测试.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/1021-单元测试.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/103_调试技术.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/103_调试技术.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/104_模块和包.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/104_模块和包.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/105多线程.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/105多线程.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/106_编码问题.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/106_编码问题.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/107_log.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/107_log.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/108_携程.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/108_携程.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/109_网络编程.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/109_网络编程-网络基础.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/110_xml.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/110_xml.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/111_json.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/111_json.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/adv/112_正则表达式.md" beforeDir="false" afterPath="$PROJECT_DIR$/python/adv/112_正则表达式.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,15 +48,22 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "E:/Winspace/danalaoshi.github.io",
-    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
-    "to.speed.mode.migration.done": "true"
+    "last_opened_file_path": "/media/augs/ACT/Winspace/danalaoshi.github.io/python/pic",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "http.proxy",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/python/pic" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/_data/bk" />
     </key>
@@ -45,7 +71,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-0978a7220b69-9867c7d4c0a4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.28294.336" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.30387.173" />
+        <option value="bundled-python-sdk-4762d8aabb82-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.30387.173" />
       </set>
     </attachedChunks>
   </component>
@@ -56,8 +83,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759890646853</updated>
+      <workItem from="1771156070201" duration="1223000" />
+      <workItem from="1771157344045" duration="1351000" />
+      <workItem from="1771158726514" duration="2547000" />
+      <workItem from="1771164229285" duration="1536000" />
+      <workItem from="1771217261708" duration="4272000" />
+      <workItem from="1771233172303" duration="11770000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
